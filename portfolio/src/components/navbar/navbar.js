@@ -28,7 +28,15 @@ const Navbar = () => {
                         GitHub
                     </button>
                 </div>
-                <div className='nav-description'>
+                <div className='desktopMenuList'>
+                    <Link activeClass='active' to='works' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Works</Link>
+                    <Link activeClass='active' to='about' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>About</Link>
+                    <Link activeClass='active' to='contact' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Contact</Link>
+                </div>
+            </div>
+            <div className='main-nav'>
+                <div className='nav-header'>
+                    <h1 className='name'>Sabrina</h1>
                     <h1 className='description'>Sabrina Quach is a UX designer and software engineer. Studying engineering and design helped her see tech problems through a new lens, one that focuses on real people.</h1>
                 </div>
                 <div className='nav-artist'>
@@ -37,13 +45,6 @@ const Navbar = () => {
                         <a href="https://unsplash.com/@s_midili?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer"> serjan midili</a> on 
                         <a href="https://unsplash.com/photos/koi-fish-swim-in-dark-water-hJb7hOl7AEs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer"> Unsplash</a>
                     </h2>
-                </div>
-            </div>
-            <div className='main-nav'>
-                <div className='desktopMenuList'>
-                    <Link activeClass='active' to='works' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Works</Link>
-                    <Link activeClass='active' to='about' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>About</Link>
-                    <Link activeClass='active' to='contact' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Contact</Link>
                 </div>
                 {/* <button className='desktopMenuButton'>
                     <FiMessageSquare />
