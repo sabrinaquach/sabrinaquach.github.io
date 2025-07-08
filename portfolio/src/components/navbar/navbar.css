@@ -1,0 +1,129 @@
+@media screen and (max-width: 840px) {
+    .nav-content {
+      flex-direction: row;       
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-buttons {
+      flex-direction: column;    
+      align-items: flex-start;
+    }
+    .nav-description, .description {
+      text-align: left;       
+      max-width: 60vw;
+      font-size: 0.5rem;
+    }
+    .desktopMenuListItem {
+        font-size: 1.2rem;
+    }
+  }
+.navbar {
+        padding: 2rem;
+        background: url("../../assets/images/serjan-midili-hJb7hOl7AEs-unsplash.jpg") no-repeat center center;
+        background-size: cover;      
+        background-position: center;   
+        height: 100vh;               
+        width: 100vw;              
+        position: relative;         
+        overflow: hidden;
+      
+}
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: 'JetBrainsMono-Regular';
+}
+.nav-description {
+    text-align: right;
+    color: white;
+}
+.nav-artist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+.artist-tag {
+    color:#fff;
+    text-decoration: none;
+    font-size: 10px;
+}
+a {
+    color:#fff;
+    text-decoration: none;
+}
+a:hover {
+    color:#FFB266;
+    text-decoration: none;
+}
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.nav-buttons button {
+    border: 1.5px solid #fff;
+    border-radius: 40px;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    font-family: 'JetBrainsMono-Regular';
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+.resume-button:hover {
+    background-color: white;
+    color: black;
+}
+.linkedin-button:hover {
+    background-color: #0a66c2;
+    color: white;
+}
+.github-button:hover {
+    background-color: #08872B;
+    color: white;
+}
+.description {
+    font-size: 20px;
+    line-height: 1;
+    text-align: right;
+    max-width: 450px;
+}
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 85vh;
+    color: white;
+}
+.desktopMenuList:hover {
+    cursor: pointer;
+    display: inline-block;
+    perspective: 800px;
+}
+.desktopMenuListItem {
+    font-size: 8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'Inter';
+    display: block;
+    transition: all .2s ease-in-out; 
+    transform-origin: left center;
+}
+.desktopMenuListItem:hover {
+    transform: scale(1.1); 
+}
