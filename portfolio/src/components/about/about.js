@@ -5,7 +5,10 @@ import '../../assets/fonts/font.css'
 const About = () => {
     return (
         <div className="about-container">
-            <h2 className="section-title">About</h2>
+            <div className="content-section">
+                <h2 className="about-title">About</h2>
+                <div className="pfp-circle"></div>
+            </div>
         </div>
     )
 }

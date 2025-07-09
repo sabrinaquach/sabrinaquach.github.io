@@ -1,13 +1,29 @@
 .about-container {
-    padding: 2rem;
     background-color: #fff;
     height: 100vh;               
     width: 100vw;              
 }
-.section-title {
-    padding: 2rem;
-    font-size: 8rem;
+.content-section {
+    display: flex;
+    flex-direction: row;
+    padding: 10rem 2rem;
+    gap: 7rem;
+}
+.about-title {
+    color: #000;
+    font-size: clamp(4rem, 8vw, 8rem);
     font-family: 'Inter';
     text-transform: uppercase;
-    color: #000;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+}
+.pfp-circle {
+    background: url(../../assets/images/pfp.png);
+    background-size: cover;      
+    background-position: center;       
+    height: 25rem;
+    width: 25rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    align-self: center;
 }

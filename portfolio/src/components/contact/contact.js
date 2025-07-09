@@ -9,20 +9,19 @@ const Contact = () => {
                 <div className="section-container">
                     <div className="section-row">
                         <h2 className="section-title">Connect With Me</h2>
-                    </div>
+                        <div className="section-row">
+                            <div className="contact-column">
+                                <h3 className="section-subtitle">Say "Hello"</h3>
+                                <p className="section-item">sabrina.quach@sjsu.edu</p>
+                            </div>
 
-                    <div className="section-row">
-                        <div className="contact-column">
-                            <h3 className="section-subtitle">Say "Hello"</h3>
-                            <p className="section-item">sabrina.quach@sjsu.edu</p>
-                        </div>
-
-                        <div className="contact-column">
-                            <h3 className="section-subtitle">Connect</h3>
-                            <div className="link-list">
-                            <a href="https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
-                            <a href="https://www.linkedin.com/in/sabrina-quach-sjsu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                            <a href="https://github.com/sabrinaquach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                            <div className="contact-column-right">
+                                <h3 className="section-subtitle">Connect</h3>
+                                <div className="link-list">
+                                    <a href="https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+                                    <a href="https://www.linkedin.com/in/sabrina-quach-sjsu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                                    <a href="https://github.com/sabrinaquach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,9 +42,9 @@ const Contact = () => {
                                 </div>
                             </form>
                         </div>
-                        {/* <div className="message-decor">
+                        <div className="message-decor">
                             <h2 className="decor-title">Let's Talk</h2>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </section>
