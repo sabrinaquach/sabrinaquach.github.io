@@ -9,28 +9,28 @@
       flex-direction: column;    
       align-items: flex-start;
     }
-    .nav-description, .description {
-      text-align: left;       
-      max-width: 60vw;
-      font-size: 0.5rem;
-    }
     .desktopMenuListItem {
         font-size: 1.2rem;
     }
-    .name {
-        font-size: 1rem;
-    }
   }
 .navbar {
-        padding: 2rem;
-        background: url("../../assets/images/serjan-midili-hJb7hOl7AEs-unsplash.jpg") no-repeat center center;
-        background-size: cover;      
-        background-position: center;   
-        height: 100vh;               
-        width: 100vw;              
-        position: relative;         
-        overflow: hidden;
+    padding: 2rem;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
       
+}
+.navbar-light .desktopMenuListItem {
+    color: white;
+}
+.navbar-dark .desktopMenuListItem {
+    color: black;
+}
+.desktopMenuListItem:hover {
+    color: #FFB266;
+    transition: color 0.2s ease;
 }
 .nav-content {
     display: flex;
@@ -43,58 +43,11 @@
     text-transform: uppercase;
     font-family: 'JetBrainsMono-Regular';
 }
-.nav-header {
-    text-align: left;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: absolute;
-    bottom: 12rem;
-}
-.name {
-    font-family: 'Inter';
-    font-size: 11.5rem;
-    text-transform: uppercase;
-}
-.description {
-    font-family: 'JetBrainsMono-Regular';
-    font-size: 20px;
-    line-height: 1;
-    text-align: left;
-    max-width: 500px;
-    text-transform: uppercase;
-}
-.nav-artist {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: right;
-    color: white;
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-}
-.artist-tag {
-    color:#fff;
-    text-decoration: none;
-    font-size: 12px;
-    font-family: 'JetBrainsMono-Regular';
-}
-a {
-    color:#fff;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-    color:#FFB266;
-}
 .nav-buttons {
     display: flex;
     gap: 1rem;
 }
 .nav-buttons button {
-    border: 1.5px solid #fff;
     border-radius: 40px;
     padding: 8px 15px;
     text-transform: uppercase;
@@ -104,27 +57,48 @@ a:hover {
     line-height: normal;
     font-size: 16px;
     cursor: pointer;
+}
+.navbar-light .resume-button {
+    border: 1.5px solid white;
     color: white;
 }
-.resume-button:hover {
-    background-color: white;
-    color: black;
+.navbar-light .linkedin-button {
+    border: 1.5px solid white;
+    color: white;
 }
-.linkedin-button:hover {
+.navbar-light .github-button {
+    border: 1.5px solid white;
+    color: white;
+}
+
+/* hover colors for white navbar */
+.navbar-light .resume-button:hover {
+  background-color: white;
+  color: black;
+}
+.navbar-light .linkedin-button:hover {
+  background-color: #0a66c2;
+  color: white;
+}
+.navbar-light .github-button:hover {
+  background-color: #08872B;
+  color: white;
+}
+
+/* hover colors for black navbar */
+.navbar-dark .resume-button:hover {
+    background-color: black;
+    color: white;
+}
+.navbar-dark .linkedin-button:hover {
     background-color: #0a66c2;
     color: white;
 }
-.github-button:hover {
+.navbar-dark .github-button:hover {
     background-color: #08872B;
     color: white;
 }
-.main-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 85vh;
-    color: white;
-}
+
 .desktopMenuList:hover {
     cursor: pointer;
     display: inline-block;

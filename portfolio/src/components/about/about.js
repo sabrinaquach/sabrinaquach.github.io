@@ -2,10 +2,12 @@ import React from "react";
 import './about.css'
 import '../../assets/fonts/font.css'
 
-const about = () => {
+const About = () => {
     return (
-        <div>About</div>
+        <div className="about-container">
+            <h2 className="section-title">About</h2>
+        </div>
     )
 }
 
-export default about
+export default About

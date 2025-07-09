@@ -1,0 +1,85 @@
+@media screen and (max-width: 840px) {
+    .nav-description, .description {
+      text-align: left;       
+      max-width: 60vw;
+      font-size: 0.5rem;
+    }
+    .name {
+        font-size: 1rem;
+    }
+}
+.work-container {
+    background: url("../../assets/images/serjan-midili-hJb7hOl7AEs-unsplash.jpg") no-repeat center center;
+    background-size: cover;      
+    background-position: center;   
+    height: 100vh;               
+    width: 100vw;              
+    position: relative;         
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 85vh;
+    color: white;
+}
+.nav-header {
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 12rem;
+}
+.name {
+    font-family: 'Inter';
+    font-size: 11.5rem;
+    text-transform: uppercase;
+}
+.description {
+    font-family: 'JetBrainsMono-Regular';
+    font-size: 20px;
+    line-height: 1;
+    text-align: left;
+    max-width: 500px;
+    text-transform: uppercase;
+}
+.nav-artist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+.artist-tag {
+    color:#fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'JetBrainsMono-Regular';
+}
+a {
+    color:#fff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color:#FFB266;
+}
+.work-section {
+    /* background-color: #000; */
+    height: 100vh;               
+    width: 100vw; 
+}
+.section-title {
+    font-size: 8rem;
+    font-family: 'Inter';
+    text-transform: uppercase;
+}

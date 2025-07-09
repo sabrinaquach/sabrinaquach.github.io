@@ -1,14 +1,30 @@
 import React from 'react';
 import './navbar.css';
 // import { FiMessageSquare } from "react-icons/fi";
-import { Link } from 'react-scroll'
+import { useLocation, useNavigate, Link as RouterLink } from 'react-router-dom';
 import '../../assets/fonts/font.css'
 
 const Navbar = () => {
+    const location = useLocation();
+    const isHome = location.pathname === "/";
+    const navigate = useNavigate();
+    const handleWorkClick = () => {
+    if (location.pathname === '/') {
+        //if on homepage scroll directly to work section
+        const el = document.getElementById('work');
+        if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        }
+    } else {
+        //navigate home and scrolls to work section
+        navigate('/#work');
+    }
+    };
+
     return (
-        <nav className='navbar'>
+        <nav className={`navbar ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
             <div className='nav-content'>
-                <div className='nav-buttons'>
+                <div className={`nav-buttons ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
                     <button 
                         className='resume-button' 
                         onClick={() => window.open('https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing', '_blank')}
@@ -29,27 +45,14 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className='desktopMenuList'>
-                    <Link activeClass='active' to='works' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Works</Link>
-                    <Link activeClass='active' to='about' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>About</Link>
-                    <Link activeClass='active' to='contact' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Contact</Link>
+                <div onClick={handleWorkClick} className="desktopMenuListItem">
+                    Work
                 </div>
-            </div>
-            <div className='main-nav'>
-                <div className='nav-header'>
-                    <h1 className='name'>Sabrina</h1>
-                    <h1 className='description'>Sabrina Quach is a UX designer and software engineer. Studying engineering and design helped her see tech problems through a new lens, one that focuses on real people.</h1>
+
+
+                    <RouterLink to="/about" className="desktopMenuListItem">About</RouterLink>
+                    <RouterLink to="/contact" className="desktopMenuListItem">Contact</RouterLink>
                 </div>
-                <div className='nav-artist'>
-                    <h2 className='artist-tag'>
-                        Photo by  
-                        <a href="https://unsplash.com/@s_midili?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer"> serjan midili</a> on 
-                        <a href="https://unsplash.com/photos/koi-fish-swim-in-dark-water-hJb7hOl7AEs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer"> Unsplash</a>
-                    </h2>
-                </div>
-                {/* <button className='desktopMenuButton'>
-                    <FiMessageSquare />
-                    Contact Me
-                </button> */}
             </div>
         </nav>
     )
