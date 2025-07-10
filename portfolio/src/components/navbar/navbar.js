@@ -20,6 +20,23 @@ const Navbar = () => {
         navigate('/#work');
     }
     };
+    const handleContactClick = () => {
+        if (location.pathname === '/') {
+          const el = document.getElementById('footer');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          navigate('/');
+          setTimeout(() => {
+            const el = document.getElementById('footer');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100); // adjust delay if needed
+        }
+      };
+      
 
     return (
         <nav className={`navbar ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
@@ -45,13 +62,13 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className='desktopMenuList'>
-                <div onClick={handleWorkClick} className="desktopMenuListItem">
-                    Work
-                </div>
-
-
+                    <div onClick={handleWorkClick} className="desktopMenuListItem">
+                        Work
+                    </div>
                     <RouterLink to="/about" className="desktopMenuListItem">About</RouterLink>
-                    <RouterLink to="/contact" className="desktopMenuListItem">Contact</RouterLink>
+                    <div onClick={handleContactClick} className="desktopMenuListItem">
+                        Contact
+                    </div>
                 </div>
             </div>
         </nav>
