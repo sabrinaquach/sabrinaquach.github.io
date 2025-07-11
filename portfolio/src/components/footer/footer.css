@@ -133,7 +133,7 @@
     background-color: #FFB266;
 }
 .cutoff-wrapper {
-    height: 14rem;              
+    height: 12rem;              
     overflow: hidden;
     position: relative;
 }
@@ -154,4 +154,3 @@
         flex: initial;
       }
   }
-  

@@ -37,7 +37,25 @@ const Work = () => {
             </div>
         </div>
         <section id="work" className="work-section">
-            <h2 className="section-title">Work</h2>
+            <h2 className="work-title">Work</h2>
+            <div className="project-column">
+                <p className="project-description">generative ai tool that creates visuals through actions.</p>
+                <div className="projects-row">
+                    <h2 className="project-title">Adobe Flux</h2>
+                    <div className="project-image"></div>
+                </div>
+                <p className="project-description-left">smart home app to view energy levels and change temperature in multiple rooms.</p>
+                <div className="projects-row">
+                    <div className="project-image"></div>
+                    <h2 className="project-title">SpartanSync</h2>
+                </div>
+                <p className="project-description">smart scheduling for busy students.</p>
+                <div className="projects-row">
+                    <h2 className="project-title">Aura</h2>
+                    <div className="project-image"></div>
+                </div>
+            </div>
+            
         </section>
         </div>
     )
