@@ -1,6 +1,5 @@
 import React from 'react';
 import './navbar.css';
-// import { FiMessageSquare } from "react-icons/fi";
 import { useLocation, useNavigate, Link as RouterLink } from 'react-router-dom';
 import '../../assets/fonts/font.css'
 
@@ -21,46 +20,50 @@ const Navbar = () => {
     }
     };
     const handleContactClick = () => {
-        if (location.pathname === '/') {
+        const scrollToFooter = () => {
           const el = document.getElementById('footer');
           if (el) {
             el.scrollIntoView({ behavior: 'smooth' });
           }
+        };
+      
+        if (location.pathname === '/') {
+          scrollToFooter();
         } else {
-          navigate('/');
+          navigate('/', { replace: false });
+          // Delay to wait for homepage render
           setTimeout(() => {
-            const el = document.getElementById('footer');
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 100); // adjust delay if needed
+            scrollToFooter();
+          }, 100); // adjust if needed
         }
       };
+      
       
 
     return (
         <nav className={`navbar ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
             <div className='nav-content'>
-                <div className={`nav-buttons ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
-                    <button 
-                        className='resume-button' 
-                        onClick={() => window.open('https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing', '_blank')}
-                    >
-                        Resume
-                    </button>
-                    <button 
-                        className='linkedin-button'
-                        onClick={() => window.open('https://www.linkedin.com/in/sabrina-quach-sjsu/', '_blank')}
-                    >
-                        LinkedIn
-                    </button>
-                    <button 
-                        className='github-button'
-                        onClick={() => window.open('https://github.com/sabrinaquach', '_blank')}
-                    >
-                        GitHub
-                    </button>
+                <div className={`nav-row nav-buttons ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
+                    <p className='initial' 
+                        onClick={() => {
+                            if (location.pathname !== '/') {
+                                navigate('/');
+                            } else {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                        }}
+                    >s.q.</p>
+                    {/* <div className='message-row'>
+                        <button 
+                            className='message-button' 
+                            onClick={handleContactClick}
+                        >
+                            <FiMessageSquare />
+                            Message Me
+                        </button>
+                    </div> */}
                 </div>
+
                 <div className='desktopMenuList'>
                     <div onClick={handleWorkClick} className="desktopMenuListItem">
                         Work

@@ -57,10 +57,19 @@
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.2s ease;
-    font-size: 1rem;
 }
-.link-list a:hover {
+/* hover colors for link list */
+.resume-button, .linkedin-button, .github-button {
+    color: black;
+}
+.resume-button:hover {
     color: #FFB266;
+}
+.linkedin-button:hover {
+    color: #0a66c2;
+}
+.github-button:hover {
+    color: #08872B;
 }
 
 /* Message Styles */

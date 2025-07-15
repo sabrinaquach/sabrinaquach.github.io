@@ -1,11 +1,30 @@
 import React from "react";
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { FiMessageSquare } from "react-icons/fi";
+import { useLocation, useNavigate } from 'react-router-dom';
 import './work.css'
 import '../../assets/fonts/font.css'
 
 const Work = () => {
     const location = useLocation();
+    const isHome = location.pathname === "/";
+    const navigate = useNavigate();
+    const handleContactClick = () => {
+        if (location.pathname === '/') {
+          const el = document.getElementById('footer');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          navigate('/');
+          setTimeout(() => {
+            const el = document.getElementById('footer');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100); // adjust delay if needed
+        }
+      };
     useEffect(() => {
         if (location.hash === '#work') {
         const el = document.getElementById('work');
@@ -24,20 +43,30 @@ const Work = () => {
                     <h1 className='description'>Sabrina Quach is a UX designer and software engineer. Studying engineering and design helped her see tech problems through a new lens, one that focuses on real people.</h1>
                 </div>
                 <div className='nav-artist'>
+                    <div className={`message-row nav-buttons ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
+                        <button 
+                            className='message-button' 
+                            onClick={handleContactClick}
+                        >
+                            <FiMessageSquare />
+                            Message Me
+                        </button>
+                    </div>
                     <h2 className='artist-tag'>
                         Photo by  
                         <a href="https://unsplash.com/@s_midili?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer"> serjan midili</a> on 
                         <a href="https://unsplash.com/photos/koi-fish-swim-in-dark-water-hJb7hOl7AEs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" target="_blank" rel="noopener noreferrer"> Unsplash</a>
                     </h2>
                 </div>
-                {/* <button className='desktopMenuButton'>
-                    <FiMessageSquare />
-                    Contact Me
-                </button> */}
             </div>
         </div>
         <section id="work" className="work-section">
             <h2 className="work-title">Work</h2>
+            <div className="link-list-work">
+                <a className="resume-button" href="https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+                <a className="linkedin-button" href="https://www.linkedin.com/in/sabrina-quach-sjsu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                <a className="github-button" href="https://github.com/sabrinaquach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
             <div className="project-column">
                 <p className="project-description">generative ai tool that creates visuals through actions.</p>
                 <div className="projects-row">

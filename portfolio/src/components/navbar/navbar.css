@@ -45,59 +45,46 @@
     text-transform: uppercase;
     font-family: 'JetBrainsMono-Regular';
 }
-.nav-buttons {
+.initial {
+    font-family: 'Inter';
+    font-weight: 600;
+    text-transform: lowercase;
+    font-size: 2.2rem;
     display: flex;
-    gap: 1rem;
-}
-.nav-buttons button {
-    border-radius: 40px;
-    padding: 8px 15px;
-    text-transform: uppercase;
-    font-family: 'JetBrainsMono-Regular';
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 16px;
+    align-items: center;
+    color: #fff;
+    line-height: 1;
     cursor: pointer;
 }
-.navbar-light .resume-button {
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+.navbar-light .initial {
+    color: white;
+}
+.navbar-light .message-button {
     border: 1.5px solid white;
     color: white;
 }
-.navbar-light .linkedin-button {
-    border: 1.5px solid white;
-    color: white;
+.navbar-dark .initial {
+    color: black;
 }
-.navbar-light .github-button {
-    border: 1.5px solid white;
-    color: white;
+.navbar-dark .initial {
+    color: black;
 }
 
 /* hover colors for white navbar */
-.navbar-light .resume-button:hover {
+.navbar-light .message-button:hover {
   background-color: white;
   color: black;
 }
-.navbar-light .linkedin-button:hover {
-  background-color: #0a66c2;
-  color: white;
-}
-.navbar-light .github-button:hover {
-  background-color: #08872B;
-  color: white;
-}
 
 /* hover colors for black navbar */
-.navbar-dark .resume-button:hover {
+.navbar-dark .message-button:hover {
     background-color: black;
-    color: white;
-}
-.navbar-dark .linkedin-button:hover {
-    background-color: #0a66c2;
-    color: white;
-}
-.navbar-dark .github-button:hover {
-    background-color: #08872B;
     color: white;
 }
 

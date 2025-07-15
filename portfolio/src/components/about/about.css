@@ -13,6 +13,13 @@
     justify-content: flex-start;
     padding-top: 4rem;
     gap: 4rem;
+    flex-wrap: wrap;
+}
+.text-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex: 3;
 }
 .about-title {
     color: #000;
@@ -48,6 +55,32 @@
     font-size: clamp(0.5rem, 1vw, 1.5rem);
     max-width: 450px;
     padding-bottom: 3rem;
+}
+.message-row-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem;
+}
+.message-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border-radius: 40px;
+    padding: 8px 15px;
+    font-family: 'JetBrainsMono-Regular';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.message-button svg {
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    top: 0.5px; 
 }
 .photos-section {
     background-color: #000;
@@ -106,6 +139,18 @@
         "four"
         "five";
       grid-auto-rows: minmax(200px, auto);
+    }
+    .text-columns {
+        flex-direction: column;
+    }
+    
+    .content-row {
+        align-items: center;
+    }
+    
+    .content-items {
+        text-align: center;
+        align-items: center;
     }
   }
   @media (max-width: 900px) {

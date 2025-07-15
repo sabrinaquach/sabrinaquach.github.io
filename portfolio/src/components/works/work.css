@@ -85,6 +85,35 @@ a:hover {
     text-align: right;
     justify-content: flex-end;
 }
+.link-list-work {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+.link-list-work a {
+    text-transform: uppercase;
+    font-family: 'JetBrainsMono-Bold';
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+/* hover colors for link list */
+.resume-button, .linkedin-button, .github-button {
+    color: black;
+}
+.resume-button:hover {
+    color: #FFB266;
+}
+.linkedin-button:hover {
+    color: #0a66c2;
+}
+.github-button:hover {
+    color: #08872B;
+}
+
 .projects-row {
     display: flex;
     flex-direction: row;
@@ -129,6 +158,32 @@ a:hover {
     color: #5B5B5B;
     padding-bottom: 1rem;
     padding-top: 10rem;
+}
+.message-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.message-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border-radius: 40px;
+    padding: 8px 15px;
+    font-family: 'JetBrainsMono-Regular';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.message-button svg {
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    top: 0.5px; 
 }
 @media screen and (min-width: 1000px) {
     .project-title {
