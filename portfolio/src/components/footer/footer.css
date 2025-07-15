@@ -122,6 +122,8 @@
     outline: none;
     background: black;
     color: white;
+    font-family: 'JetBrainsMono-Regular';
+    text-transform: uppercase;
   }
 .submit-container {
     text-align: center;

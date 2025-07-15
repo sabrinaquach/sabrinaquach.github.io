@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import { supabase } from "../../auth/supabaseClient";
 import './footer.css'
 import '../../assets/fonts/font.css'
 
 const Footer = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        const { data, error } = await supabase
+          .from('Messages') 
+          .insert([
+            {
+              name: formData.name,
+              email: formData.email,
+              message: formData.message,
+            },
+          ]);
+      
+        console.log("Supabase response:", { data, error });
+      
+        if (error) {
+          console.error("Submission error:", error.message);
+          alert("Submission failed: " + error.message);
+        } else {
+          console.log("Message sent!", data);
+          setFormData({ name: '', email: '', message: '' });
+          alert("Message sent successfully!");
+        }
+    };
+
     return (
         <footer className="footer" id="footer">
             <div className="main-row">
@@ -27,19 +63,46 @@ const Footer = () => {
                         <div className="message-inner">
                             <h2 className="message-title">Send A Message</h2>
                             <p className="message-description">Reach out and let’s create amazing things. Let’s achieve greatness together!</p>             
-                            <form className="contact-form">
-                                <input type="text" className="message-name" placeholder="Your name"/>
-                                <input type="email" className="message-email" placeholder="Your email"/>
-                                <textarea type="message" className="message-msg" rows="8"  placeholder="Your message"/>
+                            <form className="contact-form" onSubmit={handleSubmit}>
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    value={formData.name} 
+                                    onChange={handleChange} 
+                                    className="message-name" 
+                                    placeholder="Your full name"
+                                />
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    value={formData.email} 
+                                    onChange={handleChange} 
+                                    className="message-email" 
+                                    placeholder="Your email"
+                                />
+                                <textarea 
+                                    name="message" 
+                                    value={formData.message} 
+                                    onChange={handleChange} 
+                                    className="message-msg" 
+                                    rows="8"  
+                                    placeholder="Your message"
+                                />
                                 <div className="submit-container">
-                                    <button type="submit" className="message-submit" value="send">Submit</button>
+                                    <button 
+                                        type="submit" 
+                                        className="message-submit" 
+                                        value="send"
+                                    >
+                                        Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cutoff-wrapper">
+            <div className="cutoff-wrapper">
                 <h1 className="connect-bottom">Connect</h1>
             </div>
         </footer>
