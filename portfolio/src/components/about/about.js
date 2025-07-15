@@ -5,10 +5,39 @@ import '../../assets/fonts/font.css'
 const About = () => {
     return (
         <div className="about-container">
-            <div className="content-section">
-                <h2 className="about-title">About</h2>
-                <div className="pfp-circle"></div>
+            <div className="about-content">
+                <h2 className="about-title">About Me</h2>
+                <div className="content-row">
+                    <div className="pfp-circle"></div>
+                    <div className="content-items">
+                            <h3 className="about-subtitle">Hello I’m Sabrina!</h3>
+                            <p className="about-description">An aspiring UX/Product Designer with a background in Computer Engineering. I’m passionate about creating products that focus on user needs.</p>
+                    </div>
+                    <div className="content-items">
+                        <h3 className="about-subtitle">During “Me” time</h3>
+                        <p className="about-description">I enjoy eating delicious food, yoga, and making new things. Ceramics is something I’ve enjoyed doing since high school, it feels nice to do something physically creative.</p>
+                    </div>
+                </div>
             </div>
+            <section className="photos-section">
+                <h2 className="photo-title">SOME OF MY FAVORITE MOMENTS</h2>
+                <div className="photo-grid">
+                    <div className="photo photo-1"></div>
+                    <div className="photo photo-2"></div>
+                    <div className="photo photo-3"></div>
+                    <div className="photo photo-4"></div>
+                    <div className="photo photo-5">
+                        <video 
+                            src="/videos/beyonce.mov" 
+                            loop 
+                            muted
+                            autoPlay
+                            playsInline
+                            className="photo-video"
+                        />
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }
