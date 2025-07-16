@@ -71,17 +71,17 @@ const Work = () => {
                 <p className="project-description">generative ai tool that creates visuals through actions.</p>
                 <div className="projects-row">
                     <h2 className="project-title">Adobe Flux</h2>
-                    <div className="project-image"></div>
+                    <div className="project-image image-1"></div>
                 </div>
                 <p className="project-description-left">smart home app to view energy levels and change temperature in multiple rooms.</p>
                 <div className="projects-row">
-                    <div className="project-image"></div>
+                    <div className="project-image image-2"></div>
                     <h2 className="project-title">SpartanSync</h2>
                 </div>
                 <p className="project-description">smart scheduling for busy students.</p>
                 <div className="projects-row">
                     <h2 className="project-title">Aura</h2>
-                    <div className="project-image"></div>
+                    <div className="project-image image-3"></div>
                 </div>
             </div>
             
