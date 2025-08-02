@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/navbar";
 import Work from "./components/works/work";
 import About from "./components/about/about";
 import Footer from "./components/footer/footer";
+import './styles/styles.css'
 
 function App() {
   return (

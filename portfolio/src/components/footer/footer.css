@@ -1,13 +1,14 @@
 .footer {
     background-color: #000;;
     color: #fff;
+    padding-left: 150px;
 }
 .main-row {
     display: flex;
     align-items: stretch;
     gap: 2rem;
     flex-wrap: wrap;
-    padding: 4rem;
+    padding: 4rem 4rem 1.5rem 4rem;
 }
 .column-left, .message-column {
     flex: 1 1 400px; 
@@ -152,7 +153,7 @@
     font-family: 'Inter';
     text-transform: uppercase;
     text-align: center;
-    font-size: clamp(3rem, 18vw, 20rem);
+    font-size: clamp(3rem, 18vw, 18rem);
     overflow: hidden;
     line-height: 1;
     position: relative;          

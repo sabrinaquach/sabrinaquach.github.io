@@ -1,30 +1,22 @@
-@media screen and (max-width: 840px) {
-    .nav-description, .description {
-      text-align: left;       
-      max-width: 60vw;
-      font-size: 0.5rem;
-    }
-    .name {
-        font-size: 1rem;
-    }
+.main-content {
+    /* margin-left: 80px;  */
+    padding: 24.5rem 6rem 0 3rem;
 }
 .work-container {
-    background: url("../../assets/images/serjan-midili-hJb7hOl7AEs-unsplash.jpg") no-repeat center center;
+    background-color: #000;
     background-size: cover;      
     background-position: center;   
-    min-height: 100vh;              
-    width: 100vw;              
+    min-height: 80vh;                    
     position: relative;         
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2rem;
 }
 .main-nav {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 85vh;
+    justify-content: center;
+    align-items: center;
     color: white;
 }
 .nav-header {
@@ -34,34 +26,52 @@
     flex-direction: column;
     justify-content: flex-start;
 }
-.name {
+.hello-message {
     font-family: 'Inter';
-    font-size: clamp(2.5rem, 11.5vw, 12rem);
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
     text-transform: uppercase;
+    padding-bottom: 0.8rem;
 }
 .description {
     font-family: 'JetBrainsMono-Regular';
     font-size: clamp(1rem, 2vw, 1.5rem);
-    line-height: 1;
+    line-height: 1.2;
     text-align: left;
-    max-width: 600px;
+    max-width: 850px;
     text-transform: uppercase;
 }
-.nav-artist {
+.message-row {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: right;
-    color: white;
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2rem;
 }
-.artist-tag {
-    color:#fff;
-    text-decoration: none;
-    font-size: 12px;
+.message-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border-radius: 40px;
+    padding: 8px 15px;
+    padding-top: 10rem;
     font-family: 'JetBrainsMono-Regular';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    border: 1.5px solid #fff;
+}
+.message-button svg {
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    top: 0.5px; 
+}
+button:hover {
+    background-color: #fff;
+    color: #000;
 }
 a {
     color:#fff;
@@ -73,13 +83,12 @@ a:hover {
 }
 .work-section {
     min-height: 100vh;               
-    width: 100vw; 
     position: relative;
-    padding: 2rem;
+    padding: 4rem;
 }
 .work-title {
     display: flex;
-    font-size: 12rem;
+    font-size: 8rem;
     font-family: 'Inter';
     text-transform: uppercase;
     text-align: right;
@@ -94,7 +103,7 @@ a:hover {
     text-transform: uppercase;
     font-family: 'JetBrainsMono-Bold';
     font-weight: 700;
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-size: 1.5rem;
     transition: color 0.2s ease;
@@ -114,93 +123,92 @@ a:hover {
     color: #08872B;
 }
 
-.projects-row {
+.project-column {
+    /* margin: 0 auto; */
+    padding-left: 10rem;
+  }
+  
+.project-block {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 25rem;
 }
-.project-column {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10rem;
+  
+.project-text {
+    flex: 1;
+    min-width: 280px;
 }
-.project-image {
-    background-color: black;
-    height: 80vh;
-    width: 100%;
-    background-size: cover;      
-    background-position: center;  
-    border-radius: 10px;
-}
-.image-1 {
-    background-image: url(../../assets/images/abobeflux-image2.png);
-}
-.image-2 {
-    background-image: url(../../assets/images/spartansync-image1.png);
-}
-.image-3 {
-    background-image: url(../../assets/images/aura-image1.png);
-}
+  
 .project-title {
     font-family: 'Inter';
+    font-size: 2.5rem;
+    font-weight: bold;
     text-transform: uppercase;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 4vw;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 1rem;
 }
-.project-description {
+  
+  .project-description {
     font-family: 'JetBrainsMono-Regular';
-    display: flex;
-    justify-content: flex-end;
-    text-transform: uppercase;
-    color: #5B5B5B;
-    padding-top: 10rem;
-    padding-bottom: 1rem;
-}
-.project-description-left {
-    font-family: 'JetBrainsMono-Regular';
-    display: flex;
-    justify-content: flex-start;
-    text-transform: uppercase;
-    color: #5B5B5B;
-    padding-bottom: 1rem;
-    padding-top: 10rem;
-}
-.message-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-bottom: 2rem;
-}
-.message-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border-radius: 40px;
-    padding: 8px 15px;
-    font-family: 'JetBrainsMono-Regular';
-    text-transform: uppercase;
-    font-weight: 500;
     font-size: 1rem;
-    cursor: pointer;
-}
-.message-button svg {
-    vertical-align: middle;
-    height: 1em;
-    width: 1em;
+    color: #999;
+    max-width: 450px;
+    line-height: 1.5;
+  }
+  
+  .project-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+    /* align-items: center; */
+    align-items: flex-end;
+    overflow: visible;
     position: relative;
-    top: 0.5px; 
-}
-@media screen and (min-width: 1000px) {
-    .project-title {
-        font-size: 4rem;
-    }
+    padding-left: 2rem;
   }
-  @media screen and (max-width: 400px) {
-    .project-title {
-        font-size: 3rem;
-    }
+  
+  .laptop-mockup {
+    max-width: 850px; 
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 16 / 10; 
   }
+  
+  .phone-mockup {
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 19.5; 
+  }
+  
+  /* Mobile Layout */
+  @media screen and (max-width: 768px) {
+    .project-block {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .project-image {
+      margin-top: 2rem;
+      max-width: 90vw;
+      aspect-ratio: 9 / 19.5;
+    }
+  
+    .project-title {
+      font-size: 2rem;
+    }
+  
+    .project-description {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+    .laptop-mockup {
+        max-width: 90vw;
+        aspect-ratio: 16 / 10;
+      }
+  }
+  
+  

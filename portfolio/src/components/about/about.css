@@ -1,7 +1,8 @@
 .about-container {
-    background-color: #fff;
+    background-color: #000;
     min-height: 100vh;              
-    min-width: 100vw;            
+    min-width: 100vw;     
+    padding-left: 200px;       
 }
 .about-content {
     padding: 18rem 2rem;  
@@ -11,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 4rem;
+    padding-top: 1rem;
     gap: 4rem;
     flex-wrap: wrap;
 }
@@ -22,8 +23,8 @@
     flex: 3;
 }
 .about-title {
-    color: #000;
-    font-size: clamp(4rem, 10vw, 10rem);
+    color: #fff;
+    font-size: clamp(4rem, 8vw, 8rem);
     font-family: 'Inter';
     text-transform: uppercase;
 }
@@ -34,7 +35,6 @@
     aspect-ratio: 1 / 1;
     width: 30vw;
     max-width: 15rem;
-    background-color: #bbb;
     border-radius: 50%;
     align-self: center;
 }
@@ -60,7 +60,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 2rem;
 }
 .message-button {
     display: flex;
@@ -85,8 +84,8 @@
 .photos-section {
     background-color: #000;
     min-height: 100vh;               
-    min-width: 100vw; 
-    padding: 4rem 2rem;
+    /* min-width: 100vw;  */
+    padding: 4rem 4rem 15rem 4rem;
 }
 .photo-title {
     color: #fff;
@@ -95,7 +94,7 @@
     font-size: clamp(2rem, 4vw, 5rem);
     text-transform: uppercase;
     text-align: right;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
 }
 .photo-grid {
     display: grid;

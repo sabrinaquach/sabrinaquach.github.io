@@ -38,12 +38,10 @@ const Navbar = () => {
         }
       };
       
-      
-
     return (
-        <nav className={`navbar ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
+        <nav className="navbar">
             <div className='nav-content'>
-                <div className={`nav-row nav-buttons ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
+                <div className="nav-row nav-buttons">
                     <p className='initial' 
                         onClick={() => {
                             if (location.pathname !== '/') {
@@ -53,15 +51,6 @@ const Navbar = () => {
                             }
                         }}
                     >s.q.</p>
-                    {/* <div className='message-row'>
-                        <button 
-                            className='message-button' 
-                            onClick={handleContactClick}
-                        >
-                            <FiMessageSquare />
-                            Message Me
-                        </button>
-                    </div> */}
                 </div>
 
                 <div className='desktopMenuList'>

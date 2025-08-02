@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom';
 
 const About = () => {
     const location = useLocation();
-    const isHome = location.pathname === "/";
     const handleContactClick = () => {
         const el = document.getElementById('footer');
         if (el) {
@@ -28,18 +27,19 @@ const About = () => {
                         <div className="content-items">
                             <h3 className="about-subtitle">During “Me” time</h3>
                             <p className="about-description">I enjoy eating delicious food, yoga, and making new things. Ceramics is something I’ve enjoyed doing since high school, it feels nice to do something physically creative.</p>
+                            <div className="message-row-about nav-buttons">
+                                <button 
+                                    className='message-button' 
+                                    onClick={handleContactClick}
+                                >
+                                    <FiMessageSquare />
+                                    Message Me
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className={`message-row-about nav-buttons ${isHome ? 'navbar-light' : 'navbar-dark'}`}>
-                <button 
-                    className='message-button' 
-                    onClick={handleContactClick}
-                >
-                    <FiMessageSquare />
-                    Message Me
-                </button>
+                
             </div>
             <section className="photos-section">
                 <h2 className="photo-title">SOME OF MY FAVORITE MOMENTS</h2>
