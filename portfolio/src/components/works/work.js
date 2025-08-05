@@ -1,8 +1,9 @@
 import React from "react";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FiMessageSquare } from "react-icons/fi";
 import { useLocation, useNavigate } from 'react-router-dom';
 import RotatingText from "../../utilities/RotatingText";
+import ASCIIText from "../../utilities/ASCIIText";
 import './work.css'
 import '../../assets/fonts/font.css'
 
@@ -33,19 +34,45 @@ const Work = () => {
         }
         }
     }, [location]);
+
+    const [showAscii, setShowAscii] = useState(true);
+    const [showHero, setShowHero] = useState(false);
     
+    useEffect(() => {
+      const asciiTimer = setTimeout(() => {
+        setShowAscii(false);
+        setShowHero(true);
+      }, 5000); 
+    
+      return () => clearTimeout(asciiTimer);
+    }, []);
+    
+
     return (
         <div className="main-content">
             <div className="work-container">
                 <div className='main-nav'>
-                    <div className='nav-header'>
-                        <h1 className='hello-message'>
-                            Hello I’m Sabrina, &nbsp;
-                            <RotatingText words={["designer", "engineer", "builder"]} />
-                        </h1>
-                        <h1 className='description'>Studying engineering and design helped me see tech problems through a new lens, one that focuses on real people.</h1>
+                    {showAscii && (
+                        <div className="ascii-wrapper">
+                            <ASCIIText
+                                text="hello"
+                                asciiFontSize={8}
+                                enableWaves={true}
+                            />
+                        </div>
+                    )}
 
-                        <div className="message-row nav-buttons">
+                    {showHero && (
+                        <div className="nav-header fade-in">
+                            <h1 className="hello-message">
+                                I’M SABRINA,&nbsp;
+                                <RotatingText words={["designer", "engineer", "builder"]} />
+                            </h1>
+                            <p className="description">
+                                STUDYING ENGINEERING AND DESIGN HELPED ME SEE TECH PROBLEMS
+                                THROUGH A NEW LENS, ONE THAT FOCUSES ON REAL PEOPLE.
+                            </p>
+                            <div className="message-row nav-buttons">
                             <button 
                                 className='message-button' 
                                 onClick={handleContactClick}
@@ -54,7 +81,8 @@ const Work = () => {
                                 Message Me
                             </button>
                         </div>
-                    </div>
+                        </div>
+                    )}
                 </div>
             </div>
             <section id="work" className="work-section">

@@ -40,7 +40,7 @@ const RotatingText = ({ words = [], delay = 2 }) => {
         height: "3.5rem",
         position: "relative",
         display: "inline-block",
-        minWidth: "365px",
+        minWidth: "280px",
       }}
       ref={containerRef}
     >
