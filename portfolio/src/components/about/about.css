@@ -1,17 +1,22 @@
 .about-container {
     background-color: #000;
     min-height: 100vh;              
-    min-width: 100vw;     
-    padding-left: 200px;       
+    min-width: 100vw;   
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
 }
 .about-content {
     padding: 18rem 2rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .content-row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding-top: 1rem;
     gap: 4rem;
     flex-wrap: wrap;
@@ -85,7 +90,7 @@
     background-color: #000;
     min-height: 100vh;               
     /* min-width: 100vw;  */
-    padding: 4rem 4rem 15rem 4rem;
+    padding: 4rem 4rem 15rem 15rem;
 }
 .photo-title {
     color: #fff;
@@ -128,6 +133,7 @@
 .photo-3 { grid-area: three; background-image: url(../../assets/images/toki.jpeg); }
 .photo-4 { grid-area: four; background-image: url(../../assets/images/sunset.jpeg); }
 .photo-5 { grid-area: five;  }
+
 @media (max-width: 600px) {
     .photo-grid {
       grid-template-columns: 1fr;

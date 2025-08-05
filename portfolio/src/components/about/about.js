@@ -2,10 +2,10 @@ import React from "react";
 import './about.css'
 import '../../assets/fonts/font.css'
 import { FiMessageSquare } from "react-icons/fi";
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 const About = () => {
-    const location = useLocation();
+    // const location = useLocation();
     const handleContactClick = () => {
         const el = document.getElementById('footer');
         if (el) {
@@ -39,8 +39,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                
             </div>
+            
             <section className="photos-section">
                 <h2 className="photo-title">SOME OF MY FAVORITE MOMENTS</h2>
                 <div className="photo-grid">

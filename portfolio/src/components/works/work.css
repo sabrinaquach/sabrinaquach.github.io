@@ -1,6 +1,5 @@
 .main-content {
-    /* margin-left: 80px;  */
-    padding: 24.5rem 6rem 0 3rem;
+    padding: 24.5rem;
 }
 .work-container {
     background-color: #000;
@@ -24,7 +23,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
 }
 .hello-message {
     font-family: 'Inter';
@@ -37,7 +36,7 @@
     font-size: clamp(1rem, 2vw, 1.5rem);
     line-height: 1.2;
     text-align: left;
-    max-width: 850px;
+    max-width: 1150px;
     text-transform: uppercase;
 }
 .message-row {
@@ -53,7 +52,6 @@
     background: transparent;
     border-radius: 40px;
     padding: 8px 15px;
-    padding-top: 10rem;
     font-family: 'JetBrainsMono-Regular';
     text-transform: uppercase;
     font-weight: 500;
@@ -83,16 +81,11 @@ a:hover {
 }
 .work-section {
     min-height: 100vh;               
-    position: relative;
-    padding: 4rem;
-}
-.work-title {
+    /* position: relative;
+    padding: 4rem; */
     display: flex;
-    font-size: 8rem;
-    font-family: 'Inter';
-    text-transform: uppercase;
-    text-align: right;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 .link-list-work {
     display: flex;
@@ -123,28 +116,45 @@ a:hover {
     color: #08872B;
 }
 
-.project-column {
-    /* margin: 0 auto; */
-    padding-left: 10rem;
+/* work section */
+.project-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
   }
   
+.project-column {
+    scroll-snap-type: y mandatory;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+  
 .project-block {
+    height: auto;
+    max-width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 25rem;
-}
+    gap: 8rem;
+}  
   
 .project-text {
     flex: 1;
-    min-width: 280px;
+    min-width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    text-align: left;
 }
   
 .project-title {
     font-family: 'Inter';
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -152,37 +162,67 @@ a:hover {
   
   .project-description {
     font-family: 'JetBrainsMono-Regular';
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     color: #999;
-    max-width: 450px;
     line-height: 1.5;
   }
   
   .project-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end; 
-    /* align-items: center; */
-    align-items: flex-end;
+    justify-content: space-evenly; 
+    align-items: center;
     overflow: visible;
     position: relative;
-    padding-left: 2rem;
   }
-  
+
   .laptop-mockup {
-    max-width: 850px; 
+    max-width: clamp(20vw, 60vw, 90vw);
     height: auto;
     object-fit: contain;
     aspect-ratio: 16 / 10; 
   }
   
   .phone-mockup {
-    flex: 1;
-    max-width: 400px;
-    width: 100%;
+    max-width: clamp(20vh, 40vh, 70vh);
     height: auto;
     aspect-ratio: 9 / 19.5; 
   }
+
+  .gradient-text {
+    background: linear-gradient(
+      270deg,
+      #fff3b0,  
+      #ffcc70, 
+      #ffb347,  
+      #ffa500, 
+      #ff7f50,  
+      #ff6b35,   
+      #f4a261,   
+      #e76f51,   
+      #f9c74f    
+    );
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: moveGradient 4s ease infinite;
+  }
+  
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
   
   /* Mobile Layout */
   @media screen and (max-width: 768px) {
@@ -206,7 +246,7 @@ a:hover {
       max-width: 100%;
     }
     .laptop-mockup {
-        max-width: 90vw;
+        max-width: 40vw;
         aspect-ratio: 16 / 10;
       }
   }

@@ -1,7 +1,7 @@
 .footer {
     background-color: #000;;
     color: #fff;
-    padding-left: 150px;
+    padding-left: 180px;
 }
 .main-row {
     display: flex;
@@ -19,7 +19,7 @@
 .s-cube,
 .q-cube,
 .message-content {
-  border: 1px solid #fff;
+  border: 1.5px solid #fff;
   border-radius: 10px;
   padding: 4rem;
   background-color: #000;
