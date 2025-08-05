@@ -40,9 +40,9 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            
+
             <section className="photos-section">
-                <h2 className="photo-title">SOME OF MY FAVORITE MOMENTS</h2>
+                <h2 className="photo-title">Highlights</h2>
                 <div className="photo-grid">
                     <div className="photo photo-1"></div>
                     <div className="photo photo-2"></div>

@@ -99,6 +99,7 @@
     font-size: clamp(2rem, 4vw, 5rem);
     text-transform: uppercase;
     text-align: right;
+    padding-top: 5rem;
     padding-bottom: 3rem;
 }
 .photo-grid {

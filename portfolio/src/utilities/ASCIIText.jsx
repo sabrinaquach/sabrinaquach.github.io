@@ -184,15 +184,19 @@ class AsciiFilter {
   }
 }
 
+// ✅ Corrected CanvasTxt class with stable text rendering
 class CanvasTxt {
-  constructor(txt, { fontSize = 200, fontFamily = 'Arial', color = '#fdf9f3' } = {}) {
+  constructor(txt, {
+    fontSize = 200,
+    fontFamily = "'IBM Plex Mono', 'Courier New', monospace",
+    color = '#fdf9f3',
+  } = {}) {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
     this.txt = txt;
     this.fontSize = fontSize;
     this.fontFamily = fontFamily;
     this.color = color;
-
     this.font = `600 ${this.fontSize}px ${this.fontFamily}`;
   }
 
@@ -200,9 +204,11 @@ class CanvasTxt {
     this.context.font = this.font;
     const metrics = this.context.measureText(this.txt);
 
-    const textWidth = Math.ceil(metrics.width) + 20;
+    // Add more generous padding to avoid clipping
+    const extraPadding = 80;
+    const textWidth = Math.ceil(metrics.width) + extraPadding;
     const textHeight =
-      Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 20;
+      Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 40;
 
     this.canvas.width = textWidth;
     this.canvas.height = textHeight;
@@ -212,11 +218,17 @@ class CanvasTxt {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.context.fillStyle = this.color;
     this.context.font = this.font;
+    this.context.textBaseline = 'top';
+    this.context.textAlign = 'left';
 
-    const metrics = this.context.measureText(this.txt);
-    const yPos = 10 + metrics.actualBoundingBoxAscent;
+    const yPos = 20; // top padding
 
-    this.context.fillText(this.txt, 10, yPos);
+    // Append extra spaces to avoid clipping the last character
+    this.context.fillText(this.txt + '   ', 10, yPos);
+
+    // Debug box (optional)
+    // this.context.strokeStyle = '#ff0000';
+    // this.context.strokeRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
   get width() {

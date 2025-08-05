@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SpotlightCard from "../../utilities/SpotlightCard";
 import { supabase } from "../../auth/supabaseClient";
 import './footer.css'
 import '../../assets/fonts/font.css'
@@ -39,16 +40,16 @@ const Footer = () => {
         }
     };
 
-    return (
+    return (  
         <footer className="footer" id="footer">
             <div className="main-row">
                 <div className="column-left">
-                    <div className="s-cube">
+                    <SpotlightCard className="s-cube" spotlightColor="rgba(255, 178, 102, 0.2)">
                         <h2 className="s-title">s.</h2>
                         <p className="inital-subtitle">Say "Hello"</p>
                         <p className="inital-email">sabrina.quach@sjsu.edu</p>
-                    </div>
-                    <div className="q-cube">
+                    </SpotlightCard >
+                    <SpotlightCard className="q-cube" spotlightColor="rgba(255, 178, 102, 0.2)">
                         <h2 className="q-title">q.</h2>
                         <p className="inital-subtitle">Connect</p>
                         <div className="link-list">
@@ -56,10 +57,10 @@ const Footer = () => {
                             <a className="linkedin-button" href="https://www.linkedin.com/in/sabrina-quach-sjsu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                             <a className="github-button" href="https://github.com/sabrinaquach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
-                    </div>
+                    </SpotlightCard >
                 </div>
                 <div className="message-column">
-                    <div className="message-content">
+                    <SpotlightCard className="message-content" spotlightColor="rgba(255, 178, 102, 0.2)">
                         <div className="message-inner">
                             <h2 className="message-title">Send A Message</h2>
                             <p className="message-description">Reach out and let’s create amazing things. Let’s achieve greatness together!</p>             
@@ -99,7 +100,7 @@ const Footer = () => {
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </SpotlightCard >
                 </div>
             </div>
             <div className="cutoff-wrapper">

@@ -2,8 +2,12 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import { FiMessageSquare } from "react-icons/fi";
 import { useLocation, useNavigate } from 'react-router-dom';
-import RotatingText from "../../utilities/RotatingText";
+// import RotatingText from "../../utilities/RotatingText";
 import ASCIIText from "../../utilities/ASCIIText";
+import ScrollRevealImage from "../../utilities/ScrollRevealImage";
+import DecryptedText from "../../utilities/DecryptedText";
+import TextType from "../../utilities/TextType";
+import ShinyText from "../../utilities/ShinyText";
 import './work.css'
 import '../../assets/fonts/font.css'
 
@@ -39,13 +43,14 @@ const Work = () => {
     const [showHero, setShowHero] = useState(false);
     
     useEffect(() => {
-      const asciiTimer = setTimeout(() => {
-        setShowAscii(false);
-        setShowHero(true);
-      }, 5000); 
-    
-      return () => clearTimeout(asciiTimer);
-    }, []);
+        const asciiTimer = setTimeout(() => {
+          setShowAscii(false);
+          setShowHero(true);
+        }, 5000);
+      
+        return () => clearTimeout(asciiTimer);
+      }, []);
+      
     
 
     return (
@@ -58,6 +63,7 @@ const Work = () => {
                                 text="hello"
                                 asciiFontSize={8}
                                 enableWaves={true}
+
                             />
                         </div>
                     )}
@@ -66,11 +72,19 @@ const Work = () => {
                         <div className="nav-header fade-in">
                             <h1 className="hello-message">
                                 I’M SABRINA,&nbsp;
-                                <RotatingText words={["designer", "engineer", "builder"]} />
+                                {/* <RotatingText words={["designer", "engineer", "builder"]} /> */}
+                                <TextType 
+                                    className="hello-message"
+                                    text={["Designer", "Engineer", "Builder"]}
+                                    typingSpeed={75}
+                                    pauseDuration={2000}
+                                    showCursor={true}
+                                    cursorCharacter="|"
+                                />
                             </h1>
                             <p className="description">
-                                STUDYING ENGINEERING AND DESIGN HELPED ME SEE TECH PROBLEMS
-                                THROUGH A NEW LENS, ONE THAT FOCUSES ON REAL PEOPLE.
+                                STUDYING ENGINEERING AND DESIGN HELPED ME SEE TECH PROBLEMS THROUGH A NEW LENS, 
+                                ONE THAT FOCUSES ON REAL PEOPLE.
                             </p>
                             <div className="message-row nav-buttons">
                             <button 
@@ -96,54 +110,100 @@ const Work = () => {
                     <section className="project-section">
                         <div className="project-block">
                             <div className="project-text">
-                                <h2 className="project-title">Adobe Flux</h2>
+                                <DecryptedText 
+                                    className="project-title"
+                                    encryptedClassName="encrypted-char"
+                                    text="Adobe Flux"
+                                    animateOn="view"
+                                    revealDirection="start"
+                                    sequential="true"
+                                    speed="120"
+                                />
                                 <p className="project-description">
                                     Generative AI tool that creates visuals through actions.
                                 </p>
                             </div>
-                            <div className="project-image">
-                                <img
-                                    className="laptop-mockup"
-                                    src="/images/adobeflux-image1.png"
-                                    alt="Adobe Flux mockup"
-                                />
-                            </div>
+                            <ScrollRevealImage
+                                baseOpacity={0}
+                                enableBlur={true}
+                                baseRotation={5}
+                                blurStrength={10}
+                            >
+                                <div className="project-image">
+                                    <img
+                                        className="laptop-mockup"
+                                        src="/images/adobeflux-image1.png"
+                                        alt="Adobe Flux mockup"
+                                    />
+                                </div>
+                            </ScrollRevealImage>
+
                         </div>
                     </section>
 
                     <section className="project-section">
                         <div className="project-block">
                             <div className="project-text">
-                                <h2 className="project-title">Aura</h2>
+                                <DecryptedText 
+                                    className="project-title"
+                                    encryptedClassName="encrypted-char"
+                                    text="Aura"
+                                    animateOn="view"
+                                    revealDirection="start"
+                                    sequential="true"
+                                    speed="150"
+                                />
                                 <p className="project-description">
                                     Smart home app to view energy levels and change temperature in multiple rooms.
                                 </p>
                             </div>
-                            <div className="project-image">
-                                <img 
-                                    className="phone-mockup" 
-                                    src="/images/aura-image1.png" 
-                                    alt="Aura mockup" 
-                                />
-                            </div>
+                            <ScrollRevealImage
+                                baseOpacity={0}
+                                enableBlur={true}
+                                baseRotation={5}
+                                blurStrength={10}
+                            >
+                                <div className="project-image">
+                                    <img 
+                                        className="phone-mockup" 
+                                        src="/images/aura-image1.png" 
+                                        alt="Aura mockup" 
+                                    />
+                                </div>
+                            </ScrollRevealImage>
                         </div>
                     </section>
 
                     <section className="project-section">
                         <div className="project-block">
                             <div className="project-text">
-                                <h2 className="project-title">SpartanSync</h2>
+                                <DecryptedText 
+                                    className="project-title"
+                                    encryptedClassName="encrypted-char"
+                                    text="SpartanSync"
+                                    animateOn="view"
+                                    revealDirection="start"
+                                    sequential="true"
+                                    speed="120"
+                                />
                                 <p className="project-description">
                                     Smart scheduling for busy students.
                                 </p>
                             </div>
-                            <div className="project-image">
-                                <img 
-                                    className="phone-mockup" 
-                                    src="/images/spartansync-image1.png" 
-                                    alt="SpartanSync mockup" 
-                                />
-                            </div>
+                            <ScrollRevealImage
+                                baseOpacity={4}
+                                enableBlur={true}
+                                baseRotation={3}
+                                blurStrength={4}
+                            >
+                                <div className="project-image">
+                                    <img 
+                                        className="phone-mockup" 
+                                        src="/images/spartansync-image1.png" 
+                                        alt="SpartanSync mockup" 
+                                    />
+                                </div>
+                            </ScrollRevealImage>
                         </div>
                     </section>
                 </div>
