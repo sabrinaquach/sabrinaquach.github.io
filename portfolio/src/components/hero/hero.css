@@ -1,0 +1,112 @@
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black; /* or your background */
+    overflow: hidden;
+}  
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  .nav-header {
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hello-message {
+    font-family: 'Inter';
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+  }
+  
+  .description {
+    font-family: 'JetBrainsMono-Regular';
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.2;
+    text-align: left;
+    max-width: clamp(300px, 70vw, 850px);
+    text-transform: uppercase;
+  }
+  
+  .message-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  
+  .message-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border-radius: 40px;
+    padding: 8px 15px;
+    font-family: 'JetBrainsMono-Regular';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    border: 1.5px solid #fff;
+  }
+  
+  .message-button svg {
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    top: 0.5px;
+  }
+  
+  button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .ascii-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: auto;
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 4s;
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  

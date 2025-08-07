@@ -205,10 +205,10 @@ class CanvasTxt {
     const metrics = this.context.measureText(this.txt);
 
     // Add more generous padding to avoid clipping
-    const extraPadding = 80;
+    const extraPadding = 100;
     const textWidth = Math.ceil(metrics.width) + extraPadding;
     const textHeight =
-      Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 40;
+      Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 60;
 
     this.canvas.width = textWidth;
     this.canvas.height = textHeight;
@@ -221,10 +221,9 @@ class CanvasTxt {
     this.context.textBaseline = 'top';
     this.context.textAlign = 'left';
 
-    const yPos = 20; // top padding
-
-    // Append extra spaces to avoid clipping the last character
-    this.context.fillText(this.txt + '   ', 10, yPos);
+    const xPad = 50; // match half of extraPadding above
+    const yPad = 30;
+    this.context.fillText(this.txt + '  ', xPad, yPad);
 
     // Debug box (optional)
     // this.context.strokeStyle = '#ff0000';
@@ -290,7 +289,7 @@ class CanvAscii {
     const planeW = baseH * textAspect;
     const planeH = baseH;
 
-    this.geometry = new THREE.PlaneGeometry(planeW, planeH, 36, 36);
+    this.geometry = new THREE.PlaneGeometry(planeW, planeH, 64, 64);
     this.material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,

@@ -1,45 +1,97 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './navbar.css';
-import { useLocation, useNavigate, Link as RouterLink } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { BiSun, BiArrowToTop } from "react-icons/bi";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
 import '../../assets/fonts/font.css'
+
+gsap.registerPlugin(ScrollTrigger); 
 
 const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, [location.pathname]);       
+
+    const handleLogoClick = () => {
+        const el = document.getElementById('hero');
+        if (location.pathname === '/') {
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } else {
+          navigate('/', { state: { scrollTo: 'hero' } });
+        }
+    };
+    
     const handleWorkClick = () => {
         if (location.pathname === '/') {
-            const el = document.getElementById('work');
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
+          const el = document.getElementById('work');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+      
+            setTimeout(() => {
+              ScrollTrigger.refresh(true);
+            }, 200);
+          }
         } else {
-            navigate('/#work');
+          navigate('/#work');
         }
     };
+
+    const handleAboutClick = () => {
+        const el = document.getElementById('about');
+        if (location.pathname === '/about') {
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } else {
+          navigate('/about', { state: { scrollTo: 'about' } });
+        }
+    };       
 
     const handleContactClick = () => {
-        if (location.pathname === '/') {
-            const el = document.getElementById('footer');
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
+        const el = document.getElementById('footer');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
         } else {
-            navigate('/#footer');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };           
+      
+    const handleScrollToTop = () => {
+        if (location.pathname === '/') {
+          const el = document.getElementById('hero');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } else if (location.pathname === '/about') {
+          const el = document.getElementById('about');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
-
-    const handleTopPageClick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      };      
-
+      
     return (
         <nav className="navbar">
             <div className='nav-content'>
                 <div className="nav-row nav-buttons">
                     <p className='initial' 
-                        onClick={handleTopPageClick}
+                        onClick={handleLogoClick}
                     >s.q.</p>
                 </div>
 
@@ -47,7 +99,9 @@ const Navbar = () => {
                     <div onClick={handleWorkClick} className="desktopMenuListItem">
                         Work
                     </div>
-                    <RouterLink to="/about" className="desktopMenuListItem">About</RouterLink>
+                    <div onClick={handleAboutClick} className="desktopMenuListItem">
+                        About
+                    </div>
                     <div onClick={handleContactClick} className="desktopMenuListItem">
                         Contact
                     </div>
@@ -65,7 +119,7 @@ const Navbar = () => {
                     <div className='circle-button'>
                         <button 
                             className='top-button' 
-                            onClick={handleTopPageClick}
+                            onClick={handleScrollToTop}
                         >
                             <BiArrowToTop />
                         </button>

@@ -13,9 +13,9 @@ const ScrollRevealImage = ({
   end = "bottom top",
   duration = 1,
   scrub = false,
-  once = false, // <-- allow repeat
+  once = false,
   className = "",
-  toggleActions = "play reverse play reverse", // <-- loop behavior
+  toggleActions = "play reverse play reverse",
 }) => {
   const ref = useRef(null);
 
@@ -23,22 +23,31 @@ const ScrollRevealImage = ({
     const el = ref.current;
     if (!el) return;
 
-    const scroller =
-      scrollContainerRef?.current ?? window;
+    const scroller = scrollContainerRef?.current ?? window;
+
+    const anim = gsap.fromTo(
+      el,
+      from,
+      { ...to, duration, paused: true }
+    );
 
     const trigger = ScrollTrigger.create({
       trigger: el,
       scroller,
       start,
       end,
-      toggleActions,
       scrub,
-      animation: gsap.fromTo(el, from, { ...to, duration }),
-      once, // keep as false for replay
+      toggleActions,
+      once,
+      onEnter: () => anim.play(),
+      onLeave: () => anim.reverse(),
+      onEnterBack: () => anim.play(),
+      onLeaveBack: () => anim.reverse(),
     });
 
     return () => {
       trigger.kill();
+      anim.kill();
     };
   }, [scrollContainerRef, from, to, start, end, duration, scrub, toggleActions, once]);
 

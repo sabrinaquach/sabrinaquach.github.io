@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './about.css'
 import '../../assets/fonts/font.css'
 import { FiMessageSquare } from "react-icons/fi";
-// import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const About = () => {
-    // const location = useLocation();
+    const location = useLocation();
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+      if (location.state?.scrollTo === 'about') {
+        const el = document.getElementById('about');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+    
+          // optional: clear state after scrolling so it doesn't re-trigger
+          navigate(location.pathname, { replace: true, state: {} });
+        }
+      }
+    }, [location, navigate]);
+    
     const handleContactClick = () => {
         const el = document.getElementById('footer');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    };      
+    };   
 
     return (
-        <div className="about-container">
+        <div className="about-container" id="about">
             <div className="about-content">
                 <h2 className="about-title">About Me</h2>
                 <div className="content-row">
