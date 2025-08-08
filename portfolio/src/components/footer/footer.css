@@ -156,10 +156,58 @@
     position: relative;          
 }
 @media (max-width: 768px) {
-    .message-content {
-      flex: initial;
+    .footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 4rem;
+      }
+
+    .main-row {
+      flex-direction: column;
+      padding: 2rem 1rem;
     }
-    .message-column {
-        flex: initial;
+  
+    .column-left, .message-column {
+      flex: initial;
+      width: 100%;
+    }
+  
+    .s-title, .q-title {
+      font-size: 5rem;
+      text-align: center;
+    }
+  
+    .inital-subtitle, .inital-email {
+      text-align: center;
+    }
+  
+    .link-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .message-inner {
+      max-width: 100%;
+    }
+  
+    .message-title, .message-description {
+      text-align: center;
+    }
+  
+    .message-submit {
+      width: 100%;
+    }
+    .cutoff-wrapper {
+        height: 5rem;              
+        overflow: hidden;
+        position: relative;
+    }
+    .connect-bottom {
+        font-size: clamp(4rem, 18vw, 8rem);
+        overflow: hidden;
+        line-height: 1;
+        position: relative;   
       }
   }
+  

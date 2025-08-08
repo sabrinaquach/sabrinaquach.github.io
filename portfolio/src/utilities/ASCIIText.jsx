@@ -285,9 +285,13 @@ class CanvAscii {
     this.texture.minFilter = THREE.NearestFilter;
 
     const textAspect = this.textCanvas.width / this.textCanvas.height;
-    const baseH = this.planeBaseHeight;
-    const planeW = baseH * textAspect;
-    const planeH = baseH;
+    const screenWidth = window.innerWidth;
+    
+    const isMobile = screenWidth <= 768;
+    const baseH = isMobile ? 5 : 8;
+    
+    const planeW = Math.min(baseH * textAspect, 15);
+    const planeH = Math.min(baseH, 8);
 
     this.geometry = new THREE.PlaneGeometry(planeW, planeH, 64, 64);
     this.material = new THREE.ShaderMaterial({
@@ -485,7 +489,9 @@ export default function ASCIIText({
       style={{
         position: 'absolute',
         width: '100%',
-        height: '100%'
+        height: '100%',
+        maxWidth: '100vw',
+        overflow: 'hidden'
       }}
     >
       <style>{`

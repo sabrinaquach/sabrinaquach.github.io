@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './navbar.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { BiSun, BiArrowToTop } from "react-icons/bi";
+import { BiSun, BiArrowToTop, BiMenu, BiX } from "react-icons/bi";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 import '../../assets/fonts/font.css'
@@ -11,10 +11,15 @@ gsap.registerPlugin(ScrollTrigger);
 const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
 
+    // useEffect(() => {
+    //     window.scrollTo({ top: 0, behavior: 'smooth' });
+    //   }, [location.pathname]);       
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, [location.pathname]);       
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setMenuOpen(false); // Close menu on route change
+    }, [location.pathname]);
 
     const handleLogoClick = () => {
         const el = document.getElementById('hero');
@@ -92,9 +97,22 @@ const Navbar = () => {
                 <div className="nav-row nav-buttons">
                     <p className='initial' 
                         onClick={handleLogoClick}
-                    >s.q.</p>
+                    >
+                      s.q.
+                    </p>
+                    <div className="burger-wrapper">
+                      <button className="burger" onClick={() => setMenuOpen(!menuOpen)}>
+                        {menuOpen ? <BiX size={30} /> : <BiMenu size={30} />}
+                      </button>
+                      {menuOpen && (
+                        <div className="mobile-menu open">
+                          <div onClick={handleWorkClick} className="desktopMenuListItem">Work</div>
+                          <div onClick={handleAboutClick} className="desktopMenuListItem">About</div>
+                          <div onClick={handleContactClick} className="desktopMenuListItem">Contact</div>
+                        </div>
+                      )}
+                    </div>
                 </div>
-
                 <div className='desktopMenuList'>
                     <div onClick={handleWorkClick} className="desktopMenuListItem">
                         Work
@@ -107,23 +125,25 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className='nav-buttons'>
-                    <div className='circle-button'>
-                        <button 
-                            className='sun-button' 
-                            onClick={handleContactClick}
-                        >
-                            <BiSun />
-                        </button>
-                    </div>
-                    <div className='circle-button'>
-                        <button 
-                            className='top-button' 
-                            onClick={handleScrollToTop}
-                        >
-                            <BiArrowToTop />
-                        </button>
-                    </div>
+                <div className='nav-buttons-wrapper'>
+                  <div className='nav-buttons'>
+                      <div className='circle-button'>
+                          <button 
+                              className='sun-button' 
+                              onClick={handleContactClick}
+                          >
+                              <BiSun />
+                          </button>
+                      </div>
+                      <div className='circle-button'>
+                          <button 
+                              className='top-button' 
+                              onClick={handleScrollToTop}
+                          >
+                              <BiArrowToTop />
+                          </button>
+                      </div>
+                  </div>
                 </div>
             </div>
         </nav>

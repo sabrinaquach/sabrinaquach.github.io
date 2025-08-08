@@ -1,6 +1,7 @@
 .main-content {
   position: relative;
   overflow: hidden;
+  padding-left: 80px;
 }
 
 .work-container {
@@ -19,7 +20,7 @@
   align-items: center;
 }
 
-.link-list-work {
+/* .link-list-work {
   display: flex;
   justify-content: flex-end;
   gap: 3rem;
@@ -33,7 +34,7 @@
   text-decoration: none;
   font-size: 1.5rem;
   transition: color 0.2s ease;
-}
+} */
 
 /* hover colors for link list */
 .resume-button, .linkedin-button, .github-button {
@@ -54,7 +55,7 @@
 
 /* work section */
 .project-section {
-  padding: 6rem 0;
+  padding: 10rem 0;
   height: auto;
   display: flex;
   justify-content: center;
@@ -66,7 +67,7 @@
   scroll-snap-type: y mandatory;
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 6rem;
 }
 
 .project-block {
@@ -77,12 +78,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 5rem;
 }  
 
-.project-text {
+.project-text-laptop {
   flex: 1;
   min-width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  text-align: left;
+}
+
+.project-text-phone {
+  flex: 1;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -137,16 +147,34 @@
 }
 
 /* Mobile Layout */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (max-width: 1000px) {
+  .main-content {
+    padding-left: 0;
+    padding-top: 6rem;
+  }
+
   .project-block {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .project-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .project-image {
-    margin-top: 2rem;
-    max-width: 90vw;
-    aspect-ratio: 9 / 19.5;
+    margin-top: 1rem;
+  }
+
+  .project-text-laptop, .project-text-phone {
+    min-width: auto;
+    width: 70%;
+    text-align: center;
+    align-items: center;
   }
 
   .project-title {
@@ -156,10 +184,14 @@
   .project-description {
     font-size: 0.95rem;
     max-width: 100%;
+    padding-top: 0.3rem;
   }
 
   .laptop-mockup {
-    max-width: 40vw;
-    aspect-ratio: 16 / 10;
+    max-width: 90vw;
+  }
+
+  .phone-mockup {
+    max-width: 50vw;
   }
 }

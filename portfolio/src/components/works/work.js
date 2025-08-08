@@ -42,7 +42,7 @@ const Work = () => {
             <div className="project-column">
                 <section className="project-section">
                     <div className="project-block">
-                        <div className="project-text">
+                        <div className="project-text-laptop">
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
@@ -75,7 +75,7 @@ const Work = () => {
 
                 <section className="project-section">
                     <div className="project-block">
-                        <div className="project-text">
+                        <div className="project-text-phone">
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
@@ -108,7 +108,7 @@ const Work = () => {
 
                 <section className="project-section">
                     <div className="project-block">
-                        <div className="project-text">
+                        <div className="project-text-phone">
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"

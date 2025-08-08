@@ -9,7 +9,8 @@
     z-index: 1000;
     width: 80px;
     height: 100vh;
-    padding: 3rem 3rem;
+    padding: min(3em, 8%);
+    position: fixed;
 }
 .nav-content {
     display: flex;
@@ -132,4 +133,62 @@
     width: 1.8em;
     position: relative;
 }
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .desktopMenuList {
+      display: none !important;
+    }
+    .burger {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+    .nav-buttons-wrapper {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 1001;
+        pointer-events: auto;
+      }
+      .burger-wrapper {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .mobile-menu {
+        position: absolute;
+        top: 2.5rem; 
+        right: 0;
+        background-color: #000;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.05rem;
+      }
+      
+  }
   

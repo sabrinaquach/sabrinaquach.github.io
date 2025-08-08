@@ -49,8 +49,8 @@ const Hero = ({ onMessageClick }) => {
             </p>
             <div className="message-row nav-buttons">
                 <button className='message-button' onClick={onMessageClick}>
-                <FiMessageSquare />
-                Message Me
+                  <FiMessageSquare />
+                  Message Me
                 </button>
             </div>
             </div>
