@@ -74,6 +74,11 @@ const About = () => {
                             className="photo-video"
                         />
                     </div>
+                    <div className="photo photo-6"></div>
+                    <div className="photo photo-7"></div>
+                    <div className="photo photo-8"></div>
+                    <div className="photo photo-9"></div>
+                    <div className="photo photo-10"></div>
                 </div>
             </section>
         </div>

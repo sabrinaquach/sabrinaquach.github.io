@@ -142,7 +142,7 @@
     background-color: #FFB266;
 }
 .cutoff-wrapper {
-    height: 12rem;              
+    height: 11rem;   
     overflow: hidden;
     position: relative;
 }
@@ -150,43 +150,22 @@
     font-family: 'Inter';
     text-transform: uppercase;
     text-align: center;
-    font-size: clamp(3rem, 18vw, 18rem);
+    font-size: clamp(4rem, 18vw, 18rem);
     overflow: hidden;
     line-height: 1;
     position: relative;          
 }
-@media (max-width: 768px) {
+
+  @media (min-width: 769px) and (max-width: 1495px) {
     .footer {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 4rem;
+      /* padding-left: 180px; */
+      padding-top: 10rem;
       }
 
     .main-row {
-      flex-direction: column;
-      padding: 2rem 1rem;
+      flex-direction: row;
     }
-  
-    .column-left, .message-column {
-      flex: initial;
-      width: 100%;
-    }
-  
-    .s-title, .q-title {
-      font-size: 5rem;
-      text-align: center;
-    }
-  
-    .inital-subtitle, .inital-email {
-      text-align: center;
-    }
-  
-    .link-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-  
+
     .message-inner {
       max-width: 100%;
     }
@@ -199,15 +178,79 @@
       width: 100%;
     }
     .cutoff-wrapper {
-        height: 5rem;              
+        height: 6rem;             
         overflow: hidden;
         position: relative;
     }
     .connect-bottom {
-        font-size: clamp(4rem, 18vw, 8rem);
+        font-size: clamp(9rem, 15vw, 14rem);
         overflow: hidden;
         line-height: 1;
         position: relative;   
       }
   }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding-left: 0;
+      padding-top: 10rem;
+    }
+    .main-row {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
   
+    .column-left, .message-column {
+      flex: initial;
+      width: 100%;
+    }
+  
+    .s-title, .q-title {
+      font-size: 5rem;
+      text-align: left;
+    }
+  
+    .inital-subtitle, .inital-email {
+      text-align: left;
+      font-size: 1rem;
+    }
+  
+    .link-list {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .link-list a {
+      font-size: 0.9rem;
+    }
+  
+    .message-inner {
+      max-width: 100%;
+    }
+  
+    .message-title {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .message-description {
+      text-align: center;
+      font-size: 1rem;
+    }
+  
+    .message-submit {
+      width: 100%;
+    }
+    .cutoff-wrapper {
+        height: 3rem;              
+        overflow: hidden;
+        position: relative;
+    }
+    .connect-bottom {
+        font-size: 4.5rem;
+        overflow: hidden;
+        line-height: 1;
+        position: relative;   
+      }
+  }

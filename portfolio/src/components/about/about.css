@@ -90,7 +90,7 @@
     background-color: #000;
     min-height: 100vh;               
     /* min-width: 100vw;  */
-    padding: 4rem 4rem 15rem 15rem;
+    padding: 4rem 4rem 1rem 15rem;
 }
 .photo-title {
     color: #fff;
@@ -101,15 +101,16 @@
     text-align: right;
     padding-top: 4rem;
     padding-bottom: 1rem;
+    padding-right: 2rem;
 }
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: clamp(200px, 35vh, 600px);
-    /* grid-template-rows: repeat(2, 600px); */
+    grid-template-rows: repeat(3, 300px);
     grid-template-areas:
       "one one two two three"
-      "one one four five five";
+      "one one four five five"
+      "ten ten nine eight seven";
     gap: 1rem;
     width: 100%;
     height: 100%;
@@ -134,41 +135,103 @@
 .photo-3 { grid-area: three; background-image: url(../../assets/images/toki.jpeg); }
 .photo-4 { grid-area: four; background-image: url(../../assets/images/sunset.jpeg); }
 .photo-5 { grid-area: five;  }
+.photo-6 { grid-area: six; background-image: url(../../assets/images/walking.jpeg); }
+.photo-7 { grid-area: seven; background-image: url(../../assets/images/sanrio.jpg); }
+.photo-8 { grid-area: eight; background-image: url(../../assets/images/ramen.jpg); }
+.photo-9 { grid-area: nine; background-image: url(../../assets/images/sand.jpg); }
+.photo-10 { grid-area: ten; background-image: url(../../assets/images/orchids.jpg); }
 
-@media (max-width: 600px) {
-    .photo-grid {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "one"
-        "two"
-        "three"
-        "four"
-        "five";
-      grid-auto-rows: minmax(200px, auto);
-    }
-    .text-columns {
+
+  @media screen and (min-width: 769px) and (max-width: 1495px) {
+    .about-content {
+        padding: 18rem 10rem 15rem 15rem;  
+        display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
-    
-    .content-row {
-        align-items: center;
+    .photos-section {
+        background-color: #000;
+        min-height: 100vh;               
+        padding: 0 1rem 0 10rem;
     }
-    
-    .content-items {
-        text-align: center;
-        align-items: center;
+    .photo-title {
+        padding-right: 1rem;
     }
-  }
-  @media (max-width: 900px) {
     .photo-grid {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas:
-        "one two"
-        "three four"
-        "five five";
+        width: 100%;
+        height: 100%;
+        display: grid;
+        padding-left: 2rem;
+        gap: 0.5rem;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        grid-template-areas:
+          "one two two"
+          "one five five"
+          "three seven"
+          "eight nine"
+          "ten ten";
     }
   }
   
+  @media screen and (max-width: 768px) {
+    .about-content {
+        padding: 8.5rem 2rem;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-title {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .text-columns {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0rem;
+    }
+
+    .message-row-about {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; 
+    }
+    
+    .message-button {
+        padding: 0.6rem 2rem;
+        max-width: 300px;
+      }
+      
+    .photos-section {
+        background-color: #000;
+        min-height: 100vh;               
+        padding: 0;
+    }
+
+    .photo-title {
+        padding-right: 1rem;
+    }
+    .photo-grid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        padding-left: 1rem;
+        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas:
+          "two two"
+          "one six"
+          "five five"
+          "three seven"
+          "eight nine"
+          "ten ten";
+    }
+
+  }
   
   
   

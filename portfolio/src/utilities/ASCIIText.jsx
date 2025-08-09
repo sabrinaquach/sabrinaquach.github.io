@@ -288,7 +288,7 @@ class CanvAscii {
     const screenWidth = window.innerWidth;
     
     const isMobile = screenWidth <= 768;
-    const baseH = isMobile ? 5 : 8;
+    const baseH = isMobile ? 4 : 6;
     
     const planeW = Math.min(baseH * textAspect, 15);
     const planeH = Math.min(baseH, 8);
