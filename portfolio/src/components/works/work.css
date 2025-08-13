@@ -88,6 +88,7 @@
   flex-direction: column;
   justify-content: space-between; 
   text-align: left;
+  cursor: pointer;
 }
 
 .project-text-phone {
@@ -97,6 +98,7 @@
   flex-direction: column;
   justify-content: space-between; 
   text-align: left;
+  cursor: pointer;
 }
 
 .project-title {

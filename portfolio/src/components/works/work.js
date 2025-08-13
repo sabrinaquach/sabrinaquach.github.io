@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ScrollRevealImage from "../../utilities/ScrollRevealImage";
 import DecryptedText from "../../utilities/DecryptedText";
 import Hero from "../hero/hero";
@@ -8,6 +8,7 @@ import '../../assets/fonts/font.css';
 
 const Work = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleContactClick = () => {
     const el = document.getElementById('footer');
@@ -27,6 +28,45 @@ const Work = () => {
     }
   }, [location]);
 
+  const handleProjectOneClick = () => {
+    const el = document.getElementById('about');
+    if (location.pathname === '/AdobeFlux') {
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/AdobeFlux', { state: { scrollTo: 'AdobeFlux' } });
+    }
+  }; 
+
+  const handleProjectTwoClick = () => {
+    const el = document.getElementById('about');
+    if (location.pathname === '/SpartanSync') {
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/SpartanSync', { state: { scrollTo: 'SpartanSync' } });
+    }
+  }; 
+
+  const handleProjectThreeClick = () => {
+    const el = document.getElementById('about');
+    if (location.pathname === '/Aura') {
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/Aura', { state: { scrollTo: 'Aura' } });
+    }
+  }; 
+
   return (
     <div className="main-content">
       <div className="work-container">
@@ -41,7 +81,7 @@ const Work = () => {
             </div> */}
             <div className="project-column">
                 <section className="project-section">
-                    <div className="project-block">
+                    <div className="project-block" onClick={handleProjectOneClick}>
                         <div className="project-text-laptop">
                             <DecryptedText 
                                 className="project-title"
@@ -74,7 +114,7 @@ const Work = () => {
                 </section>
 
                 <section className="project-section">
-                    <div className="project-block">
+                    <div className="project-block" onClick={handleProjectTwoClick}>
                         <div className="project-text-phone">
                             <DecryptedText 
                                 className="project-title"
@@ -107,7 +147,7 @@ const Work = () => {
                 </section>
 
                 <section className="project-section">
-                    <div className="project-block">
+                    <div className="project-block" onClick={handleProjectThreeClick}>
                         <div className="project-text-phone">
                             <DecryptedText 
                                 className="project-title"
