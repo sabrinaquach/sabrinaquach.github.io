@@ -24,9 +24,9 @@ const Hero = ({ onMessageClick }) => {
         {showAscii && (
             <div className="ascii-wrapper">
             <ASCIIText
-                text="hello"
+                text="hi"
                 asciiFontSize={8}
-                textFontSize={100}
+                textFontSize={300}
                 enableWaves={true}
             />
             </div>
@@ -36,12 +36,12 @@ const Hero = ({ onMessageClick }) => {
             <h1 className="hello-message">
                 I’M SABRINA,&nbsp;
                 <TextType
-                className="hello-message"
-                text={["Designer", "Engineer", "Builder"]}
-                typingSpeed={75}
-                pauseDuration={2000}
-                showCursor={true}
-                cursorCharacter="|"
+                  className="hello-message"
+                  text={["Designer", "Engineer", "Builder"]}
+                  typingSpeed={75}
+                  pauseDuration={2000}
+                  showCursor={true}
+                  cursorCharacter="|"
                 />
             </h1>
             <p className="description">

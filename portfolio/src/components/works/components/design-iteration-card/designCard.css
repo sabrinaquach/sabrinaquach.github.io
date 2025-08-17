@@ -83,9 +83,10 @@
   }
 
 /* mobile screens */
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 768px) {
     .design-card {
         max-width: 85vw;
+        padding: 1.5rem 1.5rem;
     }
 
     .problem-solution-cards-row {
@@ -93,5 +94,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
+    }
+
+    .problem-solution-card {
+        padding: 1.5rem 1.5rem;
     }
   }

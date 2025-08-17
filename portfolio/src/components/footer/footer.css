@@ -142,7 +142,7 @@
     background-color: #FFB266;
 }
 .cutoff-wrapper {
-    height: 11rem;   
+    height: 10.3rem;   
     overflow: hidden;
     position: relative;
 }
@@ -150,7 +150,7 @@
     font-family: 'Inter';
     text-transform: uppercase;
     text-align: center;
-    font-size: clamp(4rem, 18vw, 18rem);
+    font-size: clamp(4rem, 16.5vw, 38rem);
     overflow: hidden;
     line-height: 1;
     position: relative;          
@@ -178,7 +178,7 @@
       width: 100%;
     }
     .cutoff-wrapper {
-        height: 6rem;             
+        height: 8rem;             
         overflow: hidden;
         position: relative;
     }
@@ -243,14 +243,9 @@
       width: 100%;
     }
     .cutoff-wrapper {
-        height: 3rem;              
-        overflow: hidden;
-        position: relative;
+        height: 0;
     }
-    .connect-bottom {
-        font-size: 4.5rem;
-        overflow: hidden;
-        line-height: 1;
-        position: relative;   
+    .connect-bottom {  
+        display: none;
       }
   }

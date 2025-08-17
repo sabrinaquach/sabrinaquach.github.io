@@ -8,7 +8,6 @@
     justify-content: center;
     background: black;
     overflow: hidden;
-    padding: 0 2rem;
 }  
 
 .main-nav {
@@ -86,16 +85,14 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    right: 5%;
-    max-width: 65vw;
+    /* right: 5%; */
+    max-width: 85vw;
     text-align: center;
     pointer-events: auto;
     animation: fadeOut 1s ease-in-out forwards;
     animation-delay: 4s;
     overflow: visible !important;
   }
-  
-  
   
   @keyframes fadeOut {
     to {
@@ -119,6 +116,11 @@
     .hero-container {
       padding-left: 150px;
     } 
+
+    /* .ascii-wrapper {
+      left: 5%;
+      max-width: -25vw;
+    } */
   }
   
   @media screen and (max-width: 900px) {
@@ -187,6 +189,9 @@
       align-items: center;
       justify-content: center;
       padding-top: 1.5rem;
+    }
+    .ascii-wrapper {
+      right: 2%;
     }
   }
   

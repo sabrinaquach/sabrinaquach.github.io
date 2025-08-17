@@ -12,13 +12,10 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
-
-    // useEffect(() => {
-    //     window.scrollTo({ top: 0, behavior: 'smooth' });
-    //   }, [location.pathname]);       
+    
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      setMenuOpen(false); // Close menu on route change
+      setMenuOpen(false); 
     }, [location.pathname]);
 
     const handleLogoClick = () => {

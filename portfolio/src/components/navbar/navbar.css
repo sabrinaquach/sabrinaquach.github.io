@@ -189,5 +189,17 @@
         align-items: flex-end;
         gap: 0.05rem;
     }
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1000;
+        width: 0;
+        height: 100vh;
+    }
   }
   

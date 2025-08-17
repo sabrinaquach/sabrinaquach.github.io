@@ -79,11 +79,9 @@
 /* case study section */
 .case-study-container {
     min-height: 100vh;
-    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     margin-left: calc(80px + 10rem);
 }
 
@@ -97,7 +95,7 @@
 
 .section-subheader {
     color: #484848;
-    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.9rem, 2vw, 1rem);
     font-family: 'Inter';
     text-transform: uppercase;
     padding-bottom: 1rem;
@@ -418,13 +416,13 @@
 }
 
 .key-feedback-title {
-    font-size: clamp(1re, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     max-width: 65vw;
     color: #f0f0f0;
 }
 
 .key-feedback-list {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #979797;
     list-style: none; 
     text-indent: 10px;
@@ -532,20 +530,20 @@
 
     .case-study-container {
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
         margin: 0;    
     }
 
     .background-block {
-        flex-direction: column;
-        gap: 2rem;
+        /* flex-direction: column;
+        gap: 2rem; */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     } 
 
     .design-process-block {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: flex-start;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     } 
 
     .project1-block {
@@ -632,6 +630,20 @@
     .design-iterate {
       min-width: 0; 
       width: 100%;
+    }
+
+    .design-with-intent-list, .current-state-list, 
+    .interviews-with-creatives-list {
+        text-indent: 10px;
+        max-width: 85vw;
+    }
+
+    .design-with-intent-list-item, .current-state-list-item {
+        padding-bottom: 1rem;
+    }
+
+    .design-iterations-column {
+        gap: 4rem;
     }
   
     .horizontal-line {

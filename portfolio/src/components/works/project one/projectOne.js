@@ -186,9 +186,9 @@ const ProjectOne = () => {
                             <p className="research-description">We began by tailoring our questions to understand...</p>
                         </div>
                         <ul className="design-with-intent-list">
-                            <li>How do users currently engage with generative AI tools?</li>
-                            <li>Where do these interactions fall short or become restrictive?</li>
-                            <li>Which input methods resonate most intuitively with various types of creatives?</li>
+                            <li className="design-with-intent-list-item">How do users currently engage with generative AI tools?</li>
+                            <li className="design-with-intent-list-item">Where do these interactions fall short or become restrictive?</li>
+                            <li className="design-with-intent-list-item">Which input methods resonate most intuitively with various types of creatives?</li>
                         </ul>
                         <div className="horizontal-line" />
                     </div>
@@ -205,9 +205,9 @@ const ProjectOne = () => {
                             <p className="research-description">From these studies, the main pain points are...</p>
                         </div>
                         <ul className="current-state-list">
-                            <li>Increasing frustration with inflexible prompt-based systems</li>
-                            <li>Limited support for multimodal inputs (visual, voice, gesture)</li>
-                            <li>AI poses barriers for visual or non-technical users</li>
+                            <li className="current-state-list-item">Increasing frustration with inflexible prompt-based systems</li>
+                            <li className="current-state-list-item">Limited support for multimodal inputs (visual, voice, gesture)</li>
+                            <li className="current-state-list-item"> AI poses barriers for visual or non-technical users</li>
                         </ul>
                         <div className="horizontal-line" />
                     </div>
@@ -225,9 +225,9 @@ const ProjectOne = () => {
                         </div>
                         <p className="research-description">We interviewed around 20 creatives of all different backgrounds to take a closer look into their...</p>
                         <ul className="interviews-with-creatives-list">
-                            <li>Daily creative workflows</li>
-                            <li>Frustrations with current AI tools</li>
-                            <li>More intuitive & expressive control</li>
+                            <li className="interviews-with-creatives-list-item">Daily creative workflows</li>
+                            <li className="interviews-with-creatives-list-item">Frustrations with current AI tools</li>
+                            <li className="interviews-with-creatives-list-item">More intuitive & expressive control</li>
                         </ul>
 
                         {/* Empathy Maps Subsection */}
