@@ -1,0 +1,43 @@
+.square {
+    max-width: 15vw;
+    height: auto;
+    /* aspect-ratio: 1 / 1; */
+    background-color: #5B5B5B;
+    border-radius: 5px;
+    padding: 1.3rem;
+}
+
+.square-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.square-title {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #f2f3f4;
+}
+
+.square-description {
+    color: #f0f0f0;
+    font-size: 0.85rem;
+    font-weight: 50;
+    text-align: center;
+}
+
+/* Mobile Layout */
+@media screen and (min-width: 769px) and (max-width: 1495px) {
+    .square {
+        max-width: 17vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .square {
+        max-width: 85vw;
+    }
+    
+}

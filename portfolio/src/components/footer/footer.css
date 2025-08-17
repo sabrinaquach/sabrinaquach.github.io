@@ -156,7 +156,7 @@
     position: relative;          
 }
 
-  @media (min-width: 769px) and (max-width: 1495px) {
+  @media (min-width: 901px) and (max-width: 1495px) {
     .footer {
       /* padding-left: 180px; */
       padding-top: 10rem;
@@ -190,7 +190,7 @@
       }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .footer {
       padding-left: 0;
       padding-top: 10rem;

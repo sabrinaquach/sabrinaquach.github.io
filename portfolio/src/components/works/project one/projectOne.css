@@ -14,7 +14,7 @@
     align-items: flex-start;
 }
 
-.project-block {
+.project1-block {
     height: auto;
     max-width: 1200px;
     width: 100%;
@@ -35,7 +35,7 @@
     cursor: pointer;
 }
 
-.content-items {
+.project1-content-items {
     display: flex;
     flex-direction: row;
     text-align: left;
@@ -47,8 +47,15 @@
     position: relative;
 }
 
+.project1-header {
+    color: #5B5B5B;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-family: 'Inter';
+    text-transform: uppercase;
+}
+
 .project1-title {
-    color: #fff;
+    color: #f2f3f4;
     font-size: clamp(3rem, 6vw, 6rem);
     font-family: 'Inter';
     text-transform: uppercase;
@@ -56,9 +63,10 @@
 
 .project1-description {
     font-family: 'JetBrainsMono-Regular';
-    font-size: clamp(0.5rem, 1vw, 1.5rem);
+    font-size: clamp(1rem, 1vw, 1.5rem);
     max-width: 650px;
     padding-bottom: 3rem;
+    color: #f0f0f0;
 }
 
 .project1-image {
@@ -75,25 +83,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding-left: calc(80px + 10rem);
+    /* align-items: center; */
+    margin-left: calc(80px + 10rem);
 }
 
 .horizontal-line {
     border: none;
-    border: 1.5px solid #5B5B5B;
+    border: 1px solid #5B5B5B;
+    opacity: 50%;
     width: 75vw;
-    margin: 3rem 0 3rem 0;
+    margin: 8rem 0;
 }
 
-.background-block {
+.section-subheader {
+    color: #484848;
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-family: 'Inter';
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+/* background section */
+.background-block, .design-process-block {
     height: auto;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 5rem;
 } 
+
+.background-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    align-items: center;
+}
 
 .background-column {
     flex: 1;
@@ -102,7 +127,6 @@
     justify-content: space-between; 
     align-items: flex-start;
     text-align: left;
-    cursor: pointer;
     gap: 0.5rem;
 }
 
@@ -110,11 +134,15 @@
     font-family: 'Inter';
     text-transform: uppercase;
     font-size: clamp(0.8rem, 2vw, 1.5rem);
+    color: #f2f3f4;
 }
 
-ul {
+.background-design-list {
     list-style-type: none;
     text-transform: capitalize;
+    line-height: 1.4;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: #979797;
 }
 
 .timeline-list {
@@ -125,33 +153,489 @@ ul {
     min-width: 225px;
 }
 
-  @media screen and (min-width: 769px) and (max-width: 1495px) {
-    .project1-content {
-        padding: 18rem 10rem 15rem 15rem;  
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.design-iterate {
+    min-width: 260px;
+}
 
+.section-header {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-size: clamp(2rem, 4vw, 4rem);
+    padding-bottom: 1rem;
+    color: #f2f3f4;
+}
+
+.challenge-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.challenge-question {
+    padding-top: 0.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    color: #FFB266;
+    max-width: 65vw;
+}
+
+.research-description {
+    max-width: 65vw;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.solution-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.design-with-intent-column, .current-state-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.design-with-intent-list, .current-state-list, .interviews-with-creatives-list {
+    list-style: none; 
+    text-indent: 20px;
+    padding-top: 0.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    max-width: 65vw;
+    color: #f0f0f0;
   }
   
-  @media screen and (max-width: 768px) {
+.design-with-intent-list li::before,
+.current-state-list li::before,
+.interviews-with-creatives-list li::before {
+  content: "-";
+  margin-right: 0.5rem;
+  color: #f0f0f0;
+}
+
+.section-subtitle {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    padding-bottom: 1rem; 
+    padding-top: 8rem;
+    color: #f2f3f4;
+}
+
+.empathy-maps-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.square-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.empathy-map-image-row {
+    display: flex;
+    gap: 1.5rem;
+    transition: filter 0.3s ease;
+}
+  
+  /* .empathy-map-image-row.blurred {
+    filter: blur(6px) brightness(0.6);
+    pointer-events: none;
+  } */
+  
+.empathy-map-image {
+    max-width: 32vw;
+    border-radius: 5px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+  
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+  
+.modal-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+  
+/* themes section */
+.themes-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.theme-rectangle-row, .competitor-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.themes-wrapper, .competitor-wrapper {
+    max-width: 65vw;
+    width: 100%;
+}
+
+/* competitor anaylsis section */
+.competitor-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.swot-orange {
+    color: #FFB266;
+    font-family: 'JetBrainsMono-Bold';
+}
+
+/* experience drivers section */
+.experience-drivers-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-drivers-question {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    color: #FFB266;
+    max-width: 65vw;
+    padding-bottom: 2rem;
+}
+
+.core-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1150px;
+    width: 100%;
+    max-width: 65vw;
+}
+
+/* early design concept section */
+.designConcept-image {
+    max-width: 65vw;
+    border-radius: 5px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+/* prioritization section */
+.prioritization-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.prioritization-image-row {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.prioritization-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.prioritization-image-label {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #f2f3f4;
+}
+
+.prioritization-image {
+    max-width: 31vw;
+    border-radius: 5px;
+    width: 100%;
+    cursor: zoom-in;
+}
+
+/* lofi wireframes section */
+.lofi-wireframes-image {
+    max-width: 65vw;
+    width: 100%;
+    border-radius: 5px;
+    cursor: zoom-in;
+}
+
+.lofi-wireframes-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* style guide section */
+.style-guide-image {
+    max-width: 65vw;
+    width: 100%;
+    cursor: zoom-in;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+.style-guide-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* hi-fidelity wireframe section */
+.hifi-wireframe-video {
+    max-width: 65vw;
+    object-fit: contain;
+    padding-bottom: 5rem;
+}
+
+.key-feedback-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.key-feedback-title {
+    font-size: clamp(1re, 2vw, 1.3rem);
+    max-width: 65vw;
+    color: #f0f0f0;
+}
+
+.key-feedback-list {
+    font-size: 1.2rem;
+    color: #979797;
+    list-style: none; 
+    text-indent: 10px;
+    padding-top: 0.4rem;
+}
+  
+.key-feedback-list li::before {
+  content: "-";
+  margin-right: 0.5rem;
+  color: #979797;
+}
+
+/* design iterations section */
+.design-iterations-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+/* say hello to adobe flux section */
+.final-design-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.final-design-video {
+    max-width: 65vw;
+    object-fit: contain;
+    padding-bottom: 5rem;
+}
+
+/* tablet and mid-size screens */
+@media screen and (min-width: 769px) and (max-width: 1495px) {
     .project1-content {
-        padding: 8.5rem 2rem;  
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .project1-title {
-        font-size: 3rem;
-        text-align: left;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4rem;
+      padding-left: min(80px, 8%);
     }
 
-    .text-column {
+    .background-block, .design-process-block {
+        gap: 2rem;
+    } 
+
+    .timeline-list {
+        min-width: 200px;
+    }
+
+    .research-description, .design-with-intent-list, .current-state-list,
+    .interviews-with-creatives-list, .challenge-question,
+    .experience-drivers-question, .core-row, .themes-wrapper, 
+    .competitor-wrapper, .lofi-wireframes-image, .prioritization-image,
+    .style-guide-image, .hifi-wireframe-video, .key-feedback-title,
+    .final-design-video, .designConcept-image, .empathy-map-image {
+        max-width: 75vw;
+    }
+
+    .empathy-map-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        transition: filter 0.3s ease;
+    }
+    .prioritization-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+  
+    .project1-block {
+      flex-wrap: wrap;        
+      gap: 3rem;
+    }
+  
+    .text-column,
+    .project1-content-items {
+      flex: 1 1 100%;
+      min-width: 0;             
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .timeline-list,
+    .role-tool-list,
+    .design-iterate {
+      min-width: 0; 
+      width: 100%;
+    }
+  
+    .case-study-container {
+      margin-left: 250px;
+      padding-right: 2rem;
+    }
+  }
+  
+  /* mobile screens*/
+  @media screen and (max-width: 768px) {
+    .project1-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .case-study-container {
+        justify-content: center;
+        align-items: center;
+        margin: 0;    
+    }
+
+    .background-block {
+        flex-direction: column;
+        gap: 2rem;
+    } 
+
+    .design-process-block {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+    } 
+
+    .project1-block {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 0rem;
+        gap: 2rem;
+    }
+  
+    .project1-title {
+      text-align: center;
     }
 
+    .project1-description {
+        padding-bottom: 1rem;
+        max-width: 90vw;
+    }
+
+    .section-header, .section-subheader, .section-subtitle {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 85vw;
+    }
+  
+    .text-column {
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
+    }
+  
+    .project1-image {
+      max-width: 90vw;
+      width: 100%;
+      height: auto;
+    }
+
+    .theme-rectangle-row, .competitor-row {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .research-description, .design-with-intent-list, .current-state-list,
+    .interviews-with-creatives-list, .challenge-question,
+    .experience-drivers-question, .core-row, .themes-wrapper, 
+    .competitor-wrapper, .lofi-wireframes-image, .prioritization-image,
+    .style-guide-image, .hifi-wireframe-video, .key-feedback-title,
+    .final-design-video, .designConcept-image {
+        max-width: 85vw;
+    }
+
+    .empathy-map-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: filter 0.3s ease;
+    }
+
+    .empathy-map-image {
+        max-width: 85vw;
+    }
+
+    .prioritization-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .prioritization-content-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .prioritization-image {
+        max-width: 85vw;
+    }
+
+    .core-row, .square-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+  
+    .timeline-list,
+    .role-tool-list,
+    .design-iterate {
+      min-width: 0; 
+      width: 100%;
+    }
+  
+    .horizontal-line {
+      width: 100%;
+      margin: 4rem auto;
+    }
   }

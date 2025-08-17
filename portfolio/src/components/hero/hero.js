@@ -26,6 +26,7 @@ const Hero = ({ onMessageClick }) => {
             <ASCIIText
                 text="hello"
                 asciiFontSize={8}
+                textFontSize={100}
                 enableWaves={true}
             />
             </div>

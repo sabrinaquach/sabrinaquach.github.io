@@ -184,19 +184,15 @@ class AsciiFilter {
   }
 }
 
-// ✅ Corrected CanvasTxt class with stable text rendering
 class CanvasTxt {
-  constructor(txt, {
-    fontSize = 200,
-    fontFamily = "'IBM Plex Mono', 'Courier New', monospace",
-    color = '#fdf9f3',
-  } = {}) {
+  constructor(txt, { fontSize = 200, fontFamily = 'Arial', color = '#fdf9f3' } = {}) {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
     this.txt = txt;
     this.fontSize = fontSize;
     this.fontFamily = fontFamily;
     this.color = color;
+
     this.font = `600 ${this.fontSize}px ${this.fontFamily}`;
   }
 
@@ -204,11 +200,10 @@ class CanvasTxt {
     this.context.font = this.font;
     const metrics = this.context.measureText(this.txt);
 
-    // Add more generous padding to avoid clipping
-    const extraPadding = 100;
-    const textWidth = Math.ceil(metrics.width) + extraPadding;
-    const textHeight =
-      Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 60;
+    
+    // const extraPadding = 190;
+    const textWidth = Math.ceil(metrics.width) + 190;
+    const textHeight = Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 20;
 
     this.canvas.width = textWidth;
     this.canvas.height = textHeight;
@@ -218,16 +213,11 @@ class CanvasTxt {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.context.fillStyle = this.color;
     this.context.font = this.font;
-    this.context.textBaseline = 'top';
-    this.context.textAlign = 'left';
 
-    const xPad = 50; // match half of extraPadding above
-    const yPad = 30;
-    this.context.fillText(this.txt + '  ', xPad, yPad);
+    const metrics = this.context.measureText(this.txt);
+    const yPos = 10 + metrics.actualBoundingBoxAscent;
 
-    // Debug box (optional)
-    // this.context.strokeStyle = '#ff0000';
-    // this.context.strokeRect(0, 0, this.canvas.width, this.canvas.height);
+    this.context.fillText(this.txt, 10, yPos);
   }
 
   get width() {
@@ -285,15 +275,11 @@ class CanvAscii {
     this.texture.minFilter = THREE.NearestFilter;
 
     const textAspect = this.textCanvas.width / this.textCanvas.height;
-    const screenWidth = window.innerWidth;
-    
-    const isMobile = screenWidth <= 768;
-    const baseH = isMobile ? 4 : 6;
-    
-    const planeW = Math.min(baseH * textAspect, 15);
-    const planeH = Math.min(baseH, 8);
+    const baseH = this.planeBaseHeight;
+    const planeW = baseH * textAspect; 
+    const planeH = baseH;
 
-    this.geometry = new THREE.PlaneGeometry(planeW, planeH, 64, 64);
+    this.geometry = new THREE.PlaneGeometry(planeW, planeH, 36, 36);
     this.material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
@@ -488,10 +474,8 @@ export default function ASCIIText({
       className="ascii-text-container"
       style={{
         position: 'absolute',
-        width: '100%',
-        height: '100%',
-        maxWidth: '100vw',
-        overflow: 'hidden'
+        width: '100vw',
+        height: '100vh'
       }}
     >
       <style>{`
@@ -514,20 +498,23 @@ export default function ASCIIText({
 
         .ascii-text-container pre {
           margin: 0;
-          user-select: none;
           padding: 0;
-          line-height: 1em;
-          text-align: left;
           position: absolute;
-          left: 0;
-          top: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          line-height: 1em;
+          white-space: pre;
+          font-family: 'IBM Plex Mono', monospace;
+          font-size: inherit;
+          user-select: none;
           background-image: radial-gradient(circle, #ff6188 0%, #fc9867 50%, #ffd866 100%);
-          background-attachment: fixed;
           -webkit-text-fill-color: transparent;
           -webkit-background-clip: text;
-          z-index: 9;
           mix-blend-mode: difference;
         }
+
       `}</style>
     </div>
   );

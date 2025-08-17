@@ -1,0 +1,87 @@
+.large-rectangle {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 2.2rem 2.5rem;
+    flex: 1;
+}
+
+.large-rectangle-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.large-rectangle-title {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #f2f3f4;
+}
+
+.orange-letter {
+    color: #FFB266;
+  }
+  
+
+.large-rectangle-description {
+    color: #979797;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.inner-rectangle {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: #f2f3f4;
+    border-radius: 5px;
+    padding: 2.2rem 2.5rem;
+}
+
+.inner-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.company-name {
+    color: #000;
+    min-width: 150px;
+}
+
+.inner-text {
+    color: #000;
+}
+
+
+/* @media screen and (min-width: 769px) and (max-width: 1495px) {
+    .square {
+        max-width: 17vw;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+    .inner-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .company-name {
+        color: #000;
+        max-width: 50px;
+        text-align: center;
+    }
+
+    .inner-text {
+        color: #000;
+        text-align: center;
+    }
+}
