@@ -119,14 +119,14 @@ const Work = () => {
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
-                                text="Aura"
+                                text="SpartanSync"
                                 animateOn="view"
                                 revealDirection="start"
                                 sequential="true"
                                 speed="150"
                             />
                             <p className="project-description">
-                                Smart home app to view energy levels and change temperature in multiple rooms.
+                              Smart scheduling for busy students.
                             </p>
                         </div>
                         <ScrollRevealImage
@@ -138,8 +138,8 @@ const Work = () => {
                             <div className="project-image">
                                 <img 
                                     className="phone-mockup" 
-                                    src="/images/aura-image1.png" 
-                                    alt="Aura mockup" 
+                                    src="/images/spartansync-image1.png" 
+                                    alt="SpartanSync mockup" 
                                 />
                             </div>
                         </ScrollRevealImage>
@@ -152,14 +152,14 @@ const Work = () => {
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
-                                text="SpartanSync"
+                                text="Aura"
                                 animateOn="view"
                                 revealDirection="start"
                                 sequential="true"
                                 speed="120"
                             />
                             <p className="project-description">
-                                Smart scheduling for busy students.
+                              Smart home app to view energy levels and change temperature in multiple rooms.
                             </p>
                         </div>
                         <ScrollRevealImage
@@ -171,8 +171,8 @@ const Work = () => {
                             <div className="project-image">
                                 <img 
                                     className="phone-mockup" 
-                                    src="/images/spartansync-image1.png" 
-                                    alt="SpartanSync mockup" 
+                                    src="/images/aura-image1.png" 
+                                    alt="Aura mockup" 
                                 />
                             </div>
                         </ScrollRevealImage>
