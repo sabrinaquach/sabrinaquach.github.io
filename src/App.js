@@ -4,6 +4,7 @@ import Work from "./components/works/work";
 import About from "./components/about/about";
 import ProjectOne from "./components/works/project one/projectOne";
 import ProjectTwo from "./components/works/project two/projectTwo";
+import ProjectThree from "./components/works/project three/projectThree";
 import Footer from "./components/footer/footer";
 import ScrollToHashElement from "./utilities/ScrollToHashElement";
 import './styles/styles.css';
@@ -19,7 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/AdobeFlux" element={<ProjectOne />} />
           <Route path="/SpartanSync" element={<ProjectTwo />} />
-          {/* <Route path="/Aura" element={<ProjectThree />} /> */}
+          <Route path="/Aura" element={<ProjectThree />} />
         </Routes>
         <Footer />
       </div>
