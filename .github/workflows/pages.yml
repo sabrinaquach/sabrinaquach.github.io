@@ -31,7 +31,8 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: CI=false npm run build   # <-- forces CI to false
+        # Force CRA to not treat warnings as errors in CI
+        run: CI=false npm run build
 
       - name: Detect build directory
         id: detect
@@ -39,7 +40,7 @@ jobs:
           if [ -d dist ]; then
             echo "out=dist" >> $GITHUB_OUTPUT
           elif [ -d build ]; then
-            echo "out=build" >> $GITHUB_output
+            echo "out=build" >> $GITHUB_OUTPUT
           else
             echo "No dist/ or build/ folder found after npm run build"
             exit 1
