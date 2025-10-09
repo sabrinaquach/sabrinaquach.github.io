@@ -37,7 +37,7 @@ const ProjectTwo = () => {
                         <p className="project2-description">Smart scheduling for busy students.</p>
                     </div>
                     <div className="project2-content-items">
-                        <img className="project2-image" src="/images/spartansync-image1.png"/>
+                        <img className="project2-image" src="/images/spartansync-image1.png" alt="SpartanSync Image"/>
                     </div>
                 </div>
             </div>

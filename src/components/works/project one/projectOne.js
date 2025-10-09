@@ -37,7 +37,7 @@ const ProjectOne = () => {
                         <p className="project1-description">Generative AI tool that creates visuals through actions.</p>
                     </div>
                     <div className="project1-content-items">
-                        <img className="project1-image" src="/images/adobeflux-image1.png"/>
+                        <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe FLux Image"/>
                     </div>
                 </div>
             </div>
