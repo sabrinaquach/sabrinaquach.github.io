@@ -1,198 +1,200 @@
 .hero-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: black;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  overflow: hidden;
 }  
 
 .main-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }
   
 .nav-header {
-    text-align: left;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
   
 .hello-message {
-    font-family: 'Inter';
-    font-size: clamp(2rem, 3.5vw, 4.5rem);
-    text-transform: uppercase;
-    padding-bottom: min(0.2rem, 8%);
+  font-family: 'Inter';
+  font-size: clamp(2rem, 3.5vw, 4.5rem);
+  text-transform: uppercase;
+  padding-bottom: min(0.2rem, 8%);
 }
   
 .description {
-    font-family: 'JetBrainsMono-Regular';
-    font-size: clamp(1rem, 1.3vw, 2rem);
-    line-height: 1.2;
-    text-align: left;
-    max-width: clamp(400px, 60vw, 1100px);
-    text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: normal;
+  font-size: clamp(1rem, 1.3vw, 2rem);
+  line-height: 1.2;
+  text-align: left;
+  max-width: clamp(400px, 60vw, 1100px);
+  text-transform: uppercase;
 }
   
+.message-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 2rem;
+}
+  
+.message-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border-radius: 40px;
+  padding: 8px 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  border: 1.5px solid #fff;
+}
+  
+.message-button svg {
+  vertical-align: middle;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  top: 0.5px;
+}
+  
+button:hover {
+  background-color: #fff;
+  color: #000;
+}
+  
+.ascii-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* right: 5%; */
+  max-width: 85vw;
+  text-align: center;
+  pointer-events: auto;
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 4s;
+  overflow: visible !important;
+}
+  
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+  
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+  
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1495px) {
+  .hero-container {
+    padding-left: 150px;
+  } 
+
+  /* .ascii-wrapper {
+    left: 5%;
+    max-width: -25vw;
+  } */
+}
+  
+@media screen and (max-width: 900px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: black;
+  }
+  
+  .nav-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .initial {
+    font-size: 1.8rem;
+  }
+  
+  .desktopMenuList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .nav-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  .sun-button,
+  .top-button {
+    padding: 0.5rem;
+  }
+
+  .nav-header {
+    text-align: center;
+    /* padding: 0 1rem; */
+  }
+    
+  .hello-message {
+    font-size: 1.5rem;
+  }
+    
+  .description {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    text-align: center;
+    max-width: 90vw;
+  }
+
   .message-row {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding-top: 2rem;
+    justify-content: center;
+    padding-top: 1.5rem;
   }
-  
-  .message-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border-radius: 40px;
-    padding: 8px 15px;
-    font-family: 'JetBrainsMono-Regular';
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
-    color: #fff;
-    border: 1.5px solid #fff;
-  }
-  
-  .message-button svg {
-    vertical-align: middle;
-    height: 1em;
-    width: 1em;
-    position: relative;
-    top: 0.5px;
-  }
-  
-  button:hover {
-    background-color: #fff;
-    color: #000;
-  }
-  
   .ascii-wrapper {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    /* right: 5%; */
-    max-width: 85vw;
-    text-align: center;
-    pointer-events: auto;
-    animation: fadeOut 1s ease-in-out forwards;
-    animation-delay: 4s;
-    overflow: visible !important;
+    right: 2%;
   }
-  
-  @keyframes fadeOut {
-    to {
-      opacity: 0;
-      pointer-events: none;
-    }
-  }
-  
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-  @media screen and (min-width: 901px) and (max-width: 1495px) {
-    .hero-container {
-      padding-left: 150px;
-    } 
-
-    /* .ascii-wrapper {
-      left: 5%;
-      max-width: -25vw;
-    } */
-  }
-  
-  @media screen and (max-width: 900px) {
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: auto;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 1rem;
-      gap: 1rem;
-      background-color: black;
-    }
-  
-    .nav-content {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-  
-    .initial {
-      font-size: 1.8rem;
-    }
-  
-    .desktopMenuList {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-  
-    .nav-buttons {
-      flex-direction: row;
-      justify-content: flex-start;
-      gap: 1rem;
-    }
-  
-    .sun-button,
-    .top-button {
-      padding: 0.5rem;
-    }
-
-    .nav-header {
-      text-align: center;
-      /* padding: 0 1rem; */
-    }
-    
-    .hello-message {
-      font-size: 1.5rem;
-    }
-    
-    .description {
-      font-size: clamp(0.8rem, 3vw, 1rem);
-      text-align: center;
-      max-width: 90vw;
-    }
-
-    .message-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 1.5rem;
-    }
-    .ascii-wrapper {
-      right: 2%;
-    }
-  }
+}
   
   

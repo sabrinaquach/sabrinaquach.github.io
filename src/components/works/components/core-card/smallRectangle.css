@@ -23,6 +23,8 @@
 }
 
 .small-rectangle-description {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
     color: #000;
     font-size: clamp(0.85rem, 2vw, 1.2rem);
     text-align: center;

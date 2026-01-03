@@ -56,7 +56,8 @@
     padding-bottom: 0.5rem;
 }
 .about-description {
-    font-family: 'JetBrainsMono-Regular';
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
     font-size: clamp(0.8rem, 1vw, 1.5rem);
     max-width: 450px;
     padding-bottom: 3rem;
@@ -73,7 +74,8 @@
     background: transparent;
     border-radius: 40px;
     padding: 8px 15px;
-    font-family: 'JetBrainsMono-Regular';
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1rem;

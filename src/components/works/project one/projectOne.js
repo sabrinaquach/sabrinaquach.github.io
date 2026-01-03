@@ -206,7 +206,7 @@ const ProjectOne = () => {
                         <ul className="current-state-list">
                             <li className="current-state-list-item">Increasing frustration with inflexible prompt-based systems</li>
                             <li className="current-state-list-item">Limited support for multimodal inputs (visual, voice, gesture)</li>
-                            <li className="current-state-list-item"> AI poses barriers for visual or non-technical users</li>
+                            <li className="current-state-list-item">AI poses barriers for visual or non-technical users</li>
                         </ul>
                         <div className="horizontal-line" />
                     </div>
@@ -398,7 +398,7 @@ const ProjectOne = () => {
                             After conducting user interviews and deep research, the key pain points we deduced are...
                         </p>
                         <div className="competitor-wrapper">
-                            <div className="competitor-row">
+                            <div className="painpoints-row">
                                 <Rectangle
                                     title="Prompt rigidity"
                                     icon={<BiPen size={28} />}
@@ -478,16 +478,7 @@ const ProjectOne = () => {
                                 Three design concepts were created to shape what our design would contain to ensure our experience 
                                 drivers were met.
                             </p>
-                        
-                            {/* 3D Modular Design Studio Subsection */}
-                            <h3 className="section-subtitle">3D Modular Design Studio</h3>
-                            <div className="empathy-maps-column">
-                                <p className="research-description">
-                                    A design tool that modularizes 3D elements based on user-provided references, allowing intuitive, 
-                                    component-level adjustments through gestures and AI suggestions while preserving visual consistency. 
-                                    It supports rapid iteration with real-time feedback from an adaptive assistant.
-                                </p>
-                                <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
                                     <img
                                         src="/images/project1-images/designConcept-1.png"
                                         alt="3D Modular Design Studio Concept"
@@ -497,18 +488,6 @@ const ProjectOne = () => {
                                             alt: '3D Modular Design Studio Concept'
                                         })}
                                     />
-                                </div>
-                            </div>
-
-                            {/* Interactive Visual Design Suite Subsection */}
-                            <h3 className="section-subtitle">Interactive Visual Design Suite</h3>
-                            <div className="empathy-maps-column">
-                                <p className="research-description">
-                                    An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
-                                    palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
-                                    and smart, contextual suggestions.
-                                </p>
-                                <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
                                     <img
                                         src="/images/project1-images/designConcept-2.png"
                                         alt="Interactive Visual Design Suite Concept"
@@ -518,18 +497,6 @@ const ProjectOne = () => {
                                             alt: 'Interactive Visual Design Suite Concept'
                                         })}
                                     />
-                                </div>
-                            </div>
-
-                            {/* AI Agent Subsection */}
-                            <h3 className="section-subtitle">AI Agent</h3>
-                            <div className="empathy-maps-column">
-                                <p className="research-description">
-                                    An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
-                                    palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
-                                    and smart, contextual suggestions.
-                                </p>
-                                <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
                                     <img
                                         src="/images/project1-images/designConcept-3.png"
                                         alt="AI Agent Concept"
@@ -539,6 +506,57 @@ const ProjectOne = () => {
                                             alt: 'AI Agent Concept'
                                         })}
                                     />
+                            </div>
+                        
+                            {/* 3D Modular Design Studio Subsection */}
+                            <h3 className="section-subtitle">1. 3D Modular Design Studio</h3>
+                            <div className="empathy-maps-column">
+                                <p className="research-description">
+                                    A design tool that modularizes 3D elements based on user-provided references, allowing intuitive, 
+                                    component-level adjustments through gestures and AI suggestions while preserving visual consistency. 
+                                    It supports rapid iteration with real-time feedback from an adaptive assistant.
+                                </p>
+                            </div>
+
+                            {/* Interactive Visual Design Suite Subsection */}
+                            <h3 className="section-subtitle">2. Interactive Visual Design Suite</h3>
+                            <div className="empathy-maps-column">
+                                <p className="research-description">
+                                    An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
+                                    palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
+                                    and smart, contextual suggestions.
+                                </p>
+                                {/* <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                    <img
+                                        src="/images/project1-images/designConcept-2.png"
+                                        alt="Interactive Visual Design Suite Concept"
+                                        className="designConcept-image"
+                                        onClick={() => setModalImage({
+                                            src: '/images/project1-images/designConcept-2.png',
+                                            alt: 'Interactive Visual Design Suite Concept'
+                                        })}
+                                    />
+                                </div> */}
+                            </div>
+
+                            {/* AI Agent Subsection */}
+                            <h3 className="section-subtitle">3. AI Agent</h3>
+                            <div className="empathy-maps-column">
+                                <p className="research-description">
+                                    An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
+                                    palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
+                                    and smart, contextual suggestions.
+                                </p>
+                                <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                    {/* <img
+                                        src="/images/project1-images/designConcept-3.png"
+                                        alt="AI Agent Concept"
+                                        className="designConcept-image"
+                                        onClick={() => setModalImage({
+                                            src: '/images/project1-images/designConcept-3.png',
+                                            alt: 'AI Agent Concept'
+                                        })}
+                                    /> */}
                                 </div>
                             </div>
                         </div>
@@ -665,33 +683,9 @@ const ProjectOne = () => {
 
                 {/* Design & Iterate */}
                 <div classname="design-iterate-container">
-                    {/* Low-fidelity Wireframes Section */}
-                    <div className="style-guide-container">
-                        <h3 className="section-subheader">Design & Iterate</h3>
-                        <h1 className="section-header">Style Guide</h1>
-                        <div className="style-guide-column">
-                            <p className="research-description">
-                                To stay in tune with Adobe’s brand identity, we chose colors, fonts, and icons 
-                                that remained familiar with Adobe users. 
-                            </p>
-                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                <img
-                                    src="/images/project1-images/styleGuide.png"
-                                    alt="Adobe Flux Style Guide"
-                                    className="style-guide-image"
-                                    onClick={() => setModalImage({
-                                        src: '/images/project1-images/styleGuide.png',
-                                        alt: 'Adobe Flux Style Guide'
-                                    })}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="horizontal-line" />
-                    </div>
-
                     {/* High-fidelity Wireframes Section */}
                     <div className="hifi-wireframe-container">
+                        <h3 className="section-subheader">Design & Iterate</h3>
                         <h1 className="section-header">High-fidelity wireframe</h1>
                         <div className="style-guide-column">
                             <p className="research-description">

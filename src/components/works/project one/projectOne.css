@@ -1,3 +1,7 @@
+p, li {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
+}
 .project1-container {
     background-color: #000;
     min-height: 100vh;              
@@ -62,7 +66,8 @@
 }
 
 .project1-description {
-    font-family: 'JetBrainsMono-Regular';
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
     font-size: clamp(1rem, 1vw, 1.5rem);
     max-width: 650px;
     padding-bottom: 3rem;
@@ -283,9 +288,16 @@
     gap: 2rem;
 }
 
-.theme-rectangle-row, .competitor-row {
+ .competitor-row, .theme-rectangle-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.painpoints-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     flex-wrap: wrap;
     gap: 2rem;
 }
@@ -304,7 +316,8 @@
 
 .swot-orange {
     color: #FFB266;
-    font-family: 'JetBrainsMono-Bold';
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
 }
 
 /* experience drivers section */
@@ -332,11 +345,17 @@
 
 /* early design concept section */
 .designConcept-image {
-    max-width: 65vw;
+    max-width: 20vw;
     border-radius: 5px;
     cursor: zoom-in;
     transition: transform 0.3s ease;
     object-fit: contain;
+}
+
+.designConcept-image-row {
+    display: flex;
+    gap: 1.5rem;
+    transition: filter 0.3s ease;
 }
 
 /* prioritization section */
