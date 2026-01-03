@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import './about.css'
-import '../../assets/fonts/font.css'
 import { FiMessageSquare } from "react-icons/fi";
 import { useLocation, useNavigate } from 'react-router-dom';
 

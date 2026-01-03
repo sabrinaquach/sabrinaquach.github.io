@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { BiSun, BiArrowToTop, BiMenu, BiX } from "react-icons/bi";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
-import '../../assets/fonts/font.css'
 
 gsap.registerPlugin(ScrollTrigger); 
 

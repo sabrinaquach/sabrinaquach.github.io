@@ -1,6 +1,5 @@
 import React from "react";
 import './square.css'
-import '../../../../assets/fonts/font.css'
 
 const Square = ({title, text}) => { 
     return (

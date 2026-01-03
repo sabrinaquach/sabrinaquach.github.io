@@ -4,7 +4,6 @@ import ScrollRevealImage from "../../utilities/ScrollRevealImage";
 import DecryptedText from "../../utilities/DecryptedText";
 import Hero from "../hero/hero";
 import './work.css';
-import '../../assets/fonts/font.css';
 
 const Work = () => {
   const location = useLocation();

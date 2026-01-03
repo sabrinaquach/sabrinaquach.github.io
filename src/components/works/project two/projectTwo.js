@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import './projectTwo.css'
-import '../../../assets/fonts/font.css'
 import { BiSearchAlt, BiBook, BiRotateRight, BiSmile, BiPen, BiLayer, BiTargetLock, BiSliderAlt, BiBrain, BiShow } from "react-icons/bi";
 import { useLocation, useNavigate } from 'react-router-dom';
 import Square from "../components/square/square";

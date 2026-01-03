@@ -1,6 +1,5 @@
 import React from "react";
 import './smallRectangle.css'
-import '../../../../assets/fonts/font.css'
 
 const SmallRectangle = ({ title, text, competitorTitle, icon }) => { 
     return (

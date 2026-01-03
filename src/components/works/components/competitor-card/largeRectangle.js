@@ -1,6 +1,5 @@
 import React from "react";
 import './largeRectangle.css'
-import '../../../../assets/fonts/font.css'
 
 const LargeRectangle = ({ title, text, name1, name2, name3, innerText1, innerText2, innerText3 }) => { 
     return (

@@ -1,6 +1,5 @@
 import React from "react";
 import './designCard.css'
-import '../../../../assets/fonts/font.css'
 
 const DesignCard = ({ 
     number, title, image, alt, text1, 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SpotlightCard from "../../utilities/SpotlightCard";
 import { supabase } from "../../auth/supabaseClient";
 import './footer.css'
-import '../../assets/fonts/font.css'
 
 const Footer = () => {
     const [formData, setFormData] = useState({
