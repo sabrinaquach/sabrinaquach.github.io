@@ -5,10 +5,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollRevealImage = ({
+  // children,
   children,
-  scrollContainerRef,
-  from = { opacity: 0, y: 50 },
+  from = { opacity: 0, y: 40 },
   to = { opacity: 1, y: 0 },
+  scrollContainerRef,
+  // from = { opacity: 0, y: 50 },
+  // to = { opacity: 1, y: 0 },
+  
   start = "top 80%",
   end = "bottom top",
   duration = 1,
