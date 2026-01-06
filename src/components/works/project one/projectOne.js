@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './projectOne.css'
-import { BiSearchAlt, BiBook, BiRotateRight, BiSmile, BiPen, BiLayer, BiTargetLock, BiSliderAlt, BiBrain, BiShow } from "react-icons/bi";
+import { BiSearchAlt, BiBook, BiRotateRight, BiSmile, BiPen, BiLayer, BiTargetLock, BiSliderAlt, BiBrain, BiShow, } from "react-icons/bi";
+import { TbScale, TbTerminal2, TbMoodSearch, TbTrendingUp, TbBulb, TbCloudCheck, TbMoodOff } from "react-icons/tb";
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import Square from "../components/square/square";
 import Rectangle from "../components/theme-card/rectangle";
 import LargeRectangle from "../components/competitor-card/largeRectangle";
@@ -26,6 +28,7 @@ const ProjectOne = () => {
 
     const [modalImage, setModalImage] = useState(null);
 
+
     return (
         <div className="project1-container" id="AdobeFlux">
             <div className="project1-content">
@@ -43,9 +46,9 @@ const ProjectOne = () => {
 
             <section className="case-study-container">
                 {/* Background */}
-                <div className="background-container">
+                <div className="pinned-section background-container">
                     <div className="horizontal-line" />
-                    <h3 className="section-subheader">background</h3>
+                    <h3 className="pinned-inner section-subheader">background</h3>
                     <div className="background-block">
                         <div className="background-column">
                             <h2 className="background-subtitle">Tools</h2>
@@ -84,12 +87,21 @@ const ProjectOne = () => {
                         </div>
                     </div>
                     <div className="horizontal-line" />
-                </div>
+                {/* </div> */}
 
                 {/* Design Process */}
-                <div className="design-process-container">
-                    <h3 className="section-subheader">design process</h3>
+                {/* <div className="design-process-container"> */}
+                    <h3 className="pinned-inner section-subheader">design process</h3>
                     <div className="design-process-block">
+                        <div className="background-column">
+                            <div className="background-row">
+                                <BiSmile size={28} /> 
+                                <h2 className="background-subtitle">Deliver</h2>
+                            </div>
+                            <ul className="background-design-list">
+                                <li>final design</li>
+                            </ul>
+                        </div>
                         <div className="background-column">
                             <div className="background-row">
                                 <BiSearchAlt size={28} />
@@ -123,21 +135,102 @@ const ProjectOne = () => {
                                 <li>design iterations</li>
                             </ul>
                         </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSmile size={28} /> 
-                                <h2 className="background-subtitle">Deliver</h2>
+                    </div>
+                    <div className="horizontal-line" />
+                </div>
+
+                {/* Deliver */}
+                <div className="deliver-container">
+                    {/* Say Hello to Adobe Flux Section */}
+                    <div className="final-design-container">
+                    <h3 className="section-subheader">Deliver</h3>
+                    <h1 className="section-header">Say Hello to Adobe Flux</h1>
+                    <p className="research-description">
+                        Adobe Flux redefines creative flow by centering the designer from the very first interaction. Built for intuitive 
+                        control and expressive freedom, Flux adapts to how you think, create, and iterate on your terms.
+                    </p>
+
+                        {/* Design with Purpose Subsection */}
+                        <div className="final-design-content">
+                            <h3 className="section-subtitle">Design with Purpose</h3>
+                            <div className="final-design-column">
+                                <p className="research-description">
+                                    Before creating, Adobe Flux invites users to define their goals and moodboards, building AI context 
+                                    to ensure visuals match their creative intent.
+                                </p>
+                                <video 
+                                    src="/videos/project1-videos/adobeFlux-vid1.mov" 
+                                    loop 
+                                    muted
+                                    autoPlay
+                                    playsInline
+                                    className="final-design-video"
+                                />
                             </div>
-                            <ul className="background-design-list">
-                                <li>final design</li>
-                            </ul>
+                        </div>
+                        
+                        {/* Sketch for Control Subsection */}
+                        <div className="final-design-content">
+                            <h3 className="section-subtitle">Sketch for Control</h3>
+                            <div className="final-design-column">
+                                <p className="research-description">
+                                    Sketch Mode allows users to quickly express ideas, transforming them into polished AI visuals. 
+                                    Cursor tracking adds precision, enabling element-level refinements.
+                                </p>
+                                <video 
+                                    src="/videos/project1-videos/adobeFlux-vid2.mov" 
+                                    loop 
+                                    muted
+                                    autoPlay
+                                    playsInline
+                                    className="final-design-video"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Smart Edits with AI Subsection */}
+                        <div className="final-design-content">
+                            <h3 className="section-subtitle">Smart Edits with AI</h3>
+                            <div className="final-design-column">
+                                <p className="research-description">
+                                    Edit Mode offers tools for refining AI-generated images. Context-aware AI suggestions adapt to 
+                                    each user’s evolving creative direction.
+                                </p>
+                                <video 
+                                    src="/videos/project1-videos/adobeFlux-vid3.mov" 
+                                    loop 
+                                    muted
+                                    autoPlay
+                                    playsInline
+                                    className="final-design-video"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Gesture-Driven Interaction Subsection */}
+                        <div className="final-design-content">
+                            <h3 className="section-subtitle">Gesture-Driven Interaction</h3>
+                            <div className="final-design-column">
+                                <p className="research-description">
+                                    Users can resize, rotate, and reposition elements on the canvas using intuitive gestures—enabling 
+                                    fast, hands-on adjustments without breaking flow.
+                                </p>
+                                <video 
+                                    src="/videos/project1-videos/adobeFlux-vid4.mov" 
+                                    loop 
+                                    muted
+                                    autoPlay
+                                    playsInline
+                                    className="final-design-video"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="horizontal-line" />
                 </div>
 
                 {/* Research */}
-                <div classname="research-container">
+                <div className="research-container">
                     {/* The Challenge Section */}
                     <div className="challenge-container">
                         <h3 className="section-subheader">research</h3>
@@ -298,41 +391,49 @@ const ProjectOne = () => {
                                 <div className="theme-rectangle-row">
                                     <Rectangle 
                                         title="Ethics"
+                                        icon={<TbScale />}
                                         text="Users expressed concern about ownership, authorship, and the transparency of 
                                         AI-generated content, highlighting a need for ethical guardrails in creative tools."
                                     />
                                     <Rectangle 
                                         title="Prompts"
+                                        icon={<TbTerminal2 />}
                                         text="Prompt-based systems felt limiting and unnatural for many users, especially those 
                                         who preferred more visual or intuitive ways of expressing their ideas."
                                     />
                                     <Rectangle 
                                         title="Originality / User Control"
+                                        icon={<BiBrain />}
                                         text="Many creatives felt the AI was producing work that didn’t reflect their voice or 
                                         style, pointing to a need for tools that support originality and keep users in control."
                                     />
                                     <Rectangle 
                                         title="Behavior"
+                                        icon={<TbMoodSearch />}
                                         text="Interviews revealed consistent patterns: users would often rework AI results, abandon 
                                         tools mid-process, or revert to manual methods out of frustration or lack of trust."
                                     />
                                     <Rectangle 
                                         title="Efficiency"
+                                        icon={<TbTrendingUp />}
                                         text="While AI promised speed, users often found themselves spending more time correcting 
                                         or redoing work, making the process feel inefficient rather than streamlined."
                                     />
                                     <Rectangle 
                                         title="Problem-Solving"
+                                        icon={<TbBulb />}
                                         text="Users wanted AI to act more like a creative collaborator—helping them brainstorm, 
                                         iterate, and problem-solve rather than just generate finished outputs."
                                     />
                                     <Rectangle 
                                         title="Contextual Understanding"
+                                        icon={<TbCloudCheck />}
                                         text="A major pain point was AI’s inability to understand creative context—missing the 
                                         nuance of a user’s vision, project goals, or aesthetic preferences."
                                     />
                                     <Rectangle 
                                         title="Lack of Human Emotion"
+                                        icon={<TbMoodOff />}
                                         text="Users described AI outputs as “cold” or “soulless,” underscoring a desire for tools 
                                         that feel more emotionally aware and aligned with the human creative process."
                                     />
@@ -355,9 +456,9 @@ const ProjectOne = () => {
                                         text="All three tools demonstrate strong creative capabilities, transforming non-visual 
                                         inputs (text, sketches, or sound) into visual content."
                                         name1="DALL·E"
-                                        innerText1="Excels in versatility and sketch-to-image"
+                                        innerText1="Versatility & sketch-to-image"
                                         name2="MidJourney"
-                                        innerText2="Highly customizable and artistic"
+                                        innerText2="Strong artistic control"
                                         name3="Sound2Scene"
                                         innerText3="Uniquely bridges audio with visual generation"
                                     />
@@ -406,34 +507,33 @@ const ProjectOne = () => {
                                     core to the redesign."
                                 />
                                 <Rectangle
-                                    title="Lack of multimodal input"
+                                    title="No multimodal input"
                                     icon={<BiLayer size={28} />}
-                                    text="The core innovation of Flux is enabling sketch, voice, and gesture — making this a 
-                                    primary design opportunity."
+                                    text="The core innovation of Flux is enabling sketch, voice, and gesture."
                                 />
                                 <Rectangle
-                                    title="Misalignment with creative vision"
+                                    title="Creative mismatch"
                                     icon={<BiTargetLock size={28} />}
                                     text="The tool must visually reflect the user’s intent, so aligning outputs with creative 
                                     vision is crucial."
                                 />
                                 <Rectangle
-                                    title="Loss of user control"
+                                    title="Limited control"
                                     icon={<BiSliderAlt size={28} />}
-                                    text="Ensuring creatives feel in charge of the process drives trust and adoption — a key 
+                                    text="Ensuring creatives feel in charge of the process drives trust and adoption, a key 
                                     design consideration."
                                 />
                                 <Rectangle
-                                    title="Poor contextual understanding"
+                                    title="Context gaps"
                                     icon={<BiBrain size={28} />}
                                     text="Designing AI to better grasp goals and context is essential to making interactions 
                                     feel intelligent and relevant."
                                 />
                                 <Rectangle
-                                    title="Low accessibility for visual thinkers"
+                                    title="Not visual-friendly"
                                     icon={<BiShow size={28} />}
-                                    text="The interface must feel natural to non-technical, visually-driven users — directly 
-                                    shaping design choices."
+                                    text="The interface must feel natural to non-technical, visually-driven users which directly 
+                                    shape design choices."
                                 />
                             </div>
                             <div className="horizontal-line" />
@@ -444,7 +544,7 @@ const ProjectOne = () => {
                 </div>
 
                 {/* Define */}
-                <div classname="define-container">
+                <div className="define-container">
                     {/* Experience Drivers Section */}
                     <div className="experience-drivers-container">
                         <h3 className="section-subheader">Define</h3>
@@ -478,7 +578,8 @@ const ProjectOne = () => {
                                 Three design concepts were created to shape what our design would contain to ensure our experience 
                                 drivers were met.
                             </p>
-                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                            {/* 3D Modular Design Studio Subsection */}
+                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
                                     <img
                                         src="/images/project1-images/designConcept-1.png"
                                         alt="3D Modular Design Studio Concept"
@@ -488,45 +589,18 @@ const ProjectOne = () => {
                                             alt: '3D Modular Design Studio Concept'
                                         })}
                                     />
-                                    <img
-                                        src="/images/project1-images/designConcept-2.png"
-                                        alt="Interactive Visual Design Suite Concept"
-                                        className="designConcept-image"
-                                        onClick={() => setModalImage({
-                                            src: '/images/project1-images/designConcept-2.png',
-                                            alt: 'Interactive Visual Design Suite Concept'
-                                        })}
-                                    />
-                                    <img
-                                        src="/images/project1-images/designConcept-3.png"
-                                        alt="AI Agent Concept"
-                                        className="designConcept-image"
-                                        onClick={() => setModalImage({
-                                            src: '/images/project1-images/designConcept-3.png',
-                                            alt: 'AI Agent Concept'
-                                        })}
-                                    />
-                            </div>
-                        
-                            {/* 3D Modular Design Studio Subsection */}
-                            <h3 className="section-subtitle">1. 3D Modular Design Studio</h3>
-                            <div className="empathy-maps-column">
-                                <p className="research-description">
-                                    A design tool that modularizes 3D elements based on user-provided references, allowing intuitive, 
-                                    component-level adjustments through gestures and AI suggestions while preserving visual consistency. 
-                                    It supports rapid iteration with real-time feedback from an adaptive assistant.
-                                </p>
+                                    <div className="early-design-column">
+                                        <h3 className="section-subtitle-early-design">1. 3D Modular Design Studio</h3>
+                                        <p className="research-description">
+                                            A design tool that modularizes 3D elements based on user-provided references, allowing intuitive, 
+                                            component-level adjustments through gestures and AI suggestions while preserving visual consistency. 
+                                            It supports rapid iteration with real-time feedback from an adaptive assistant.
+                                        </p>
+                                    </div>
                             </div>
 
                             {/* Interactive Visual Design Suite Subsection */}
-                            <h3 className="section-subtitle">2. Interactive Visual Design Suite</h3>
-                            <div className="empathy-maps-column">
-                                <p className="research-description">
-                                    An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
-                                    palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
-                                    and smart, contextual suggestions.
-                                </p>
-                                {/* <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
                                     <img
                                         src="/images/project1-images/designConcept-2.png"
                                         alt="Interactive Visual Design Suite Concept"
@@ -536,19 +610,19 @@ const ProjectOne = () => {
                                             alt: 'Interactive Visual Design Suite Concept'
                                         })}
                                     />
-                                </div> */}
+                                    <div className="early-design-column">
+                                        <h3 className="section-subtitle-early-design">2. Interactive Visual Design Suite</h3>
+                                        <p className="research-description">
+                                            An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
+                                            palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
+                                            and smart, contextual suggestions.
+                                        </p>
+                                    </div>
                             </div>
 
                             {/* AI Agent Subsection */}
-                            <h3 className="section-subtitle">3. AI Agent</h3>
-                            <div className="empathy-maps-column">
-                                <p className="research-description">
-                                    An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
-                                    palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
-                                    and smart, contextual suggestions.
-                                </p>
-                                <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                    {/* <img
+                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
+                                    <img
                                         src="/images/project1-images/designConcept-3.png"
                                         alt="AI Agent Concept"
                                         className="designConcept-image"
@@ -556,8 +630,15 @@ const ProjectOne = () => {
                                             src: '/images/project1-images/designConcept-3.png',
                                             alt: 'AI Agent Concept'
                                         })}
-                                    /> */}
-                                </div>
+                                    />
+                                    <div className="early-design-column">
+                                        <h3 className="section-subtitle-early-design">3. AI Agent</h3>
+                                        <p className="research-description">
+                                            An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
+                                            palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
+                                            and smart, contextual suggestions.
+                                        </p>
+                                    </div>
                             </div>
                         </div>
                         <div className="horizontal-line" />
@@ -682,7 +763,7 @@ const ProjectOne = () => {
                 </div>
 
                 {/* Design & Iterate */}
-                <div classname="design-iterate-container">
+                <div className="design-iterate-container">
                     {/* High-fidelity Wireframes Section */}
                     <div className="hifi-wireframe-container">
                         <h3 className="section-subheader">Design & Iterate</h3>
@@ -803,99 +884,26 @@ const ProjectOne = () => {
 
                         <div className="horizontal-line" />
                     </div>
-
                 </div>
-                
-                {/* Deliver */}
-                <div classname="deliver-container">
-                    {/* Say Hello to Adobe Flux Section */}
-                    <div className="final-design-container">
-                    <h3 className="section-subheader">Deliver</h3>
-                    <h1 className="section-header">Say Hello to Adobe Flux</h1>
+
+                {/* Exploring What’s Next */}
+                <div className="reflection-container">
+                    <h1 className="section-header">Exploring What’s Next</h1>
                     <p className="research-description">
-                        Flux redefines creative flow by centering the designer from the very first interaction. Built for intuitive 
-                        control and expressive freedom, Flux adapts to how you think, create, and iterate—on your terms.
+                        Creating Adobe Flux reframed how I think about creative software, not as static tools, but as adaptive 
+                        systems shaped by human and AI collaboration. Designing for all creators at different levels required 
+                        questioning long-standing assumptions about authorship, control, and process, and instead focusing on how 
+                        intelligence can actively participate in creation without overriding creative intent. Iterative prototyping 
+                        and feedback revealed that trust, transparency, and flexibility are just as important as raw generative power 
+                        in emerging creative workflows. 
+                        <br/> <br/> 
+                        As the platform evolves, there is significant potential to push Flux further 
+                        through richer personalization, tighter connections across the Adobe ecosystem, and real-time collaborative 
+                        features that allow creators to co-create with both AI and one another. Exploring these directions could 
+                        transform Flux into a shared creative environment, one that amplifies imagination while maintaining clarity, 
+                        ownership, and deliberate artistic choice.
                     </p>
-
-                        {/* Design with Purpose Subsection */}
-                        <div className="final-design-content">
-                            <h3 className="section-subtitle">Design with Purpose</h3>
-                            <div className="final-design-column">
-                                <p className="research-description">
-                                    Before creating, Adobe Flux invites users to define their goals and moodboards, building AI context 
-                                    to ensure visuals match their creative intent.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid1.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
-                            </div>
-                        </div>
-                        
-                        {/* Sketch for Control Subsection */}
-                        <div className="final-design-content">
-                            <h3 className="section-subtitle">Sketch for Control</h3>
-                            <div className="final-design-column">
-                                <p className="research-description">
-                                    Sketch Mode allows users to quickly express ideas, transforming them into polished AI visuals. 
-                                    Cursor tracking adds precision, enabling element-level refinements.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid2.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Smart Edits with AI Subsection */}
-                        <div className="final-design-content">
-                            <h3 className="section-subtitle">Smart Edits with AI</h3>
-                            <div className="final-design-column">
-                                <p className="research-description">
-                                    Edit Mode offers tools for refining AI-generated images. Context-aware AI suggestions adapt to 
-                                    each user’s evolving creative direction.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid3.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Gesture-Driven Interaction Subsection */}
-                        <div className="final-design-content">
-                            <h3 className="section-subtitle">Gesture-Driven Interaction</h3>
-                            <div className="final-design-column">
-                                <p className="research-description">
-                                    Users can resize, rotate, and reposition elements on the canvas using intuitive gestures—enabling 
-                                    fast, hands-on adjustments without breaking flow.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid4.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                                
-
             </section>
         </div>
     )

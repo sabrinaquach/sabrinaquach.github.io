@@ -13,7 +13,6 @@ const About = () => {
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
     
-          // optional: clear state after scrolling so it doesn't re-trigger
           navigate(location.pathname, { replace: true, state: {} });
         }
       }

@@ -68,24 +68,37 @@ const Navbar = () => {
     };           
       
     const handleScrollToTop = () => {
-        if (location.pathname === '/') {
-          const el = document.getElementById('hero');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        } else if (location.pathname === '/about') {
-          const el = document.getElementById('about');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      //home
+      if (location.pathname === '/') {
+        document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    
+      //about page
+      if (location.pathname === '/about') {
+        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    
+      //project pages
+      if (location.pathname === '/AdobeFlux') {
+        document.getElementById('AdobeFlux')?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    
+      if (location.pathname === '/SpartanSync') {
+        document.getElementById('SpartanSync')?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    
+      if (location.pathname === '/Aura') {
+        document.getElementById('Aura')?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+       
       
     return (
         <nav className="navbar">
@@ -123,14 +136,14 @@ const Navbar = () => {
 
                 <div className='nav-buttons-wrapper'>
                   <div className='nav-buttons'>
-                      <div className='circle-button'>
+                      {/* <div className='circle-button'>
                           <button 
                               className='sun-button' 
                               onClick={handleContactClick}
                           >
                               <BiSun />
                           </button>
-                      </div>
+                      </div> */}
                       <div className='circle-button'>
                           <button 
                               className='top-button' 

@@ -29,7 +29,7 @@
 
 .large-rectangle-description {
     color: #979797;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     text-align: center;
     padding-bottom: 2rem;
 }
@@ -53,10 +53,16 @@
 .company-name {
     color: #000;
     min-width: 150px;
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
 .inner-text {
     color: #000;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);;
 }
 
 

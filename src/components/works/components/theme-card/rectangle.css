@@ -8,6 +8,13 @@
     flex: 1;
 }
 
+.rectangle-header-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+
 .rectangle-column {
     display: flex;
     flex-direction: column;
@@ -18,7 +25,7 @@
 .rectangle-title {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     color: #f2f3f4;
     text-align: center;
 }
@@ -28,3 +35,12 @@
     font-size: clamp(0.8rem, 2vw, 1rem);
     text-align: center;
 }
+
+.rectangle-icon {
+    font-size: 25px; 
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
