@@ -22,34 +22,35 @@ const ScrollRevealImage = ({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
-    const scroller = scrollContainerRef?.current ?? window;
-
-    const anim = gsap.fromTo(
-      el,
-      from,
-      { ...to, duration, paused: true }
-    );
-
-    const trigger = ScrollTrigger.create({
-      trigger: el,
-      scroller,
-      start,
-      end,
-      scrub,
-      toggleActions,
-      once,
-      onEnter: () => anim.play(),
-      onLeave: () => anim.reverse(),
-      onEnterBack: () => anim.play(),
-      onLeaveBack: () => anim.reverse(),
-    });
-
-    return () => {
-      trigger.kill();
-      anim.kill();
-    };
+  
+    const scroller = scrollContainerRef?.current || window;
+  
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        from,
+        {
+          ...to,
+          duration,
+          scrollTrigger: {
+            trigger: el,
+            scroller,
+            start,
+            end,
+            scrub,
+            toggleActions,
+            once,
+            invalidateOnRefresh: true,
+          }
+        }
+      );
+    }, el);
+  
+    ScrollTrigger.refresh();
+  
+    return () => ctx.revert();
   }, [scrollContainerRef, from, to, start, end, duration, scrub, toggleActions, once]);
+  
 
   return (
     <div ref={ref} className={className}>
