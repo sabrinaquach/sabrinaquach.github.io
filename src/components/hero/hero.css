@@ -45,12 +45,20 @@
   max-width: clamp(400px, 60vw, 1100px);
   text-transform: uppercase;
 }
+
+.ps-message {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: normal;
+  font-size: clamp(0.8rem, 1.3vw, 1.2rem);
+  padding-top: 2.5rem;
+}
   
 .message-row {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-top: 2rem;
+  /* justify-content: space-evenly; */
 }
   
 .message-button {

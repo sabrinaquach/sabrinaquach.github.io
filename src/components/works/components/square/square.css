@@ -1,5 +1,5 @@
 .square {
-    max-width: 15vw;
+    width: 15vw;
     height: auto;
     /* aspect-ratio: 1 / 1; */
     background-color: #5B5B5B;
@@ -31,13 +31,14 @@
 /* Mobile Layout */
 @media screen and (min-width: 769px) and (max-width: 1495px) {
     .square {
-        max-width: 17vw;
+        width: 17vw;
     }
 }
 
 @media screen and (max-width: 768px) {
     .square {
-        max-width: 85vw;
+        width: 85vw;
+        margin: 0 auto;
     }
     
 }

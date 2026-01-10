@@ -1,0 +1,433 @@
+.project2-image {
+    max-width: 20vw;
+    display: block;
+    height: auto;
+}
+
+.p-section-subtitle {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    padding-bottom: 1rem; 
+    color: #f2f3f4;
+}
+
+.p-final-design-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.final-design-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 6rem;
+    gap: 5rem;
+}
+
+.p-final-design-video {
+    max-width: 20vw;
+    object-fit: contain;
+    padding-bottom: 5rem;
+}
+
+.section-subtitle-orange {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    padding-bottom: 1rem; 
+    padding-top: 4rem;
+    color: #FFB266;
+}
+
+.p-square-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.current-state-image-row {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding-top: 4rem;
+}
+
+.current-state-image-label {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #f2f3f4;
+}
+
+.current-state-description {
+    padding-top: 4rem;
+}
+
+.research-question-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.research-question-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.research-question-label {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #f2f3f4;
+}
+
+.persona-row {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding-top: 3rem;
+}
+
+.persona-circle {
+    background: url(../../../../public/images/project2-images/Giselle-Persona.png);
+    background-size: cover;      
+    background-position: center;       
+    aspect-ratio: 1 / 1;
+    width: 80vw;
+    /* max-width: 15rem; */
+    border-radius: 50%;
+    align-self: center;
+}
+
+.interview-quote-column {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    gap: 2rem;
+}
+
+.interview-quote-circle {
+    background-size: cover;      
+    background-position: center;       
+    aspect-ratio: 1 / 1;
+    width: 8vw;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.interview-quote-description {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    max-width: 520px;
+}
+
+.findings-list {
+    list-style: none; 
+    text-indent: 20px;
+    max-width: 100%;
+    color: #f0f0f0;
+}
+
+.findings-list li::before {
+    content: "-";
+    margin-right: 0.5rem;
+    color: #f0f0f0;
+}
+
+.findings-question {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #FFB266;
+    max-width: 100%;
+    padding-top: 2rem;
+}
+
+.p-hifi-wireframe-video {
+    max-width: 20vw;
+    object-fit: contain;
+    padding-bottom: 5rem;
+    margin: 0 auto;
+}
+
+.design-iterations-content-row {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.design-iterations-row {
+    display: flex;
+    flex-direction: row;
+    /* gap: 8rem; */
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+.design-iterations-number {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 20vw, 15rem);
+    color: #f2f3f4;
+}
+
+.design-iterations-subtitle {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    padding-top: 6rem; 
+    color: #f2f3f4;
+}
+
+.design-iterations-inner-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.design-iteration-img {
+    max-width: 20vw;
+    object-fit: contain;
+    /* padding-bottom: 5rem; */
+}
+
+.design-iteration-card {
+    width: 100%;
+    max-width: 100%;
+    height:fit-content;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 1rem 1rem;
+}
+
+.design-iterations-inner-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 5.5rem;
+}
+
+.design-iteration-inner-inner-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.design-iterations-subtitle-content {
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #f2f3f4;
+    /* text-align: center; */
+}
+
+.arrow-before-after {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.arrow-icon {
+    align-self: center;
+    width: 80px;
+    height: 80px;
+}
+
+/* tablet and mid-size screens */
+@media screen and (min-width: 769px) and (max-width: 1495px) {
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin: 0; 
+        padding-left: 0;
+    }
+
+    .case-study-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin: 0 auto;   
+    }
+
+    .project-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-block, .design-process-block {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    } 
+
+    .timeline-list {
+        min-width: 200px;
+    }
+
+    .research-description, .design-with-intent-list, .current-state-list,
+    .interviews-with-creatives-list, .challenge-question,
+    .experience-drivers-question, .core-row, .themes-wrapper, 
+    .competitor-wrapper, .lofi-wireframes-image, .prioritization-image,
+    .style-guide-image, .hifi-wireframe-video, .key-feedback-title,
+    .final-design-video, .designConcept-image, .empathy-map-image {
+        max-width: 75vw;
+    }
+
+    .early-design-column {
+        max-width: 70vw;
+    }
+    .designConcept-image {
+        max-width: 20vw;
+    }
+
+    .empathy-map-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        transition: filter 0.3s ease;
+    }
+    .prioritization-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+  
+    .project1-block {
+      flex-wrap: wrap;        
+      gap: 3rem;
+    }
+  
+    .text-column,
+    .project1-content-items {
+      flex: 1 1 100%;
+      min-width: 0;             
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .timeline-list,
+    .role-tool-list,
+    .design-iterate {
+      min-width: 0; 
+      width: 100%;
+    }
+  }
+  
+  /* mobile screens*/
+  @media screen and (max-width: 768px) {
+    .project2-image {
+        max-width: 40vw;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .final-design-row {
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 3rem;
+    }
+
+    .p-final-design-video {
+        max-width: 40vw;
+        margin: 0 auto;
+        padding-bottom: 3rem;
+    }
+
+    .ch
+
+    .theme-rectangle-row, .competitor-row {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .research-description, .design-with-intent-list, .current-state-list,
+    .interviews-with-creatives-list, .challenge-question,
+    .experience-drivers-question, .core-row, .themes-wrapper, 
+    .competitor-wrapper, .lofi-wireframes-image, .prioritization-image,
+    .style-guide-image, .hifi-wireframe-video, .key-feedback-title,
+    .final-design-video, .designConcept-image {
+        max-width: 85vw;
+    }
+
+    .early-design-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        transition: filter 0.3s ease;
+    }
+
+    .empathy-map-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: filter 0.3s ease;
+    }
+
+    .empathy-map-image {
+        max-width: 85vw;
+    }
+
+    .prioritization-image-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .prioritization-content-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .prioritization-image {
+        max-width: 85vw;
+    }
+
+    .core-row, .square-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+  
+    .timeline-list,
+    .role-tool-list,
+    .design-iterate {
+      min-width: 0; 
+      width: 100%;
+    }
+
+    .design-with-intent-list, .current-state-list, 
+    .interviews-with-creatives-list {
+        text-indent: 10px;
+        max-width: 85vw;
+    }
+
+    .design-with-intent-list-item, .current-state-list-item {
+        padding-bottom: 1rem;
+    }
+
+    .design-iterations-column {
+        gap: 4rem;
+    }
+
+    .reflection-container {
+        padding-bottom: 0;
+    }
+  
+    .horizontal-line {
+      width: 100%;
+      margin: 4rem auto;
+    }
+  }

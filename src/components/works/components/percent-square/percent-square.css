@@ -1,0 +1,66 @@
+.percent-square {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 2.5rem;
+    background-color: #8B7E74;
+    border-radius: 25px;
+  }
+
+  .percent-square-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+  
+.percent-square-percent {
+    font-family: 'Inter', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    flex-shrink: 0;
+}
+  
+.percent-square-description {
+    font-size: 1.05rem;
+    color: #fff;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 250px;
+}
+
+.percent-square-image {
+    object-fit: contain;
+    background-position: center;       
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    align-self: center;
+}
+  
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .percent-square {
+        max-width: 100%;
+    }
+}
+  
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .percent-square {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+  
+    .percent-square-percent {
+        font-size: 3rem;
+    }
+}
+  

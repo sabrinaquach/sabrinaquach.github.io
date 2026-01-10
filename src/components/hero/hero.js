@@ -1,4 +1,3 @@
-// src/components/hero/Hero.js
 import { useEffect, useState } from 'react';
 import { FiMessageSquare } from 'react-icons/fi';
 import ASCIIText from '../../utilities/ASCIIText';
@@ -48,6 +47,7 @@ const Hero = ({ onMessageClick }) => {
                 STUDYING ENGINEERING AND DESIGN HELPED ME SEE TECH PROBLEMS THROUGH A NEW LENS, 
                 ONE THAT FOCUSES ON REAL PEOPLE.
             </p>
+            <p className="ps-message">p.s. I built this from scratch :)</p>
             <div className="message-row nav-buttons">
                 <button className='message-button' onClick={onMessageClick}>
                   <FiMessageSquare />

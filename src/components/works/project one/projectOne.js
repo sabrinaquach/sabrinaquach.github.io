@@ -15,31 +15,33 @@ const ProjectOne = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-      if (location.state?.scrollTo === 'about') {
-        const el = document.getElementById('about');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-    
-          navigate(location.pathname, { replace: true, state: {} });
-        }
-      }
+        setTimeout(() => {
+            if (location.state?.scrollTo) {
+                const el = document.getElementById(location.state.scrollTo);
+            if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+            }
+                navigate(location.pathname, { replace: true, state: {} });
+            } else {
+                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+            }
+        }, 0);
     }, [location, navigate]);
-    
 
     const [modalImage, setModalImage] = useState(null);
 
 
     return (
-        <div className="project1-container" id="AdobeFlux">
-            <div className="project1-content">
-                <div className="project1-block">
+        <div className="project-container" id="AdobeFlux">
+            <div className="project-content">
+                <div className="project-block">
                     <div className="text-column">
-                        <h3 className="project1-header">Case Study</h3>
-                        <h1 className="project1-title">Adobe Flux</h1>
-                        <p className="project1-description">Generative AI tool that creates visuals through actions.</p>
+                        <h3 className="project-header">Case Study</h3>
+                        <h1 className="project-title">Adobe Flux</h1>
+                        <p className="project-description">Generative AI tool that creates visuals through actions.</p>
                     </div>
-                    <div className="project1-content-items">
-                        <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe FLux Image"/>
+                    <div className="project-content-items">
+                        <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe Flux"/>
                     </div>
                 </div>
             </div>
