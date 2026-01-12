@@ -4,7 +4,7 @@
     height: auto;
     background-color: #f2f3f4;;
     border-radius: 5px;
-    padding: 2.2rem 2.5rem;
+    padding: 2rem;
     flex: 1;
 }
 
@@ -18,7 +18,7 @@
 .small-rectangle-title {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: 1.1rem;
     color: #f2f3f4;
 }
 
@@ -26,6 +26,6 @@
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
     color: #000;
-    font-size: clamp(0.85rem, 2vw, 1.2rem);
+    font-size: 0.9rem;
     text-align: center;
 }

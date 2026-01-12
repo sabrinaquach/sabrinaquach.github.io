@@ -15,18 +15,17 @@ const ProjectOne = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setTimeout(() => {
-            if (location.state?.scrollTo) {
-                const el = document.getElementById(location.state.scrollTo);
+        if (location.state?.scrollTo === 'AdobeFlux') {
+          setTimeout(() => {
+            const el = document.getElementById('AdobeFlux');
             if (el) {
-                  el.scrollIntoView({ behavior: 'smooth' });
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+              navigate(location.pathname, { replace: true, state: {} });
             }
-                navigate(location.pathname, { replace: true, state: {} });
-            } else {
-                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-            }
-        }, 0);
-    }, [location, navigate]);
+          }, 0);
+        }
+      }, [location, navigate]);      
 
     const [modalImage, setModalImage] = useState(null);
 
@@ -466,7 +465,7 @@ const ProjectOne = () => {
                                     />
                                     <LargeRectangle
                                         title="weaknesses"
-                                        text="These three tools face technical and usability challenges, such as the need for highly specific 
+                                        text="These three tools face technical and usability challenges, like the need for highly specific 
                                         prompts, inconsistent realism, limited access."
                                         name1="DALL·E"
                                         innerText1="Need to be very descriptive"
@@ -479,7 +478,7 @@ const ProjectOne = () => {
                                         competitorTitle="Opportunities"
                                         text="Each tool has room to grow by enhancing user personalization, expanding access methods, and 
                                         introducing features like real-time editing, better prompt support, and adaptive learning for 
-                                        user-specific styles or audio cues."
+                                        user-specific styles/audio cues."
                                     />
                                     <Rectangle
                                         competitorTitle="Threats"
@@ -541,8 +540,6 @@ const ProjectOne = () => {
                             <div className="horizontal-line" />
                         </div>
                     </div>
-
-                    {/* <div className="horizontal-line" /> */}
                 </div>
 
                 {/* Define */}
@@ -835,7 +832,7 @@ const ProjectOne = () => {
                                 and provided clearer indicators of where the user is. 
                             </p>
                             <DesignCard 
-                                number="1."
+                                number="01."
                                 title="Improving Context and Streamlining Navigation"
                                 image="/images/project1-images/iteration1-before.png"
                                 alt="Adobe FLux Iteration 1"
@@ -851,7 +848,7 @@ const ProjectOne = () => {
                                 text8="✅ Made gesture prompts appear contextually, only when needed"
                             />
                             <DesignCard 
-                                number="2."
+                                number="02."
                                 title="Clarifying Focus & Reducing Cognitive Load"
                                 image="/images/project1-images/iteration2-before.png"
                                 alt="Adobe FLux Iteration 2"
@@ -867,7 +864,7 @@ const ProjectOne = () => {
                                 text8="✅ Added a persistent prompt reminder for continuity and direction"
                             />
                             <DesignCard 
-                                number="3."
+                                number="03."
                                 title="Strengthening Identity & Edit Mode Clarity"
                                 image="/images/project1-images/iteration3-before.png"
                                 alt="Adobe FLux Iteration 3"
@@ -886,26 +883,28 @@ const ProjectOne = () => {
 
                         <div className="horizontal-line" />
                     </div>
+
+                    {/* Exploring What’s Next */}
+                    <div className="reflection-container">
+                        <h1 className="section-header">Exploring What’s Next</h1>
+                        <p className="research-description">
+                            Creating Adobe Flux reframed how I think about creative software, not as static tools, but as adaptive 
+                            systems shaped by human and AI collaboration. Designing for all creators at different levels required 
+                            questioning long-standing assumptions about authorship, control, and process, and instead focusing on how 
+                            intelligence can actively participate in creation without overriding creative intent. Iterative prototyping 
+                            and feedback revealed that trust, transparency, and flexibility are just as important as raw generative power 
+                            in emerging creative workflows. 
+                            <br/> <br/> 
+                            As the platform evolves, there is significant potential to push Flux further 
+                            through richer personalization, tighter connections across the Adobe ecosystem, and real-time collaborative 
+                            features that allow creators to co-create with both AI and one another. Exploring these directions could 
+                            transform Flux into a shared creative environment, one that amplifies imagination while maintaining clarity, 
+                            ownership, and deliberate artistic choice.
+                        </p>
+                    </div>
                 </div>
 
-                {/* Exploring What’s Next */}
-                <div className="reflection-container">
-                    <h1 className="section-header">Exploring What’s Next</h1>
-                    <p className="research-description">
-                        Creating Adobe Flux reframed how I think about creative software, not as static tools, but as adaptive 
-                        systems shaped by human and AI collaboration. Designing for all creators at different levels required 
-                        questioning long-standing assumptions about authorship, control, and process, and instead focusing on how 
-                        intelligence can actively participate in creation without overriding creative intent. Iterative prototyping 
-                        and feedback revealed that trust, transparency, and flexibility are just as important as raw generative power 
-                        in emerging creative workflows. 
-                        <br/> <br/> 
-                        As the platform evolves, there is significant potential to push Flux further 
-                        through richer personalization, tighter connections across the Adobe ecosystem, and real-time collaborative 
-                        features that allow creators to co-create with both AI and one another. Exploring these directions could 
-                        transform Flux into a shared creative environment, one that amplifies imagination while maintaining clarity, 
-                        ownership, and deliberate artistic choice.
-                    </p>
-                </div>
+                
             </section>
         </div>
     )

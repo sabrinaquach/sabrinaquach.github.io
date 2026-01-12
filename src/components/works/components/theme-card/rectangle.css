@@ -4,7 +4,7 @@
     height: auto;
     border: 1px solid #fff;
     border-radius: 5px;
-    padding: 2.2rem 2.5rem;
+    padding: 2rem;
     flex: 1;
 }
 
@@ -25,14 +25,14 @@
 .rectangle-title {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: 1.1rem;
     color: #f2f3f4;
     text-align: center;
 }
 
 .rectangle-description {
     color: #979797;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 0.85rem;
     text-align: center;
 }
 

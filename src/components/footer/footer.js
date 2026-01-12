@@ -85,7 +85,7 @@ const Footer = () => {
                                     value={formData.message} 
                                     onChange={handleChange} 
                                     className="message-msg" 
-                                    rows="8"  
+                                    rows="7"  
                                     placeholder="Your message"
                                 />
                                 <div className="submit-container">

@@ -4,7 +4,7 @@
     height: auto;
     border: 1px solid #fff;
     border-radius: 5px;
-    padding: 2.2rem 2.5rem;
+    padding: 2rem;
     flex: 1;
 }
 
@@ -18,7 +18,7 @@
 .large-rectangle-title {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: 1.1rem;
     color: #f2f3f4;
 }
 
@@ -29,9 +29,9 @@
 
 .large-rectangle-description {
     color: #979797;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: 0.8rem;
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .inner-rectangle {
@@ -40,13 +40,13 @@
     height: auto;
     background-color: #f2f3f4;
     border-radius: 5px;
-    padding: 2.2rem 2.5rem;
+    padding: 2rem;
 }
 
 .inner-row {
     display: grid;
     grid-template-columns: 150px 1fr;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -55,14 +55,14 @@
     min-width: 150px;
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: 1.1rem;
 }
 
 .inner-text {
     color: #000;
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);;
+    font-size: 0.8rem;
 }
 
 

@@ -8,7 +8,7 @@
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    font-size: clamp(1.1rem, 1.7vw, 2rem);
     padding-bottom: 1rem; 
     color: #f2f3f4;
 }
@@ -36,7 +36,7 @@
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    font-size: clamp(1.1rem, 1.7vw, 2rem);
     padding-bottom: 1rem; 
     padding-top: 4rem;
     color: #FFB266;
@@ -60,8 +60,15 @@
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
     color: #f2f3f4;
+}
+
+.current-state-image {
+    max-width: 40vw;
+    border-radius: 5px;
+    width: 100%;
+    cursor: zoom-in;
 }
 
 .current-state-description {
@@ -241,7 +248,7 @@
 }
 
 /* tablet and mid-size screens */
-@media screen and (min-width: 769px) and (max-width: 1495px) {
+/* @media (max-width: 1024px) {
     .project-content {
         flex-direction: column;
         align-items: center;
@@ -285,9 +292,6 @@
         max-width: 75vw;
     }
 
-    .early-design-column {
-        max-width: 70vw;
-    }
     .designConcept-image {
         max-width: 20vw;
     }
@@ -324,7 +328,7 @@
       min-width: 0; 
       width: 100%;
     }
-  }
+  } */
   
   /* mobile screens*/
   @media screen and (max-width: 768px) {
@@ -343,91 +347,61 @@
 
     .p-final-design-video {
         max-width: 40vw;
-        margin: 0 auto;
+        object-fit: contain;
         padding-bottom: 3rem;
+        align-self: center;
     }
 
-    .ch
-
-    .theme-rectangle-row, .competitor-row {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .research-question-row,
+    .persona-row,
+    .design-iterations-content-row,
+    .design-iterations-row,
+    .design-iterations-inner-row,
+    .current-state-image-row,
+    .p-square-row {
+        flex-direction: column;
+        /* align-items: center; */
     }
 
-    .research-description, .design-with-intent-list, .current-state-list,
-    .interviews-with-creatives-list, .challenge-question,
-    .experience-drivers-question, .core-row, .themes-wrapper, 
-    .competitor-wrapper, .lofi-wireframes-image, .prioritization-image,
-    .style-guide-image, .hifi-wireframe-video, .key-feedback-title,
-    .final-design-video, .designConcept-image {
+    img, video {
+        max-width: 100%;
+    }
+
+    .current-state-image {
         max-width: 85vw;
     }
 
-    .early-design-image-row {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-        transition: filter 0.3s ease;
+    .interview-quote-circle {
+        width: 30vw;
     }
 
-    .empathy-map-image-row {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        transition: filter 0.3s ease;
-    }
-
-    .empathy-map-image {
-        max-width: 85vw;
-    }
-
-    .prioritization-image-row {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-    }
-    
-    .prioritization-content-column {
-        display: flex;
-        flex-direction: column;
+    .interview-quote-column {
+        padding-bottom: 2rem;
+        padding-top: 2rem;
         gap: 1rem;
     }
-    
-    .prioritization-image {
-        max-width: 85vw;
-    }
 
-    .core-row, .square-row {
-        flex-direction: column;
+    .research-question-row {
         gap: 1rem;
     }
-  
-    .timeline-list,
-    .role-tool-list,
-    .design-iterate {
-      min-width: 0; 
-      width: 100%;
+
+    .persona-circle {
+        max-width: 60vw;
     }
 
-    .design-with-intent-list, .current-state-list, 
-    .interviews-with-creatives-list {
-        text-indent: 10px;
-        max-width: 85vw;
+    .persona-row {
+        gap: 2rem;
     }
 
-    .design-with-intent-list-item, .current-state-list-item {
-        padding-bottom: 1rem;
+    .design-iterations-subtitle {
+        padding-top: 3rem;
+    }
+    
+    .design-iterations-content-row {
+        gap: 0;
     }
 
-    .design-iterations-column {
-        gap: 4rem;
-    }
-
-    .reflection-container {
-        padding-bottom: 0;
-    }
-  
-    .horizontal-line {
-      width: 100%;
-      margin: 4rem auto;
+    .design-iteration-img {
+        max-width: 30vw;
     }
   }

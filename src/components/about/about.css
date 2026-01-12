@@ -7,10 +7,11 @@
     align-items: center;
 }
 .about-content {
-    padding: 18rem 2rem;  
+    padding-top: 10rem;  
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 80px;
 }
 .content-row {
     display: flex;
@@ -29,7 +30,7 @@
 }
 .about-title {
     color: #fff;
-    font-size: clamp(4rem, 8vw, 8rem);
+    font-size: clamp(4rem, 6vw, 8rem);
     font-family: 'Inter';
     text-transform: uppercase;
 }
@@ -38,8 +39,8 @@
     background-size: cover;      
     background-position: center;       
     aspect-ratio: 1 / 1;
-    width: 30vw;
-    max-width: 15rem;
+    width: 100%;
+    max-width: 220px;
     border-radius: 50%;
     align-self: center;
 }
@@ -58,7 +59,7 @@
 .about-description {
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    font-size: clamp(0.9rem, 0.6vw, 1.1rem);
     max-width: 450px;
     padding-bottom: 3rem;
 }
@@ -78,7 +79,7 @@
     font-weight: normal;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 0.6vw, 1.1rem);
     cursor: pointer;
 }
 .message-button svg {
@@ -144,7 +145,7 @@
 .photo-10 { grid-area: ten; background-image: url(../../assets/images/orchids.jpg); }
 
 
-  @media screen and (min-width: 769px) and (max-width: 1495px) {
+@media (max-width: 1024px) {
     .about-content {
         padding: 18rem 10rem 15rem 15rem;  
         display: flex;

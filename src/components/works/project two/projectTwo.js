@@ -298,7 +298,7 @@ const ProjectTwo = () => {
                                         <img
                                             src="/images/project2-images/opening-view.png"
                                             alt="Feasibility Chart"
-                                            className="prioritization-image"
+                                            className="current-state-image"
                                             onClick={() => setModalImage({
                                                 src: '/images/project2-images/opening-view.png',
                                                 alt: 'Enrollment opening view'
@@ -312,7 +312,7 @@ const ProjectTwo = () => {
                                         <img
                                             src="/images/project2-images/added-class-in-cart.png"
                                             alt="Feasibility Chart"
-                                            className="prioritization-image"
+                                            className="current-state-image"
                                             onClick={() => setModalImage({
                                                 src: '/images/project2-images/added-class-in-cart.png',
                                                 alt: 'Added class in cart'
@@ -328,7 +328,7 @@ const ProjectTwo = () => {
                                         <img
                                             src="/images/project2-images/class-list.png"
                                             alt="Feasibility Chart"
-                                            className="prioritization-image"
+                                            className="current-state-image"
                                             onClick={() => setModalImage({
                                                 src: '/images/project2-images/class-list.png',
                                                 alt: 'List of classes'
@@ -342,7 +342,7 @@ const ProjectTwo = () => {
                                         <img
                                             src="/images/project2-images/myprogress.png"
                                             alt="Feasibility Chart"
-                                            className="prioritization-image"
+                                            className="current-state-image"
                                             onClick={() => setModalImage({
                                                 src: '/images/project2-images/myprogress.png',
                                                 alt: 'MyProgress student view'

@@ -25,14 +25,14 @@
 .design-card-number {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(2rem, 3vw, 4rem);
+    font-size: 3rem;
     color: #FFB266;
 }
 
 .design-card-title {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    font-size: 1.5rem;
     color: #f2f3f4;
 }
 
@@ -48,11 +48,11 @@
 
 .problem-solution-card {
     width: 100%;
-    max-width: 100%;
+    /* max-width: 100%; */
     height: auto;
     border: 1px solid #fff;
     border-radius: 5px;
-    padding: 2.2rem 2.5rem;
+    padding: 2rem;
 }
 
 .problem-solution-column {
@@ -66,13 +66,13 @@
     color: #f2f3f4;
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-size: 1.1rem;
     padding-bottom: 1rem;
 }
 
 .problem-solution-text {
     color: #f0f0f0;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: 0.9rem;
 }
 
 /* tablet and mis-size screens */

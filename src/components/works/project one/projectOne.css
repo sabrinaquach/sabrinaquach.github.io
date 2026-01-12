@@ -1,15 +1,19 @@
 p, li {
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);;
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
 }
+
 .project-container {
-    background-color: #000;
-    min-height: 100vh;              
-    min-width: 100vw;   
-    display: flex;  
-    flex-direction: column;
-    align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: black;
+  padding-left: 80px;
 }
 
 .project-content {
@@ -17,11 +21,11 @@ p, li {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    max-width: 1020px;
 }
 
 .project-block {
     height: auto;
-    margin-left: calc(80px + 2rem);
     max-width: 1200px; 
     width: 100%;
     display: flex;
@@ -31,7 +35,8 @@ p, li {
 
 .text-column {
     flex: 1;
-    min-width: 650px;
+    width: 100%;
+    min-width: 550px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
@@ -53,14 +58,14 @@ p, li {
 
 .project-header {
     color: #5B5B5B;
-    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.7rem, 0.4vw, 0.9rem);
     font-family: 'Inter';
     text-transform: uppercase;
 }
 
 .project-title {
     color: #f2f3f4;
-    font-size: clamp(3rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
     font-family: 'Inter';
     text-transform: uppercase;
 }
@@ -68,7 +73,7 @@ p, li {
 .project-description {
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
-    font-size: clamp(1rem, 1vw, 1.5rem);
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
     max-width: 100%;
     padding-bottom: 3rem;
     color: #f0f0f0;
@@ -87,8 +92,15 @@ p, li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: calc(80px + 2rem);
     max-width: 1200px;   
+    width: 100%;
+    padding: 0 4rem;
+}
+
+.project-block,
+.case-study-container {
+    margin: 0 auto;
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -102,7 +114,7 @@ p, li {
 
 .section-subheader {
     color: #484848;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 0.6vw, 1rem);
     font-family: 'Inter';
     text-transform: uppercase;
     padding-bottom: 1rem;
@@ -138,7 +150,7 @@ p, li {
 .background-subtitle {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     color: #f2f3f4;
 }
 
@@ -146,7 +158,7 @@ p, li {
     list-style-type: none;
     text-transform: capitalize;
     line-height: 1.4;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
     color: #979797;
 }
 
@@ -178,13 +190,14 @@ p, li {
 
 .challenge-question {
     padding-top: 0.5rem;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
     color: #FFB266;
     max-width: 100%;
 }
 
 .research-description {
-    max-width: 100%;
+    max-width: 1200px;
+    width: 100%;
     line-height: 1.5;
     color: #f0f0f0;
 }
@@ -221,7 +234,7 @@ p, li {
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    font-size: clamp(1.1rem, 1.7vw, 2rem);
     padding-bottom: 1rem; 
     padding-top: 4rem;
     color: #f2f3f4;
@@ -290,21 +303,21 @@ p, li {
 
  .competitor-row, .theme-rectangle-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     flex-wrap: wrap;
     gap: 2rem;
 }
 
 .painpoints-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     flex-wrap: wrap;
     gap: 2rem;
 }
 
 .themes-wrapper, .competitor-wrapper {
-    max-width: 65vw;
-    width: 100%;
+    max-width: 1020px;
+    width: 100%;    
 }
 
 /* competitor anaylsis section */
@@ -328,9 +341,9 @@ p, li {
 }
 
 .experience-drivers-question {
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
     color: #FFB266;
-    max-width: 100%;
+    max-width: 1020px;
     padding-bottom: 2rem;
 }
 
@@ -338,14 +351,14 @@ p, li {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    /* max-width: 1150px; */
-    width: 100%;
-    max-width: 65vw;
+    max-width: 1020px;
+    width: 100%;    
 }
 
 /* early design concept section */
 .designConcept-image {
     max-width: 20vw;
+    width: 100%;
     border-radius: 5px;
     cursor: zoom-in;
     transition: transform 0.3s ease;
@@ -367,7 +380,7 @@ p, li {
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.1rem, 3vw, 1.7rem);
+    font-size: clamp(1.1rem, 1.7vw, 2rem);
     padding-bottom: 1rem; 
     /* padding-top: 4rem; */
     color: #f2f3f4;
@@ -378,6 +391,7 @@ p, li {
     gap: 1.5rem;
     transition: filter 0.3s ease;
     padding-top: 4rem;
+    max-width: 1020px;
 }
 
 /* prioritization section */
@@ -403,7 +417,7 @@ p, li {
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    font-size: clamp(1.1rem, 1.7vw, 2rem);
     color: #f2f3f4;
 }
 
@@ -416,8 +430,9 @@ p, li {
 
 /* lofi wireframes section */
 .lofi-wireframes-image {
-    max-width: 65vw;
-    width: 100%;
+    /* max-width: 900px; */
+    /* max-width: 1020px;
+    width: 100%; */
     border-radius: 5px;
     cursor: zoom-in;
 }
@@ -430,7 +445,7 @@ p, li {
 
 /* style guide section */
 .style-guide-image {
-    max-width: 65vw;
+    max-width: 900px;
     width: 100%;
     cursor: zoom-in;
     object-fit: contain;
@@ -457,13 +472,14 @@ p, li {
 }
 
 .key-feedback-title {
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
-    max-width: 65vw;
+    font-size: clamp(0.95rem, 0.6vw, 1.1rem);
+    /* max-width: 1020px; */
+    /* width: 100%;     */
     color: #f0f0f0;
 }
 
 .key-feedback-list {
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: clamp(0.85rem, 2vw, 1rem);
     color: #979797;
     list-style: none; 
     text-indent: 10px;
@@ -491,7 +507,7 @@ p, li {
 }
 
 .final-design-video {
-    max-width: 60vw;
+    max-width: 55vw;
     object-fit: contain;
     padding-bottom: 5rem;
     margin: 0 auto;
@@ -502,7 +518,7 @@ p, li {
 }
   
 /* tablet and mid-size screens */
-@media screen and (min-width: 769px) and (max-width: 1495px) {
+@media (max-width: 1024px) {
     .project-content {
         flex-direction: column;
         align-items: center;
@@ -589,6 +605,10 @@ p, li {
   
   /* mobile screens*/
   @media screen and (max-width: 768px) {
+    .project-container {
+        padding-left: 0;
+    }
+
     .project-content * {
       flex-direction: column;
       align-items: center;
@@ -601,7 +621,8 @@ p, li {
         display: flex;
         flex-direction: column;
         align-items: center; 
-        margin: 0 auto;   
+        padding: 0 2rem;
+        /* margin: 0 auto;    */
     }
 
     .background-block {
@@ -660,7 +681,7 @@ p, li {
     .experience-drivers-question, .core-row, .themes-wrapper, 
     .competitor-wrapper, .lofi-wireframes-image, .prioritization-image,
     .style-guide-image, .hifi-wireframe-video, .key-feedback-title,
-    .final-design-video, .designConcept-image {
+    .final-design-video, .designConcept-image, .early-design-column {
         max-width: 85vw;
     }
 
@@ -732,4 +753,4 @@ p, li {
       width: 100%;
       margin: 4rem auto;
     }
-  }
+}

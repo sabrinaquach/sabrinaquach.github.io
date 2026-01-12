@@ -9,7 +9,8 @@
     align-items: stretch;
     gap: 2rem;
     flex-wrap: wrap;
-    padding: 4rem 4rem 1.5rem 4rem;
+    max-width: 1120px;
+    padding: 2rem;
 }
 .column-left, .message-column {
     flex: 1 1 400px; 
@@ -23,26 +24,22 @@
   width: 100%;
   box-sizing: border-box;
 }
-.s-title {
+.s-title, .q-title {
     font-family: 'Inter';
-    font-size: 8rem;
+    font-size: 5rem;
 }
 .inital-subtitle {
     font-family: 'Inter';
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #888888;
     padding-bottom: 0.5rem;
+    padding-top: 0.8rem;
 }
 .inital-email {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-}
-.q-title {
-    font-family: 'Inter';
-    font-size: 8rem;
-    padding-bottom: 2rem;
 }
 .link-list {
     display: flex;
@@ -54,7 +51,7 @@
     font-weight: 800;
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: color 0.2s ease;
 }
 /* hover colors for link list */
@@ -90,7 +87,7 @@
 }
 .message-title {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: 'Inter';
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -99,12 +96,12 @@
     color: #B9B9B9;
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 0.9rem;
     max-width: 600px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 .message-name, .message-email, .message-msg {
-    font-size: 16px;
+    font-size: 0.8rem;
     width: 100%;
     max-width: 600px;
     margin-bottom: 1rem;
@@ -139,7 +136,7 @@
     text-transform: uppercase;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -147,21 +144,21 @@
     background-color: #FFB266;
 }
 .cutoff-wrapper {
-    height: 10.3rem;   
+    height: 8.3rem;   
     overflow: hidden;
     position: relative;
 }
 .connect-bottom {
     font-family: 'Inter';
     text-transform: uppercase;
-    text-align: center;
-    font-size: clamp(4rem, 16.5vw, 38rem);
+    /* text-align: center; */
+    font-size: 16vw;
     overflow: hidden;
     line-height: 1;
     position: relative;          
 }
 
-  @media (min-width: 901px) and (max-width: 1495px) {
+@media (max-width: 1024px) {
     .footer {
       /* padding-left: 180px; */
       padding-top: 10rem;
@@ -195,7 +192,7 @@
       }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     .footer {
       padding-left: 0;
       padding-top: 10rem;
