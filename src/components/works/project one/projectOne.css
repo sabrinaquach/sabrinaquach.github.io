@@ -150,7 +150,7 @@ p, li {
 .background-subtitle {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
     color: #f2f3f4;
 }
 
@@ -177,7 +177,7 @@ p, li {
 .section-header {
     font-family: 'Inter';
     text-transform: uppercase;
-    font-size: clamp(1.1rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
     padding-bottom: 1rem;
     color: #f2f3f4;
 }
@@ -234,7 +234,7 @@ p, li {
     font-family: 'Inter';
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.1rem, 1.7vw, 2rem);
+    font-size: clamp(1.25rem, 1.6vw, 2rem);
     padding-bottom: 1rem; 
     padding-top: 4rem;
     color: #f2f3f4;
