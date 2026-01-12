@@ -97,7 +97,7 @@
 .persona-row {
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 2rem;
     padding-top: 3rem;
 }
 
@@ -106,7 +106,7 @@
     background-size: cover;      
     background-position: center;       
     aspect-ratio: 1 / 1;
-    width: 80vw;
+    width: 15vw;
     /* max-width: 15rem; */
     border-radius: 50%;
     align-self: center;
@@ -345,7 +345,7 @@
         padding-top: 3rem;
     }
 
-    .p-final-design-video {
+    .p-final-design-video, .p-hifi-wireframe-video {
         max-width: 40vw;
         object-fit: contain;
         padding-bottom: 3rem;
