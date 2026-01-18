@@ -63,6 +63,7 @@ const ProjectOne = () => {
                         <div className="background-column">
                             <h2 className="background-subtitle">Team</h2>
                             <ul className="background-design-list">
+                                <li>Sabrina Quach</li>
                                 <li>Sierra Mcray</li>
                                 <li>Yanfeng Dong</li>
                                 <li>Tanisha Damle</li>
