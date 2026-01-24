@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import './projectThree.css'
 import { BiSearchAlt, BiBook, BiRotateRight, BiSmile } from "react-icons/bi";
-import { TbClipboardX, TbClipboardCheck, TbMoodSearch, TbArrowRight } from "react-icons/tb";
 import { useLocation, useNavigate } from 'react-router-dom';
-
-import Square from "../components/square/square";
-import Rectangle from "../components/theme-card/rectangle";
-import LargeRectangle from "../components/competitor-card/largeRectangle";
-import PercentSquare from "../components/percent-square/percent-square";
-// import SmallRectangle from "../components/core-card/smallRectangle";
-// import DesignCard from "../components/design-iteration-card/designCard";
 
 const ProjectThree = () => {
     const location = useLocation();
@@ -29,7 +21,37 @@ const ProjectThree = () => {
         }, 0);
     }, [location, navigate]);
 
-    const [modalImage, setModalImage] = useState(null);
+    // const [modalImage, setModalImage] = useState(null);
+
+    const video1Ref = useRef(null);
+    const video2Ref = useRef(null);
+      
+    useEffect(() => {
+        const v1 = video1Ref.current;
+        const v2 = video2Ref.current;
+      
+        if (!v1 || !v2) return;
+      
+        const syncVideos = () => {
+            v2.currentTime = v1.currentTime;
+        };
+      
+        //start both videos together
+            Promise.all([v1.play(), v2.play()]).catch(() => {
+        });
+      
+            v1.addEventListener("timeupdate", syncVideos);
+      
+            v1.addEventListener("ended", () => {
+                v2.currentTime = 0;
+                v2.play();
+                v1.play();
+            });
+      
+            return () => {
+                v1.removeEventListener("timeupdate", syncVideos);
+            };
+    }, []);      
 
     return (
         <div className="project-container" id="Aura">
@@ -160,22 +182,76 @@ const ProjectThree = () => {
                                 <div className="p-final-design-column">
                                     <h3 className="p-section-subtitle">Dial Functionality</h3>
                                     <p className="research-description">
-                                        Aura’s physical dial is designed to feel familiar, tactile, and effortless. Aura’s dial works like a regular thermostat, making 
-                                        it easy to adjust the temperature for the whole home by simply turning the dial. When motion sensing is turned on, the dial becomes 
-                                        smarter and lets users control the temperature in only the rooms that are being used. This helps keep people comfortable while avoiding 
-                                        wasted energy in empty rooms. The experience stays simple for everyday use, but becomes more powerful as users explore Aura’s smarter 
-                                        features.
+                                        Aura’s physical dial is designed to feel familiar, tactile, and effortless. Like a traditional thermostat, users can turn the dial to 
+                                        quickly adjust the temperature for the entire home. As users enable more advanced features, the dial adapts to support smarter, more 
+                                        precise control—while still keeping the interaction simple and intuitive.
                                     </p>
                                 </div>
-                                
-                                <video 
-                                    src="/videos/project3-videos/Aura-Dial-Function.mov"
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="p-final-design-video"
-                                />
+                            </div>
+
+                            {/* Motion On */}
+                            <div className="final-design-content">
+                                <div className="final-design-row">
+                                    <div className="p-final-design-column">
+                                        <h3 className="p-section-subtitle">Motion On</h3>
+                                        <p className="research-description">
+                                            When motion sensing is turned on, the dial becomes smarter and lets users control the temperature in only the rooms that are being used. 
+                                            This helps keep people comfortable while avoiding wasted energy in empty rooms. The experience stays simple for everyday use, but becomes 
+                                            more powerful as users explore Aura’s smarter features.
+                                        </p>
+                                    </div>
+                                    
+                                    <video 
+                                        ref={video1Ref}
+                                        src="/videos/project3-videos/Aura-App-Motion-On.mp4"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
+                                    <video 
+                                        ref={video2Ref}
+                                        src="/videos/project3-videos/Aura-Hardware-App-Motion-On1.mov"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Motion Off */}
+                            <div className="final-design-content">
+                                <div className="final-design-row">
+                                    <div className="p-final-design-column">
+                                        <h3 className="p-section-subtitle">Motion Off</h3>
+                                        <p className="research-description">
+                                            When motion sensing is disabled, the dial behaves like a standard thermostat. Adjustments apply to the whole home, giving users 
+                                            straightforward, predictable control over their environment.
+                                        </p>
+                                    </div>
+                                    
+                                    <video 
+                                        ref={video1Ref}
+                                        src="/videos/project3-videos/Aura-App-Motion-Off.mp4"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
+                                    <video 
+                                        ref={video2Ref}
+                                        src="/videos/project3-videos/Aura-Hardware-App-Motion-Off.mov"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
+                                </div>
                             </div>
                         </div>
                         
@@ -192,7 +268,7 @@ const ProjectThree = () => {
                                 </div>
                                 
                                 <video 
-                                    src="/videos/project3-videos/Aura-History.mov"
+                                    src="/videos/project3-videos/Aura-App-History.mp4"
                                     loop 
                                     muted
                                     autoPlay
@@ -217,14 +293,24 @@ const ProjectThree = () => {
                                     </p>
                                 </div>
                                 
-                                {/* <video 
-                                    src="/videos/project3-videos/Aura-All.mov"
+                                <video 
+                                    ref={video1Ref}
+                                    src="/videos/project3-videos/Aura-App.mp4"
                                     loop 
                                     muted
                                     autoPlay
                                     playsInline
                                     className="p-final-design-video"
-                                /> */}
+                                />
+                                <video 
+                                        ref={video2Ref}
+                                        src="/videos/project3-videos/Aura-Hardware-App.mov"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
                             </div>
                         </div>
                     </div>

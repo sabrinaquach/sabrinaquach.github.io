@@ -52,7 +52,7 @@ const Footer = () => {
                         <h2 className="q-title">q.</h2>
                         <p className="inital-subtitle">Connect</p>
                         <div className="link-list">
-                            <a className="resume-button" href="https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+                            <a className="resume-button" href="https://drive.google.com/file/d/1Euu_aCkoSRtlNPKXhKVV7ykqckHv1QxV/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
                             <a className="linkedin-button" href="https://www.linkedin.com/in/sabrina-quach-sjsu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                             <a className="github-button" href="https://github.com/sabrinaquach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                         </div>
