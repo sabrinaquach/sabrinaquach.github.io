@@ -798,7 +798,7 @@ const ProjectThree = () => {
                 </div>
                 
                 {/* Exploring What’s Next */}
-                <div className="reflection-container">
+                <div className="reflection-container-1">
                     <h1 className="section-header">Lessons from Aura</h1>
                     <p className="research-description">
                         Designing Aura fundamentally changed how I approach smart products. The project pushed me to translate complex system behavior 
@@ -812,6 +812,30 @@ const ProjectThree = () => {
                         over time. Looking ahead, Aura could expand through broader smart home integration and partnerships that help bring accessible solutions 
                         to more households. The vision is to make sustainable living effortless, transparent, and accessible.
                     </p>
+                    <div className="horizontal-line" />
+                </div>
+
+                {/* Special Thanks */}
+                <div className="reflection-container">
+                    <div className="thanks-row">
+                        <div className="thanks-column">
+                            <h1 className="section-header">Special Thanks</h1>
+                            <p className="research-description">
+                                I want to sincerely thank my team members for their support, collaboration and creativity. Most importantly, my loved ones for their 
+                                encouragement, feedback, and unwavering support throughout this project.
+                            </p>
+                        </div>
+                         <img 
+                            src="/images/aura-team.png"
+                            alt="Jeric Montepalco, Sabrina Quach, Roger Huynh"
+                            className="thanks-img"
+                        />
+                        <img 
+                            src="/images/aura-roomies.png"
+                            alt="Sabrina Quach's Supportive Friends"
+                            className="thanks-img"
+                        />
+                    </div>
                 </div>
             </section>
         </div>

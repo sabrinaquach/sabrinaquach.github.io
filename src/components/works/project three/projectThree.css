@@ -84,6 +84,23 @@
     gap: 2rem;
 }
 
+.thanks-row {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.thanks-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.thanks-img {
+    max-width: 20vw;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
  /* mobile screens*/
  @media screen and (max-width: 768px) {
     .two-final-design-row {

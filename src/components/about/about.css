@@ -102,7 +102,7 @@
     font-size: clamp(2rem, 4vw, 5rem);
     text-transform: uppercase;
     text-align: right;
-    padding-top: 4rem;
+    padding-top: 12rem;
     padding-bottom: 1rem;
     padding-right: 2rem;
 }
@@ -134,7 +134,7 @@
   }
   
 .photo-1 { grid-area: one; background-image: url(../../assets/images/food.jpeg); }
-.photo-2 { grid-area: two; background-image: url(../../assets/images/group.jpeg); }
+.photo-2 { grid-area: two; background-image: url(../../assets/images/roomies.png); }
 .photo-3 { grid-area: three; background-image: url(../../assets/images/toki.jpeg); }
 .photo-4 { grid-area: four; background-image: url(../../assets/images/sunset.jpeg); }
 .photo-5 { grid-area: five;  }
@@ -150,7 +150,9 @@
         padding: 18rem 10rem 15rem 15rem;  
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
     }
     .photos-section {
         background-color: #000;
@@ -159,6 +161,7 @@
     }
     .photo-title {
         padding-right: 1rem;
+        padding-top: 5rem;
     }
     .photo-grid {
         width: 100%;
