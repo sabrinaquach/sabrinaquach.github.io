@@ -9,6 +9,7 @@ import Rectangle from "../components/theme-card/rectangle";
 import LargeRectangle from "../components/competitor-card/largeRectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
 import DesignCard from "../components/design-iteration-card/designCard";
+import ProjectTags from "../components/project-tags/tags";
 
 const ProjectOne = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -36,6 +37,28 @@ const ProjectOne = () => {
                         <h3 className="project-header">Case Study</h3>
                         <h1 className="project-title">Adobe Flux</h1>
                         <p className="project-description">Generative AI tool that creates visuals through actions.</p>
+                        <div className='project-tags'>
+                            <ProjectTags
+                                text="AI-Driven Design"
+                                color="#B1FFA6"
+                            />
+                            <ProjectTags
+                                text="Desktop"
+                                color="#FFE0C0"
+                            />
+                            <ProjectTags
+                                text="Customer Journeys"
+                                color="#5AACDC"
+                            />
+                            <ProjectTags
+                                text="Creative Tools"
+                                color="#FFE97B"
+                            />
+                            <ProjectTags
+                                text="UX design"
+                                color="#FFA6E3"
+                            />
+                        </div>
                     </div>
                     <div className="project-content-items">
                         <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe Flux"/>

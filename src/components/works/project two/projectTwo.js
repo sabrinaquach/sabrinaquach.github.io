@@ -8,6 +8,7 @@ import Square from "../components/square/square";
 import Rectangle from "../components/theme-card/rectangle";
 import LargeRectangle from "../components/competitor-card/largeRectangle";
 import PercentSquare from "../components/percent-square/percent-square";
+import ProjectTags from "../components/project-tags/tags";
 
 const ProjectTwo = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -35,7 +36,33 @@ const ProjectTwo = () => {
                     <div className="text-column">
                         <h3 className="project-header">Case Study</h3>
                         <h1 className="project-title">SpartanSync</h1>
-                        <p className="project1description">Smart scheduling for busy students.</p>
+                        <p className="project-description">Smart scheduling for busy students.</p>
+                        <div className='project-tags'>
+                            <ProjectTags
+                                text="Data-Driven"
+                                color="#D0B2FA"
+                            />
+                            <ProjectTags
+                                text="Mobile"
+                                color="#B2E4FA"
+                            />
+                            <ProjectTags
+                                text="Academic"
+                                color="#F6FAB2"
+                            />
+                            <ProjectTags
+                                text="Student Productivity"
+                                color="#E9A060"
+                            />
+                            <ProjectTags
+                                text="Degree Planning"
+                                color="#5DD371"
+                            />
+                            <ProjectTags
+                                text="UX design"
+                                color="#FFA6E3"
+                            />
+                        </div>
                     </div>
                     <div className="project-content-items">
                         <img className="project2-image" src="/images/spartansync-image1.png" alt="SpartanSync"/>
@@ -484,11 +511,11 @@ const ProjectTwo = () => {
                         
                         <div className="research-question-row">
                             <PercentSquare
-                                percent="75%"
+                                percent="75"
                                 text="found the official SJSU enrollment system difficult to use."
                             />
                             <PercentSquare
-                                percent="90%"
+                                percent="90"
                                 text="relied on external sites to create schedules."
                             />
                         </div>

@@ -6,6 +6,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import Rectangle from "../components/theme-card/rectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
+import PercentSquare from "../components/percent-square/percent-square"
+import ProjectTags from "../components/project-tags/tags";
 
 const ProjectThree = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -64,6 +66,44 @@ const ProjectThree = () => {
                         <h3 className="project-header">Case Study</h3>
                         <h1 className="project-title">Aura</h1>
                         <p className="project-description">Smart home app to view energy levels and change temperature in multiple rooms.</p>
+                        <div className='project-tags'>
+                            <ProjectTags
+                                text="IoT Design"
+                                color="#18FF08"
+                            />
+                            <ProjectTags
+                                text="UX design"
+                                color="#FFA6E3"
+                            />
+                            <ProjectTags
+                                text="Home Automation"
+                                color="#F9FF8F"
+                            />
+                            <ProjectTags
+                                text="Mobile"
+                                color="#B2E4FA"
+                            />
+                            <ProjectTags
+                                text="Full-Stack"
+                                color="#AAFFD8"
+                            />
+                            <ProjectTags
+                                text="HTML"
+                                color="#B5B6FF"
+                            />
+                            <ProjectTags
+                                text="CSS"
+                                color="#F8B966"
+                            />
+                            <ProjectTags
+                                text="JavaScript"
+                                color="#66A8F8"
+                            />
+                            <ProjectTags
+                                text="Supabase"
+                                color="#34b27b"
+                            />
+                        </div>
                     </div>
                     <div className="project-content-items">
                         <img className="project2-image" src="/images/aura-image1.png" alt="Aura"/>
@@ -607,19 +647,29 @@ const ProjectThree = () => {
                                     I explored several ways for users to adjust whole-home and room-level temperatures. Early ideas included a dropdown above
                                     the target temperature, a dropdown in the top-left corner, and a dropdown over the occupied room, but these either felt 
                                     cluttered, disconnected from the room being adjusted, or obscured important information. Through iteration, I settled on 
-                                    a bottom half-circle dial with tabs, which allowed users to quickly and intuitively switch between rooms or adjust the whole 
-                                    home, creating a consistent and approachable interaction throughout the app.
+                                    a half-circle dial towards the right of the screen with tabs, which allowed users to quickly and intuitively switch between 
+                                    rooms or adjust the whole home, creating a consistent and approachable interaction throughout the app.
                                 </p>
                             </div>
 
                             <div className="final-design-row">
                                 <div className="p-final-design-column">
                                     <h3 className="p-section-subtitle">Final design – half circle with tabs</h3>
-                                    <p className="research-description">
-                                        The final solution combined a bottom half-circle dial with a tab system to switch between rooms. The tab was inspired by the 
-                                        History view and provided a consistent interaction pattern throughout the app. This design balances simplicity, quick access, 
-                                        and clarity, allowing users to control individual rooms or the whole home without cognitive overload.
-                                    </p>
+                                    <div className="p2-final-design-column">
+                                        <p className="research-description">
+                                            The final solution combined a half-circle dial with a tab system to switch between rooms. The tab was inspired by the 
+                                            History view and provided a consistent interaction pattern throughout the app. This design balances simplicity, quick access, 
+                                            and clarity, allowing users to control individual rooms or the whole home without cognitive overload.
+                                        </p>
+                                        <PercentSquare
+                                            percent={83}
+                                            text="preferred the room-based control"
+                                        />
+                                        <PercentSquare
+                                            percent={91}
+                                            text="of users felt the app was easy to use"
+                                        />
+                                    </div>
                                 </div>
                                 
                                 <img 
@@ -682,7 +732,7 @@ const ProjectThree = () => {
                                     <p className="key-feedback-title">
                                         PIR Motion Sensor (HC-SR501)
                                         <ul className="key-feedback-list">
-                                            <li>Consider reinforcing location indicators or section highlights.</li>
+                                            <li>Detect human occupancy by sensing changes in infrared heat.</li>
                                         </ul>
                                     </p>
                                     <p className="key-feedback-title">
@@ -807,10 +857,11 @@ const ProjectThree = () => {
                         bridge between technical capability and human understanding, while treating accessibility as a core design constraint rather 
                         than an afterthought.
                         <br/> <br/> 
-                        With more time and resources, I would continue evolving Aura’s experience by refining multi-room temperature switching for smoother 
-                        control, expanding room-level analytics for deeper behavioral insight, and introducing adaptive learning so the system personalizes 
-                        over time. Looking ahead, Aura could expand through broader smart home integration and partnerships that help bring accessible solutions 
-                        to more households. The vision is to make sustainable living effortless, transparent, and accessible.
+                        With more time and resources, I would continue evolving Aura by refining multi-room temperature switching for smoother control, 
+                        expanding room-level analytics for deeper behavioral insights, and improving accessibility; such as allowing users to move the dial 
+                        to either side of the screen based on their dominant hand. I’d also introduce adaptive learning so the system can personalize over time. 
+                        Looking ahead, Aura could grow through deeper smart home integration and partnerships that help bring accessible solutions to more households. 
+                        The goal is to make sustainable living effortless, transparent, and accessible.
                     </p>
                     <div className="horizontal-line" />
                 </div>
@@ -825,7 +876,8 @@ const ProjectThree = () => {
                                 encouragement, feedback, and unwavering support throughout this project.
                             </p>
                         </div>
-                         <img 
+                        <div className="thanks-row-img">
+                        <img 
                             src="/images/aura-team.png"
                             alt="Jeric Montepalco, Sabrina Quach, Roger Huynh"
                             className="thanks-img"
@@ -835,6 +887,17 @@ const ProjectThree = () => {
                             alt="Sabrina Quach's Supportive Friends"
                             className="thanks-img"
                         />
+                        </div>
+                         {/* <img 
+                            src="/images/aura-team.png"
+                            alt="Jeric Montepalco, Sabrina Quach, Roger Huynh"
+                            className="thanks-img"
+                        />
+                        <img 
+                            src="/images/aura-roomies.png"
+                            alt="Sabrina Quach's Supportive Friends"
+                            className="thanks-img"
+                        /> */}
                     </div>
                 </div>
             </section>

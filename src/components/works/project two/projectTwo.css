@@ -405,4 +405,14 @@
     .design-iteration-img {
         max-width: 30vw;
     }
+
+    .arrow-icon {
+        align-self: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow-before-after {
+        gap: 0;
+    }
   }

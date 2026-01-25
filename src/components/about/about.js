@@ -36,7 +36,7 @@ const About = () => {
                     <div className="text-columns">
                         <div className="content-items">
                                 <h3 className="about-subtitle">Hello I’m Sabrina!</h3>
-                                <p className="about-description">An aspiring UX/Product Designer with a background in Computer Engineering. I’m passionate about creating products that focus on user needs.</p>
+                                <p className="about-description">I'm a UX/Product Designer with a background in Computer Engineering. I’m passionate about creating products that focus on user needs.</p>
                         </div>
                         <div className="content-items">
                             <h3 className="about-subtitle">During “Me” time</h3>

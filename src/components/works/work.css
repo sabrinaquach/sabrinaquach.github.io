@@ -136,6 +136,13 @@
   height: auto;
 }
 
+.project-tags {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 /* Mobile Layout */
 @media (max-width: 1024px) {
   .project-block {
@@ -237,5 +244,11 @@
 
   .phone-mockup {
     max-width: 60%;
+  }
+
+  .project-tags {
+    align-items: center;
+    justify-content: center;
+    margin: 0 3rem;
   }
 }

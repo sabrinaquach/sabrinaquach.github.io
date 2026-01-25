@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ScrollRevealImage from "../../utilities/ScrollRevealImage";
 import DecryptedText from "../../utilities/DecryptedText";
 import Hero from "../hero/hero";
+import ProjectTags from "./components/project-tags/tags";
 import './work.css';
 
 const Work = () => {
@@ -72,12 +73,6 @@ const Work = () => {
         <Hero onMessageClick={handleContactClick} />
       </div>
         <section id="work" className="work-section">
-            {/* <h2 className="work-title">Work</h2>
-            <div className="link-list-work">
-                <a className="resume-button" href="https://drive.google.com/file/d/1vh-xTEQ21noU3d0xxoUGupWvtbcraZHV/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume ↗</a>
-                <a className="linkedin-button" href="https://www.linkedin.com/in/sabrina-quach-sjsu/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                <a className="github-button" href="https://github.com/sabrinaquach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            </div> */}
             <div className="project-column">
                 <section className="project-section">
                     <div className="project-block" onClick={handleProjectOneClick}>
@@ -94,6 +89,28 @@ const Work = () => {
                             <p className="project-description">
                                 Generative AI tool that creates visuals through actions.
                             </p>
+                            <div className='project-tags'>
+                              <ProjectTags
+                                text="AI-Driven Design"
+                                color="#B1FFA6"
+                              />
+                              <ProjectTags
+                                text="Desktop"
+                                color="#FFE0C0"
+                              />
+                              <ProjectTags
+                                text="Customer Journeys"
+                                color="#5AACDC"
+                              />
+                              <ProjectTags
+                                text="Creative Tools"
+                                color="#FFE97B"
+                              />
+                              <ProjectTags
+                                text="UX design"
+                                color="#FFA6E3"
+                              />
+                            </div>
                         </div>
                         <ScrollRevealImage
                             baseOpacity={0}
@@ -127,6 +144,32 @@ const Work = () => {
                             <p className="project-description">
                               Smart scheduling for busy students.
                             </p>
+                            <div className='project-tags'>
+                              <ProjectTags
+                                text="Data-Driven"
+                                color="#D0B2FA"
+                              />
+                              <ProjectTags
+                                text="Mobile"
+                                color="#B2E4FA"
+                              />
+                              <ProjectTags
+                                text="Academic"
+                                color="#F6FAB2"
+                              />
+                              <ProjectTags
+                                text="Student Productivity"
+                                color="#E9A060"
+                              />
+                              <ProjectTags
+                                text="Degree Planning"
+                                color="#5DD371"
+                              />
+                              <ProjectTags
+                                text="UX design"
+                                color="#FFA6E3"
+                              />
+                            </div>
                         </div>
                         <ScrollRevealImage
                             baseOpacity={0}
@@ -160,6 +203,44 @@ const Work = () => {
                             <p className="project-description">
                               Smart home app to view energy levels and change temperature in multiple rooms.
                             </p>
+                            <div className='project-tags'>
+                              <ProjectTags
+                                text="IoT Design"
+                                color="#18FF08"
+                              />
+                              <ProjectTags
+                                text="UX design"
+                                color="#FFA6E3"
+                              />
+                              <ProjectTags
+                                text="Home Automation"
+                                color="#F9FF8F"
+                              />
+                              <ProjectTags
+                                text="Mobile"
+                                color="#B2E4FA"
+                              />
+                              <ProjectTags
+                                text="Full-Stack"
+                                color="#AAFFD8"
+                              />
+                              <ProjectTags
+                                text="HTML"
+                                color="#B5B6FF"
+                              />
+                              <ProjectTags
+                                text="CSS"
+                                color="#F8B966"
+                              />
+                              <ProjectTags
+                                text="JavaScript"
+                                color="#66A8F8"
+                              />
+                              <ProjectTags
+                                text="Supabase"
+                                color="#34b27b"
+                              />
+                            </div>
                         </div>
                         <ScrollRevealImage
                             baseOpacity={4}

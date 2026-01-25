@@ -84,7 +84,7 @@
     gap: 2rem;
 }
 
-.thanks-row {
+.thanks-row, .thanks-row-img {
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -99,6 +99,12 @@
     max-width: 20vw;
     object-fit: contain;
     border-radius: 5px;
+}
+
+.p2-final-design-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
  /* mobile screens*/
@@ -120,7 +126,7 @@
         flex-direction: column;
         gap: 1rem;
     }
-    .dial-design-iteration-img, .design-iteration-img {
+    .dial-design-iteration-img, .design-iteration-img, .thanks-img {
         max-width: 40vw;
         align-self: center;
     }
@@ -129,4 +135,12 @@
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1rem;
     }
+    .thanks-row {
+        display: flex;
+        flex-direction: column;
+    }
+    .thanks-row-img, .p2-final-design-column  {
+        gap: 1rem;
+    }
+
   }
