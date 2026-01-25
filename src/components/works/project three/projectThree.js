@@ -271,7 +271,7 @@ const ProjectThree = () => {
                                 </div>
                                 
                                 <video 
-                                    src="/videos/project3-videos/Aura-App-History.mov"
+                                    src="/videos/project3-videos/Aura-App-History.mp4"
                                     loop 
                                     muted
                                     autoPlay
