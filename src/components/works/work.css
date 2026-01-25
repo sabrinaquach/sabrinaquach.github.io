@@ -131,10 +131,9 @@
 }
 
 .phone-mockup {
-  max-width: 260px;
+  max-width: 20vw;
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 19.5;
 }
 
 /* Mobile Layout */

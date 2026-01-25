@@ -4,8 +4,11 @@
     height: auto;
     background-color: #f2f3f4;;
     border-radius: 5px;
-    padding: 2rem;
+    padding: 1rem;
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .small-rectangle-column {
@@ -20,6 +23,7 @@
     text-transform: uppercase;
     font-size: 1.1rem;
     color: #f2f3f4;
+    text-align: center;
 }
 
 .small-rectangle-description {

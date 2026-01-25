@@ -11,6 +11,7 @@ import SmallRectangle from "../components/core-card/smallRectangle";
 import DesignCard from "../components/design-iteration-card/designCard";
 
 const ProjectOne = () => {
+    const [modalImage, setModalImage] = useState(null);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -26,9 +27,6 @@ const ProjectOne = () => {
           }, 0);
         }
       }, [location, navigate]);      
-
-    const [modalImage, setModalImage] = useState(null);
-
 
     return (
         <div className="project-container" id="AdobeFlux">

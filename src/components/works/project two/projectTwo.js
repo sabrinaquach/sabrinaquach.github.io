@@ -10,6 +10,7 @@ import LargeRectangle from "../components/competitor-card/largeRectangle";
 import PercentSquare from "../components/percent-square/percent-square";
 
 const ProjectTwo = () => {
+    const [modalImage, setModalImage] = useState(null);
     const location = useLocation();
     const navigate = useNavigate();
       
@@ -26,8 +27,6 @@ const ProjectTwo = () => {
           }
         }, 0);
       }, [location, navigate]);
-
-    const [modalImage, setModalImage] = useState(null);
 
     return (
         <div className="project-container" id="SpartanSync">
@@ -141,14 +140,14 @@ const ProjectTwo = () => {
                 <div className="deliver-container">
                     {/* Meet SpartanSync Section */}
                     <div className="final-design-container">
-                    <h3 className="section-subheader">Deliver</h3>
-                    <h1 className="section-header">Meet SpartanSync</h1>
-                    <p className="research-description">
-                        SpartanSync simplifies course planning for SJSU students by turning a stressful, fragmented process into a clear 
-                        and visual experience. Designed to eliminate tab-hopping and manual cross-checking, SpartanSync helps students 
-                        quickly generate, compare, and refine valid class schedules all in one place. Ensuring that students can make confident 
-                        academic decisions with less conflict and stress.
-                    </p>
+                        <h3 className="section-subheader">Deliver</h3>
+                        <h1 className="section-header">Meet SpartanSync</h1>
+                        <p className="research-description">
+                            SpartanSync simplifies course planning for SJSU students by turning a stressful, fragmented process into a clear 
+                            and visual experience. Designed to eliminate tab-hopping and manual cross-checking, SpartanSync helps students 
+                            quickly generate, compare, and refine valid class schedules all in one place. Ensuring that students can make confident 
+                            academic decisions with less conflict and stress.
+                        </p>
 
                         {/* Degree-Aware Planning Subsection */}
                         <div className="final-design-content">
@@ -350,6 +349,11 @@ const ProjectTwo = () => {
                                         />
                                     </div>
                                 </div>
+                                {modalImage && (
+                                    <div className="image-modal" onClick={() => setModalImage(null)}>
+                                    <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
+                                    </div>
+                                )}
                             </div>
                             <p className="research-description current-state-description">
                                 This analysis revealed that students spend a significant amount of mental effort just to piece together basic information, 
