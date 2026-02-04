@@ -17,7 +17,7 @@ p, li {
 }
 
 .project-content {
-    padding-top: 10rem;  
+    padding-top: 8rem;  
     display: flex;
     flex-direction: row;
     align-items: flex-start;

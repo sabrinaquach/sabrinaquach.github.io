@@ -1,0 +1,26 @@
+.link {
+    display: inline-flex; 
+    align-items: center;
+    font-weight: bold;
+    position: relative;      
+  }
+
+span, .icon {
+    position: relative;
+}
+
+.icon {
+    margin-left: 0.5em;
+}
+
+.orange {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background-color: #ff8000;
+    position: absolute;
+
+    left: -1em;            
+    top: 50%;              
+    transform: translateY(-50%); 
+}

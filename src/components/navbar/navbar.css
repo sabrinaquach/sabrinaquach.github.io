@@ -72,6 +72,11 @@
     color: #FFB266;
     transition: color 0.2s ease;
 }
+
+.desktopMenuListItem.active {
+    color: #FFB266;
+  }
+  
 .nav-buttons {
     display: flex;
     justify-content: flex-end;

@@ -11,6 +11,8 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isWorkInView, setIsWorkInView] = useState(false);
+    const [workClicked, setWorkClicked] = useState(false);
     
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -31,19 +33,21 @@ const Navbar = () => {
     };
     
     const handleWorkClick = () => {
-        if (location.pathname === '/') {
-          const el = document.getElementById('work');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-      
-            setTimeout(() => {
-              ScrollTrigger.refresh(true);
-            }, 200);
-          }
-        } else {
-          navigate('/#work');
+      setWorkClicked(true); // 👈 force active immediately
+    
+      if (location.pathname === '/') {
+        const el = document.getElementById('work');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+    
+          setTimeout(() => {
+            ScrollTrigger.refresh(true);
+          }, 200);
         }
-    };
+      } else {
+        navigate('/#work');
+      }
+    };    
 
     const handleAboutClick = () => {
         const el = document.getElementById('about');
@@ -98,8 +102,44 @@ const Navbar = () => {
     
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-       
-      
+
+    useEffect(() => {
+      if (location.pathname !== "/") return;
+    
+      const workSection = document.getElementById("work");
+      if (!workSection) return;
+    
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsWorkInView(entry.isIntersecting);
+    
+          // once observer takes over, clear manual click state
+          if (entry.isIntersecting) {
+            setWorkClicked(false);
+          }
+        },
+        { threshold: 0.3 }
+      );
+    
+      observer.observe(workSection);
+    
+      return () => observer.disconnect();
+    }, [location.pathname]);
+    
+    const pathname = location.pathname;
+
+    const isProjectPage =
+    location.pathname === "/AdobeFlux" ||
+    location.pathname === "/SpartanSync" ||
+    location.pathname === "/Aura";
+  
+    const isWorkActive =
+      isProjectPage ||
+      (location.pathname === "/" && (workClicked || isWorkInView));
+    
+    const isAboutActive = location.pathname === "/about";
+
+
     return (
         <nav className="navbar">
             <div className='nav-content'>
@@ -115,21 +155,29 @@ const Navbar = () => {
                       </button>
                       {menuOpen && (
                         <div className="mobile-menu open">
-                          <div onClick={handleWorkClick} className="desktopMenuListItem">Work</div>
-                          <div onClick={handleAboutClick} className="desktopMenuListItem">About</div>
+                          <div onClick={handleWorkClick} className={`desktopMenuListItem ${isWorkActive ? "active" : ""}`}>Work</div>
+                          <div onClick={handleAboutClick} className={`desktopMenuListItem ${isWorkActive ? "active" : ""}`}>About</div>
                           <div onClick={handleContactClick} className="desktopMenuListItem">Contact</div>
                         </div>
                       )}
                     </div>
                 </div>
                 <div className='desktopMenuList'>
-                    <div onClick={handleWorkClick} className="desktopMenuListItem">
+                    <div 
+                      onClick={handleWorkClick} 
+                      className={`desktopMenuListItem ${isWorkActive ? "active" : ""}`}
+                    >
                         Work
                     </div>
-                    <div onClick={handleAboutClick} className="desktopMenuListItem">
+                    <div 
+                      onClick={handleAboutClick} 
+                      className={`desktopMenuListItem ${isAboutActive ? "active" : ""}`}
+                    >
                         About
                     </div>
-                    <div onClick={handleContactClick} className="desktopMenuListItem">
+                    <div 
+                      onClick={handleContactClick} 
+                      className="desktopMenuListItem">
                         Contact
                     </div>
                 </div>

@@ -78,6 +78,17 @@
   cursor: pointer;
 }
 
+.button-wrapper {
+  min-width: 0;      
+  flex: none;        
+  width: auto;       
+  display: inline-block;
+  position: relative; 
+  padding-bottom: 1rem;
+  /* margin-left: 1rem; */
+}
+
+
 .project-text-phone {
   flex: 1;
   max-width: 500px;

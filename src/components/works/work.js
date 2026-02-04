@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import ScrollRevealImage from "../../utilities/ScrollRevealImage";
 import DecryptedText from "../../utilities/DecryptedText";
 import Hero from "../hero/hero";
 import ProjectTags from "./components/project-tags/tags";
+import SeeCaseStudyButton from "./components/see-portfolio/see-portfolio";
+
 import './work.css';
 
 const Work = () => {
@@ -77,6 +80,9 @@ const Work = () => {
                 <section className="project-section">
                     <div className="project-block" onClick={handleProjectOneClick}>
                         <div className="project-text-laptop">
+                            <div className="button-wrapper">
+                              <SeeCaseStudyButton click={handleProjectOneClick} />
+                            </div>
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
@@ -132,6 +138,9 @@ const Work = () => {
                 <section className="project-section">
                     <div className="project-block" onClick={handleProjectTwoClick}>
                         <div className="project-text-phone">
+                            <div className="button-wrapper">
+                              <SeeCaseStudyButton click={handleProjectTwoClick} />
+                            </div>
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
@@ -191,6 +200,9 @@ const Work = () => {
                 <section className="project-section">
                     <div className="project-block" onClick={handleProjectThreeClick}>
                         <div className="project-text-phone">
+                            <div className="button-wrapper">
+                              <SeeCaseStudyButton click={handleProjectThreeClick} />
+                            </div>
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"

@@ -31,7 +31,7 @@ const Hero = ({ onMessageClick }) => {
             </div>
         )}
         {showHero && (
-            <div className="nav-header fade-in">
+          <div className="nav-header fade-in">
             <h1 className="hello-message">
                 I’M SABRINA,&nbsp;
                 <TextType
@@ -54,7 +54,7 @@ const Hero = ({ onMessageClick }) => {
                   Message Me
                 </button>
             </div>
-            </div>
+          </div>
         )}
         </div>
     </div>
