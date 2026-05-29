@@ -1,7 +1,7 @@
 import React from "react";
 import './tags.css'
 
-const ProjectTags = ({ text, color = "#ffffff" }) => { 
+const ProjectTags = ({ title, text, color = "#ffffff" }) => { 
 
   const hexToRgba = (hex, alpha) => {
     if (!hex) return `rgba(255, 255, 255, ${alpha})`;
@@ -21,6 +21,7 @@ const ProjectTags = ({ text, color = "#ffffff" }) => {
         borderColor: color
       }}
     >
+      {/* <h2 className="project-tag-title">{title}</h2> */}
       <p className="project-tag-description">{text}</p>
     </div>
   )

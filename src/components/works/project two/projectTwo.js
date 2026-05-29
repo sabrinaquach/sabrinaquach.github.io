@@ -1,62 +1,59 @@
 import React, { useEffect, useState } from "react";
 import './projectTwo.css'
-import { BiSearchAlt, BiBook, BiRotateRight, BiSmile } from "react-icons/bi";
-import { TbClipboardX, TbClipboardCheck, TbMoodSearch, TbArrowRight } from "react-icons/tb";
+import { BiSearchAlt, BiBook, BiRotateRight, BiSmile, BiPen, BiLayer, BiTargetLock, BiSliderAlt, BiBrain, BiShow, } from "react-icons/bi";
+import { TbScale, TbTerminal2, TbMoodSearch, TbTrendingUp, TbBulb, TbCloudCheck, TbMoodOff } from "react-icons/tb";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import Square from "../components/square/square";
 import Rectangle from "../components/theme-card/rectangle";
 import LargeRectangle from "../components/competitor-card/largeRectangle";
-import PercentSquare from "../components/percent-square/percent-square";
+import SmallRectangle from "../components/core-card/smallRectangle";
+import DesignCard from "../components/design-iteration-card/designCard";
 import ProjectTags from "../components/project-tags/tags";
 
 const ProjectTwo = () => {
     const [modalImage, setModalImage] = useState(null);
     const location = useLocation();
     const navigate = useNavigate();
-      
+
     useEffect(() => {
-        setTimeout(() => {
-          if (location.state?.scrollTo) {
-            const el = document.getElementById(location.state.scrollTo);
+        if (location.state?.scrollTo === 'AdobeFlux') {
+          setTimeout(() => {
+            const el = document.getElementById('AdobeFlux');
             if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+              navigate(location.pathname, { replace: true, state: {} });
             }
-            navigate(location.pathname, { replace: true, state: {} });
-          } else {
-            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-          }
-        }, 0);
-      }, [location, navigate]);
+          }, 0);
+        }
+      }, [location, navigate]);      
 
     return (
-        <div className="project-container" id="SpartanSync">
-            <div className="project-content" id="top">
+        <div className="project-container" id="AdobeFlux">
+            <section className="case-study-container">
+            <div className="project-content">
                 <div className="project-block">
                     <div className="text-column">
-                        <h3 className="project-header">Case Study</h3>
-                        <h1 className="project-title">SpartanSync</h1>
-                        <p className="project-description">Smart scheduling for busy students.</p>
+                        <h3 className="project-header">— Case Study 02</h3>
+                        <h1 className="project-title">Adobe Flux</h1>
+                        <p className="project-description">Generative AI tool that creates visuals through actions.</p>
                         <div className='project-tags'>
                             <ProjectTags
-                                text="Data-Driven"
-                                color="#D0B2FA"
+                                text="AI-Driven Design"
+                                color="#B1FFA6"
                             />
                             <ProjectTags
-                                text="Mobile"
-                                color="#B2E4FA"
+                                text="Desktop"
+                                color="#FFE0C0"
                             />
                             <ProjectTags
-                                text="Academic"
-                                color="#F6FAB2"
+                                text="Customer Journeys"
+                                color="#5AACDC"
                             />
                             <ProjectTags
-                                text="Student Productivity"
-                                color="#E9A060"
-                            />
-                            <ProjectTags
-                                text="Degree Planning"
-                                color="#5DD371"
+                                text="Creative Tools"
+                                color="#FFE97B"
                             />
                             <ProjectTags
                                 text="UX design"
@@ -65,35 +62,33 @@ const ProjectTwo = () => {
                         </div>
                     </div>
                     <div className="project-content-items">
-                        <img className="project2-image" src="/images/spartansync-image1.png" alt="SpartanSync"/>
+                        <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe Flux"/>
                     </div>
                 </div>
             </div>
-
-            <section className="case-study-container">
                 {/* Background */}
-                <div className="background-container">
+                <div className="pinned-section background-container">
                     <div className="horizontal-line" />
-                    <h3 className="section-subheader">background</h3>
+                    <h3 className="pinned-inner project-header">Work overview</h3>
                     <div className="background-block">
                         <div className="background-column">
-                            <h2 className="background-subtitle">Tools</h2>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Figma</li>
-                                <li>Figjam</li>
-                                <li>Google Form</li>
+                            <h2 className="background-subtitle">Timeline</h2>
+                            <ul className="background-design-list">
+                                <li>March 2025 - May 2025</li>
                             </ul>
                         </div>
                         <div className="background-column">
                             <h2 className="background-subtitle">Team</h2>
                             <ul className="background-design-list">
                                 <li>Sabrina Quach</li>
-                                <li>SJSU Students (client)</li>
+                                <li>Sierra Mcray</li>
+                                <li>Yanfeng Dong</li>
+                                <li>Tanisha Damle</li>
                             </ul>
                         </div>
                         <div className="background-column">
-                            <h2 className="background-subtitle">My Role</h2>
-                            <ul className="role-tool-list background-design-list">
+                            <h2 className="background-subtitle">Responsibilities</h2>
+                            <ul className="background-design-list">
                                 <li>Ideation</li>
                                 <li>UX Research / Testing</li>
                                 <li>Interface Design</li>
@@ -101,62 +96,12 @@ const ProjectTwo = () => {
                             </ul>
                         </div>
                         <div className="background-column">
-                            <h2 className="background-subtitle">Timeline</h2>
-                            <ul className="timeline-list background-design-list">
-                                <li>Week 1–3: Research & Problem Definition</li>
-                                <li>Week 4–6: Ideation & Early Prototyping</li>
-                                <li>Week 7–9: High-Fidelity Design & Motion</li>
-                                <li>Week 10: Final Touches & Final Presentation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="horizontal-line" />
-                {/* </div> */}
-
-                {/* Design Process */}
-                {/* <div className="design-process-container"> */}
-                    <h3 className="pinned-inner section-subheader">design process</h3>
-                    <div className="design-process-block">
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSmile size={28} /> 
-                                <h2 className="background-subtitle">Deliver</h2>
-                            </div>
+                            <h2 className="background-subtitle">Tools</h2>
                             <ul className="background-design-list">
-                                <li>final design</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSearchAlt size={28} />
-                                <h2 className="background-subtitle">Research</h2>
-                            </div>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Understand the problem</li>
-                                <li>Offical system analysis</li>
-                                <li>user research</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                        <div className="background-row">
-                            <BiBook size={28} />
-                            <h2 className="background-subtitle">Define</h2>
-                        </div>
-                            <ul className="background-design-list">
-                                <li>establish core needs</li>
-                                <li>early design concepts</li>
-                                <li>deciding a direction</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiRotateRight size={28}/> 
-                                <h2 className="background-subtitle design-iterate">Design & Iterate</h2>
-                            </div>
-                            <ul className="role-tool-list background-design-list">
-                                <li>high-fidelity wireframes</li>
-                                <li>user testing feedback</li>
-                                <li>design iterations</li>
+                                <li>Figma</li>
+                                <li>Figjam</li>
+                                <li>Perplexity</li>
+                                <li>ChatGBT (Image)</li>
                             </ul>
                         </div>
                     </div>
@@ -165,83 +110,95 @@ const ProjectTwo = () => {
 
                 {/* Deliver */}
                 <div className="deliver-container">
-                    {/* Meet SpartanSync Section */}
+                    {/* Say Hello to Adobe Flux Section */}
                     <div className="final-design-container">
-                        <h3 className="section-subheader">Deliver</h3>
-                        <h1 className="section-header">Meet SpartanSync</h1>
-                        <p className="research-description">
-                            SpartanSync simplifies course planning for SJSU students by turning a stressful, fragmented process into a clear 
-                            and visual experience. Designed to eliminate tab-hopping and manual cross-checking, SpartanSync helps students 
-                            quickly generate, compare, and refine valid class schedules all in one place. Ensuring that students can make confident 
-                            academic decisions with less conflict and stress.
-                        </p>
+                    <h3 className="project-header">Deliver</h3>
+                    <h1 className="section-header">Say Hello to Adobe Flux</h1>
+                    <p className="research-description">
+                        Adobe Flux redefines creative flow by centering the designer from the very first interaction. Built for intuitive 
+                        control and expressive freedom, Flux adapts to how you think, create, and iterate on your terms.
+                    </p>
 
-                        {/* Degree-Aware Planning Subsection */}
-                        <div className="final-design-content">
-                            <div className="final-design-row">
-                                <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Degree-Aware Planning</h3>
+                        {/* Design with Purpose Subsection */}
+                        <div className="final-design-column">
+                            <div className="final-design-breakdown">
+                                <div className="text-column">
+                                    <h3 className="section-subtitle">Design with Purpose</h3>
                                     <p className="research-description">
-                                        SpartanSync shows students their degree progress, requirements, and scheduling limits upfront, so they know exactly 
-                                        where they stand before building a schedule. Academic progress is shown through clear progress bars, allowing students 
-                                        to instantly understand what’s done, what remains, and how close they are to graduating.
+                                        Before creating, Adobe Flux invites users to define their goals and moodboards, building AI context 
+                                        to ensure visuals match their creative intent.
                                     </p>
                                 </div>
-                                
                                 <video 
-                                    src="/videos/project2-videos/Degree-Aware-Planning-Video.mov"
+                                    src="/videos/project1-videos/adobeFlux-vid1.mov" 
                                     loop 
                                     muted
                                     autoPlay
                                     playsInline
-                                    className="p-final-design-video"
+                                    className="final-design-video"
                                 />
-                            </div>
+                            </div> 
                         </div>
                         
-                        {/* Guided Progress Flow Subsection */}
-                        <div className="final-design-content">
-                            <div className="final-design-row">
-                                <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Guided Progress Flow</h3>
+                        {/* Sketch for Control Subsection */}
+                        <div className="final-design-column">
+                            <div className="final-design-breakdown">
+                                <div className="text-column">
+                                    <h3 className="section-subtitle">Sketch for Control</h3>
                                     <p className="research-description">
-                                        SpartanSync uses a clear, step-by-step progress indicator to direct students throughout the scheduling journey. Moreover, 
-                                        student-centered language is integrated into each step, replacing system-heavy terminology with wording students already 
-                                        understand. This combination helps reduce confusion, reinforces clarity, and allows students to move through the process 
-                                        confidently without needing additional explanation.
+                                        Sketch Mode allows users to quickly express ideas, transforming them into polished AI visuals. 
+                                        Cursor tracking adds precision, enabling element-level refinements.
                                     </p>
                                 </div>
-                                
                                 <video 
-                                    src="/videos/project2-videos/Guided-Progress-Flow-Video.mov"
+                                    src="/videos/project1-videos/adobeFlux-vid2.mov" 
                                     loop 
                                     muted
                                     autoPlay
                                     playsInline
-                                    className="p-final-design-video"
+                                    className="final-design-video"
                                 />
                             </div>
                         </div>
 
-                        {/* Focused Schedule Exploration Subsection */}
-                        <div className="final-design-content">
-                            <div className="final-design-row">
-                                <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Focused Schedule Exploration</h3>
+                        {/* Smart Edits with AI Subsection */}
+                        <div className="final-design-column">
+                            <div className="final-design-breakdown">
+                                <div className="text-column">
+                                    <h3 className="section-subtitle">Smart Edits with AI</h3>
                                     <p className="research-description">
-                                        To prevent cognitive overload, class times are organized into structured, digestible blocks that make it easier to scan, compare, 
-                                        and evaluate options in one place. Students can quickly see all the details they usually check like course, time, professor, and 
-                                        ratings. This focused layout organizes class options into a single, easy-to-scan view, showing only schedules that fit without conflicts.
+                                        Edit Mode offers tools for refining AI-generated images. Context-aware AI suggestions adapt to 
+                                        each user’s evolving creative direction.
                                     </p>
                                 </div>
-                                
                                 <video 
-                                    src="/videos/project2-videos/Focused-Schedule-Exploration-Video.mov"
+                                    src="/videos/project1-videos/adobeFlux-vid3.mov" 
                                     loop 
                                     muted
                                     autoPlay
                                     playsInline
-                                    className="p-final-design-video"
+                                    className="final-design-video"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Gesture-Driven Interaction Subsection */}
+                        <div className="final-design-column">
+                            <div className="final-design-breakdown">
+                                <div className="text-column">
+                                    <h3 className="section-subtitle">Gesture-Driven Interaction</h3>
+                                    <p className="research-description">
+                                        Users can resize, rotate, and reposition elements on the canvas using intuitive gestures—enabling 
+                                        fast, hands-on adjustments without breaking flow.
+                                    </p>
+                                </div>
+                                <video 
+                                    src="/videos/project1-videos/adobeFlux-vid4.mov" 
+                                    loop 
+                                    muted
+                                    autoPlay
+                                    playsInline
+                                    className="final-design-video"
                                 />
                             </div>
                         </div>
@@ -251,202 +208,123 @@ const ProjectTwo = () => {
 
                 {/* Research */}
                 <div className="research-container">
-                    {/* Setting the Scene Section */}
-                    <div className="setting-the-scene-container">
-                        <h3 className="section-subheader">research</h3>
-                        <h1 className="section-header">Setting the Scene</h1>
+                    {/* The Challenge Section */}
+                    <div className="challenge-container">
+                        <h3 className="project-header">research</h3>
+                        <h1 className="section-header">the challenge</h1>
                         <div className="challenge-column">
                             <p className="research-description">
-                                Course registration at SJSU is a pivotal, time-sensitive process. Students must juggle degree requirements, 
-                                class availability, professor preferences, and personal schedules often across multiple disconnected systems.
-                                <br /> <br />
-                                Today, many students rely on a patchwork of tools: MyScheduler, MyPlanner, class listings, Google Sheets, 
-                                RateMyProfessor, and third-party sites. This fragmented experience makes planning slow, error-prone, and 
-                                mentally exhausting.
-                                <br /> <br />
+                                Many AI-powered creative tools rely on text prompts, limiting control and customization especially for 
+                                creatives who think beyond words or prefer hands-on, intuitive workflows. This creates a disconnect 
+                                between a designer’s vision and the AI’s output.
                             </p>
+                            <p className="research-description">This poses the question on...</p>
                         </div>
-                        <p className="challenge-question">SpartanSync was designed to replace this chaos with a single, intuitive scheduling experience. </p>
+                        <p className="challenge-question">How might alternate UI inputs give creatives more expression, engagement, and control? </p>
                         <div className="horizontal-line" />
                     </div>
                     
-                    {/* The Problem Section */}
-                    <div className="problem-container">
-                        <h1 className="section-header">the Problem</h1>
+                    {/* The Solution Section */}
+                    <div className="solution-container">
+                        <h1 className="section-header">the solution</h1>
                         <div className="solution-column">
                             <p className="research-description">
-                                There is no simple, centralized way for SJSU students to generate and compare all valid course schedules in one 
-                                place. As a result, students waste time, feel overwhelmed, and risk missing ideal class combinations.
+                                Through competitor analysis, user research, and user testing, we created a solution that explores new 
+                                interaction models beyond the traditional text prompts. By using real-time input like sketching, voice, 
+                                gestures, and smart guidance, it allows users a more natural, expressive, and collaborative design 
+                                process with AI. 
+                            </p>
+                            <p className="research-description">
+                                Adobe Flux is a collaborative design platform that uses AI as a creative assistant, not a replacement. It 
+                                helps users quickly generate and refine visuals through intuitive tools, real-time suggestions, and flexible 
+                                inputs like sketch, voice, and gesture. This ensures that creatives remain in full control.
                             </p>
                         </div>
-                        <h3 className="section-subtitle">Why this matters</h3>
+                        <div className="horizontal-line" />
+                    </div>
+
+                    {/* Designing With Intent Section */}
+                    <div className="design-with-intent-container">
+                        <h1 className="section-header">designing with intent</h1>
+                        <div className="design-with-intent-column">
+                            <p className="research-description">
+                                As AI tools evolve, they often expect users to navigate complex jargon and rigid processes. With Adobe Flux, 
+                                we reimagined the experience to be intuitive, accessible, and empowering such that it is designed 
+                                specifically for creatives who think and create beyond words. 
+                            </p>
+                            <p className="research-description">We began by tailoring our questions to understand...</p>
+                        </div>
                         <ul className="design-with-intent-list">
-                            <li className="design-with-intent-list-item">Registration windows are limited</li>
-                            <li className="design-with-intent-list-item">Schedule conflicts can delay graduation</li>
-                            <li className="design-with-intent-list-item">Stress disproportionately affects working students and commuters</li>
+                            <li className="design-with-intent-list-item">How do users currently engage with generative AI tools?</li>
+                            <li className="design-with-intent-list-item">Where do these interactions fall short or become restrictive?</li>
+                            <li className="design-with-intent-list-item">Which input methods resonate most intuitively with various types of creatives?</li>
                         </ul>
                         <div className="horizontal-line" />
                     </div>
 
-                    {/* The Solution Section */}
-                    <div className="solution-container">
-                        <h1 className="section-header">the Solution</h1>
-                        <div className="solution-column">
+                    {/* Current State of AI Section */}
+                    <div className="current-state-container">
+                        <h1 className="section-header">Current State of AI</h1>
+                        <div className="current-state-column">
                             <p className="research-description">
-                                SpartanSync streamlines class planning by integrating degree progress, course availability, and schedule visualization into one cohesive flow.
-                                By pulling relevant academic data upfront, students can instantly explore all valid schedule combinations—without switching tabs or manually cross-checking information.
+                                Before we designed for generative AI, we needed to understand the current functions, limitations, and 
+                                needs that users wanted. To do so, we carried out a comprehensive deep research, utilizing tools such 
+                                as Perplexity, Google Gemini, and ChatGPT to process and interpret extensive data from UX case studies.
                             </p>
+                            <p className="research-description">From these studies, the main pain points are...</p>
                         </div>
-                        <h3 className="section-subtitle-orange">Why i care</h3>
-                            <p className="research-description">
-                                As an SJSU student, I’ve personally experienced the frustration of learning and relearning the university’s scheduling 
-                                systems each semester. Designing SpartanSync meant designing a solution I genuinely needed, one that reduces stress and 
-                                empowers students to make faster, better informed academic decisions.
-                            </p>
+                        <ul className="current-state-list">
+                            <li className="current-state-list-item">Increasing frustration with inflexible prompt-based systems</li>
+                            <li className="current-state-list-item">Limited support for multimodal inputs (visual, voice, gesture)</li>
+                            <li className="current-state-list-item">AI poses barriers for visual or non-technical users</li>
+                        </ul>
                         <div className="horizontal-line" />
                     </div>
 
-                    {/* Where the Current System Falls Short Section */}
-                    <div className="understanding-challenges-container">
-                    <h1 className="section-header">Where the Current System Falls Short</h1>
+                    {/* Interviews With Creatives Section */}
+                    <div className="interviews-with-creatives-container">
+                        <h1 className="section-header">interviews with creatives</h1>
                         <div className="interviews-with-creatives-column">
                             <p className="research-description">
-                                Initial analysis revealed major usability issues across the existing scheduling tools. Students often felt lost when first 
-                                entering the system due to unclear starting points and fragmented workflows spread across MyPlanner, MyScheduler, and class 
-                                listings. Added classes and time conflicts were difficult to see early, forcing students to rely on external notes or 
-                                spreadsheets to keep track of information. As a result, students expended significant cognitive effort just to piece together 
-                                a basic schedule, making the process stressful and error-prone.
+                                To better understand these pain points and uncover intuitive solutions, we conducted in-depth user interviews with a diverse group of creatives. 
                             </p>
-                            <div className="current-state-image-row">
-                                <div className="prioritization-content-column">
-                                    <h4 className="current-state-image-label">Students don’t know where to start</h4>
-                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                        <img
-                                            src="/images/project2-images/opening-view.png"
-                                            alt="Feasibility Chart"
-                                            className="current-state-image"
-                                            onClick={() => setModalImage({
-                                                src: '/images/project2-images/opening-view.png',
-                                                alt: 'Enrollment opening view'
-                                            })}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="prioritization-content-column">
-                                    <h4 className="current-state-image-label">Must jump back and forth to see added classes</h4>
-                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                        <img
-                                            src="/images/project2-images/added-class-in-cart.png"
-                                            alt="Feasibility Chart"
-                                            className="current-state-image"
-                                            onClick={() => setModalImage({
-                                                src: '/images/project2-images/added-class-in-cart.png',
-                                                alt: 'Added class in cart'
-                                            })}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="current-state-image-row">
-                                <div className="prioritization-content-column">
-                                    <h4 className="current-state-image-label">Class listings are dense and lack key details</h4>
-                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                        <img
-                                            src="/images/project2-images/class-list.png"
-                                            alt="Feasibility Chart"
-                                            className="current-state-image"
-                                            onClick={() => setModalImage({
-                                                src: '/images/project2-images/class-list.png',
-                                                alt: 'List of classes'
-                                            })}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="prioritization-content-column">
-                                    <h4 className="current-state-image-label">Text-heavy MyProgress is difficult to interpret</h4>
-                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                        <img
-                                            src="/images/project2-images/myprogress.png"
-                                            alt="Feasibility Chart"
-                                            className="current-state-image"
-                                            onClick={() => setModalImage({
-                                                src: '/images/project2-images/myprogress.png',
-                                                alt: 'MyProgress student view'
-                                            })}
-                                        />
-                                    </div>
-                                </div>
-                                {modalImage && (
-                                    <div className="image-modal" onClick={() => setModalImage(null)}>
-                                    <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
-                                    </div>
-                                )}
-                            </div>
-                            <p className="research-description current-state-description">
-                                This analysis revealed that students spend a significant amount of mental effort just to piece together basic information, 
-                                turning what should be a planning task into a stressful, error-prone process. Screens showing class search, added courses, 
-                                and degree progress lack visual continuity, forcing students to constantly shift attention and piece together information 
-                                across multiple pages.
-                            </p>
-                        </div>
-                        <div className="horizontal-line" /> 
-                    </div>
-
-                    {/* Understanding Student Scheduling Challenges Section */}
-                    <div className="current-state-container">
-                    <h1 className="section-header">Understanding Student Scheduling Challenges</h1>
-                        <div className="current-state-column">
-                            <p className="research-description">
-                                The goal of research was to identify where students struggle most when building schedules and what features would 
-                                meaningfully improve the experience. By understanding these challenges, the objective is to design a tool that 
-                                streamlines scheduling and enhances the student experience.
-                            </p>
-                            <p className="research-description">To stay focused, I defined SMART objectives...</p>
-                        </div>
-                        <div className="p-square-row">
-                            <Square 
-                                title="Specific"
-                                text="Identify common scheduling challenges and desired features"
-                            />
-                            <Square 
-                                title="Measurable"
-                                text="Collect insights through surveys and interviews"
-                            />
-                            <Square 
-                                title="Achievable"
-                                text="Improve usability through clear, flexible design"
-                            />
-                            <Square 
-                                title="Relevant"
-                                text="Address visualization, conflicts, and inefficiency"
-                            />
-                            <Square 
-                                title="Time-bound"
-                                text="Complete research within two weeks"
-                            />
                         </div>
 
-                        {/* Who I Spoke With Subsection */}
-                        <h3 className="section-subtitle">Who I Spoke With</h3>
+                        {/* Who We Interviewed Subsection */}
+                        <div className="subsection-container">
+                            <h2 className="section-subtitle">Who we interviewed</h2>
+                            <p className="research-description">We interviewed around 20 creatives of all different backgrounds to take a closer look into their...</p>
+                            <ul className="interviews-with-creatives-list">
+                                <li className="interviews-with-creatives-list-item">Daily creative workflows</li>
+                                <li className="interviews-with-creatives-list-item">Frustrations with current AI tools</li>
+                                <li className="interviews-with-creatives-list-item">More intuitive & expressive control</li>
+                            </ul>
+                        </div>
+
+                        {/* Empathy Maps Subsection */}
+                        <div className="subsection-container">
+                        <h3 className="section-subtitle">Empathy Maps</h3>
                         <div className="empathy-maps-column">
                             <p className="research-description">
-                                My target audience consisted of current SJSU undergraduate and graduate students across different majors and academic years.
+                                Based on our user interviews, we created empathy maps to capture and organize users’ emotions, 
+                                thoughts, and behaviors. Each map had categories...
                             </p>
-                            <div className="painpoints-row">
-                                <Rectangle
-                                    title="Inclusion Criteria"
-                                    icon={<TbClipboardCheck />}
-                                    text="Current SJSU students, Prior use of SJSU registration tools, Actively plan their own schedules"
+                            <div className="square-row">
+                                <Square 
+                                    title="say"
+                                    text="“It’s impressive, but it doesn’t understand what I’m trying to do.”"
                                 />
-                                <Rectangle
-                                    title="Exclusion Criteria"
-                                    icon={<TbClipboardX />}
-                                    text="Incoming freshmen, Students who rely entirely on advisors, University staff or faculty"
+                                <Square 
+                                    title="do"
+                                    text="Tweak outputs endlessly, give up on the tool, or go back to doing it by hand."
                                 />
-                                <Rectangle
-                                    title="Methods"
-                                    icon={<TbMoodSearch />}
-                                    text="User interviews, Surveys, Observations, Cognitive walkthroughs, Think-aloud protocols"
+                                <Square 
+                                    title="think"
+                                    text="“I’m not sure this really reflects my creative voice.”"
+                                />
+                                <Square 
+                                    title="feel"
+                                    text="Confused, disconnected, creatively blocked."
                                 />
                             </div>
                             <p className="research-description">
@@ -454,112 +332,422 @@ const ProjectTwo = () => {
                                 creative control. User interviews helped in honing into creating a product that collaborated under 
                                 the users’ control.
                             </p>
+                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                <img
+                                    src="/images/project1-images/empathyMap-1.png"
+                                    alt="Empathy Map 1"
+                                    className="empathy-map-image"
+                                    onClick={() => setModalImage({
+                                        src: '/images/project1-images/empathyMap-1.png',
+                                        alt: 'Empathy Map 1'
+                                    })}
+                                />
+                                <img
+                                    src="/images/project1-images/empathyMap-2.png"
+                                    alt="Empathy Map 2"
+                                    className="empathy-map-image"
+                                    onClick={() => setModalImage({
+                                        src: '/images/project1-images/empathyMap-2.png',
+                                        alt: 'Empathy Map 2'
+                                    })}
+                                />
+                            </div>
+
+                            {modalImage && (
+                                <div className="image-modal" onClick={() => setModalImage(null)}>
+                                <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
+                                </div>
+                            )}
+                        </div>
                         </div>
 
-                        {/* Key Research Questions Subsection */}
-                        <h3 className="section-subtitle">Key Research Questions</h3>
-                        <div className="research-question-row">
-                            <LargeRectangle
-                                title="Primary"
-                                name1="Question 1"
-                                innerText1="What challenges do students face when creating schedules?"
-                                name2="Question 2"
-                                innerText2="What tools do they currently use?"
-                                name3="Question 3"
-                                innerText3="What features would save the most time?"
-                            />
-                            <LargeRectangle
-                                title="Secondary"
-                                name1="Question 1"
-                                innerText1="How do other universities design scheduling tools?"
-                                name2="Question 2"
-                                innerText2="Why do students turn to third-party platforms?"
-                                name3="Question 3"
-                                innerText3="What reduces stress during scheduling?"
-                            />
+                        {/* Themes Subsection */}
+                        <div className="subsection-container">
+                        <h3 className="section-subtitle">Themes</h3>
+                        <div className="themes-column">
+                            <p className="research-description">
+                                Based on our user interviews, we created empathy maps to capture and organize users’ 
+                                emotions, thoughts, and behaviors. Each map had categories...
+                            </p>
+                            <div className="themes-wrapper">
+                                <div className="theme-rectangle-row">
+                                    <Rectangle 
+                                        title="Ethics"
+                                        icon={<TbScale />}
+                                        text="Users expressed concern about ownership, authorship, and the transparency of 
+                                        AI-generated content, highlighting a need for ethical guardrails in creative tools."
+                                    />
+                                    <Rectangle 
+                                        title="Prompts"
+                                        icon={<TbTerminal2 />}
+                                        text="Prompt-based systems felt limiting and unnatural for many users, especially those 
+                                        who preferred more visual or intuitive ways of expressing their ideas."
+                                    />
+                                    <Rectangle 
+                                        title="Originality / User Control"
+                                        icon={<BiBrain />}
+                                        text="Many creatives felt the AI was producing work that didn’t reflect their voice or 
+                                        style, pointing to a need for tools that support originality and keep users in control."
+                                    />
+                                    <Rectangle 
+                                        title="Behavior"
+                                        icon={<TbMoodSearch />}
+                                        text="Interviews revealed consistent patterns: users would often rework AI results, abandon 
+                                        tools mid-process, or revert to manual methods out of frustration or lack of trust."
+                                    />
+                                    <Rectangle 
+                                        title="Efficiency"
+                                        icon={<TbTrendingUp />}
+                                        text="While AI promised speed, users often found themselves spending more time correcting 
+                                        or redoing work, making the process feel inefficient rather than streamlined."
+                                    />
+                                    <Rectangle 
+                                        title="Problem-Solving"
+                                        icon={<TbBulb />}
+                                        text="Users wanted AI to act more like a creative collaborator—helping them brainstorm, 
+                                        iterate, and problem-solve rather than just generate finished outputs."
+                                    />
+                                    <Rectangle 
+                                        title="Contextual Understanding"
+                                        icon={<TbCloudCheck />}
+                                        text="A major pain point was AI’s inability to understand creative context—missing the 
+                                        nuance of a user’s vision, project goals, or aesthetic preferences."
+                                    />
+                                    <Rectangle 
+                                        title="Lack of Human Emotion"
+                                        icon={<TbMoodOff />}
+                                        text="Users described AI outputs as “cold” or “soulless,” underscoring a desire for tools 
+                                        that feel more emotionally aware and aligned with the human creative process."
+                                    />
+                                </div>
+                            </div>
+                            </div>
                         </div>
 
-                        {/* What I Learned Subsection */}
-                        <h3 className="section-subtitle">What I Learned </h3>
-                        <p className="research-description">
-                            I interviewed 20 SJSU students and found that most rely on third-party sites due to the fragmented experience 
-                            of the official enrollment system. 
-                            When asked on the biggest challenges SJSU students face when creating their class schedules, students said...
-                        </p>
-                        <div className="research-question-row">
-                            <div className="interview-quote-column">
-                                <img className="interview-quote-circle" src="/images/project2-images/student1.png" alt="Student 1"/>
-                                <p className="interview-quote-description">
-                                    "I think a lot of the time the software glitches so that’s annoying. Also, I have to input a lot of information 
-                                    in order to find a specific class."
-                                </p>
-                            </div>
-                            <div className="interview-quote-column">
-                                <img className="interview-quote-circle" src="/images/project2-images/student2.png" alt="Student 2"/>
-                                <p className="interview-quote-description">
-                                    "I feel like we’re all left to figure out what we need and I have to take pictures of "MyProgress",
-                                    class listings, “MyRoadmap”, etc because it only allows one tab open."
-                                </p>
-                            </div>
-                            <div className="interview-quote-column">
-                                <img className="interview-quote-circle" src="/images/project2-images/student3.png" alt="Student 3"/>
-                                <p className="interview-quote-description">
-                                    "The scheduler tool isn’t built into the class search, so I can’t see how one choice affects my next class selection."
-                                </p>
+                        {/* Competitor Analysis Subsection */}
+                        <div className="subsection-container">
+                        <h3 className="section-subtitle">Competitor Analysis</h3>
+                        <div className="competitor-column">
+                            <p className="research-description">
+                                We analyzed three companies by categorizing them by their <span className="swot-orange">SWOT </span>
+                                (strengths, weaknesses, opportunities, and threats). Overall, Midjourney, Dall-E, and 
+                                Sound2Scene had common themes across all three SWOTs...
+                            </p>
+                            <div className="competitor-wrapper">
+                                <div className="competitor-row">
+                                    <LargeRectangle
+                                        title="Strengths"
+                                        text="All three tools demonstrate strong creative capabilities, transforming non-visual 
+                                        inputs (text, sketches, or sound) into visual content."
+                                        name1="DALL·E"
+                                        innerText1="Versatility & sketch-to-image"
+                                        name2="MidJourney"
+                                        innerText2="Strong artistic control"
+                                        name3="Sound2Scene"
+                                        innerText3="Uniquely bridges audio with visual generation"
+                                    />
+                                    <LargeRectangle
+                                        title="weaknesses"
+                                        text="These three tools face technical and usability challenges, like the need for highly specific 
+                                        prompts, inconsistent realism, limited access."
+                                        name1="DALL·E"
+                                        innerText1="Need to be very descriptive"
+                                        name2="MidJourney"
+                                        innerText2="Discord dependency"
+                                        name3="Sound2Scene"
+                                        innerText3="Alignment issues between input and output"
+                                    />
+                                    <Rectangle
+                                        competitorTitle="Opportunities"
+                                        text="Each tool has room to grow by enhancing user personalization, expanding access methods, and 
+                                        introducing features like real-time editing, better prompt support, and adaptive learning for 
+                                        user-specific styles/audio cues."
+                                    />
+                                    <Rectangle
+                                        competitorTitle="Threats"
+                                        text="The fast-moving AI landscape poses threats from advanced competitors and ethical concerns 
+                                        around misuse (e.g., deepfakes), while tools like Sound2Scene also face low visibility and 
+                                        adoption risks."
+                                    />
+                                </div>
                             </div>
                         </div>
-                        
-                        <div className="research-question-row">
-                            <PercentSquare
-                                percent="75"
-                                text="found the official SJSU enrollment system difficult to use."
-                            />
-                            <PercentSquare
-                                percent="90"
-                                text="relied on external sites to create schedules."
-                            />
                         </div>
+
                         <div className="horizontal-line" />
+                    </div>
+
+                     {/* Overall Pain Points Subsection */}
+                    <h3 className="section-header">Overall Pain Points</h3>
+                    <div className="competitor-column">
+                        <p className="research-description">
+                            After conducting user interviews and deep research, the key pain points we deduced are...
+                        </p>
+                        <div className="competitor-wrapper">
+                            <div className="painpoints-row">
+                                <Rectangle
+                                    title="Prompt rigidity"
+                                    icon={<BiPen size={28} />}
+                                    text="Because Flux aims to move beyond traditional prompts, addressing this limitation is 
+                                    core to the redesign."
+                                />
+                                <Rectangle
+                                    title="No multimodal input"
+                                    icon={<BiLayer size={28} />}
+                                    text="The core innovation of Flux is enabling sketch, voice, and gesture."
+                                />
+                                <Rectangle
+                                    title="Creative mismatch"
+                                    icon={<BiTargetLock size={28} />}
+                                    text="The tool must visually reflect the user’s intent, so aligning outputs with creative 
+                                    vision is crucial."
+                                />
+                                <Rectangle
+                                    title="Limited control"
+                                    icon={<BiSliderAlt size={28} />}
+                                    text="Ensuring creatives feel in charge of the process drives trust and adoption, a key 
+                                    design consideration."
+                                />
+                                <Rectangle
+                                    title="Context gaps"
+                                    icon={<BiBrain size={28} />}
+                                    text="Designing AI to better grasp goals and context is essential to making interactions 
+                                    feel intelligent and relevant."
+                                />
+                                <Rectangle
+                                    title="Not visual-friendly"
+                                    icon={<BiShow size={28} />}
+                                    text="The interface must feel natural to non-technical, visually-driven users which directly 
+                                    shape design choices."
+                                />
+                            </div>
+                            <div className="horizontal-line" />
+                        </div>
                     </div>
                 </div>
 
                 {/* Define */}
                 <div className="define-container">
-                    <h3 className="section-subheader">Define</h3>
-
-                    {/* Persona Section */}
-                    <h3 className="section-header">Persona</h3>
-                    <p className="research-description">To guide my design, a student-centered persona was created to understand scheduling challenges.</p>
-                    <div className="persona-row">
-                        <div className="persona-circle" />
-                        <p className="research-description">
-                            Giselle is a student at San Jose State University, she is a fourth year Management Information Systems 
-                            major. During her four years at SJSU, she has always dreaded planning her schedule every semester. The 
-                            constant back and forth between “MyScheduler”, “MyPlanner”, class time listings, and Google sheets is 
-                            overwhelming every time. She wishes that there was an application that would make her life easier each 
-                            semester.
-                        </p>
-                    </div>
-                    <div className="horizontal-line" />
-
-                    {/* Key Findings & Opportunities Section */}
-                    <div className="findings-container">
-                        <h1 className="section-header">Key Findings & Opportunities</h1>
+                    {/* Experience Drivers Section */}
+                    <div className="experience-drivers-container">
+                        <h3 className="project-header">Define</h3>
+                        <h1 className="section-header">Experience Drivers</h1>
                         <div className="experience-drivers-column">
-                            <p className="research-description">Research revealed consistent frustrations</p>
-                            <ul className="findings-list">
-                                <li className="design-with-intent-list-item">Tabs automatically close, forcing students to write information down</li>
-                                <li className="design-with-intent-list-item">Core features live in separate systems</li>
-                                <li className="design-with-intent-list-item">No way to plan schedules collaboratively</li>
-                                <li className="design-with-intent-list-item">No degree-aware recommendations</li>
-                                <li className="design-with-intent-list-item">Professor ratings require external tools</li>
-                                <li className="design-with-intent-list-item">“My Progress” is difficult to interpret</li>
-                            </ul>
-                            <p className="findings-question">
-                                How might we provide an intuitive, visual scheduling tool that allows SJSU students to plan 
-                                courses efficiently without conflicts or wasted effort?
+                            <p className="experience-drivers-question">
+                                How might we empower designers with the creative potential of AI while maintaining intuitive, flexible 
+                                control and a seamless workflow?
+                            </p>
+                            <p className="research-description">Using this HMW, we created experience drivers to shape our design...</p>
+                            <div className="core-row">
+                                <SmallRectangle
+                                    text="AI tools need creative flexibility"
+                                />
+                                <SmallRectangle
+                                    text="Manual control is non-negotiable"
+                                />
+                                <SmallRectangle
+                                    text="Contextual assistance improves flow"
+                                />
+                            </div>
+                        </div>
+                        <div className="horizontal-line" />
+                    </div>
+
+                    {/* Early Design Concepts Section */}
+                    <div className="early-design-container">
+                        <h1 className="section-header">Early Design Concepts</h1>
+                        <div className="early-design-column">
+                            <p className="research-description">
+                                Three design concepts were created to shape what our design would contain to ensure our experience 
+                                drivers were met.
+                            </p>
+                            {/* 3D Modular Design Studio Subsection */}
+                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
+                                    <img
+                                        src="/images/project1-images/designConcept-1.png"
+                                        alt="3D Modular Design Studio Concept"
+                                        className="designConcept-image"
+                                        onClick={() => setModalImage({
+                                            src: '/images/project1-images/designConcept-1.png',
+                                            alt: '3D Modular Design Studio Concept'
+                                        })}
+                                    />
+                                    <div className="early-design-column">
+                                        <h3 className="section-subtitle-early-design">1. 3D Modular Design Studio</h3>
+                                        <p className="research-description">
+                                            A design tool that modularizes 3D elements based on user-provided references, allowing intuitive, 
+                                            component-level adjustments through gestures and AI suggestions while preserving visual consistency. 
+                                            It supports rapid iteration with real-time feedback from an adaptive assistant.
+                                        </p>
+                                    </div>
+                            </div>
+
+                            {/* Interactive Visual Design Suite Subsection */}
+                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
+                                    <img
+                                        src="/images/project1-images/designConcept-2.png"
+                                        alt="Interactive Visual Design Suite Concept"
+                                        className="designConcept-image"
+                                        onClick={() => setModalImage({
+                                            src: '/images/project1-images/designConcept-2.png',
+                                            alt: 'Interactive Visual Design Suite Concept'
+                                        })}
+                                    />
+                                    <div className="early-design-column">
+                                        <h3 className="section-subtitle-early-design">2. Interactive Visual Design Suite</h3>
+                                        <p className="research-description">
+                                            An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
+                                            palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
+                                            and smart, contextual suggestions.
+                                        </p>
+                                    </div>
+                            </div>
+
+                            {/* AI Agent Subsection */}
+                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
+                                    <img
+                                        src="/images/project1-images/designConcept-3.png"
+                                        alt="AI Agent Concept"
+                                        className="designConcept-image"
+                                        onClick={() => setModalImage({
+                                            src: '/images/project1-images/designConcept-3.png',
+                                            alt: 'AI Agent Concept'
+                                        })}
+                                    />
+                                    <div className="early-design-column">
+                                        <h3 className="section-subtitle-early-design">3. AI Agent</h3>
+                                        <p className="research-description">
+                                            An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
+                                            palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
+                                            and smart, contextual suggestions.
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div className="horizontal-line" />
+                    </div>
+
+                    {/* Prioritization Section */}
+                    <div className="prioritization-container">
+                        <h1 className="section-header">Prioritization</h1>
+                        <div className="prioritization-column">
+                            <p className="research-description">
+                                Prioritization was needed to determine feasibility and desirability to help us determine the direction 
+                                of our design. We found that the AI agent, AI Mood Board, Modular Design Studio, Cursor Tracking, 
+                                Interactive Design Studio were highly possible for our design.
+                            </p>
+                            <div className="prioritization-image-row">
+                                <div className="prioritization-content-column">
+                                    <h4 className="prioritization-image-label">feasibility</h4>
+                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                        <img
+                                            src="/images/project1-images/priorization-feasibility.png"
+                                            alt="Feasibility Chart"
+                                            className="prioritization-image"
+                                            onClick={() => setModalImage({
+                                                src: '/images/project1-images/priorization-feasibility.png',
+                                                alt: 'Feasibility Chart'
+                                            })}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="prioritization-content-column">
+                                    <h4 className="prioritization-image-label">desirability</h4>
+                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                        <img
+                                            src="/images/project1-images/priorization-desirability.png"
+                                            alt="Desirability Chart"
+                                            className="prioritization-image"
+                                            onClick={() => setModalImage({
+                                                src: '/images/project1-images/priorization-desirability.png',
+                                                alt: 'Desirability Chart'
+                                            })}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="horizontal-line" />
+                    </div>
+
+                    {/* Low-fidelity Wireframes Section */}
+                    <div className="lofi-wireframes-container">
+                        <h1 className="section-header">Low-fidelity Wireframes</h1>
+                        <div className="lofi-wireframes-column">
+                            <p className="research-description">
+                                To define what Adobe Flux was going to look like, three versions were explored to get a 
+                                visualization of what the platform would look like.
                             </p>
                         </div>
+
+                        {/* Version 1 Subsection */}
+                        <div className="subsection-container">
+                        <div className="lofi-wireframes-content-column">
+                            <h3 className="section-subtitle">Version 1</h3>
+                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                <img
+                                    src="/images/project1-images/lofi-wireframe-v1.png"
+                                    alt="Low-Fidelity Wireframe Version 1"
+                                    className="lofi-wireframes-image"
+                                    onClick={() => setModalImage({
+                                        src: '/images/project1-images/lofi-wireframe-v1.png',
+                                        alt: 'Low-Fidelity Wireframe Version 1'
+                                    })}
+                                />
+                            </div>
+                            <p className="research-description">
+                                This version looked too much to Adobe’s current platform, it offered nothing too different 
+                                from what they already had. This was unintuitive and did not improve the creatives’ workflow.
+                            </p>
+                        </div>
+                        </div>
+
+                        {/* Version 2 Subsection */}
+                        <div className="subsection-container">
+                        <div className="lofi-wireframes-content-column">
+                            <h3 className="section-subtitle">Version 2</h3>
+                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                <img
+                                    src="/images/project1-images/lofi-wireframe-v2.png"
+                                    alt="Low-Fidelity Wireframe Version 2"
+                                    className="lofi-wireframes-image"
+                                    onClick={() => setModalImage({
+                                        src: '/images/project1-images/lofi-wireframe-v2.png',
+                                        alt: 'Low-Fidelity Wireframe Version 2'
+                                    })}
+                                />
+                            </div>
+                            <p className="research-description">
+                                This version explored the idea of having two modes that users could switch in between to have the 
+                                idea of “a platform that you could do everything in”. This also explored the idea of giving 
+                                contextualization for generative AI in a more digestible way for the user. 
+                            </p>
+                        </div>
+                        </div>
+
+                        {/* Version 3 Subsection */}
+                        <div className="subsection-container">
+                        <div className="lofi-wireframes-content-column">
+                            <h3 className="section-subtitle">Version 3</h3>
+                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                <img
+                                    src="/images/project1-images/lofi-wireframe-v3.png"
+                                    alt="Low-Fidelity Wireframe Version 3"
+                                    className="lofi-wireframes-image"
+                                    onClick={() => setModalImage({
+                                        src: '/images/project1-images/lofi-wireframe-v3.png',
+                                        alt: 'Low-Fidelity Wireframe Version 3'
+                                    })}
+                                />
+                            </div>
+                            <p className="research-description">
+                                This version honed in on what Adobe Flux was going to look like, it had clear contextualization and
+                                easy visualization of a generated image. In goals, create, and edit, the user could switch in between 
+                                to create their desired image easily.
+                            </p>
+                        </div>
+                        </div>
+
                         <div className="horizontal-line" />
                     </div>
                 </div>
@@ -568,56 +756,61 @@ const ProjectTwo = () => {
                 <div className="design-iterate-container">
                     {/* High-fidelity Wireframes Section */}
                     <div className="hifi-wireframe-container">
-                        <h3 className="section-subheader">Design & Iterate</h3>
+                        <h3 className="project-header">Design & Iterate</h3>
                         <h1 className="section-header">High-fidelity wireframe</h1>
                         <div className="style-guide-column">
                             <p className="research-description">
                                 For user testing, we used the following high-fidelity wireframe.
                             </p>
                             <video 
-                                src="/videos/project2-videos/SpartanSync-HiFi-wireframe.mov" 
+                                src="/videos/project1-videos/hi-fidelity-wireframe.mov" 
                                 loop 
                                 muted
                                 autoPlay
                                 playsInline
-                                className="p-hifi-wireframe-video"
+                                className="hifi-wireframe-video"
                             />
                         </div>
 
 
                         {/* Key Feedback Subsection */}
+                        <div className="subsection-container">
                         <h3 className="section-subtitle">Key Feedback</h3>
                         <div className="key-feedback-column">
                             <p className="key-feedback-title">
-                                No clear indication of progress in the process
+                                Navigation lacks clarity
                                 <ul className="key-feedback-list">
-                                    <li>Users were left wondering how many more steps until they finish scheduling.</li>
+                                    <li>Users struggle to understand where they are, especially within Style Mode.</li>
                                 </ul>
                             </p>
                             <p className="key-feedback-title">
-                                “My Progress” was difficult to understand
+                                Style Mode orientation is unclear
                                 <ul className="key-feedback-list">
-                                    <li>Users felt it was an improvement, yet still not clear enough.</li>
+                                    <li>Consider reinforcing location indicators or section highlights.</li>
                                 </ul>
                             </p>
                             <p className="key-feedback-title">
-                                Too many steps slowed the process
+                                "Regenerate" feels too generic
                                 <ul className="key-feedback-list">
-                                    <li>Extra steps made the scheduling process longer than needed.</li>
+                                    <li>Enhance it with language that emphasizes creative agency and personalization.</li>
                                 </ul>
                             </p>
                             <p className="key-feedback-title">
-                                Confusing language made it unclear what the next step was
+                                Insufficient feedback between sub-headers
                                 <ul className="key-feedback-list">
-                                    <li>Provide clearer language to guide the user.</li>
+                                    <li>Provide clearer transitions or visual cues to guide the user.</li>
                                 </ul>
                             </p>
                             <p className="key-feedback-title">
-                                Class listings were still overwhelming and provided no additional information
+                                Transformation tools aren't intuitive
                                 <ul className="key-feedback-list">
-                                    <li>Reduce cognitive load and add key information students' look for.</li>
+                                    <li>Make them accessible without requiring gesture-based interactions</li>
                                 </ul>
                             </p>
+                            <p className="key-feedback-title">
+                                Consider reintroducing the "Upload Sketch" option to support mixed-media workflows and ease of access.
+                            </p>
+                        </div>
                         </div>
 
                         <div className="horizontal-line" />
@@ -626,129 +819,85 @@ const ProjectTwo = () => {
                     {/* Design Iterations Section */}
                     <div className="design-iterations-container">
                         <h1 className="section-header">Design Iterations</h1>
-                        <p className="research-description">
-                            Taking into account the feedback we got from our user testing, we simplified our navigation 
-                            and provided clearer indicators of where the user is. 
-                        </p>
+                        <div className="design-iterations-column">
+                            <p className="research-description">
+                                Taking into account the feedback we got from our user testing, we simplified our navigation 
+                                and provided clearer indicators of where the user is. 
+                            </p>
+                            <DesignCard 
+                                number="01."
+                                title="Improving Context and Streamlining Navigation"
+                                image="/images/project1-images/iteration1-before.png"
+                                alt="Adobe FLux Iteration 1"
 
-                        <h3 className="design-iterations-subtitle">Progress Clarity</h3>
-                        <div className="design-iterations-row">
-                            <div className="design-iterations-content-row">
-                                <div className="design-iterations-inner-row">
-                                    <div className="arrow-before-after">
-                                        <div className="design-iteration-inner-inner-column">
-                                            <h3 className="design-iterations-subtitle-content">before</h3>
-                                            <img className="design-iteration-img" src="/images/project2-images/before1.png" alt="Before Design Iteration 1"/>
-                                        </div>
-                                        <TbArrowRight className="arrow-icon" />
-                                        <div className="design-iteration-inner-inner-column">
-                                            <h3 className="design-iterations-subtitle-content">after</h3>
-                                            <img className="design-iteration-img" src="/images/project2-images/after1.png" alt="After Design Iteration 1"/>                                    </div>
-                                    </div>
-                                </div>
+                                text1="❌ Navigation was overcomplex across Goals, Create, and Edit modes"
+                                text2="❌ Goal input lacked flexibility"
+                                text3="❌ Header design lacked structure and clarity"
+                                text4="❌ Gesture button was always visible, creating confusion"
 
-                                    <div className="design-iterations-inner-column">
-                                        <div className="design-iteration-card">
-                                            <h3 className="problem-solution-subtitle">Problem</h3>
-                                            <div className="problem-solution-column">
-                                                <p className="problem-solution-text">❌ Users didn’t know where they were or when they would finish</p>
-                                            </div>
-                                        </div>
-                                        <div className="design-iteration-card">
-                                            <h3 className="problem-solution-subtitle">Solution</h3>
-                                            <div className="problem-solution-column">
-                                                <p className="problem-solution-text">✅ Added a clear, persistent progress indicator</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
+                                text5="✅ Combined into two core modes: Goals and Create"
+                                text6="✅ Allowed users to input and customize project descriptions"
+                                text7="✅ Redesigned with clear visual hierarchy to anchor the experience"
+                                text8="✅ Made gesture prompts appear contextually, only when needed"
+                            />
+                            <DesignCard 
+                                number="02."
+                                title="Clarifying Focus & Reducing Cognitive Load"
+                                image="/images/project1-images/iteration2-before.png"
+                                alt="Adobe FLux Iteration 2"
+
+                                text1="❌ Create screen was cluttered with too many options"
+                                text2="❌ No integration for existing Adobe Moodboard workflows"
+                                text3="❌ Poor visual hierarchy made it hard to navigate"
+                                text4="❌ Users lost track of their original prompt"
+
+                                text5="✅ Simplified to Sketch and AI Generation, moved Moodboards (renamed Reference) to the Goals panel"
+                                text6="✅ Added link-out to Adobe Moodboards app for optional inspiration"
+                                text7="✅ Strengthened layout with clear headings and typographic contrast"
+                                text8="✅ Added a persistent prompt reminder for continuity and direction"
+                            />
+                            <DesignCard 
+                                number="03."
+                                title="Strengthening Identity & Edit Mode Clarity"
+                                image="/images/project1-images/iteration3-before.png"
+                                alt="Adobe FLux Iteration 3"
+
+                                text1="❌ Weak hierarchy made Edit Mode feel ambiguous"
+                                text2="❌ Experience felt too close to standard Adobe tools"
+                                text3="❌ Unfamiliar terminology created friction"
+                                text4="❌ No way to revisit or undo edits"
+
+                                text5="✅ Introduced clear indicators and structure for Edit Mode"
+                                text6="✅ Reimagined editing tools for AI-specific workflows"
+                                text7="✅ Replaced with industry-recognized language for better clarity"
+                                text8="✅ Added a Timeline feature to view and revert to previous states"
+                            />
                         </div>
 
-                        <h3 className="design-iterations-subtitle">Reducing Cognitive Load</h3>
-                        <div className="design-iterations-row">
-                            <div className="design-iterations-content-row">
-                                <div className="design-iterations-inner-row">
-                                    <div className="arrow-before-after">
-                                        <div className="design-iteration-inner-inner-column">
-                                            <h3 className="design-iterations-subtitle-content">before</h3>
-                                            <img className="design-iteration-img" src="/images/project2-images/before2.png" alt="Before Design Iteration 2"/>
-                                        </div>
-                                        <TbArrowRight className="arrow-icon" />
-                                        <div className="design-iteration-inner-inner-column">
-                                            <h3 className="design-iterations-subtitle-content">after</h3>
-                                            <img className="design-iteration-img" src="/images/project2-images/after2.png" alt="After Design Iteration 2"/>                                    </div>
-                                    </div>
-                                </div>
-
-                                    <div className="design-iterations-inner-column">
-                                        <div className="design-iteration-card">
-                                            <h3 className="problem-solution-subtitle">Problem</h3>
-                                            <div className="problem-solution-column">
-                                                <p className="problem-solution-text">❌ Class times were cluttered</p>
-                                            </div>
-                                        </div>
-                                        <div className="design-iteration-card">
-                                            <h3 className="problem-solution-subtitle">Solution</h3>
-                                            <div className="problem-solution-column">
-                                                <p className="problem-solution-text">✅ Grouped class options into structured, scannable blocks</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <h3 className="design-iterations-subtitle">Rethinking Progress Visualization</h3>
-                        <div className="design-iterations-row">
-                            <div className="design-iterations-content-row">
-                                <div className="design-iterations-inner-row">
-                                    <div className="arrow-before-after">
-                                        <div className="design-iteration-inner-inner-column">
-                                            <h3 className="design-iterations-subtitle-content">before</h3>
-                                            <img className="design-iteration-img" src="/images/project2-images/before3.png" alt="Before Design Iteration 3"/>
-                                        </div>
-                                        <TbArrowRight className="arrow-icon" />
-                                        <div className="design-iteration-inner-inner-column">
-                                            <h3 className="design-iterations-subtitle-content">after</h3>
-                                            <img className="design-iteration-img" src="/images/project2-images/after3.png" alt="After Design Iteration 3"/>                                    </div>
-                                    </div>
-                                </div>
-
-                                    <div className="design-iterations-inner-column">
-                                        <div className="design-iteration-card">
-                                            <h3 className="problem-solution-subtitle">Problem</h3>
-                                            <div className="problem-solution-column">
-                                                <p className="problem-solution-text">❌ Stacked bars felt abstract and unhelpful</p>
-                                                <p className="problem-solution-text">❌ Confusing terminology</p>
-                                            </div>
-                                        </div>
-                                        <div className="design-iteration-card">
-                                            <h3 className="problem-solution-subtitle">Solution</h3>
-                                            <div className="problem-solution-column">
-                                                <p className="problem-solution-text">✅ Reworked progress visualization to clearly show completion per category</p>
-                                                <p className="problem-solution-text">✅ Replaced system language with student-friendly terms</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
                         <div className="horizontal-line" />
+                    </div>
+
+                    {/* Exploring What’s Next */}
+                    <div className="reflection-container">
+                        <h1 className="section-header">Exploring What’s Next</h1>
+                        <p className="research-description">
+                            Creating Adobe Flux reframed how I think about creative software, not as static tools, but as adaptive 
+                            systems shaped by human and AI collaboration. Designing for all creators at different levels required 
+                            questioning long-standing assumptions about authorship, control, and process, and instead focusing on how 
+                            intelligence can actively participate in creation without overriding creative intent. Iterative prototyping 
+                            and feedback revealed that trust, transparency, and flexibility are just as important as raw generative power 
+                            in emerging creative workflows. 
+                            <br/> <br/> 
+                            As the platform evolves, there is significant potential to push Flux further 
+                            through richer personalization, tighter connections across the Adobe ecosystem, and real-time collaborative 
+                            features that allow creators to co-create with both AI and one another. Exploring these directions could 
+                            transform Flux into a shared creative environment, one that amplifies imagination while maintaining clarity, 
+                            ownership, and deliberate artistic choice.
+                        </p>
                     </div>
                 </div>
 
-                {/* Exploring What’s Next */}
-                <div className="reflection-container">
-                    <h1 className="section-header">Exploring What’s Next</h1>
-                    <p className="research-description">
-                        Designing SpartanSync was personal, it came from my own frustration with SJSU’s enrollment system and a desire 
-                        to create the tool I wish I had as a student. Through interviews, testing, and iteration, I saw how much stress 
-                        scheduling causes and how powerful clarity can be in reducing that burden. This project reinforced that thoughtful 
-                        design can genuinely make difficult processes feel more manageable.
-                        <br/> <br/> 
-                        Looking ahead, I see SpartanSync evolving beyond scheduling into a trusted academic companion. With deeper integration 
-                        into degree progress, smarter recommendations, and collaborative planning features, it has the potential to help students 
-                        feel more confident, supported, and in control of their path to graduation.
-                    </p>
-                </div>
+                
             </section>
         </div>
     )

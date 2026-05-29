@@ -31,7 +31,7 @@
 .about-title {
     color: #fff;
     font-size: clamp(4rem, 6vw, 8rem);
-    font-family: 'Inter';
+    font-family: 'Work Sans';
     text-transform: uppercase;
 }
 .pfp-circle {
@@ -50,7 +50,7 @@
     text-align: left;
 }
 .about-subtitle {
-    font-family: 'Inter';
+    font-family: 'Work Sans';
     font-weight: 700;
     font-size: clamp(1rem, 1.5vw, 2rem);
     text-transform: uppercase;
@@ -97,7 +97,7 @@
 }
 .photo-title {
     color: #fff;
-    font-family: 'Inter';
+    font-family: 'Work Sans';
     font-weight: 700;
     font-size: clamp(2rem, 4vw, 5rem);
     text-transform: uppercase;

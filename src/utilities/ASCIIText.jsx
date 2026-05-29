@@ -185,7 +185,7 @@ class AsciiFilter {
 }
 
 class CanvasTxt {
-  constructor(txt, { fontSize = 200, fontFamily = 'Arial', color = '#fdf9f3' } = {}) {
+  constructor(txt, { fontSize = 200, fontFamily = 'Work Sans', color = '#fdf9f3' } = {}) {
     this.canvas = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
     this.txt = txt;

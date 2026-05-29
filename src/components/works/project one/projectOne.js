@@ -17,9 +17,9 @@ const ProjectOne = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (location.state?.scrollTo === 'AdobeFlux') {
+        if (location.state?.scrollTo === 'Pip') {
           setTimeout(() => {
-            const el = document.getElementById('AdobeFlux');
+            const el = document.getElementById('Pip');
             if (el) {
               el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       
@@ -30,69 +30,70 @@ const ProjectOne = () => {
       }, [location, navigate]);      
 
     return (
-        <div className="project-container" id="AdobeFlux">
+    <div className="project-container" id="Pip">
+        <section className="case-study-container">
             <div className="project-content">
                 <div className="project-block">
-                    <div className="text-column">
-                        <h3 className="project-header">Case Study</h3>
-                        <h1 className="project-title">Adobe Flux</h1>
-                        <p className="project-description">Generative AI tool that creates visuals through actions.</p>
-                        <div className='project-tags'>
-                            <ProjectTags
-                                text="AI-Driven Design"
-                                color="#B1FFA6"
-                            />
-                            <ProjectTags
-                                text="Desktop"
-                                color="#FFE0C0"
-                            />
-                            <ProjectTags
-                                text="Customer Journeys"
-                                color="#5AACDC"
-                            />
-                            <ProjectTags
-                                text="Creative Tools"
-                                color="#FFE97B"
-                            />
-                            <ProjectTags
-                                text="UX design"
-                                color="#FFA6E3"
-                            />
+                    <div className="project-content-block">
+                        <div className="text-column">
+                            <h3 className="project-header">— Case Study 01</h3>
+                            <h1 className="project-title">Pip</h1>
+                            <p className="project-description">A beginner-friendly skincare ingredient scanner that helps users understand what's in their products — personalized to their skin type, jargon-free, and guided by a friendly mascot named Pip.</p>
+                            <div className='project-tags'>
+                                <ProjectTags
+                                    text="UX Design"
+                                    color="#B1FFA6"
+                                />
+                                <ProjectTags
+                                    text="Product Design"
+                                    color="#FFE0C0"
+                                />
+                                <ProjectTags
+                                    text="Mobile Design"
+                                    color="#5AACDC"
+                                />
+                                <ProjectTags
+                                    text="User Research"
+                                    color="#FFE97B"
+                                />
+                                <ProjectTags
+                                    text="Interaction Design"
+                                    color="#FFA6E3"
+                                />
+                                <ProjectTags
+                                    text="End-to-end Product Design"
+                                    color="#D0B2FA"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="project-content-items">
-                        <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe Flux"/>
+                        <div className="project-content-items">
+                            <img className="project2-image" src="/images/pip-images/pip-home.png" alt="Pip app"/>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <section className="case-study-container">
                 {/* Background */}
                 <div className="pinned-section background-container">
                     <div className="horizontal-line" />
-                    <h3 className="pinned-inner section-subheader">background</h3>
+                    <h3 className="pinned-inner project-header">Work overview</h3>
                     <div className="background-block">
                         <div className="background-column">
-                            <h2 className="background-subtitle">Tools</h2>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Figma</li>
-                                <li>Figjam</li>
-                                <li>ChatGBT Image Generator</li>
-                                <li>Perplexity</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <h2 className="background-subtitle">Team</h2>
+                            <h2 className="background-subtitle">Timeline</h2>
                             <ul className="background-design-list">
-                                <li>Sabrina Quach</li>
-                                <li>Sierra Mcray</li>
-                                <li>Yanfeng Dong</li>
-                                <li>Tanisha Damle</li>
+                                <li>February 2026 - Present</li>
                             </ul>
                         </div>
                         <div className="background-column">
-                            <h2 className="background-subtitle">My Role</h2>
-                            <ul className="role-tool-list background-design-list">
+                            <h2 className="background-subtitle">Disciplines</h2>
+                            <ul className="background-design-list">
+                                <li>UX Design</li>
+                                <li>Interaction Design</li>
+                                <li>Mobile Design</li>
+                            </ul>
+                        </div>
+                        <div className="background-column">
+                            <h2 className="background-subtitle">Responsibilities</h2>
+                            <ul className="background-design-list">
                                 <li>Ideation</li>
                                 <li>UX Research / Testing</li>
                                 <li>Interface Design</li>
@@ -100,62 +101,12 @@ const ProjectOne = () => {
                             </ul>
                         </div>
                         <div className="background-column">
-                            <h2 className="background-subtitle">Timeline</h2>
-                            <ul className="timeline-list background-design-list">
-                                <li>Week 1–3: Research & Problem Definition</li>
-                                <li>Week 4–6: Ideation & Early Prototyping</li>
-                                <li>Week 7–9: High-Fidelity Design & Motion</li>
-                                <li>Week 10: Final Touches & Adobe Presentation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="horizontal-line" />
-                {/* </div> */}
-
-                {/* Design Process */}
-                {/* <div className="design-process-container"> */}
-                    <h3 className="pinned-inner section-subheader">design process</h3>
-                    <div className="design-process-block">
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSmile size={28} /> 
-                                <h2 className="background-subtitle">Deliver</h2>
-                            </div>
+                            <h2 className="background-subtitle">Tools</h2>
                             <ul className="background-design-list">
-                                <li>final design</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSearchAlt size={28} />
-                                <h2 className="background-subtitle">Research</h2>
-                            </div>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Understand the problem</li>
-                                <li>Competitor analysis</li>
-                                <li>user research</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                        <div className="background-row">
-                            <BiBook size={28} />
-                            <h2 className="background-subtitle">Define</h2>
-                        </div>
-                            <ul className="background-design-list">
-                                <li>establish core needs</li>
-                                <li>early design concepts</li>
-                                <li>deciding a direction</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiRotateRight size={28}/> 
-                                <h2 className="background-subtitle design-iterate">Design & Iterate</h2>
-                            </div>
-                            <ul className="role-tool-list background-design-list">
-                                <li>high-fidelity wireframes</li>
-                                <li>user testing feedback</li>
-                                <li>design iterations</li>
+                                <li>Figma</li>
+                                <li>Figjam</li>
+                                <li>Claude</li>
+                                <li>ChatGBT (Image)</li>
                             </ul>
                         </div>
                     </div>
@@ -164,88 +115,126 @@ const ProjectOne = () => {
 
                 {/* Deliver */}
                 <div className="deliver-container">
-                    {/* Say Hello to Adobe Flux Section */}
+                    {/* Final Design Section */}
                     <div className="final-design-container">
-                    <h3 className="section-subheader">Deliver</h3>
-                    <h1 className="section-header">Say Hello to Adobe Flux</h1>
-                    <p className="research-description">
-                        Adobe Flux redefines creative flow by centering the designer from the very first interaction. Built for intuitive 
-                        control and expressive freedom, Flux adapts to how you think, create, and iterate on your terms.
-                    </p>
+                    <h3 className="project-header">Deliver</h3>
+                    <h2 className="section-header">Introducing Pip</h2>
+                    <div class="solution-column">
+                        <p className="research-description">
+                            Pip isn't just a skincare app. It's the first one that actually talks to you like a friend who knows what they're doing.
+                        </p>
+                        <p className="research-description">
+                            Most skincare tools hand you data and leave you to figure out what it means. Pip does something different: it takes that same 
+                            ingredient information and translates it — into plain English, personalized to your skin, delivered with a warmth that makes 
+                            learning about skincare feel like a conversation rather than a lecture.
+                        </p>
+                    </div>
 
-                        {/* Design with Purpose Subsection */}
+                        {/* Scan Subsection */}
                         <div className="final-design-content">
-                            <h3 className="section-subtitle">Design with Purpose</h3>
                             <div className="final-design-column">
-                                <p className="research-description">
-                                    Before creating, Adobe Flux invites users to define their goals and moodboards, building AI context 
-                                    to ensure visuals match their creative intent.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid1.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column">
+                                        <h2 className="section-subtitle">scan</h2>
+                                        <p className="project-description">Pip's core screen. Leads with a numeric breakdown of your ingredient results, surfaces the five most relevant ingredients for your specific skin type with plain-English explanations, and tells you exactly why each one works — or doesn't — for you. The full list is one tap away for users who want to go deeper.</p>
+                                        <h2 className="project-section-subtitle">why?</h2>
+                                        <div className='project-tags'>
+                                            <ProjectTags
+                                                text="Match percentage instead of pass/fail — Ingredient safety isn't binary. A percentage gives users a personalized signal without requiring them to understand the logic behind it."
+                                                color="#F8B966"
+                                            />
+                                        </div>
+                                    </div>
+                                    <video 
+                                        src="/videos/pip-videos/scan-pip.mp4" 
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p2-final-design-video"
+                                    />
+                                </div>
                             </div>
                         </div>
                         
-                        {/* Sketch for Control Subsection */}
+                        {/* Explore Subsection */}
                         <div className="final-design-content">
-                            <h3 className="section-subtitle">Sketch for Control</h3>
                             <div className="final-design-column">
-                                <p className="research-description">
-                                    Sketch Mode allows users to quickly express ideas, transforming them into polished AI visuals. 
-                                    Cursor tracking adds precision, enabling element-level refinements.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid2.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column">
+                                        <h1 className="section-subtitle">Explore</h1>
+                                        <p className="project-description">Personalized product recommendations ranked by match percentage. A hero card anchors the top result; a compact ranked list follows below. Editorial hierarchy that communicates priority without making the user think about it.</p>
+                                        <h2 className="project-section-subtitle">why?</h2>
+                                        <div className='project-tags'>
+                                            <ProjectTags
+                                                text="Editorial layout instead of bento grid — The grid looked dynamic but buried the benefit tags and created too much visual competition. The hero card gives the top result the space it deserves."
+                                                color="#F8B966"
+                                            />
+                                        </div>
+                                    </div>
+                                    <video 
+                                        src="/videos/pip-videos/explore-pip.mp4" 
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p2-final-design-video"
+                                    />
+                                </div>
                             </div>
                         </div>
 
-                        {/* Smart Edits with AI Subsection */}
+                        {/* Skin Diary Subsection */}
                         <div className="final-design-content">
-                            <h3 className="section-subtitle">Smart Edits with AI</h3>
                             <div className="final-design-column">
-                                <p className="research-description">
-                                    Edit Mode offers tools for refining AI-generated images. Context-aware AI suggestions adapt to 
-                                    each user’s evolving creative direction.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid3.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column">
+                                        <h1 className="section-subtitle">Skin Diary</h1>
+                                        <p className="project-description">Daily check-ins that track hydration, breakouts, sensitivity, and texture over time — so users can see whether their routine is actually working, not just guess. Emoji-anchored descriptors keep self-reporting consistent across days. Pip's character responds to streaks and missed check-ins to keep the habit going.</p>
+                                        <h2 className="project-section-subtitle">why?</h2>
+                                        <div className='project-tags'>
+                                            <ProjectTags
+                                                text="Emoji-anchored scales instead of numbers — Numbers drift in meaning day to day. Anchoring each option to a plain-English descriptor keeps ratings consistent over time and makes the check-in feel conversational."
+                                                color="#F8B966"
+                                            />
+                                        </div>
+                                    </div>
+                                    <video 
+                                        src="/videos/pip-videos/diary-pip.mp4" 
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p2-final-design-video"
+                                    />
+                                </div>
                             </div>
                         </div>
 
-                        {/* Gesture-Driven Interaction Subsection */}
+                        {/* My Routine Subsection */}
                         <div className="final-design-content">
-                            <h3 className="section-subtitle">Gesture-Driven Interaction</h3>
                             <div className="final-design-column">
-                                <p className="research-description">
-                                    Users can resize, rotate, and reposition elements on the canvas using intuitive gestures—enabling 
-                                    fast, hands-on adjustments without breaking flow.
-                                </p>
-                                <video 
-                                    src="/videos/project1-videos/adobeFlux-vid4.mov" 
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="final-design-video"
-                                />
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column">
+                                        <h1 className="section-subtitle">My Routine</h1>
+                                        <p className="project-description">What to use, in what order, and when. Fast to open, faster to read.</p>
+                                        <h2 className="project-section-subtitle">why?</h2>
+                                        <div className='project-tags'>
+                                            <ProjectTags
+                                                text="Single container instead of card per step — Nested cards inside cards added visual weight without adding information. Spacing and dividers do the same job more cleanly."
+                                                color="#F8B966"
+                                            />
+                                        </div>
+                                    </div>
+                                    <video 
+                                        src="/videos/pip-videos/routine-pip.mp4" 
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p2-final-design-video"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -254,451 +243,254 @@ const ProjectOne = () => {
 
                 {/* Research */}
                 <div className="research-container">
-                    {/* The Challenge Section */}
+                    {/* The Problem Section */}
                     <div className="challenge-container">
-                        <h3 className="section-subheader">research</h3>
-                        <h1 className="section-header">the challenge</h1>
-                        <div className="challenge-column">
+                        <h3 className="project-header">research</h3>
+                        <h1 className="section-header">the problem</h1>
+                        <div class="solution-column">
                             <p className="research-description">
-                                Many AI-powered creative tools rely on text prompts, limiting control and customization especially for 
-                                creatives who think beyond words or prefer hands-on, intuitive workflows. This creates a disconnect 
-                                between a designer’s vision and the AI’s output.
+                            Skincare should be simple. But walk into any drugstore or open any skincare app and you're immediately confronted with ingredient 
+                            lists that read like chemistry textbooks, conflicting advice from every corner of the internet, and products that promise everything 
+                            without explaining anything.
                             </p>
-                            <p className="research-description">This poses the question on...</p>
+                            <p className="research-description">
+                            For beginners — especially people who are just starting to care about their skin — this experience is overwhelming enough to give up entirely. 
+                            They don't know what niacinamide does. They don't know if glycerin is good or bad for oily skin. And they definitely don't know which of the 
+                            47 moisturizers on the shelf is right for them.
+                            </p>
+                            <p className="challenge-question">That's the gap Pip was designed to fill.</p>
                         </div>
-                        <p className="challenge-question">How might alternate UI inputs give creatives more expression, engagement, and control? </p>
                         <div className="horizontal-line" />
                     </div>
                     
                     {/* The Solution Section */}
                     <div className="solution-container">
-                        <h1 className="section-header">the solution</h1>
+                        <h1 className="section-header">the opportunity</h1>
                         <div className="solution-column">
                             <p className="research-description">
-                                Through competitor analysis, user research, and user testing, we created a solution that explores new 
-                                interaction models beyond the traditional text prompts. By using real-time input like sketching, voice, 
-                                gestures, and smart guidance, it allows users a more natural, expressive, and collaborative design 
-                                process with AI. 
+                            Most skincare apps are built for people who already know what they're doing. They surface ingredient data, flag potential irritants, and provide 
+                            detailed analysis — but they present it in the same dense, jargon-heavy way that made skincare confusing in the first place.
+
                             </p>
                             <p className="research-description">
-                                Adobe Flux is a collaborative design platform that uses AI as a creative assistant, not a replacement. It 
-                                helps users quickly generate and refine visuals through intuitive tools, real-time suggestions, and flexible 
-                                inputs like sketch, voice, and gesture. This ensures that creatives remain in full control.
+                            The opportunity wasn't to build another ingredient database. It was to build the first skincare app that genuinely meets beginners where they are — 
+                            with plain-English explanations, personalized recommendations, and a warm, character-driven experience that makes learning about your skin feel 
+                            approachable rather than intimidating.
                             </p>
                         </div>
                         <div className="horizontal-line" />
                     </div>
 
-                    {/* Designing With Intent Section */}
+                    {/* Users Section */}
                     <div className="design-with-intent-container">
-                        <h1 className="section-header">designing with intent</h1>
+                        <h1 className="section-header">Who I'm designing for</h1>
                         <div className="design-with-intent-column">
                             <p className="research-description">
-                                As AI tools evolve, they often expect users to navigate complex jargon and rigid processes. With Adobe Flux, 
-                                we reimagined the experience to be intuitive, accessible, and empowering such that it is designed 
-                                specifically for creatives who think and create beyond words. 
+                            To understand who I was designing for, I conducted 12 user interviews across a range of ages, skin types, and skincare experience levels. I wanted to 
+                            understand not just what people knew about skincare, but how they felt about not knowing — and what that gap was costing them.
                             </p>
-                            <p className="research-description">We began by tailoring our questions to understand...</p>
+                            <p className="research-description">A few patterns emerged consistently from themes and pain points:</p>
                         </div>
                         <ul className="design-with-intent-list">
-                            <li className="design-with-intent-list-item">How do users currently engage with generative AI tools?</li>
-                            <li className="design-with-intent-list-item">Where do these interactions fall short or become restrictive?</li>
-                            <li className="design-with-intent-list-item">Which input methods resonate most intuitively with various types of creatives?</li>
+                            <li className="design-with-intent-list-item">People trusted recommendations from friends, partners, and online communities far more than marketing claims or app suggestions</li>
+                            <li className="design-with-intent-list-item">Scientific ingredient names were a major barrier — users would abandon a product page the moment they felt out of their depth
+                            </li>
+                            <li className="design-with-intent-list-item">Most users had no idea what their skin type actually was, let alone how to shop for it</li>
+                            <li className="design-with-intent-list-item">The emotional stakes were higher than expected — bad product experiences didn't just waste money, they damaged confidence</li>
                         </ul>
+                        <div className={`users-column ${modalImage ? 'blurred' : ''}`}>
+                            <img
+                                src="/images/pip-images/themes-pip.png"
+                                alt="Themes from user interviews"
+                                className="themes-image"
+                                onClick={() => setModalImage({
+                                    src: '/images/pip-images/themes-pip.png',
+                                    alt: 'Themes from user interviews'
+                                })}
+                            />
+                            <img
+                                src="/images/pip-images/pain-points-pip.png"
+                                alt="Painpoints from user interviews"
+                                className="themes-image"
+                                onClick={() => setModalImage({
+                                    src: '/images/pip-images/pain-points-pip.png',
+                                    alt: 'Painpoints from user interviews'
+                                })}
+                            />
+                        </div>
+                        {modalImage && (
+                            <div className="image-modal" onClick={() => setModalImage(null)}>
+                            <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
+                            </div>
+                        )}
+
+                        <div className="subsection-container">
+                            <h2 className="section-subtitle">Personas</h2>
+                            <div class="solution-column">
+                            <p className="research-description">From these interviews I developed two core personas.</p>
+                            <div className="persona-row">
+                                <div className="persona-circle1" />
+                                <p className="research-description">
+                                Andre is a 28-year-old product manager with oily, sensitive skin who hits the gym five days a week. He built his routine from his partner's recommendations and has never 
+                                really understood why he uses what he uses. He wants to learn, but every time he tries, the jargon shuts him down. He trusts people over marketing, and he's skeptical of 
+                                anything that feels like an ad.
+                                </p>
+                            </div>
+                            <div className="persona-row">
+                                <div className="persona-circle2" />
+                                <p className="research-description">
+                                Jade is a 24-year-old grad student with dry, sensitive skin who has been trying to build a consistent routine for two years. She's done her research, she knows the basics, but 
+                                she still feels uncertain every time she tries something new. She wants confidence, not another overwhelming product page.
+                                </p>
+                            </div>
+                            <p className="research-description">These two users shaped every design decision that followed — from the tone of Pip's copy to the structure of the ingredient breakdown. They also served as the foundation for the user journey map below.</p>
+                            </div>
+                            <div className={`users-column ${modalImage ? 'blurred' : ''}`}>
+                                <img
+                                    src="/images/pip-images/journey-map-pip.png"
+                                    alt="Themes from user interviews"
+                                    className="themes-image"
+                                    onClick={() => setModalImage({
+                                        src: '/images/pip-images/journey-map-pip.png',
+                                        alt: 'User journey map'
+                                    })}
+                                />
+                            </div>
+                        </div>
                         <div className="horizontal-line" />
                     </div>
 
-                    {/* Current State of AI Section */}
+                    {/* Competitive Anaylsis Section */}
                     <div className="current-state-container">
-                        <h1 className="section-header">Current State of AI</h1>
+                        <h1 className="section-header">Competitive landscape</h1>
                         <div className="current-state-column">
                             <p className="research-description">
-                                Before we designed for generative AI, we needed to understand the current functions, limitations, and 
-                                needs that users wanted. To do so, we carried out a comprehensive deep research, utilizing tools such 
-                                as Perplexity, Google Gemini, and ChatGPT to process and interpret extensive data from UX case studies.
-                            </p>
-                            <p className="research-description">From these studies, the main pain points are...</p>
-                        </div>
-                        <ul className="current-state-list">
-                            <li className="current-state-list-item">Increasing frustration with inflexible prompt-based systems</li>
-                            <li className="current-state-list-item">Limited support for multimodal inputs (visual, voice, gesture)</li>
-                            <li className="current-state-list-item">AI poses barriers for visual or non-technical users</li>
-                        </ul>
-                        <div className="horizontal-line" />
-                    </div>
-
-                    {/* Interviews With Creatives Section */}
-                    <div className="interviews-with-creatives-container">
-                        <h1 className="section-header">interviews with creatives</h1>
-                        <div className="interviews-with-creatives-column">
-                            <p className="research-description">
-                                To better understand these pain points and uncover intuitive solutions, we conducted in-depth user interviews with a diverse group of creatives. 
-                            </p>
-
-                        {/* Who We Interviewed Subsection */}
-                            <h3 className="section-subtitle">Who we interviewed</h3>
-                        </div>
-                        <p className="research-description">We interviewed around 20 creatives of all different backgrounds to take a closer look into their...</p>
-                        <ul className="interviews-with-creatives-list">
-                            <li className="interviews-with-creatives-list-item">Daily creative workflows</li>
-                            <li className="interviews-with-creatives-list-item">Frustrations with current AI tools</li>
-                            <li className="interviews-with-creatives-list-item">More intuitive & expressive control</li>
-                        </ul>
-
-                        {/* Empathy Maps Subsection */}
-                        <h3 className="section-subtitle">Empathy Maps</h3>
-                        <div className="empathy-maps-column">
-                            <p className="research-description">
-                                Based on our user interviews, we created empathy maps to capture and organize users’ emotions, 
-                                thoughts, and behaviors. Each map had categories...
-                            </p>
-                            <div className="square-row">
-                                <Square 
-                                    title="say"
-                                    text="“It’s impressive, but it doesn’t understand what I’m trying to do.”"
-                                />
-                                <Square 
-                                    title="do"
-                                    text="Tweak outputs endlessly, give up on the tool, or go back to doing it by hand."
-                                />
-                                <Square 
-                                    title="think"
-                                    text="“I’m not sure this really reflects my creative voice.”"
-                                />
-                                <Square 
-                                    title="feel"
-                                    text="Confused, disconnected, creatively blocked."
-                                />
-                            </div>
-                            <p className="research-description">
-                                In which we were able to dive deeper into the problem of AI feeling emotionless and taking away 
-                                creative control. User interviews helped in honing into creating a product that collaborated under 
-                                the users’ control.
-                            </p>
-                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                <img
-                                    src="/images/project1-images/empathyMap-1.png"
-                                    alt="Empathy Map 1"
-                                    className="empathy-map-image"
-                                    onClick={() => setModalImage({
-                                        src: '/images/project1-images/empathyMap-1.png',
-                                        alt: 'Empathy Map 1'
-                                    })}
-                                />
-                                <img
-                                    src="/images/project1-images/empathyMap-2.png"
-                                    alt="Empathy Map 2"
-                                    className="empathy-map-image"
-                                    onClick={() => setModalImage({
-                                        src: '/images/project1-images/empathyMap-2.png',
-                                        alt: 'Empathy Map 2'
-                                    })}
-                                />
-                            </div>
-
-                            {modalImage && (
-                                <div className="image-modal" onClick={() => setModalImage(null)}>
-                                <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Themes Subsection */}
-                        <h3 className="section-subtitle">Themes</h3>
-                        <div className="themes-column">
-                            <p className="research-description">
-                                Based on our user interviews, we created empathy maps to capture and organize users’ 
-                                emotions, thoughts, and behaviors. Each map had categories...
+                            I analyzed 5 direct competitors to understand what the market was already doing and where the gaps were.
                             </p>
                             <div className="themes-wrapper">
                                 <div className="theme-rectangle-row">
                                     <Rectangle 
-                                        title="Ethics"
-                                        icon={<TbScale />}
-                                        text="Users expressed concern about ownership, authorship, and the transparency of 
-                                        AI-generated content, highlighting a need for ethical guardrails in creative tools."
+                                        title="SkinSort"
+                                        text="Great ingredient depth and visual taste, but skews scientific over supportive. Built for enthusiasts, not beginners."
                                     />
                                     <Rectangle 
-                                        title="Prompts"
-                                        icon={<TbTerminal2 />}
-                                        text="Prompt-based systems felt limiting and unnatural for many users, especially those 
-                                        who preferred more visual or intuitive ways of expressing their ideas."
+                                        title="Skin Bliss"
+                                        text="Solid concepts buried under a lengthy onboarding and cluttered UI. Tries to build trust through thoroughness — and overshoots."
                                     />
                                     <Rectangle 
-                                        title="Originality / User Control"
-                                        icon={<BiBrain />}
-                                        text="Many creatives felt the AI was producing work that didn’t reflect their voice or 
-                                        style, pointing to a need for tools that support originality and keep users in control."
+                                        title="Lóvi"
+                                        text="Great visual design with real moments of delight. Doesn't always follow through — the routine presentation undermines what the rest of the app sets up well."
                                     />
                                     <Rectangle 
-                                        title="Behavior"
-                                        icon={<TbMoodSearch />}
-                                        text="Interviews revealed consistent patterns: users would often rework AI results, abandon 
-                                        tools mid-process, or revert to manual methods out of frustration or lack of trust."
+                                        title="CareSkin"
+                                        text="Clean, quick, and practical. Loses points for engagement — ingredients and tips presented as walls of text that are hard to stay with."
                                     />
                                     <Rectangle 
-                                        title="Efficiency"
-                                        icon={<TbTrendingUp />}
-                                        text="While AI promised speed, users often found themselves spending more time correcting 
-                                        or redoing work, making the process feel inefficient rather than streamlined."
-                                    />
-                                    <Rectangle 
-                                        title="Problem-Solving"
-                                        icon={<TbBulb />}
-                                        text="Users wanted AI to act more like a creative collaborator—helping them brainstorm, 
-                                        iterate, and problem-solve rather than just generate finished outputs."
-                                    />
-                                    <Rectangle 
-                                        title="Contextual Understanding"
-                                        icon={<TbCloudCheck />}
-                                        text="A major pain point was AI’s inability to understand creative context—missing the 
-                                        nuance of a user’s vision, project goals, or aesthetic preferences."
-                                    />
-                                    <Rectangle 
-                                        title="Lack of Human Emotion"
-                                        icon={<TbMoodOff />}
-                                        text="Users described AI outputs as “cold” or “soulless,” underscoring a desire for tools 
-                                        that feel more emotionally aware and aligned with the human creative process."
+                                        title="Thea"
+                                        text="The most polished product discovery experience, with cross-platform reviews and intuitive controls. The detail layer lets it down — match explanations need structure, not paragraphs."
                                     />
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Competitor Analysis Subsection */}
-                        <h3 className="section-subtitle">Competitor Analysis</h3>
-                        <div className="competitor-column">
                             <p className="research-description">
-                                We analyzed three companies by categorizing them by their <span className="swot-orange">SWOT </span>
-                                (strengths, weaknesses, opportunities, and threats). Overall, Midjourney, Dall-E, and 
-                                Sound2Scene had common themes across all three SWOTs...
+                                Every competitor did at least one thing well. But across all five, the same problem kept surfacing: they were designed for people who 
+                                were already engaged with skincare, not for people trying to get there. The ingredient data was dense. The explanations assumed knowledge. 
+                                The tone was clinical. And none of them had a personality — they felt like tools, not companions.
                             </p>
-                            <div className="competitor-wrapper">
-                                <div className="competitor-row">
-                                    <LargeRectangle
-                                        title="Strengths"
-                                        text="All three tools demonstrate strong creative capabilities, transforming non-visual 
-                                        inputs (text, sketches, or sound) into visual content."
-                                        name1="DALL·E"
-                                        innerText1="Versatility & sketch-to-image"
-                                        name2="MidJourney"
-                                        innerText2="Strong artistic control"
-                                        name3="Sound2Scene"
-                                        innerText3="Uniquely bridges audio with visual generation"
-                                    />
-                                    <LargeRectangle
-                                        title="weaknesses"
-                                        text="These three tools face technical and usability challenges, like the need for highly specific 
-                                        prompts, inconsistent realism, limited access."
-                                        name1="DALL·E"
-                                        innerText1="Need to be very descriptive"
-                                        name2="MidJourney"
-                                        innerText2="Discord dependency"
-                                        name3="Sound2Scene"
-                                        innerText3="Alignment issues between input and output"
-                                    />
-                                    <Rectangle
-                                        competitorTitle="Opportunities"
-                                        text="Each tool has room to grow by enhancing user personalization, expanding access methods, and 
-                                        introducing features like real-time editing, better prompt support, and adaptive learning for 
-                                        user-specific styles/audio cues."
-                                    />
-                                    <Rectangle
-                                        competitorTitle="Threats"
-                                        text="The fast-moving AI landscape poses threats from advanced competitors and ethical concerns 
-                                        around misuse (e.g., deepfakes), while tools like Sound2Scene also face low visibility and 
-                                        adoption risks."
-                                    />
-                                </div>
-                            </div>
+                            <p className="challenge-question">That insight became Pip's main purpose: not just what your ingredients do, but what they mean for you, explained like a knowledgeable friend.</p>
+                        </div>
+                        <div className="horizontal-line" />
+                    </div>
+                </div>
+
+                {/* Process */}
+                <div className="define-container">
+                    {/* AI in my workflow Section */}
+                    <div className="interviews-with-creatives-container">
+                        <h3 className="project-header">Process</h3>
+                        <h1 className="section-header">AI in my workflow</h1>
+                        <div className="solution-column">
+                            <p className="research-description">
+                            I used Claude as a thinking partner, not a generator. During research synthesis, I'd paste interview observations and ask it to flag surface-level 
+                            groupings — it caught assumptions in my affinity map that directly sharpened how I framed Jade and Andre. For competitive research, it helped me 
+                            synthesize patterns across five apps into the gap analysis that shaped Pip's main purpose.
+                            </p>
+                            <p className="research-description">
+                            In the design phase, I used Claude to stress-test microcopy and explore design directions quickly. I'd ask it to generate multiple versions 
+                            of ingredient explanations, onboarding copy, or skin diary prompts — then use those variations as a starting point to iterate against, 
+                            narrowing down until the tone and structure felt unmistakably like Pip. It was a faster way to find the edges of an idea before committing 
+                            to one direction. I also used it to flag anywhere the copy felt clinical, vague, or assumed prior knowledge the user wouldn't have.
+                            </p>
+                            <p className="research-description">
+                            The framing that made it useful: "here's what I'm thinking — where am I wrong?" I treated Claude as a critic, not a co-designer.
+                            </p>
                         </div>
 
                         <div className="horizontal-line" />
                     </div>
 
-                     {/* Overall Pain Points Subsection */}
-                    <h3 className="section-header">Overall Pain Points</h3>
+                    {/* Design Principles Section */}
+                    <h3 className="section-header">Design Principles</h3>
                     <div className="competitor-column">
                         <p className="research-description">
-                            After conducting user interviews and deep research, the key pain points we deduced are...
+                        Before moving into wireframes, I established three principles that would guide every decision:
                         </p>
                         <div className="competitor-wrapper">
-                            <div className="painpoints-row">
+                            <div className="square-row">
                                 <Rectangle
-                                    title="Prompt rigidity"
-                                    icon={<BiPen size={28} />}
-                                    text="Because Flux aims to move beyond traditional prompts, addressing this limitation is 
-                                    core to the redesign."
+                                    title="Beginner-first, always."
+                                    text="If a feature requires prior knowledge to use, it's not ready."
                                 />
                                 <Rectangle
-                                    title="No multimodal input"
-                                    icon={<BiLayer size={28} />}
-                                    text="The core innovation of Flux is enabling sketch, voice, and gesture."
+                                    title="Personalization over information."
+                                    text="Raw data isn't helpful. Knowing whether this ingredient works for your skin is."
                                 />
                                 <Rectangle
-                                    title="Creative mismatch"
-                                    icon={<BiTargetLock size={28} />}
-                                    text="The tool must visually reflect the user’s intent, so aligning outputs with creative 
-                                    vision is crucial."
-                                />
-                                <Rectangle
-                                    title="Limited control"
-                                    icon={<BiSliderAlt size={28} />}
-                                    text="Ensuring creatives feel in charge of the process drives trust and adoption, a key 
-                                    design consideration."
-                                />
-                                <Rectangle
-                                    title="Context gaps"
-                                    icon={<BiBrain size={28} />}
-                                    text="Designing AI to better grasp goals and context is essential to making interactions 
-                                    feel intelligent and relevant."
-                                />
-                                <Rectangle
-                                    title="Not visual-friendly"
-                                    icon={<BiShow size={28} />}
-                                    text="The interface must feel natural to non-technical, visually-driven users which directly 
-                                    shape design choices."
+                                    title="Warm, not clinical."
+                                    text="Pip has a personality. Advice from a knowledgeable friend — not a product label."
                                 />
                             </div>
                             <div className="horizontal-line" />
                         </div>
                     </div>
-                </div>
 
-                {/* Define */}
-                <div className="define-container">
-                    {/* Experience Drivers Section */}
                     <div className="experience-drivers-container">
-                        <h3 className="section-subheader">Define</h3>
-                        <h1 className="section-header">Experience Drivers</h1>
-                        <div className="experience-drivers-column">
-                            <p className="experience-drivers-question">
-                                How might we empower designers with the creative potential of AI while maintaining intuitive, flexible 
-                                control and a seamless workflow?
-                            </p>
-                            <p className="research-description">Using this HMW, we created experience drivers to shape our design...</p>
-                            <div className="core-row">
-                                <SmallRectangle
-                                    text="AI tools need creative flexibility"
-                                />
-                                <SmallRectangle
-                                    text="Manual control is non-negotiable"
-                                />
-                                <SmallRectangle
-                                    text="Contextual assistance improves flow"
-                                />
-                            </div>
-                        </div>
-                        <div className="horizontal-line" />
-                    </div>
-
-                    {/* Early Design Concepts Section */}
-                    <div className="early-design-container">
-                        <h1 className="section-header">Early Design Concepts</h1>
-                        <div className="early-design-column">
+                        <h1 className="section-header">Lo-fi wireframes</h1>
+                        <div className="solution-column">
                             <p className="research-description">
-                                Three design concepts were created to shape what our design would contain to ensure our experience 
-                                drivers were met.
+                            After synthesizing my 12 interviews into an affinity map, I moved into lo-fi wireframes to test the core information architecture before investing 
+                            in visual design. The key questions at this stage were structural: what does the product detail page need to contain? How should the ingredient 
+                            breakdown be organized? What's the right flow from scan to recommendation to diary entry?
                             </p>
-                            {/* 3D Modular Design Studio Subsection */}
-                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
-                                    <img
-                                        src="/images/project1-images/designConcept-1.png"
-                                        alt="3D Modular Design Studio Concept"
-                                        className="designConcept-image"
-                                        onClick={() => setModalImage({
-                                            src: '/images/project1-images/designConcept-1.png',
-                                            alt: '3D Modular Design Studio Concept'
-                                        })}
-                                    />
-                                    <div className="early-design-column">
-                                        <h3 className="section-subtitle-early-design">1. 3D Modular Design Studio</h3>
-                                        <p className="research-description">
-                                            A design tool that modularizes 3D elements based on user-provided references, allowing intuitive, 
-                                            component-level adjustments through gestures and AI suggestions while preserving visual consistency. 
-                                            It supports rapid iteration with real-time feedback from an adaptive assistant.
-                                        </p>
-                                    </div>
-                            </div>
-
-                            {/* Interactive Visual Design Suite Subsection */}
-                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
-                                    <img
-                                        src="/images/project1-images/designConcept-2.png"
-                                        alt="Interactive Visual Design Suite Concept"
-                                        className="designConcept-image"
-                                        onClick={() => setModalImage({
-                                            src: '/images/project1-images/designConcept-2.png',
-                                            alt: 'Interactive Visual Design Suite Concept'
-                                        })}
-                                    />
-                                    <div className="early-design-column">
-                                        <h3 className="section-subtitle-early-design">2. Interactive Visual Design Suite</h3>
-                                        <p className="research-description">
-                                            An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
-                                            palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
-                                            and smart, contextual suggestions.
-                                        </p>
-                                    </div>
-                            </div>
-
-                            {/* AI Agent Subsection */}
-                            <div className={`early-design-image-row ${modalImage ? 'blurred' : ''}`}>
-                                    <img
-                                        src="/images/project1-images/designConcept-3.png"
-                                        alt="AI Agent Concept"
-                                        className="designConcept-image"
-                                        onClick={() => setModalImage({
-                                            src: '/images/project1-images/designConcept-3.png',
-                                            alt: 'AI Agent Concept'
-                                        })}
-                                    />
-                                    <div className="early-design-column">
-                                        <h3 className="section-subtitle-early-design">3. AI Agent</h3>
-                                        <p className="research-description">
-                                            An AI-enhanced design environment for creating and refining visual concepts using mood boards, color 
-                                            palettes, and layout compositions—with support for eye/cursor tracking, sketch-to-concept refinement, 
-                                            and smart, contextual suggestions.
-                                        </p>
-                                    </div>
-                            </div>
-                        </div>
-                        <div className="horizontal-line" />
-                    </div>
-
-                    {/* Prioritization Section */}
-                    <div className="prioritization-container">
-                        <h1 className="section-header">Prioritization</h1>
-                        <div className="prioritization-column">
                             <p className="research-description">
-                                Prioritization was needed to determine feasibility and desirability to help us determine the direction 
-                                of our design. We found that the AI agent, AI Mood Board, Modular Design Studio, Cursor Tracking, 
-                                Interactive Design Studio were highly possible for our design.
+                            I explored several directions for the ingredient breakdown — a traffic light summary bar, tabbed categories, color-coded cards — and landed on a combination: 
+                            a numeric summary (22 good / 3 caution / 1 bad) that gives the at-a-glance verdict, followed by a scrollable list of the top ingredients with plain-English 
+                            one-liners and benefit tags.
                             </p>
                             <div className="prioritization-image-row">
                                 <div className="prioritization-content-column">
-                                    <h4 className="prioritization-image-label">feasibility</h4>
+                                    <h4 className="prioritization-image-label">Onboarding</h4>
                                     <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
                                         <img
-                                            src="/images/project1-images/priorization-feasibility.png"
-                                            alt="Feasibility Chart"
+                                            src="/images/pip-images/onboarding-pip.png"
+                                            alt="Lo-fi onboarding wireframes"
                                             className="prioritization-image"
                                             onClick={() => setModalImage({
-                                                src: '/images/project1-images/priorization-feasibility.png',
-                                                alt: 'Feasibility Chart'
+                                                src: '/images/pip-images/onboarding-pip.png',
+                                                alt: 'Lo-fi onboarding wireframes'
                                             })}
                                         />
                                     </div>
                                 </div>
                                 <div className="prioritization-content-column">
-                                    <h4 className="prioritization-image-label">desirability</h4>
+                                    <h4 className="prioritization-image-label">Core features</h4>
                                     <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
                                         <img
-                                            src="/images/project1-images/priorization-desirability.png"
-                                            alt="Desirability Chart"
+                                            src="/images/pip-images/core-features-pip.png"
+                                            alt="Lo-fi core features wireframes"
                                             className="prioritization-image"
                                             onClick={() => setModalImage({
-                                                src: '/images/project1-images/priorization-desirability.png',
-                                                alt: 'Desirability Chart'
+                                                src: '/images/pip-images/core-features-pip.png',
+                                                alt: 'Lo-fi core features wireframes'
                                             })}
                                         />
                                     </div>
@@ -708,227 +500,158 @@ const ProjectOne = () => {
                         <div className="horizontal-line" />
                     </div>
 
-                    {/* Low-fidelity Wireframes Section */}
-                    <div className="lofi-wireframes-container">
-                        <h1 className="section-header">Low-fidelity Wireframes</h1>
-                        <div className="lofi-wireframes-column">
+                    <div className="experience-drivers-container">
+                        <h1 className="section-header">Hi-fi wireframes</h1>
+                        <div className="solution-column">
                             <p className="research-description">
-                                To define what Adobe Flux was going to look like, three versions were explored to get a 
-                                visualization of what the platform would look like.
+                            The first major iteration focused on getting the visual system right. Pip's palette — soft yellow, light blue, and warm white — was chosen to feel approachable 
+                            and calm rather than clinical or overly medical. The mascot character was developed through several rounds of exploration, moving from a cowboy/western theme 
+                            that felt too playful toward a warmer companion tone that felt more trustworthy.
                             </p>
-                        </div>
-
-                        {/* Version 1 Subsection */}
-                        <div className="lofi-wireframes-content-column">
-                            <h3 className="section-subtitle">Version 1</h3>
-                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                <img
-                                    src="/images/project1-images/lofi-wireframe-v1.png"
-                                    alt="Low-Fidelity Wireframe Version 1"
-                                    className="lofi-wireframes-image"
-                                    onClick={() => setModalImage({
-                                        src: '/images/project1-images/lofi-wireframe-v1.png',
-                                        alt: 'Low-Fidelity Wireframe Version 1'
-                                    })}
-                                />
+                            <p className="research-description">
+                            The ingredient cards went through multiple rounds of iteration, ultimately landing on white cards with a colored left border and a single benefit badge — clean 
+                            enough to scan quickly, informative enough to be useful.
+                            </p>
+                            <div className="prioritization-image-row">
+                                <div className="prioritization-content-column">
+                                    <h4 className="prioritization-image-label">Onboarding</h4>
+                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                        <img
+                                            src="/images/pip-images/hifi-onboarding-pip.png"
+                                            alt="Hi-fi onboarding wireframes"
+                                            className="prioritization-image"
+                                            onClick={() => setModalImage({
+                                                src: '/images/pip-images/hifi-onboarding-pip.png',
+                                                alt: 'Lo-fi onboarding wireframes'
+                                            })}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="prioritization-content-column">
+                                    <h4 className="prioritization-image-label">Core features</h4>
+                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                        <img
+                                            src="/images/pip-images/hifi-core-pip.png"
+                                            alt="Hi-fi core features wireframes"
+                                            className="prioritization-image"
+                                            onClick={() => setModalImage({
+                                                src: '/images/pip-images/hifi-core-pip.png',
+                                                alt: 'Lo-fi core features wireframes'
+                                            })}
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                            <p className="research-description">
-                                This version looked too much to Adobe’s current platform, it offered nothing too different 
-                                from what they already had. This was unintuitive and did not improve the creatives’ workflow.
-                            </p>
-                        </div>
-
-                        {/* Version 2 Subsection */}
-                        <div className="lofi-wireframes-content-column">
-                            <h3 className="section-subtitle">Version 2</h3>
-                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                <img
-                                    src="/images/project1-images/lofi-wireframe-v2.png"
-                                    alt="Low-Fidelity Wireframe Version 2"
-                                    className="lofi-wireframes-image"
-                                    onClick={() => setModalImage({
-                                        src: '/images/project1-images/lofi-wireframe-v2.png',
-                                        alt: 'Low-Fidelity Wireframe Version 2'
-                                    })}
-                                />
-                            </div>
-                            <p className="research-description">
-                                This version explored the idea of having two modes that users could switch in between to have the 
-                                idea of “a platform that you could do everything in”. This also explored the idea of giving 
-                                contextualization for generative AI in a more digestible way for the user. 
-                            </p>
-                        </div>
-
-                        {/* Version 3 Subsection */}
-                        <div className="lofi-wireframes-content-column">
-                            <h3 className="section-subtitle">Version 3</h3>
-                            <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
-                                <img
-                                    src="/images/project1-images/lofi-wireframe-v3.png"
-                                    alt="Low-Fidelity Wireframe Version 3"
-                                    className="lofi-wireframes-image"
-                                    onClick={() => setModalImage({
-                                        src: '/images/project1-images/lofi-wireframe-v3.png',
-                                        alt: 'Low-Fidelity Wireframe Version 3'
-                                    })}
-                                />
-                            </div>
-                            <p className="research-description">
-                                This version honed in on what Adobe Flux was going to look like, it had clear contextualization and
-                                easy visualization of a generated image. In goals, create, and edit, the user could switch in between 
-                                to create their desired image easily.
-                            </p>
                         </div>
                         <div className="horizontal-line" />
                     </div>
-                </div>
 
-                {/* Design & Iterate */}
-                <div className="design-iterate-container">
-                    {/* High-fidelity Wireframes Section */}
-                    <div className="hifi-wireframe-container">
-                        <h3 className="section-subheader">Design & Iterate</h3>
-                        <h1 className="section-header">High-fidelity wireframe</h1>
-                        <div className="style-guide-column">
+                    <div className="experience-drivers-container">
+                        <h1 className="section-header">Refining</h1>
+                        <div className="solution-column">
                             <p className="research-description">
-                                For user testing, we used the following high-fidelity wireframe.
+                            The second major iteration came directly out of 3 mentor feedback sessions with Qin, a senior designer who pushed hard on two things: visual hierarchy and container 
+                            complexity. Her feedback on My Routine was the most impactful — too many nested containers (a card inside a card inside a card). She pointed to Spotify, Luma, and 
+                            Airbnb as references for how modern apps use spacing and typography rather than containers to organize information. I rebuilt the routine section as a clean list 
+                            inside a single outer container, separated by dividers alone.
                             </p>
-                            <video 
-                                src="/videos/project1-videos/hi-fidelity-wireframe.mov" 
-                                loop 
-                                muted
-                                autoPlay
-                                playsInline
-                                className="hifi-wireframe-video"
-                            />
+                            <p className="research-description">
+                            She also pushed back on typography — too many text styles across the product detail page. I audited every screen and reduced variation to three consistent levels: 
+                            section headers, body text, and secondary labels. The product detail page felt significantly more cohesive after this pass.
+                            </p>
+                            <p className="research-description">
+                            The Explore page went through the most visual iterations — bento grid, list view, and finally the editorial layout that made it into the current design.
+                            </p>
+                            <div className="prioritization-image-row">
+                                <div className="prioritization-content-column">
+                                    <h4 className="prioritization-image-label">Core features</h4>
+                                    <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
+                                        <img
+                                            src="/images/pip-images/refined1-core-pip.png"
+                                            alt="Refined core features wireframes"
+                                            className="refined-image"
+                                            onClick={() => setModalImage({
+                                                src: '/images/pip-images/refined1-core-pip.png',
+                                                alt: 'Refined core features wireframes'
+                                            })}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-
-                        {/* Key Feedback Subsection */}
-                        <h3 className="section-subtitle">Key Feedback</h3>
-                        <div className="key-feedback-column">
-                            <p className="key-feedback-title">
-                                Navigation lacks clarity
-                                <ul className="key-feedback-list">
-                                    <li>Users struggle to understand where they are, especially within Style Mode.</li>
-                                </ul>
-                            </p>
-                            <p className="key-feedback-title">
-                                Style Mode orientation is unclear
-                                <ul className="key-feedback-list">
-                                    <li>Consider reinforcing location indicators or section highlights.</li>
-                                </ul>
-                            </p>
-                            <p className="key-feedback-title">
-                                "Regenerate" feels too generic
-                                <ul className="key-feedback-list">
-                                    <li>Enhance it with language that emphasizes creative agency and personalization.</li>
-                                </ul>
-                            </p>
-                            <p className="key-feedback-title">
-                                Insufficient feedback between sub-headers
-                                <ul className="key-feedback-list">
-                                    <li>Provide clearer transitions or visual cues to guide the user.</li>
-                                </ul>
-                            </p>
-                            <p className="key-feedback-title">
-                                Transformation tools aren't intuitive
-                                <ul className="key-feedback-list">
-                                    <li>Make them accessible without requiring gesture-based interactions</li>
-                                </ul>
-                            </p>
-                            <p className="key-feedback-title">
-                                Consider reintroducing the "Upload Sketch" option to support mixed-media workflows and ease of access.
-                            </p>
-                        </div>
-
                         <div className="horizontal-line" />
                     </div>
-                    
-                    {/* Design Iterations Section */}
-                    <div className="design-iterations-container">
-                        <h1 className="section-header">Design Iterations</h1>
-                        <div className="design-iterations-column">
-                            <p className="research-description">
-                                Taking into account the feedback we got from our user testing, we simplified our navigation 
-                                and provided clearer indicators of where the user is. 
+
+                    {/* Exploring What’s Next */}
+                    <div className="experience-drivers-container">
+                        <h1 className="section-header">Key design decisions</h1>
+                        <div className="solution-column">
+                            <p className="key-feedback-title">
+                            Why a match percentage instead of just good/bad/caution
+                                <ul className="key-feedback-list">
+                                    <li>A simple pass/fail didn't capture the nuance of ingredient safety — an ingredient might be safe for most people but worth watching for someone with oily skin specifically. A match percentage gave users a personalized signal without requiring them to understand the underlying logic.</li>
+                                </ul>
                             </p>
-                            <DesignCard 
-                                number="01."
-                                title="Improving Context and Streamlining Navigation"
-                                image="/images/project1-images/iteration1-before.png"
-                                alt="Adobe FLux Iteration 1"
-
-                                text1="❌ Navigation was overcomplex across Goals, Create, and Edit modes"
-                                text2="❌ Goal input lacked flexibility"
-                                text3="❌ Header design lacked structure and clarity"
-                                text4="❌ Gesture button was always visible, creating confusion"
-
-                                text5="✅ Combined into two core modes: Goals and Create"
-                                text6="✅ Allowed users to input and customize project descriptions"
-                                text7="✅ Redesigned with clear visual hierarchy to anchor the experience"
-                                text8="✅ Made gesture prompts appear contextually, only when needed"
-                            />
-                            <DesignCard 
-                                number="02."
-                                title="Clarifying Focus & Reducing Cognitive Load"
-                                image="/images/project1-images/iteration2-before.png"
-                                alt="Adobe FLux Iteration 2"
-
-                                text1="❌ Create screen was cluttered with too many options"
-                                text2="❌ No integration for existing Adobe Moodboard workflows"
-                                text3="❌ Poor visual hierarchy made it hard to navigate"
-                                text4="❌ Users lost track of their original prompt"
-
-                                text5="✅ Simplified to Sketch and AI Generation, moved Moodboards (renamed Reference) to the Goals panel"
-                                text6="✅ Added link-out to Adobe Moodboards app for optional inspiration"
-                                text7="✅ Strengthened layout with clear headings and typographic contrast"
-                                text8="✅ Added a persistent prompt reminder for continuity and direction"
-                            />
-                            <DesignCard 
-                                number="03."
-                                title="Strengthening Identity & Edit Mode Clarity"
-                                image="/images/project1-images/iteration3-before.png"
-                                alt="Adobe FLux Iteration 3"
-
-                                text1="❌ Weak hierarchy made Edit Mode feel ambiguous"
-                                text2="❌ Experience felt too close to standard Adobe tools"
-                                text3="❌ Unfamiliar terminology created friction"
-                                text4="❌ No way to revisit or undo edits"
-
-                                text5="✅ Introduced clear indicators and structure for Edit Mode"
-                                text6="✅ Reimagined editing tools for AI-specific workflows"
-                                text7="✅ Replaced with industry-recognized language for better clarity"
-                                text8="✅ Added a Timeline feature to view and revert to previous states"
-                            />
+                            <p className="key-feedback-title">
+                            Why the ingredient list shows only the top 5 by default
+                                <ul className="key-feedback-list">
+                                    <li>Showing all 26 ingredients at once was overwhelming in testing. Leading with the 5 most relevant ingredients for the user's skin type — with a "Show all" option — reduced cognitive load without hiding information from users who wanted to dig deeper.</li>
+                                </ul>
+                            </p>
+                            <p className="key-feedback-title">
+                            Why Pip's character appears sparingly
+                                <ul className="key-feedback-list">
+                                    <li>Early iterations had Pip appearing in every section, which diluted the character's impact and made the interface feel cluttered. The final design reserves Pip for moments where personality adds real value — the "Why this works for you" callout, the skin diary streak interactions, and the onboarding flow — so each appearance feels intentional rather than decorative.</li>
+                                </ul>
+                            </p>
+                            <p className="key-feedback-title">
+                            Why the skin diary uses emoji-anchored scales instead of numbers
+                                <ul className="key-feedback-list">
+                                    <li>Numbers alone are inconsistent — what felt like a 4 last Tuesday might feel like a 3 today. Anchoring each option to a short plain-English descriptor with a face to match ("Bad" through "Super") keeps ratings consistent over time and makes the check-in feel conversational rather than clinical.</li>
+                                </ul>
+                            </p>
                         </div>
-
                         <div className="horizontal-line" />
                     </div>
 
                     {/* Exploring What’s Next */}
                     <div className="reflection-container">
-                        <h1 className="section-header">Exploring What’s Next</h1>
-                        <p className="research-description">
-                            Creating Adobe Flux reframed how I think about creative software, not as static tools, but as adaptive 
-                            systems shaped by human and AI collaboration. Designing for all creators at different levels required 
-                            questioning long-standing assumptions about authorship, control, and process, and instead focusing on how 
-                            intelligence can actively participate in creation without overriding creative intent. Iterative prototyping 
-                            and feedback revealed that trust, transparency, and flexibility are just as important as raw generative power 
-                            in emerging creative workflows. 
-                            <br/> <br/> 
-                            As the platform evolves, there is significant potential to push Flux further 
-                            through richer personalization, tighter connections across the Adobe ecosystem, and real-time collaborative 
-                            features that allow creators to co-create with both AI and one another. Exploring these directions could 
-                            transform Flux into a shared creative environment, one that amplifies imagination while maintaining clarity, 
-                            ownership, and deliberate artistic choice.
-                        </p>
+                        <h1 className="section-header">What I learned</h1>
+                        <div className="solution-column">
+                            <p className="research-description">
+                            Designing Pip taught me that the hardest design problems aren't about features — they're about trust. Andre doesn't need more information 
+                            about his skincare. He needs to feel like someone who actually knows what they're talking about is looking out for him. Every decision in 
+                            Pip was ultimately a trust decision: how do you present complex ingredient data without overwhelming? How do you make a recommendation feel 
+                            personal rather than algorithmic? How do you build a habit that encourages without shaming?
+                            </p>
+                            <p className="research-description">
+                            Working through 3 rounds of mentor critique also taught me how to separate my attachment to a design from whether it's actually working. Some 
+                            of my favorite early decisions — the nested ingredient cards, the mascot in every section — were the first things Qin pushed back on. Learning 
+                            to hear that feedback, understand the reasoning, and iterate quickly without losing Pip's core personality is the skill I'm most proud of 
+                            developing through this project.
+                            </p>
+                        </div>
+                        <div className="subsection-container">
+                            <h2 className="section-subtitle">What's next</h2>
+                            <ul className="design-with-intent-list">
+                                <li className="design-with-intent-list-item">
+                                    Usability testing with 5 beginner skincare users to validate the ingredient breakdown and skin diary flows
+                                </li>
+                                <li className="design-with-intent-list-item">
+                                    Accessibility audit across all screens — particularly contrast ratios on the benefit tags and match score badges
+                                </li>
+                                <li className="design-with-intent-list-item">
+                                    Exploring a routine builder onboarding flow that helps users set up their first routine from scratch using Pip's recommendations
+                                </li>
+                                <li className="design-with-intent-list-item">
+                                    Refine visuals further and continue to add moments of delight
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-
-                
-            </section>
-        </div>
+                </div>   
+        </section>
+    </div>
     )
 }
 

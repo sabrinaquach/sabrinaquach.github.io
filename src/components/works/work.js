@@ -33,6 +33,19 @@ const Work = () => {
 
   const handleProjectOneClick = () => {
     const el = document.getElementById('about');
+    if (location.pathname === '/Pip') {
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/Pip', { state: { scrollTo: 'Pip' } });
+    }
+  }; 
+
+  const handleProjectTwoClick = () => {
+    const el = document.getElementById('about');
     if (location.pathname === '/AdobeFlux') {
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
@@ -41,19 +54,6 @@ const Work = () => {
       }
     } else {
       navigate('/AdobeFlux', { state: { scrollTo: 'AdobeFlux' } });
-    }
-  }; 
-
-  const handleProjectTwoClick = () => {
-    const el = document.getElementById('about');
-    if (location.pathname === '/SpartanSync') {
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    } else {
-      navigate('/SpartanSync', { state: { scrollTo: 'SpartanSync' } });
     }
   }; 
 
@@ -79,42 +79,45 @@ const Work = () => {
             <div className="project-column">
                 <section className="project-section">
                     <div className="project-block" onClick={handleProjectOneClick}>
-                        <div className="project-text-laptop">
+                        <div className="project-text-phone">
                             <div className="button-wrapper">
                               <SeeCaseStudyButton click={handleProjectOneClick} />
                             </div>
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
-                                text="Adobe Flux"
+                                text="Pip"
                                 animateOn="view"
                                 revealDirection="start"
                                 sequential="true"
                                 speed="120"
                             />
                             <p className="project-description">
-                                Generative AI tool that creates visuals through actions.
+                              A beginner-friendly skincare ingredient scanner that helps users understand what's in their products — personalized to their skin type, jargon-free, and guided by a friendly mascot named Pip.
                             </p>
                             <div className='project-tags'>
                               <ProjectTags
-                                text="AI-Driven Design"
+                                text="UX design"
                                 color="#B1FFA6"
                               />
                               <ProjectTags
-                                text="Desktop"
+                                text="Product design"
                                 color="#FFE0C0"
                               />
                               <ProjectTags
-                                text="Customer Journeys"
+                                text="Mobile design"
                                 color="#5AACDC"
                               />
                               <ProjectTags
-                                text="Creative Tools"
+                                text="User research"
                                 color="#FFE97B"
                               />
                               <ProjectTags
-                                text="UX design"
+                                text="Interaction design"
                                 color="#FFA6E3"
+                              />
+                              <ProjectTags
+                                text="End-to-end product design"
                               />
                             </div>
                         </div>
@@ -126,9 +129,9 @@ const Work = () => {
                         >
                             <div className="project-image">
                                 <img
-                                    className="laptop-mockup"
-                                    src="/images/adobeflux-image1.png"
-                                    alt="Adobe Flux mockup"
+                                    className="phone-mockup"
+                                    src="/images/pip-images/pip-home.png"
+                                    alt="Pip mockup"
                                 />
                             </div>
                         </ScrollRevealImage>
@@ -137,46 +140,42 @@ const Work = () => {
 
                 <section className="project-section">
                     <div className="project-block" onClick={handleProjectTwoClick}>
-                        <div className="project-text-phone">
+                        <div className="project-text-laptop">
                             <div className="button-wrapper">
                               <SeeCaseStudyButton click={handleProjectTwoClick} />
                             </div>
                             <DecryptedText 
                                 className="project-title"
                                 encryptedClassName="encrypted-char"
-                                text="SpartanSync"
+                                text="Adobe Flux"
                                 animateOn="view"
                                 revealDirection="start"
                                 sequential="true"
-                                speed="150"
+                                speed="120"
                             />
                             <p className="project-description">
-                              Smart scheduling for busy students.
+                              Generative AI tool that creates visuals through actions.
                             </p>
                             <div className='project-tags'>
                               <ProjectTags
-                                text="Data-Driven"
-                                color="#D0B2FA"
+                                text="AI-driven design"
+                                color="#18FF08"
                               />
                               <ProjectTags
-                                text="Mobile"
-                                color="#B2E4FA"
+                                text="Desktop"
+                                color="#FFE0C0"
                               />
                               <ProjectTags
-                                text="Academic"
+                                text="Creative tools"
                                 color="#F6FAB2"
-                              />
-                              <ProjectTags
-                                text="Student Productivity"
-                                color="#E9A060"
-                              />
-                              <ProjectTags
-                                text="Degree Planning"
-                                color="#5DD371"
                               />
                               <ProjectTags
                                 text="UX design"
                                 color="#FFA6E3"
+                              />
+                              <ProjectTags
+                                text="Customer journeys"
+                                color="#5AACDC"
                               />
                             </div>
                         </div>
@@ -188,8 +187,8 @@ const Work = () => {
                         >
                             <div className="project-image">
                                 <img 
-                                    className="phone-mockup" 
-                                    src="/images/spartansync-image1.png" 
+                                    className="laptop-mockup" 
+                                    src="/images/adobeflux-image1.png" 
                                     alt="SpartanSync mockup" 
                                 />
                             </div>
@@ -217,7 +216,7 @@ const Work = () => {
                             </p>
                             <div className='project-tags'>
                               <ProjectTags
-                                text="IoT Design"
+                                text="IoT design"
                                 color="#18FF08"
                               />
                               <ProjectTags
@@ -225,7 +224,7 @@ const Work = () => {
                                 color="#FFA6E3"
                               />
                               <ProjectTags
-                                text="Home Automation"
+                                text="Home automation"
                                 color="#F9FF8F"
                               />
                               <ProjectTags
@@ -233,7 +232,7 @@ const Work = () => {
                                 color="#B2E4FA"
                               />
                               <ProjectTags
-                                text="Full-Stack"
+                                text="Full-stack"
                                 color="#AAFFD8"
                               />
                               <ProjectTags

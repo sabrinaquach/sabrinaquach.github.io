@@ -5,7 +5,7 @@
     justify-content: center;
     gap: 1.5rem;
     width: 100%;
-    padding: 2.2rem;
+    padding: 1.8rem;
     background-color: #8B7E74;
     border-radius: 25px;
   }
@@ -19,7 +19,7 @@
 }
   
 .percent-square-percent {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Work Sans';
     font-size: 4.5rem;
     font-weight: 500;
     color: #fff;

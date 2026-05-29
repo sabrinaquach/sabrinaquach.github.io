@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Work />} />
           <Route path="/about" element={<About />} />
-          <Route path="/AdobeFlux" element={<ProjectOne />} />
-          <Route path="/SpartanSync" element={<ProjectTwo />} />
+          <Route path="/Pip" element={<ProjectOne />} />
+          <Route path="/AdobeFlux" element={<ProjectTwo />} />
           <Route path="/Aura" element={<ProjectThree />} />
         </Routes>
         <Footer />

@@ -52,7 +52,7 @@
 }
 
 .initial {
-    font-family: 'Inter';
+    font-family: 'Work Sans';
     font-size: clamp(1.1rem, 2vw, 2rem);
     font-weight: 600;
     text-transform: lowercase;

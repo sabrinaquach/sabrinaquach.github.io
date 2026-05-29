@@ -60,8 +60,10 @@ const ProjectThree = () => {
 
     return (
         <div className="project-container" id="Aura">
+            <section className="case-study-container">
             <div className="project-content">
                 <div className="project-block">
+                    <div className="project-content-block">
                     <div className="text-column">
                         <h3 className="project-header">Case Study</h3>
                         <h1 className="project-title">Aura</h1>
@@ -108,23 +110,18 @@ const ProjectThree = () => {
                     <div className="project-content-items">
                         <img className="project2-image" src="/images/aura-image1.png" alt="Aura"/>
                     </div>
+                    </div>
                 </div>
             </div>
-
-            <section className="case-study-container">
-                {/* Background */}
-                <div className="background-container">
+                
+                <div className="pinned-section background-container">
                     <div className="horizontal-line" />
-                    <h3 className="section-subheader">background</h3>
+                    <h3 className="pinned-inner project-header">Work overview</h3>
                     <div className="background-block">
                         <div className="background-column">
-                            <h2 className="background-subtitle">Tools</h2>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Figma</li>
-                                <li>System Diagrams</li>
-                                <li>Google Docs</li>
-                                <li>Visual Studio Code</li>
-                                <li>Canva</li>
+                            <h2 className="background-subtitle">Timeline</h2>
+                            <ul className="background-design-list">
+                                <li>Januart 2025 - December 2025</li>
                             </ul>
                         </div>
                         <div className="background-column">
@@ -132,12 +129,12 @@ const ProjectThree = () => {
                             <ul className="background-design-list">
                                 <li>Sabrina Quach</li>
                                 <li>Roger Huynh</li>
-                                <li>Jeric Montepalco</li>
+                                <li>Jeric Monetpalco</li>
                             </ul>
                         </div>
                         <div className="background-column">
-                            <h2 className="background-subtitle">My Role</h2>
-                            <ul className="role-tool-list background-design-list">
+                            <h2 className="background-subtitle">Responsibilities</h2>
+                            <ul className="background-design-list">
                                 <li>UX/Product Design</li>
                                 <li>System Thinking</li>
                                 <li>Software Engineering</li>
@@ -145,59 +142,13 @@ const ProjectThree = () => {
                             </ul>
                         </div>
                         <div className="background-column">
-                            <h2 className="background-subtitle">Timeline</h2>
-                            <ul className="timeline-list background-design-list">
-                                <li>Week 1–3: Research & Problem Definition</li>
-                                <li>Week 4–6: Ideation & Early Prototyping</li>
-                                <li>Week 7–9: High-Fidelity Design & Motion</li>
-                                <li>Week 10: Final Touches & Final Presentation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="horizontal-line" />
-
-                    {/* Design Process */}
-                    <h3 className="pinned-inner section-subheader">design process</h3>
-                    <div className="design-process-block">
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSmile size={28} /> 
-                                <h2 className="background-subtitle">Deliver</h2>
-                            </div>
+                            <h2 className="background-subtitle">Tools</h2>
                             <ul className="background-design-list">
-                                <li>final design</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiSearchAlt size={28} />
-                                <h2 className="background-subtitle">Research</h2>
-                            </div>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Understand the problem</li>
-                                <li>Offical system analysis</li>
-                                <li>user research</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                        <div className="background-row">
-                            <BiBook size={28} />
-                            <h2 className="background-subtitle">Define</h2>
-                        </div>
-                            <ul className="background-design-list">
-                                <li>establish core needs</li>
-                                <li>early design concepts</li>
-                                <li>deciding a direction</li>
-                            </ul>
-                        </div>
-                        <div className="background-column">
-                            <div className="background-row">
-                                <BiRotateRight size={28}/> 
-                                <h2 className="background-subtitle design-iterate">Design & Develop</h2>
-                            </div>
-                            <ul className="role-tool-list background-design-list">
-                                <li>Hardware components</li>
-                                <li>Software components</li>
+                                <li>Figma</li>
+                                <li>System Diagrams</li>
+                                <li>Google Docs</li>
+                                <li>Visual Studio Code</li>
+                                <li>Canva</li>
                             </ul>
                         </div>
                     </div>
@@ -208,7 +159,7 @@ const ProjectThree = () => {
                 <div className="deliver-container">
                     {/* Meet SpartanSync Section */}
                     <div className="final-design-container">
-                    <h3 className="section-subheader">Deliver</h3>
+                    <h3 className="project-header">Deliver</h3>
                     <h1 className="section-header">Introducing Aura</h1>
                     <p className="research-description">
                         Aura (AuraTherm) is a motion‑sensed smart thermostat system paired with a companion mobile app that adjusts heating and cooling based 
@@ -219,8 +170,9 @@ const ProjectThree = () => {
                         {/* Dial Functionality Subsection */}
                         <div className="final-design-content">
                             <div className="final-design-row">
+                            <div className="final-design-breakdown">
                                 <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Dial Functionality</h3>
+                                    <h3 className="section-subtitle">Dial Functionality</h3>
                                     <p className="research-description">
                                         Aura’s physical dial is designed to feel familiar, tactile, and effortless. Like a traditional thermostat, users can turn the dial to 
                                         quickly adjust the temperature for the entire home. As users enable more advanced features, the dial adapts to support smarter, more 
@@ -228,52 +180,54 @@ const ProjectThree = () => {
                                     </p>
                                 </div>
                             </div>
+                            </div>
 
                             {/* Motion On */}
                             <div className="final-design-content">
-                                <div className="two-final-design-row">
+                                <div className="final-design-breakdown">
                                     <div className="p-final-design-column">
-                                        <h3 className="p-section-subtitle">Motion On</h3>
+                                        <h3 className="section-subtitle">Motion On</h3>
                                         <p className="research-description">
-                                            When motion sensing is turned on, the dial becomes smarter and lets users control the temperature in only the rooms that are being used. 
-                                            This helps keep people comfortable while avoiding wasted energy in empty rooms. The experience stays simple for everyday use, but becomes 
-                                            more powerful as users explore Aura’s smarter features.
+                                                When motion sensing is turned on, the dial becomes smarter and lets users control the temperature in only the rooms that are being used. 
+                                                This helps keep people comfortable while avoiding wasted energy in empty rooms. The experience stays simple for everyday use, but becomes 
+                                                more powerful as users explore Aura’s smarter features.
                                         </p>
                                     </div>
-                                    <div className="p-final-design-row-vids">
-                                        <video 
-                                            ref={video1Ref}
-                                            src="/videos/project3-videos/Aura-App-Motion-On.mov"
-                                            loop 
-                                            muted
-                                            autoPlay
-                                            playsInline
-                                            className="p2-final-design-video"
-                                        />
-                                        <video 
-                                            ref={video2Ref}
-                                            src="/videos/project3-videos/Aura-Hardware-App-Motion-On1.mov"
-                                            loop 
-                                            muted
-                                            autoPlay
-                                            playsInline
-                                            className="p2-final-design-video video2-border"
-                                        />
+                                    <div className="two-final-design-row">
+                                        <div className="p-final-design-row-vids">
+                                            <video 
+                                                ref={video1Ref}
+                                                src="/videos/project3-videos/Aura-App-Motion-On.mov"
+                                                loop 
+                                                muted
+                                                autoPlay
+                                                playsInline
+                                                className="p2-final-design-video"
+                                            />
+                                            <video 
+                                                ref={video2Ref}
+                                                src="/videos/project3-videos/Aura-Hardware-App-Motion-On1.mov"
+                                                loop 
+                                                muted
+                                                autoPlay
+                                                playsInline
+                                                className="p2-final-design-video video2-border"
+                                            />
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
-                            </div>
 
                             {/* Motion Off */}
-                            <div className="final-design-content">
+                            <div className="final-design-breakdown">
+                                <div className="p-final-design-column">
+                                    <h3 className="section-subtitle">Motion Off</h3>
+                                    <p className="research-description">
+                                    When motion sensing is disabled, the dial behaves like a standard thermostat. Adjustments apply to the whole home, giving users 
+                                    straightforward, predictable control over their environment.
+                                    </p>
+                                </div>
                                 <div className="two-final-design-row">
-                                    <div className="p-final-design-column">
-                                        <h3 className="p-section-subtitle">Motion Off</h3>
-                                        <p className="research-description">
-                                            When motion sensing is disabled, the dial behaves like a standard thermostat. Adjustments apply to the whole home, giving users 
-                                            straightforward, predictable control over their environment.
-                                        </p>
-                                    </div>
-                                    
                                     <div className="p-final-design-row-vids">
                                         <video 
                                             ref={video1Ref}
@@ -300,64 +254,67 @@ const ProjectThree = () => {
                         
                         {/* Room-Level Awareness Subsection */}
                         <div className="final-design-content">
-                            <div className="final-design-row">
-                                <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Room-Level Awareness</h3>
-                                    <p className="research-description">
+                            <div className="final-design-column">
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column-aura">
+                                        <h2 className="section-subtitle">Room-Level Awareness</h2>
+                                        <p className="project-description">
                                         Aura makes occupancy visible and understandable. The system highlights which rooms are currently active and shows how heating or cooling 
                                         is being prioritized based on real behavior. By clearly reflecting how the system is responding to movement throughout the home, users 
                                         develop a stronger mental model of how Aura works, which builds trust and reinforces transparency.
-                                    </p>
+                                        </p>
+                                    </div>
+                                    <video 
+                                        src="/videos/project3-videos/Aura-App-History.mp4"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
                                 </div>
-                                
-                                <video 
-                                    src="/videos/project3-videos/Aura-App-History.mp4"
-                                    loop 
-                                    muted
-                                    autoPlay
-                                    playsInline
-                                    className="p-final-design-video"
-                                />
                             </div>
                         </div>
 
                         {/* Everything In Action Subsection */}
-                        <div className="final-design-content">
-                            <div className="two-final-design-row">
+                        <div className="final-design-breakdown">
                                 <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Everything In Action</h3>
-                                    <p className="research-description">
-                                        Aura differs from traditional thermostats by combining smart sensing and real-time app feedback. Motion sensors 
-                                        detect which rooms are occupied, the system adjusts comfort accordingly, and the app updates to reflect these changes instantly. 
-                                        <br/> <br/>
-                                        The app is fully functional, with login, register, onboarding, settings, profile uploads, energy tracking, and a history of room activity 
-                                        and temperature changes. For more direct control, the dial allows quick, tactile adjustments for the whole home or individual rooms. Clear 
-                                        notifications explain changes and highlight impact over time, creating an experience that feels intuitive and responsive.
-                                    </p>
+                                    <h3 className="section-subtitle">Everything In Action</h3>
+                                    <div className="solution-column">
+                                        <p className="research-description">
+                                            Aura differs from traditional thermostats by combining smart sensing and real-time app feedback. Motion sensors 
+                                            detect which rooms are occupied, the system adjusts comfort accordingly, and the app updates to reflect these changes instantly.
+                                        </p>
+                                        <p className="research-description">
+                                            The app is fully functional, with login, register, onboarding, settings, profile uploads, energy tracking, and a history of room activity 
+                                            and temperature changes. For more direct control, the dial allows quick, tactile adjustments for the whole home or individual rooms. Clear 
+                                            notifications explain changes and highlight impact over time, creating an experience that feels intuitive and responsive.
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <div className="p-final-design-row-vids">
-                                    <video 
-                                        ref={video1Ref}
-                                        src="/videos/project3-videos/Aura-App.mov"
-                                        loop 
-                                        muted
-                                        autoPlay
-                                        playsInline
-                                        className="p2-final-design-video"
-                                    />
-                                    <video 
-                                        ref={video2Ref}
-                                        src="/videos/project3-videos/Aura-Hardware-App.mov"
-                                        loop 
-                                        muted
-                                        autoPlay
-                                        playsInline
-                                        className="p2-final-design-video video2-border"
-                                    />
+                                <div className="two-final-design-row">
+                                    <div className="p-final-design-row-vids">
+                                        <video 
+                                            ref={video1Ref}
+                                            src="/videos/project3-videos/Aura-App.mov"
+                                            loop 
+                                            muted
+                                            autoPlay
+                                            playsInline
+                                            className="p2-final-design-video"
+                                        />
+                                        <video 
+                                            ref={video2Ref}
+                                            src="/videos/project3-videos/Aura-Hardware-App.mov"
+                                            loop 
+                                            muted
+                                            autoPlay
+                                            playsInline
+                                            className="p2-final-design-video video2-border"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <div className="horizontal-line" />
                 </div>
@@ -366,7 +323,7 @@ const ProjectThree = () => {
                 <div className="research-container">
                     {/* The Current Experience Section */}
                     <div className="current-experience-container">
-                        <h3 className="section-subheader">research</h3>
+                        <h3 className="project-header">research</h3>
                         <h1 className="section-header">The Current Experience</h1>
                         <div className="current-experience-column">
                             <p className="research-description">
@@ -439,73 +396,79 @@ const ProjectThree = () => {
                         </div>
 
                         {/* Social & Environmental Context Subsection */}
-                        <h3 className="section-subtitle">Social & Environmental Context</h3>
-                        <p className="research-description">
-                            Research also revealed that low-income households spend over twice the percentage of their income on energy compared to the national 
-                            average. High upfront costs and complex installations prevent many families from benefiting from existing smart thermostat solutions.
-                            <br/><br/>
-                            This reframed Aura as more than a convenience product, it became a design problem centered on:
-                        </p>
-                        <ul className="design-with-intent-list">
-                            <li className="design-with-intent-list-item">Accessibility</li>
-                            <li className="design-with-intent-list-item">Affordability</li>
-                            <li className="design-with-intent-list-item">Equity</li>
-                            <li className="design-with-intent-list-item">Sustainability</li>
-                        </ul>
+                        <div className="subsection-container">
+                            <h3 className="section-subtitle">Social & Environmental Context</h3>
+                            <p className="research-description">
+                                Research also revealed that low-income households spend over twice the percentage of their income on energy compared to the national 
+                                average. High upfront costs and complex installations prevent many families from benefiting from existing smart thermostat solutions.
+                                <br/><br/>
+                                This reframed Aura as more than a convenience product, it became a design problem centered on:
+                            </p>
+                            <ul className="design-with-intent-list">
+                                <li className="design-with-intent-list-item">Accessibility</li>
+                                <li className="design-with-intent-list-item">Affordability</li>
+                                <li className="design-with-intent-list-item">Equity</li>
+                                <li className="design-with-intent-list-item">Sustainability</li>
+                            </ul>
+                        </div>
 
                         {/* Technical & Engineering Constraints Subsection */}
-                        <h3 className="section-subtitle">Technical & Engineering Constraints</h3>
-                        <p className="research-description">
-                            Working closely with engineers meant every UX decision had to stay grounded in technical reality. We carefully considered…
-                        </p>
-                        <ul className="design-with-intent-list">
-                            <li className="design-with-intent-list-item">Motion sensor accuracy</li>
-                            <li className="design-with-intent-list-item">Placement limitations</li>
-                            <li className="design-with-intent-list-item">Latency between detection and HVAC response</li>
-                            <li className="design-with-intent-list-item">Hardware cost tradeoffs</li>
-                            <li className="design-with-intent-list-item">Scalability for different home sizes</li>
-                        </ul>
-                        <p className="research-description">
-                            <br/>
-                            Rather than designing idealized interfaces, I shaped the UX around what the system could realistically support, ensuring 
-                            the experience felt reliable and trustworthy instead of misleading.
-                        </p>
+                        <div className="subsection-container">
+                            <h3 className="section-subtitle">Technical & Engineering Constraints</h3>
+                            <p className="research-description">
+                                Working closely with engineers meant every UX decision had to stay grounded in technical reality. We carefully considered…
+                            </p>
+                            <ul className="design-with-intent-list">
+                                <li className="design-with-intent-list-item">Motion sensor accuracy</li>
+                                <li className="design-with-intent-list-item">Placement limitations</li>
+                                <li className="design-with-intent-list-item">Latency between detection and HVAC response</li>
+                                <li className="design-with-intent-list-item">Hardware cost tradeoffs</li>
+                                <li className="design-with-intent-list-item">Scalability for different home sizes</li>
+                            </ul>
+                            <p className="research-description">
+                                <br/>
+                                Rather than designing idealized interfaces, I shaped the UX around what the system could realistically support, ensuring 
+                                the experience felt reliable and trustworthy instead of misleading.
+                            </p>
+                        </div>
 
                         {/* Key Feedback Subsection */}
-                        <h3 className="section-subtitle">Key Insights</h3>
-                        <p className="research-description">From research and technical constraints, several themes emerged: <br/><br/></p>
-                        <div className="themes-wrapper">
-                            <div className="theme-rectangle-row">
-                                <Rectangle 
-                                    title="Energy Waste"
-                                    icon={<TbBoltOff />}
-                                    text="Much of the energy loss happens when heating or cooling runs in spaces no one is using."
-                                />
-                                <Rectangle 
-                                    title="Adaptive Automation"
-                                    icon={<TbRepeat />}
-                                    text="Systems should respond to how people actually live, not fixed schedules."
-                                />
-                                <Rectangle 
-                                    title="Transparency"
-                                    icon={<TbHeartHandshake />}
-                                    text="Users are more comfortable with automation when they understand why changes happen."
-                                />
-                                <Rectangle 
-                                    title="Trust Gap"
-                                    icon={<TbMoodConfuzed />}
-                                    text="Unclear feedback makes smart systems feel intimidating. When system behavior isn’t explained, users feel unsure and disconnected."
-                                />
-                                <Rectangle 
-                                    title="Accessible Sustainable Solutions"
-                                    icon={<TbWorldDollar />}
-                                    text="Energy-saving tools only work at scale when they are affordable for all households."
-                                />
-                                <Rectangle 
-                                    title="Habit Alignment"
-                                    icon={<TbUserCheck />}
-                                    text="Smart systems work best when they naturally fit into users’ existing habits, making them feel natural and easy to use."
-                                />
+                        <div className="subsection-container">
+                            <h3 className="section-subtitle">Key Insights</h3>
+                            <p className="research-description">From research and technical constraints, several themes emerged: <br/><br/></p>
+                            <div className="themes-wrapper">
+                                <div className="theme-rectangle-row">
+                                    <Rectangle 
+                                        title="Energy Waste"
+                                        icon={<TbBoltOff />}
+                                        text="Much of the energy loss happens when heating or cooling runs in spaces no one is using."
+                                    />
+                                    <Rectangle 
+                                        title="Adaptive Automation"
+                                        icon={<TbRepeat />}
+                                        text="Systems should respond to how people actually live, not fixed schedules."
+                                    />
+                                    <Rectangle 
+                                        title="Transparency"
+                                        icon={<TbHeartHandshake />}
+                                        text="Users are more comfortable with automation when they understand why changes happen."
+                                    />
+                                    <Rectangle 
+                                        title="Trust Gap"
+                                        icon={<TbMoodConfuzed />}
+                                        text="Unclear feedback makes smart systems feel intimidating. When system behavior isn’t explained, users feel unsure and disconnected."
+                                    />
+                                    <Rectangle 
+                                        title="Accessible Sustainable Solutions"
+                                        icon={<TbWorldDollar />}
+                                        text="Energy-saving tools only work at scale when they are affordable for all households."
+                                    />
+                                    <Rectangle 
+                                        title="Habit Alignment"
+                                        icon={<TbUserCheck />}
+                                        text="Smart systems work best when they naturally fit into users’ existing habits, making them feel natural and easy to use."
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -515,7 +478,7 @@ const ProjectThree = () => {
 
                 {/* Define */}
                 <div className="define-container">
-                    <h3 className="section-subheader">Define</h3>
+                    <h3 className="project-header">Define</h3>
 
                     {/* Design Principles Section */}
                     <div className="design-principles-container">
@@ -552,6 +515,7 @@ const ProjectThree = () => {
                             the dial without confusion.
                         </p>
 
+                        <div className="subsection-container">
                         <h3 className="section-subtitle">Dial Design Exploration</h3>
                         <div className="final-design-content">
                             <div className="dial-design-iteration-row">
@@ -613,7 +577,9 @@ const ProjectThree = () => {
                                     </p>
                                 </div>
                             </div>
+                            </div>
 
+                            <div className="subsection-container">
                             <h3 className="section-subtitle">Multi-Level Temperature Control Exploration</h3>
                             <div className="design-interation-column">
                                 <div className="room-design-iteration-row">
@@ -651,11 +617,15 @@ const ProjectThree = () => {
                                     rooms or adjust the whole home, creating a consistent and approachable interaction throughout the app.
                                 </p>
                             </div>
+                            </div>
 
-                            <div className="final-design-row">
-                                <div className="p-final-design-column">
-                                    <h3 className="p-section-subtitle">Final design – half circle with tabs</h3>
-                                    <div className="p2-final-design-column">
+                            <div className="subsection-container">
+                            <div className="final-design-content">
+                            <div className="final-design-column">
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column-aura">
+                                        <h2 className="section-subtitle">Final design – half circle with tabs</h2>
+                                        <div className="p2-final-design-column">
                                         <p className="research-description">
                                             The final solution combined a half-circle dial with a tab system to switch between rooms. The tab was inspired by the 
                                             History view and provided a consistent interaction pattern throughout the app. This design balances simplicity, quick access, 
@@ -669,14 +639,19 @@ const ProjectThree = () => {
                                             percent={91}
                                             text="of users felt the app was easy to use"
                                         />
+                                        </div>
                                     </div>
+                                    <video 
+                                        src="/videos/project3-videos/Aura-App-History.mp4"
+                                        loop 
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p-final-design-video"
+                                    />
                                 </div>
-                                
-                                <img 
-                                    src="/images/aura-image1.png"
-                                    alt="Floor Plan Design 5"
-                                    className="design-iteration-img"
-                                />
+                            </div>
+                        </div>
                             </div>
                         </div>
                         <div className="horizontal-line" />
@@ -685,7 +660,7 @@ const ProjectThree = () => {
 
                 {/* Design & Develop */}
                 <div className="design-develop-container">
-                    <h3 className="section-subheader">Design & Develop</h3>
+                    <h3 className="project-header">Design & Develop</h3>
 
                     {/* System & UX Design Section */}
                     <div className="design-principles-container">
@@ -697,6 +672,7 @@ const ProjectThree = () => {
                             for users, rather than the engineering of the hardware itself.
                         </p>
 
+                        <div className="subsection-container">
                         <h3 className="section-subtitle">Hardware & Firmware Specs</h3>
                         <div className="hardware-row">
                             <div className={`empathy-map-image-row ${modalImage ? 'blurred' : ''}`}>
@@ -763,7 +739,9 @@ const ProjectThree = () => {
                                 </div>
                             </div>
                         </div>
+                        </div>
 
+                        <div className="subsection-container">
                         <h3 className="section-subtitle">Software & Aura App Overview</h3>
                         <p className="research-description">
                             The Aura software stack powers both the backend intelligence and the mobile app experience. The mobile app, which I coded, 
@@ -794,7 +772,9 @@ const ProjectThree = () => {
                                 />
                             </div>
                         </div>
+                        </div>
 
+                        <div className="subsection-container">
                         <h3 className="section-subtitle">Programming Languages</h3>
                         <div className="themes-wrapper">
                             <div className="rectangle-row">
@@ -815,7 +795,8 @@ const ProjectThree = () => {
                                 />
                             </div>
                         </div>
-
+                        </div>
+                        <div className="subsection-container">
                         <h3 className="section-subtitle">App Features & UX Work</h3>
                         <div className="key-feedback-column">
                             <p className="key-feedback-title">
@@ -843,6 +824,7 @@ const ProjectThree = () => {
                                 </ul>
                             </p>
                         </div>
+                        </div>
                     </div>
                     <div className="horizontal-line" />
                 </div>
@@ -868,14 +850,12 @@ const ProjectThree = () => {
 
                 {/* Special Thanks */}
                 <div className="reflection-container">
-                    <div className="thanks-row">
                         <div className="thanks-column">
                             <h1 className="section-header">Special Thanks</h1>
                             <p className="research-description">
                                 I want to sincerely thank my team members for their support, collaboration and creativity. Most importantly, my loved ones for their 
                                 encouragement, feedback, and unwavering support throughout this project.
                             </p>
-                        </div>
                         <div className="thanks-row-img">
                         <img 
                             src="/images/aura-team.png"
@@ -888,16 +868,6 @@ const ProjectThree = () => {
                             className="thanks-img"
                         />
                         </div>
-                         {/* <img 
-                            src="/images/aura-team.png"
-                            alt="Jeric Montepalco, Sabrina Quach, Roger Huynh"
-                            className="thanks-img"
-                        />
-                        <img 
-                            src="/images/aura-roomies.png"
-                            alt="Sabrina Quach's Supportive Friends"
-                            className="thanks-img"
-                        /> */}
                     </div>
                 </div>
             </section>

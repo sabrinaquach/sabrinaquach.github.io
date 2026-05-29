@@ -100,8 +100,8 @@
 }
 
 .project-title {
-  font-family: 'Inter';
-  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-family: 'Work Sans';
+  font-size: 3.5rem;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -110,7 +110,7 @@
 .encrypted-char {
   color: #fff;
   font-family: 'Inter';
-  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-size: 3.1rem;
   font-weight: bold;
   text-transform: uppercase;
   opacity: 0.5;
@@ -120,7 +120,7 @@
 .project-description {
   font-family: 'JetBrains Mono', monospace;
   font-weight: normal;
-  font-size: clamp(0.9rem, 0.6vw, 1.1rem);
+  font-size: 1rem;
   color: #999;
   line-height: 1.5;
 }

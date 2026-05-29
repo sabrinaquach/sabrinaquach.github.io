@@ -44,8 +44,8 @@ const Hero = ({ onMessageClick }) => {
                 />
             </h1>
             <p className="description">
-                STUDYING ENGINEERING AND DESIGN HELPED ME SEE TECH PROBLEMS THROUGH A NEW LENS, 
-                ONE THAT FOCUSES ON REAL PEOPLE.
+                Studying engineering and design helped me see tech problems through a new lens,
+                one that focuese on real people.
             </p>
             <p className="ps-message">p.s. I built this from scratch :)</p>
             <div className="message-row nav-buttons">
