@@ -234,7 +234,7 @@
   }
 
   .encrypted-char {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .project-description {
@@ -260,6 +260,6 @@
   .project-tags {
     align-items: center;
     justify-content: center;
-    margin: 0 2rem;
+    margin: 0 2.2rem;
   }
 }
