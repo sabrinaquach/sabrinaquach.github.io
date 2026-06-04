@@ -90,8 +90,8 @@ const Navbar = () => {
         return;
       }
     
-      if (location.pathname === '/SpartanSync') {
-        document.getElementById('SpartanSync')?.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname === '/Pip') {
+        document.getElementById('Pip')?.scrollIntoView({ behavior: 'smooth' });
         return;
       }
     

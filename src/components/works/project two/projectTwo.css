@@ -1230,6 +1230,7 @@ p, li {
   
     .project-title {
       text-align: center;
+      font-size: 3rem;
     }
 
     .project-description {
@@ -1241,8 +1242,9 @@ p, li {
         display: flex;
         flex-wrap: wrap;
         max-width: 85vw;
+        font-size: 2rem;
     }
-  
+    
     .text-column {
       align-items: center;
       text-align: center;

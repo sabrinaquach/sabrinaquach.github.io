@@ -228,17 +228,17 @@
   .project-text-phone {
     text-align: center;
     align-items: center;
-    min-width: 550px;
+    min-width: 500px;
     padding: 0 1rem;
     gap: 0.5rem;
   }
 
   .encrypted-char {
-    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-size: 3rem;
   }
 
   .project-description {
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-size: 1rem;
     max-width: 80vw;
     margin: 0 auto;
     line-height: 1.2em;
@@ -260,6 +260,6 @@
   .project-tags {
     align-items: center;
     justify-content: center;
-    margin: 0 3rem;
+    margin: 0 2rem;
   }
 }
