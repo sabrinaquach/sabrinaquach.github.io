@@ -48,41 +48,44 @@ const Navbar = () => {
         }
     };
     
-    const handleWorkClick = () => {
-      if (location.pathname === '/') {
-        const el = document.getElementById('work');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-          setTimeout(() => {
-            ScrollTrigger.refresh(true);
-          }, 200);
-        }
-      } else {
-        navigate('/#work');
+  const handleWorkClick = () => {
+    if (location.pathname === '/') {
+      const el = document.getElementById('work');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          ScrollTrigger.refresh(true);
+        }, 200);
       }
-    };  
+    } else {
+      navigate('/#work');
+    }
+    setIsHovering(false); 
+  };
 
-    const handleAboutClick = () => {
-        const el = document.getElementById('about');
-        if (location.pathname === '/about') {
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        } else {
-          navigate('/about', { state: { scrollTo: 'about' } });
-        }
-    };       
+  const handleAboutClick = () => {
+    const el = document.getElementById('about');
+    if (location.pathname === '/about') {
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/about', { state: { scrollTo: 'about' } });
+    }
+    setIsHovering(false); 
+  };
 
-    const handleContactClick = () => {
-        const el = document.getElementById('footer');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    };           
+  const handleContactClick = () => {
+    const el = document.getElementById('footer');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setIsHovering(false);
+  };          
       
     const handleScrollToTop = () => {
       //home
@@ -136,9 +139,9 @@ const Navbar = () => {
                             className="burger"
                             onClick={() => {
                               if (isMobile) {
-                                setIsHovering(prev => !prev); // toggle open/closed on tap
+                                setIsHovering(prev => !prev); 
                               } else {
-                                setIsHovering(false); // desktop: click just closes, as before
+                                setIsHovering(false); 
                               }
                             }}
                         >

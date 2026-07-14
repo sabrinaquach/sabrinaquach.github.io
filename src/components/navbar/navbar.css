@@ -232,7 +232,7 @@
     .mobile-menu {
         width: 100vw;
         border-radius: 0;
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     .nav-buttons-wrapper {
@@ -243,5 +243,10 @@
     .burger {
         margin: 1rem;
     }
+
+    .desktopMenuListItem, .encrypted-char1 {
+        font-size: 4rem;
+    }
+
   }
   
