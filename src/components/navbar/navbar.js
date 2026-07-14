@@ -4,20 +4,36 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { BiArrowToTop, BiMenu, BiX } from "react-icons/bi";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
+import DecryptedText from '../../utilities/DecryptedText';
 
 gsap.registerPlugin(ScrollTrigger); 
 
 const Navbar = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [isWorkInView, setIsWorkInView] = useState(false);
-    const [workClicked, setWorkClicked] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [isHovering, setIsHovering] = useState(false);
+  const isMenuVisible = isHovering;
+  
+  const isProjectPage =
+  location.pathname === "/Pip" ||
+  location.pathname === "/AdobeFlux" ||
+  location.pathname === "/Aura";
+
+  const isWorkActive = isProjectPage || location.pathname === "/";
+  const isAboutActive = location.pathname === "/about";
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
     
-    useEffect(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setMenuOpen(false); 
-    }, [location.pathname]);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsHovering(false); 
+  }, [location.pathname]);
 
     const handleLogoClick = () => {
         const el = document.getElementById('hero');
@@ -33,13 +49,10 @@ const Navbar = () => {
     };
     
     const handleWorkClick = () => {
-      setWorkClicked(true); // 👈 force active immediately
-    
       if (location.pathname === '/') {
         const el = document.getElementById('work');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
-    
           setTimeout(() => {
             ScrollTrigger.refresh(true);
           }, 200);
@@ -47,7 +60,7 @@ const Navbar = () => {
       } else {
         navigate('/#work');
       }
-    };    
+    };  
 
     const handleAboutClick = () => {
         const el = document.getElementById('about');
@@ -102,43 +115,8 @@ const Navbar = () => {
     
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-    useEffect(() => {
-      if (location.pathname !== "/") return;
-    
-      const workSection = document.getElementById("work");
-      if (!workSection) return;
-    
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsWorkInView(entry.isIntersecting);
-    
-          // once observer takes over, clear manual click state
-          if (entry.isIntersecting) {
-            setWorkClicked(false);
-          }
-        },
-        { threshold: 0.3 }
-      );
-    
-      observer.observe(workSection);
-    
-      return () => observer.disconnect();
-    }, [location.pathname]);
     
     const pathname = location.pathname;
-
-    const isProjectPage =
-    location.pathname === "/AdobeFlux" ||
-    location.pathname === "/SpartanSync" ||
-    location.pathname === "/Aura";
-  
-    const isWorkActive =
-      isProjectPage ||
-      (location.pathname === "/" && (workClicked || isWorkInView));
-    
-    const isAboutActive = location.pathname === "/about";
-
 
     return (
         <nav className="navbar">
@@ -149,17 +127,57 @@ const Navbar = () => {
                     >
                       s.q.
                     </p>
-                    <div className="burger-wrapper">
-                      <button className="burger" onClick={() => setMenuOpen(!menuOpen)}>
-                        {menuOpen ? <BiX size={30} /> : <BiMenu size={30} />}
-                      </button>
-                      {menuOpen && (
-                        <div className="mobile-menu open">
-                          <div onClick={handleWorkClick} className={`desktopMenuListItem ${isWorkActive ? "active" : ""}`}>Work</div>
-                          <div onClick={handleAboutClick} className={`desktopMenuListItem ${isWorkActive ? "active" : ""}`}>About</div>
-                          <div onClick={handleContactClick} className="desktopMenuListItem">Contact</div>
-                        </div>
-                      )}
+                    <div
+                      className="burger-wrapper"
+                      onMouseEnter={() => { if (!isMobile) setIsHovering(true); }}
+                      onMouseLeave={() => { if (!isMobile) setIsHovering(false); }}
+                    >
+                        <button
+                            className="burger"
+                            onClick={() => {
+                              if (isMobile) {
+                                setIsHovering(prev => !prev); // toggle open/closed on tap
+                              } else {
+                                setIsHovering(false); // desktop: click just closes, as before
+                              }
+                            }}
+                        >
+                            {isHovering ? <BiX size={30} color="#000" /> : <BiMenu size={30} color="#fff" />}
+                        </button>
+                        <div className={`mobile-menu ${isHovering ? "open" : ""}`}>
+                        <DecryptedText
+                            text="Work"
+                            onClick={handleWorkClick}
+                            parentClassName={`desktopMenuListItem ${isWorkActive ? "active" : ""}`}
+                            encryptedClassName="encrypted-char1"
+                            animateOn="hover"
+                            revealDirection="start"
+                            sequential="true"
+                            speed={200}
+                        />
+                        <DecryptedText
+                            text="About"
+                            onClick={handleAboutClick}
+                            parentClassName={`desktopMenuListItem ${isAboutActive ? "active" : ""}`}
+                            className="decrypted-char"
+                            encryptedClassName="encrypted-char1"
+                            animateOn="hover"
+                            revealDirection="start"
+                            sequential="true"
+                            speed={120}
+                        />
+                        <DecryptedText
+                            text="Contact"
+                            onClick={handleContactClick}
+                            parentClassName="desktopMenuListItem"
+                            className="decrypted-char"
+                            encryptedClassName="encrypted-char1"
+                            animateOn="hover"
+                            revealDirection="start"
+                            sequential="true"
+                            speed={120}
+                        />
+                    </div>
                     </div>
                 </div>
                 <div className='desktopMenuList'>

@@ -128,11 +128,14 @@ const Work = () => {
                             blurStrength={10}
                         >
                             <div className="project-image">
-                                <img
-                                    className="phone-mockup"
-                                    src="/images/pip-images/pip-home.png"
-                                    alt="Pip mockup"
-                                />
+                              <video 
+                                  src="/videos/pip-videos/scan-pip.mp4" 
+                                  loop 
+                                  muted
+                                  autoPlay
+                                  playsInline
+                                  className="p2-final-design-video"
+                              />
                             </div>
                         </ScrollRevealImage>
                     </div>
@@ -186,11 +189,14 @@ const Work = () => {
                             blurStrength={10}
                         >
                             <div className="project-image">
-                                <img 
-                                    className="laptop-mockup" 
-                                    src="/images/adobeflux-image1.png" 
-                                    alt="SpartanSync mockup" 
-                                />
+                              <video 
+                                  src="/videos/project1-videos/adobeFlux-vid1.mov" 
+                                  loop 
+                                  muted
+                                  autoPlay
+                                  playsInline
+                                  className="final-design-video"
+                              />
                             </div>
                         </ScrollRevealImage>
                     </div>
@@ -260,11 +266,14 @@ const Work = () => {
                             blurStrength={4}
                         >
                             <div className="project-image">
-                                <img 
-                                    className="phone-mockup" 
-                                    src="/images/aura-image1.png" 
-                                    alt="Aura mockup" 
-                                />
+                            `<video 
+                                  src="/videos/project3-videos/Aura-App-Motion-Off.mov"
+                                  loop 
+                                  muted
+                                  autoPlay
+                                  playsInline
+                                  className="p2-final-design-video"
+                              />
                             </div>
                         </ScrollRevealImage>
                     </div>

@@ -1,15 +1,14 @@
 .footer {
     background-color: #000;;
     color: #fff;
-    padding-left: 180px;
-    /* padding-top: 10rem; */
 }
 .main-row {
     display: flex;
     align-items: stretch;
     gap: 2rem;
     flex-wrap: wrap;
-    max-width: 1120px;
+    max-width: 1150px;
+    margin: 0 auto;
     padding: 2rem;
 }
 .column-left, .message-column {
@@ -151,7 +150,7 @@
 .connect-bottom {
     font-family: 'Work Sans';
     text-transform: uppercase;
-    /* text-align: center; */
+    text-align: center;
     font-size: 16vw;
     overflow: hidden;
     line-height: 1;

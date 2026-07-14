@@ -14,7 +14,6 @@ p, li {
   align-items: center;
   justify-content: flex-start;
   background: black;
-  padding-left: 80px;
 }
 
 .project-content {
@@ -310,7 +309,6 @@ p, li {
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
-    padding-left: 80px;
 }
   
 /* themes section */
@@ -555,17 +553,6 @@ p, li {
     padding-bottom: 5rem;
 }
 
-.project-container {
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: black;
-  padding-left: 80px;
-}
 
 .project-content {
     padding-top: 8rem;  
