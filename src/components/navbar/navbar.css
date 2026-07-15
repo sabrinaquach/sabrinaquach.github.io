@@ -18,18 +18,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.05rem;
+    /* gap: 0.05rem; */
 } 
 
 .desktopMenuListItem {
-    font-size: 5rem;
+    font-size: 8rem;
     font-family: 'Work Sans';
     text-transform: uppercase;
     font-weight: bold;
     display: block;
     transition: all .3s ease-in-out; 
     transform-origin: center;
-    text-align: left;
     color: #000;
     cursor: pointer;
 }
@@ -62,7 +61,7 @@
 }
 
 .desktopMenuListItem.active {
-    color: #FFB266;
+    color: #ff8000;
   }
   
 .nav-buttons {
@@ -99,8 +98,8 @@
 
 .desktopMenuList:hover {
     cursor: pointer;
-    display: inline-block;
-    perspective: 800px;
+    display: inline;
+    /* perspective: 800px; */
 } 
 .desktopMenuListItem:hover {
     transform: scale(1.2); 
@@ -157,15 +156,15 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 35vw;
+    width: 100vw;
     height: 100vh;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: flex-end; 
     align-items: flex-end;     
-    padding: 2rem 4rem 2rem 0;
-    gap: 0.2rem;
+    padding: 2rem 5rem 2rem 0;
+    /* gap: 0rem; */
     z-index: 1000;        
     transform: translateX(100%);
     opacity: 0;
@@ -215,9 +214,9 @@
 }
 
 .encrypted-char1 {
-    color: #000;
+    color: #505050;
     font-family: 'Work Sans';
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: bold;
     text-transform: uppercase;
     /* opacity: 0.1; */

@@ -12,7 +12,6 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isHovering, setIsHovering] = useState(false);
-  const isMenuVisible = isHovering;
   
   const isProjectPage =
   location.pathname === "/Pip" ||
@@ -119,8 +118,6 @@ const Navbar = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     
-    const pathname = location.pathname;
-
     return (
         <nav className="navbar">
             <div className='nav-content'>
@@ -137,13 +134,7 @@ const Navbar = () => {
                     >
                         <button
                             className="burger"
-                            onClick={() => {
-                              if (isMobile) {
-                                setIsHovering(prev => !prev); 
-                              } else {
-                                setIsHovering(false); 
-                              }
-                            }}
+                            onClick={() => setIsHovering(prev => !prev)}
                         >
                             {isHovering ? <BiX size={30} color="#000" /> : <BiMenu size={30} color="#fff" />}
                         </button>
