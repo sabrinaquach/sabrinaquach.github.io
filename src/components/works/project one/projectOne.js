@@ -39,6 +39,27 @@ const ProjectOne = () => {
                             <h3 className="project-header">— Case Study 01</h3>
                             <h1 className="project-title">Pip</h1>
                             <p className="project-description">A beginner-friendly skincare ingredient scanner that helps users understand what's in their products — personalized to their skin type, jargon-free, and guided by a friendly mascot named Pip.</p>
+                            <div className="live-app-block">
+                                <div className="live-app-buttons">
+                                    <a
+                                        className="live-app-link"
+                                        href="https://pip-skincare.vercel.app"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View live app ↗
+                                    </a>
+                                    <a
+                                        className="repo-link"
+                                        href="https://github.com/sabrinaquach/pip-skincare"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        View code ↗
+                                    </a>
+                                </div>
+                                <span className="live-app-note">Try the demo — no signup</span>
+                            </div>
                             <div className='project-tags'>
                                 <ProjectTags
                                     text="UX Design"
@@ -89,6 +110,8 @@ const ProjectOne = () => {
                                 <li>UX Design</li>
                                 <li>Interaction Design</li>
                                 <li>Mobile Design</li>
+                                <li>Design Engineering</li>
+                                <li>Front-end Development</li>
                             </ul>
                         </div>
                         <div className="background-column">
@@ -98,6 +121,8 @@ const ProjectOne = () => {
                                 <li>UX Research / Testing</li>
                                 <li>Interface Design</li>
                                 <li>Prototyping</li>
+                                <li>Building & Shipping</li>
+                                <li>Backend / Auth Setup</li>
                             </ul>
                         </div>
                         <div className="background-column">
@@ -105,8 +130,12 @@ const ProjectOne = () => {
                             <ul className="background-design-list">
                                 <li>Figma</li>
                                 <li>Figjam</li>
-                                <li>Claude</li>
-                                <li>ChatGBT (Image)</li>
+                                <li>ChatGPT (Image)</li>
+                                <li>Claude Code</li>
+                                <li>React Native</li>
+                                <li>Expo</li>
+                                <li>Supabase</li>
+                                <li>Vercel</li>
                             </ul>
                         </div>
                     </div>
@@ -240,6 +269,81 @@ const ProjectOne = () => {
                     </div>
                     <div className="horizontal-line" />
                 </div>
+
+                    {/* Build */}
+                    <div className="experience-drivers-container shipping-container">
+                        <div className="final-design-content">
+                            <div className="final-design-column">
+                                <div className="project-content-breakdown-block">
+                                    <div className="text-column">
+                                        <h2 className="section-header">shipping it</h2>
+                                        <p className="project-description">Pip is live — 640 real products with full ingredient lists, matched against the skin profile onboarding builds for you. Getting it from prototype to something a stranger can open meant a different class of decision: cost, safety, and edge cases rather than features.</p>
+                                        <div className="live-app-block">
+                                            <div className="live-app-buttons">
+                                                <a
+                                                    className="live-app-link"
+                                                    href="https://pip-skincare.vercel.app"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    View live app ↗
+                                                </a>
+                                                <a
+                                                    className="repo-link"
+                                                    href="https://github.com/sabrinaquach/pip-skincare"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    View code ↗
+                                                </a>
+                                            </div>
+                                            <span className="live-app-note">Try the demo — no signup</span>
+                                        </div>
+                                    </div>
+                                    <video
+                                        src="/videos/pip-videos/live-app-pip.mp4"
+                                        loop
+                                        muted
+                                        autoPlay
+                                        playsInline
+                                        className="p2-final-design-video"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <h2 className="section-subtitle">constraints?</h2>
+                        <div className="constraint-list">
+                            <div className="constraint-item">
+                                <span className="constraint-index">01</span>
+                                <div className="constraint-body">
+                                    <h3 className="constraint-title">Haiku 4.5 over Opus</h3>
+                                    <p className="constraint-detail">Extraction is a bounded task, so the smaller model held up at roughly 0.13¢ a scan. At Opus pricing, the core feature would have been the reason the app couldn't stay free.</p>
+                                </div>
+                            </div>
+                            <div className="constraint-item">
+                                <span className="constraint-index">02</span>
+                                <div className="constraint-body">
+                                    <h3 className="constraint-title">640 real products, not a sample set</h3>
+                                    <p className="constraint-detail">A match percentage only means something if the thing you scanned is actually in the catalog.</p>
+                                </div>
+                            </div>
+                            <div className="constraint-item">
+                                <span className="constraint-index">03</span>
+                                <div className="constraint-body">
+                                    <h3 className="constraint-title">A seeded demo account</h3>
+                                    <p className="constraint-detail">RLS on every table, auth on the edge functions, per-user rate limiting. The demo lets you in without an account, and it isn't anyone's real skin data.</p>
+                                </div>
+                            </div>
+                            <div className="constraint-item">
+                                <span className="constraint-index">04</span>
+                                <div className="constraint-body">
+                                    <h3 className="constraint-title">Personalization is rule-based, not generated</h3>
+                                    <p className="constraint-detail">The &ldquo;why this works for you&rdquo; copy and the brand matching are functions over your skin profile, not AI calls. That keeps them instant, free, and identical every time you open the same product.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="horizontal-line" />
+                    </div>
 
                 {/* Research */}
                 <div className="research-container">
@@ -410,18 +514,16 @@ const ProjectOne = () => {
                         <h1 className="section-header">AI in my workflow</h1>
                         <div className="solution-column">
                             <p className="research-description">
-                            I used Claude as a thinking partner, not a generator. During research synthesis, I'd paste interview observations and ask it to flag surface-level 
-                            groupings — it caught assumptions in my affinity map that directly sharpened how I framed Jade and Andre. For competitive research, it helped me 
-                            synthesize patterns across five apps into the gap analysis that shaped Pip's main purpose.
+                            I used Claude as a thinking partner, not a generator. During research, I'd paste in interview observations and ask where my groupings were
+                            too surface-level — it caught assumptions in my affinity map that sharpened how I framed Jade and Andre. In the design phase, I used it to
+                            stress-test microcopy: generate five versions of an ingredient explanation, then iterate against them until the tone felt unmistakably like
+                            Pip. A fast way to find the edges of an idea before committing to one.
                             </p>
                             <p className="research-description">
-                            In the design phase, I used Claude to stress-test microcopy and explore design directions quickly. I'd ask it to generate multiple versions 
-                            of ingredient explanations, onboarding copy, or skin diary prompts — then use those variations as a starting point to iterate against, 
-                            narrowing down until the tone and structure felt unmistakably like Pip. It was a faster way to find the edges of an idea before committing 
-                            to one direction. I also used it to flag anywhere the copy felt clinical, vague, or assumed prior knowledge the user wouldn't have.
-                            </p>
-                            <p className="research-description">
-                            The framing that made it useful: "here's what I'm thinking — where am I wrong?" I treated Claude as a critic, not a co-designer.
+                            Building the app worked the same way. Claude Code got me from Figma to a running React Native app far faster than I could have alone, but the
+                            decisions that mattered stayed mine — which model runs in the product, where personalization should be deterministic instead of generated, how
+                            the edge functions verify a caller. The framing that made it useful in both phases: &quot;here's what I'm thinking — where am I wrong?&quot; A critic,
+                            not a co-designer.
                             </p>
                         </div>
 
@@ -630,18 +732,27 @@ const ProjectOne = () => {
                             to hear that feedback, understand the reasoning, and iterate quickly without losing Pip's core personality is the skill I'm most proud of 
                             developing through this project.
                             </p>
+                            <p className="research-description">
+                            Shipping it taught me something designing it couldn't. A prototype gets to defer every hard question; a real app doesn't. The moment there
+                            were 640 products and a stranger who could open the thing, choices I'd never had to make in Figma became unavoidable — what a scan costs,
+                            what happens when the catalog hasn't seen a product, whether someone's skin diary is genuinely private. Watching my design assumptions meet
+                            real constraints, and having to defend or drop them, is the part I would have missed entirely if I'd stopped at the prototype.
+                            </p>
                         </div>
                         <div className="subsection-container">
                             <h2 className="section-subtitle">What's next</h2>
                             <ul className="design-with-intent-list">
                                 <li className="design-with-intent-list-item">
-                                    Usability testing with 5 beginner skincare users to validate the ingredient breakdown and skin diary flows
+                                    Growing the catalog well past 640 products, so fewer scans land on something the database hasn&rsquo;t seen yet
                                 </li>
                                 <li className="design-with-intent-list-item">
-                                    Accessibility audit across all screens — particularly contrast ratios on the benefit tags and match score badges
+                                    Multi-product scanning — an on-device vision model that detects several products in one frame, so a whole shelf or an existing routine can be captured in one shot instead of one label at a time
                                 </li>
                                 <li className="design-with-intent-list-item">
-                                    Exploring a routine builder onboarding flow that helps users set up their first routine from scratch using Pip's recommendations
+                                    Moving the common extractions on-device, so a scan resolves without a network round trip and the per-scan cost drops to zero
+                                </li>
+                                <li className="design-with-intent-list-item">
+                                    Exploring a routine builder onboarding flow that helps users set up their first routine from scratch using Pip&rsquo;s recommendations
                                 </li>
                                 <li className="design-with-intent-list-item">
                                     Refine visuals further and continue to add moments of delight

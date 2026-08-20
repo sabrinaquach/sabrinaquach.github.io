@@ -95,6 +95,29 @@ const Work = () => {
                             <p className="project-description">
                               A beginner-friendly skincare ingredient scanner that helps users understand what's in their products — personalized to their skin type, jargon-free, and guided by a friendly mascot named Pip.
                             </p>
+                            <div className="live-app-block">
+                              <div className="live-app-buttons">
+                                <a
+                                  className="card-demo-link"
+                                  href="https://pip-skincare.vercel.app"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  View live app ↗
+                                </a>
+                                <a
+                                  className="card-repo-link"
+                                  href="https://github.com/sabrinaquach/pip-skincare"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  View code ↗
+                                </a>
+                              </div>
+                              <span className="live-app-note">Try the demo — no signup</span>
+                            </div>
                             <div className='project-tags'>
                               <ProjectTags
                                 text="UX design"
