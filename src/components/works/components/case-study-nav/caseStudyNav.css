@@ -1,0 +1,115 @@
+/* Same dock as the work page's filter: fixed bottom-centre at z-index 999,
+   under .navbar and .nav-buttons-wrapper, which both own 1000. */
+.cs-nav-dock {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.75rem);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+
+.cs-nav-dock.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-nav-dock,
+  .cs-nav-dock.is-visible {
+    transform: translateX(-50%);
+    transition: opacity 0.01s linear, visibility 0.01s linear;
+  }
+}
+
+.cs-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.45rem;
+  /* One line that scrolls, so the bar never changes height as labels change. */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #2a2a2a;
+  border-radius: 2.5em;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+}
+
+.cs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.cs-nav-chip {
+  flex: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #979797;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  padding: 0.55em 1.1em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.cs-nav-chip:hover {
+  /* Dark on light rather than a brighter label: the bar is translucent, so page
+     content scrolls behind it and a light-on-dark hover stays hard to read. */
+  color: #000;
+  background-color: rgba(242, 243, 244, 0.85);
+  border-color: rgba(242, 243, 244, 0.85);
+}
+
+.cs-nav-chip.is-active {
+  color: #000;
+  background-color: #f2f3f4;
+  border-color: #f2f3f4;
+}
+
+.cs-nav-chip:focus-visible {
+  outline: 2px solid #ff8000;
+  outline-offset: 2px;
+}
+
+/* .nav-buttons-wrapper moves to bottom/right 1rem here, so anchor rather than
+   centre to stay clear of it. */
+@media (max-width: 768px) {
+  .cs-nav-dock {
+    left: 0.75rem;
+    right: 5rem;
+    bottom: 1rem;
+    transform: translateY(0.75rem);
+  }
+
+  .cs-nav-dock.is-visible {
+    transform: translateY(0);
+  }
+
+  .cs-nav-chip {
+    font-size: 0.72rem;
+    padding: 0.5em 0.9em;
+  }
+}
+
+/* scrollIntoView lands the heading flush with the top of the scrollport, which
+   is underneath the fixed navbar. This is what holds it clear, and it works
+   whichever element ends up being the scroll container. */
+.case-study-container .project-header,
+.case-study-container .section-header {
+  scroll-margin-top: 6rem;
+}

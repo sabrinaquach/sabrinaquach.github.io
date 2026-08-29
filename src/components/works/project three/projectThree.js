@@ -8,6 +8,8 @@ import Rectangle from "../components/theme-card/rectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
 import PercentSquare from "../components/percent-square/percent-square"
 import ProjectTags from "../components/project-tags/tags";
+import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
+import { scrollPageTo } from '../../../utilities/pageScroll';
 
 const ProjectThree = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -23,7 +25,7 @@ const ProjectThree = () => {
             }
             navigate(location.pathname, { replace: true, state: {} });
           } else {
-            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+            scrollPageTo(0);
           }
         }, 0);
     }, [location, navigate]);
@@ -58,8 +60,20 @@ const ProjectThree = () => {
             };
     }, []);      
 
+    // Explicit so the bar reaches the reflection, which sits at .section-header
+    // level and the .project-header eyebrows alone would miss.
+    const navSections = [
+        { match: 'Work overview', label: 'Overview' },
+        { match: 'Deliver', label: 'Deliver' },
+        { match: 'research', label: 'Research' },
+        { match: 'Define', label: 'Define' },
+        { match: 'Design & Develop', label: 'Design' },
+        { match: 'Lessons from Aura', label: 'Reflection' },
+    ];
+
     return (
         <div className="project-container" id="Aura">
+        <CaseStudyNav sections={navSections} />
             <section className="case-study-container">
             <div className="project-content">
                 <div className="project-block">

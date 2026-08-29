@@ -10,6 +10,7 @@ import LargeRectangle from "../components/competitor-card/largeRectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
 import DesignCard from "../components/design-iteration-card/designCard";
 import ProjectTags from "../components/project-tags/tags";
+import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
 
 const ProjectOne = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -29,8 +30,21 @@ const ProjectOne = () => {
         }
       }, [location, navigate]);      
 
+    // Explicit so the bar can reach sections that sit at .section-header level —
+    // "shipping it" and the reflection — which the .project-header eyebrows alone
+    // would miss. `match` is the heading's own text, `label` is the tab.
+    const navSections = [
+        { match: 'Work overview', label: 'Overview' },
+        { match: 'Deliver', label: 'Deliver' },
+        { match: 'shipping it', label: 'Shipped' },
+        { match: 'research', label: 'Research' },
+        { match: 'Process', label: 'Process' },
+        { match: 'What I learned', label: 'Reflection' },
+    ];
+
     return (
     <div className="project-container" id="Pip">
+        <CaseStudyNav sections={navSections} />
         <section className="case-study-container">
             <div className="project-content">
                 <div className="project-block">

@@ -5,6 +5,7 @@ import About from "./components/about/about";
 import ProjectOne from "./components/works/project one/projectOne";
 import ProjectTwo from "./components/works/project two/projectTwo";
 import ProjectThree from "./components/works/project three/projectThree";
+import ProjectFour from "./components/works/project four/projectFour";
 import Footer from "./components/footer/footer";
 import ScrollToHashElement from "./utilities/ScrollToHashElement";
 import './styles/styles.css';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Pip" element={<ProjectOne />} />
           <Route path="/AdobeFlux" element={<ProjectTwo />} />
           <Route path="/Aura" element={<ProjectThree />} />
+          <Route path="/RealityCheck" element={<ProjectFour />} />
         </Routes>
         <Footer />
       </div>

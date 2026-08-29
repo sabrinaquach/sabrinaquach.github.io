@@ -5,6 +5,7 @@ import { BiArrowToTop, BiMenu, BiX } from "react-icons/bi";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 import DecryptedText from '../../utilities/DecryptedText';
+import { scrollPageTo } from '../../utilities/pageScroll';
 
 gsap.registerPlugin(ScrollTrigger); 
 
@@ -16,7 +17,8 @@ const Navbar = () => {
   const isProjectPage =
   location.pathname === "/Pip" ||
   location.pathname === "/AdobeFlux" ||
-  location.pathname === "/Aura";
+  location.pathname === "/Aura" ||
+  location.pathname === "/RealityCheck";
 
   const isWorkActive = isProjectPage || location.pathname === "/";
   const isAboutActive = location.pathname === "/about";
@@ -30,7 +32,8 @@ const Navbar = () => {
   }, []);
     
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Instant, not smooth: a new page should open at the top, not scroll there.
+    scrollPageTo(0);
     setIsHovering(false); 
   }, [location.pathname]);
 
@@ -40,7 +43,7 @@ const Navbar = () => {
           if (el) {
             el.scrollIntoView({ behavior: 'smooth' });
           } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            scrollPageTo(0, 'smooth');
           }
         } else {
           navigate('/', { state: { scrollTo: 'hero' } });
@@ -68,7 +71,7 @@ const Navbar = () => {
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollPageTo(0, 'smooth');
       }
     } else {
       navigate('/about', { state: { scrollTo: 'about' } });
@@ -81,7 +84,7 @@ const Navbar = () => {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollPageTo(0, 'smooth');
     }
     setIsHovering(false);
   };          
@@ -115,7 +118,7 @@ const Navbar = () => {
         return;
       }
     
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollPageTo(0, 'smooth');
     };
     
     return (

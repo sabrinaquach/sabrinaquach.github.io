@@ -10,6 +10,7 @@ import LargeRectangle from "../components/competitor-card/largeRectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
 import DesignCard from "../components/design-iteration-card/designCard";
 import ProjectTags from "../components/project-tags/tags";
+import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
 
 const ProjectTwo = () => {
     const [modalImage, setModalImage] = useState(null);
@@ -29,8 +30,20 @@ const ProjectTwo = () => {
         }
       }, [location, navigate]);      
 
+    // Explicit so the bar reaches the reflection, which sits at .section-header
+    // level and the .project-header eyebrows alone would miss.
+    const navSections = [
+        { match: 'Work overview', label: 'Overview' },
+        { match: 'Deliver', label: 'Deliver' },
+        { match: 'research', label: 'Research' },
+        { match: 'Define', label: 'Define' },
+        { match: 'Design & Iterate', label: 'Design' },
+        { match: 'Exploring What’s Next', label: 'Reflection' },
+    ];
+
     return (
         <div className="project-container" id="AdobeFlux">
+        <CaseStudyNav sections={navSections} />
             <section className="case-study-container">
             <div className="project-content">
                 <div className="project-block">

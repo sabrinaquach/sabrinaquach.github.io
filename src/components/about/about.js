@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import './about.css'
 import { FiMessageSquare } from "react-icons/fi";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { scrollPageTo } from '../../utilities/pageScroll';
 
 const About = () => {
     const location = useLocation();
@@ -23,7 +24,7 @@ const About = () => {
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
         } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          scrollPageTo(0, 'smooth');
         }
     };   
 

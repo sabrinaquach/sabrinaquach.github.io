@@ -1,0 +1,110 @@
+/* Reality Check reuses the case-study classes defined in projectOne.css /
+   projectTwo.css / projectThree.css. Those stylesheets are global once their
+   components are imported in App.js, which is how the existing pages already
+   share this styling. Only page-specific spacing belongs here. */
+
+.research-container,
+.process-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Last section on the page, so it needs air before the footer. .reflection-container
+   already carries padding-bottom: 5rem from projectOne.css (dropped to 0 under
+   768px), which is the convention the other case studies end on — this page just
+   opts into it rather than inventing a new value. */
+
+/* Pip scopes subsection spacing to its container rather than to the class —
+   projectOne.css does exactly this with
+     .shipping-container .section-subtitle { padding-top: 5rem; }
+   Same pattern here so each sub-block reads as its own block instead of
+   crowding the paragraph above it. Pip gets this separation for free because a
+   video and a tag row sit between its subsections; this page is text-only, so
+   the space has to be declared. */
+.research-container .section-subtitle,
+.process-container .section-subtitle {
+  padding-top: 4rem;
+}
+
+/* The section's own first heading should not inherit that gap — the
+   horizontal-line above it already carries 4rem. */
+.research-container .section-header + .section-subtitle,
+.process-container .section-header + .section-subtitle {
+  padding-top: 2rem;
+}
+
+/* Figures. The claims on this page are visual ones — a colour system, a flow, a
+   reused map — so each sits next to the screen it describes. A row holds one or
+   two; two side by side is what makes "same component, different layer" read as
+   a comparison rather than two unrelated pictures. */
+.rc-figure-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.rc-figure {
+  /* Grows to fill a row alone, and pairs evenly when there are two. */
+  flex: 1 1 320px;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Every still and clip on this page has the laptop rendered into the file and
+   sits on its own black ground, so a border or radius would frame the canvas
+   rather than the screen. */
+.rc-figure img,
+.rc-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rc-caption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #979797;
+}
+
+@media (max-width: 768px) {
+  .rc-figure-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* A portrait phone clip beside a landscape laptop one has to be matched on
+   height, not width. The phone is ~0.50 wide-to-tall and the laptop ~1.63, so
+   at equal widths the phone stands three times taller; roughly a quarter of the
+   row lands the two at the same height. */
+.rc-figure-phone {
+  flex: 0 1 23%;
+  min-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .rc-figure-phone {
+    max-width: 240px;
+    align-self: center;
+  }
+}
+
+/* .live-app-block carries only a padding-bottom, so the buttons sit flush
+   against the paragraph above them wherever it follows body copy. */
+.research-container .live-app-block {
+  padding-top: 2rem;
+}
+
+/* The hero's copy sits tighter to its buttons than a section's does. */
+#RealityCheck .project-content-block .live-app-block {
+  padding-top: 1rem;
+}

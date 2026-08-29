@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { scrollPageTo } from './pageScroll';
 
 const ScrollToHashElement = () => {
   const location = useLocation();
@@ -15,7 +16,7 @@ const ScrollToHashElement = () => {
       }
     } else if (location.state?.scrollToTop) {
       console.log("Scrolling to top");
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollPageTo(0, 'smooth');
     }
   }, [location]);
   

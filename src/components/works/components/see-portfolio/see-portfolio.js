@@ -4,7 +4,10 @@ import gsap from "gsap";
 
 import "./see-portfolio.css";
 
-const SeeCaseStudyButton = ({ click }) => {
+// `href` makes this an external link (the shipped projects without a written
+// case study point at the live app or the repo); without one it is an in-app
+// navigation and `click` does the routing.
+const SeeProjectButton = ({ click, href }) => {
   const colorRef = useRef(null);
   const tl = useRef(null);
 
@@ -31,13 +34,19 @@ const SeeCaseStudyButton = ({ click }) => {
 
   return (
     <div className="wrapper">
-      <a className="link" onClick={click}>
+      <a
+        className="link"
+        href={href}
+        target={href ? "_blank" : undefined}
+        rel={href ? "noopener noreferrer" : undefined}
+        onClick={click}
+      >
         <div ref={colorRef} className="color" />
-        <span>SEE CASE STUDY</span>
+        <span>SEE PROJECT</span>
         <TbArrowRight className="icon" size={22} />
       </a>
     </div>
   );
 };
 
-export default SeeCaseStudyButton;
+export default SeeProjectButton;

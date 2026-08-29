@@ -1,0 +1,129 @@
+/* The dock: fixed, bottom-centre, fades in once #work is on screen.
+   Bottom-centre is the only free corner — .navbar owns top-left and
+   .nav-buttons-wrapper owns bottom-right, both at z-index 1000, so this sits
+   at 999 and yields to them if they ever overlap. */
+.work-filter-dock {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.75rem);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+
+.work-filter-dock.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-filter-dock,
+  .work-filter-dock.is-visible {
+    transform: translateX(-50%);
+    transition: opacity 0.01s linear, visibility 0.01s linear;
+  }
+}
+
+.work-filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.45rem;
+  /* Chips stay on one line and scroll rather than wrapping the bar to two
+     rows, which would make the dock jump height as the label lengths change. */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #2a2a2a;
+  border-radius: 2.5em;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+}
+
+.work-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.work-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  flex: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #979797;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  padding: 0.55em 1.15em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.work-filter-chip:hover {
+  /* Dark on light rather than a brighter label: the bar is translucent, so page
+     content scrolls behind it and a light-on-dark hover stays hard to read. */
+  color: #000;
+  background-color: rgba(242, 243, 244, 0.85);
+  border-color: rgba(242, 243, 244, 0.85);
+}
+
+.work-filter-chip.is-active {
+  color: #000;
+  background-color: #f2f3f4;
+  border-color: #f2f3f4;
+}
+
+.work-filter-chip:focus-visible {
+  outline: 2px solid #ff8000;
+  outline-offset: 2px;
+}
+
+.work-filter-count {
+  font-size: 0.72rem;
+  font-weight: normal;
+  opacity: 0.6;
+}
+
+/* Clear .nav-buttons-wrapper, which moves to bottom/right 1rem here. Anchoring
+   left/right instead of centring keeps the bar out from under it. */
+@media (max-width: 768px) {
+  .work-filter-dock {
+    left: 0.75rem;
+    right: 5rem;
+    bottom: 1rem;
+    transform: translateY(0.75rem);
+  }
+
+  .work-filter-dock.is-visible {
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-filter-dock,
+    .work-filter-dock.is-visible {
+      transform: none;
+    }
+  }
+
+  .work-filter {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .work-filter-chip {
+    font-size: 0.78rem;
+    padding: 0.5em 0.95em;
+  }
+}
