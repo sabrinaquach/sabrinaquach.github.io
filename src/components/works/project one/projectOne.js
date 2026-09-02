@@ -290,6 +290,7 @@ const ProjectOne = () => {
                             <div className="final-design-column">
                                 <div className="project-content-breakdown-block">
                                     <div className="text-column">
+                                        <h3 className="project-header">Shipped</h3>
                                         <h2 className="section-header">shipping it</h2>
                                         <p className="project-description">Pip is live — 640 real products with full ingredient lists, matched against the skin profile onboarding builds for you. Getting it from prototype to something a stranger can open meant a different class of decision: cost, safety, and edge cases rather than features.</p>
                                         <div className="live-app-block">
@@ -732,6 +733,7 @@ const ProjectOne = () => {
 
                     {/* Exploring What’s Next */}
                     <div className="reflection-container">
+                        <h3 className="project-header">Reflection</h3>
                         <h1 className="section-header">What I learned</h1>
                         <div className="solution-column">
                             <p className="research-description">

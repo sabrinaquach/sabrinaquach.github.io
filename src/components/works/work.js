@@ -47,16 +47,23 @@ const Work = () => {
   }, [location]);
 
   // The dock is only useful while there is a list to filter, so it rides the
-  // visibility of #work itself. The section is taller than the viewport, so a
-  // threshold of 0 means "any part of the work list is on screen" — it fades in
-  // as the hero scrolls away and out again once the footer takes over.
+  // visibility of #work itself.
+  //
+  // The bottom 60% of the viewport is cropped out of the root. Without it a
+  // threshold of 0 fires the moment the first pixel of #work clips the bottom
+  // edge, which is still while the hero fills the screen — the dock was showing
+  // over the hero. Shrinking the root means #work has to have risen into the
+  // top 40% before it counts, so the dock arrives with the first project card.
+  //
+  // Only the bottom is cropped: the top edge stays put, so the dock still hides
+  // on its own once the list has scrolled past and the footer takes over.
   useEffect(() => {
     const el = workRef.current;
     if (!el) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => setInWork(entry.isIntersecting),
-      { threshold: 0 }
+      { threshold: 0, rootMargin: '0px 0px -60% 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();

@@ -776,7 +776,7 @@ const ProjectTwo = () => {
                                 For user testing, we used the following high-fidelity wireframe.
                             </p>
                             <video 
-                                src="/videos/project1-videos/hi-fidelity-wireframe.mov" 
+                                src="/videos/project1-videos/hi-fidelity-wireframe.mp4" 
                                 loop 
                                 muted
                                 autoPlay
@@ -892,6 +892,7 @@ const ProjectTwo = () => {
 
                     {/* Exploring What’s Next */}
                     <div className="reflection-container">
+                        <h3 className="project-header">Reflection</h3>
                         <h1 className="section-header">Exploring What’s Next</h1>
                         <p className="research-description">
                             Creating Adobe Flux reframed how I think about creative software, not as static tools, but as adaptive 

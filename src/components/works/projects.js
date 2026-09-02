@@ -3,11 +3,17 @@
 // Shipped and case-study are two independent facts, not one category, because
 // the best work is both:
 //   shipped: true  — it is deployed and a stranger can use it right now
-//   route          — there is a written case study on this site at that path
+//   route          — there is a written page on this site at that path
 //
 // A project with both shows up under both filter chips and wears both badges.
-// Deriving "has a case study" from `route` keeps them from drifting apart: the
-// badge and the chip both read the same field.
+//
+// Having a page and being a case study are not the same thing. Reality Check
+// and Spacescan have written pages, but they document what got built and why
+// rather than a research-and-iteration process — no interviews, personas or
+// competitive work — so they stay out of the case-study filter and wear no
+// case-study badge. A route still implies a case study by default; those two
+// opt out with `caseStudy: false`, which keeps the exception visible on the
+// project rather than buried in the predicate.
 
 const projects = [
   {
@@ -41,6 +47,7 @@ const projects = [
     description:
       "Most listing sites tell you what an apartment looks like. Reality Check tells you what living there would actually be like — how long the commute really is, what the neighborhood's safety looks like, and what you'd actually pay each month once utilities and parking are counted in.",
     route: '/RealityCheck',
+    caseStudy: false,
     // Laptop is rendered into the file, same as Adobe Flux, so this takes the
     // plain treatment rather than the CSS shell that `frame: 'laptop'` draws.
     media: { type: 'video', src: '/videos/reality-check-videos/rc-single-listing-laptop.mp4', className: 'final-design-video' },
@@ -65,7 +72,11 @@ const projects = [
     layout: 'laptop',
     description:
       "A Figma plugin that audits a file against its own design system — compares spacing, padding and type against a defined scale and flags every value that doesn't match, grouped by layer.",
-    media: null, // TODO: a screen recording of the plugin panel would sell this one
+    route: '/Spacescan',
+    caseStudy: false,
+    // Laptop is rendered into the file, same as Reality Check, so this takes the
+    // plain treatment rather than the CSS shell that `frame: 'laptop'` draws.
+    media: { type: 'video', src: '/videos/spacescan-videos/spacescan-checks-laptop.mp4', className: 'final-design-video' },
     links: {
       // TODO: add the Figma Community listing URL as `demo` once published
       repo: 'https://github.com/sabrinaquach/Spacescan',
@@ -116,6 +127,6 @@ const projects = [
   },
 ];
 
-export const hasCaseStudy = (project) => Boolean(project.route);
+export const hasCaseStudy = (project) => Boolean(project.route) && project.caseStudy !== false;
 
 export default projects;

@@ -845,6 +845,7 @@ const ProjectThree = () => {
                 
                 {/* Exploring What’s Next */}
                 <div className="reflection-container-1">
+                    <h3 className="project-header">Reflection</h3>
                     <h1 className="section-header">Lessons from Aura</h1>
                     <p className="research-description">
                         Designing Aura fundamentally changed how I approach smart products. The project pushed me to translate complex system behavior 

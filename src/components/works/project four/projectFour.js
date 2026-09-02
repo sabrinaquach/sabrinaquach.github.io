@@ -27,10 +27,9 @@ const ProjectFour = () => {
     const navSections = [
         { match: 'Work overview', label: 'Overview' },
         { match: 'Introducing Reality Check', label: 'Deliver' },
-        { match: 'The Problem', label: 'Problem' },
-        { match: 'The Solution', label: 'Solution' },
+        { match: 'Define', label: 'Define' },
         { match: 'Designing Through Feedback', label: 'Process' },
-        { match: 'Key Design Decisions', label: 'Decisions' },
+        { match: 'Decisions', label: 'Decisions' },
         { match: 'Reflection', label: 'Reflection' },
     ];
 
@@ -200,6 +199,7 @@ const ProjectFour = () => {
             {/* The Problem */}
             <div className="research-container">
                 <div className="horizontal-line" />
+                <h3 className="project-header">Define</h3>
                 <h2 className="section-header">The Problem</h2>
                 <div className="solution-column">
                 <p className="research-description">
@@ -314,7 +314,7 @@ const ProjectFour = () => {
             {/* Key Design Decisions */}
             <div className="process-container">
                 <div className="horizontal-line" />
-                <h2 className="section-header">Key Design Decisions</h2>
+                <h3 className="project-header">Decisions</h3>
 
                 <h2 className="section-subtitle">A transparent, user-weighted scoring formula</h2>
                 <p className="research-description">
@@ -372,7 +372,8 @@ const ProjectFour = () => {
             {/* Reflection */}
             <div className="process-container reflection-container">
                 <div className="horizontal-line" />
-                <h2 className="section-header">Reflection</h2>
+                <h3 className="project-header">Reflection</h3>
+                <h2 className="section-header">Lessons from Reality Check</h2>
                 <div className="solution-column">
                 <p className="research-description">
                     Reality Check's biggest constraint was data access — there's no clean, universal source

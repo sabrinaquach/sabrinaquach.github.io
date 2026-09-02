@@ -1,0 +1,110 @@
+/* Detail callout — a wide view with a marked region, fanned out to a zoomed
+   detail. See detailCallout.js for why the rays are measured rather than
+   written as percentages. */
+
+.dc-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 2rem 0 0;
+}
+
+/* Detail on the left, wide view on the right — see detailCallout.js for why
+   that order, which is the opposite of the usual one.
+
+   The two media have opposing shapes: the laptop clip is ~1.64 wide-to-tall,
+   the plugin panel ~0.73. Sizing them to a common height would put the panel at
+   roughly a quarter of the column and make its text smaller than it is anywhere
+   else on the page, so the columns are set independently. The wide view is
+   orientation ("the plugin runs in a panel beside the canvas") and reads fine
+   small; the panel is the thing you actually look at.
+
+   DOM order stays wide-then-zoom so the stacked breakpoint below reads
+   context-then-detail without needing to reorder anything. */
+.dc-callout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32fr 8fr 60fr;
+  align-items: center;
+  width: 100%;
+}
+
+/* grid-row is pinned on both, not just grid-column. Auto-placement walks the
+   items in DOM order and will not move its cursor backwards: .dc-wide is first
+   and claims column 3, so a .dc-zoom asking for column 1 would be placed on a
+   second row rather than to its left. Naming the row is what actually puts the
+   two side by side. */
+.dc-wide {
+  position: relative;
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.dc-zoom {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+/* Both clips have their frame — a laptop shell, a plugin window — rendered into
+   the file and sit on their own ground, so a border here would frame the
+   surround rather than the screen. */
+.dc-wide video,
+.dc-zoom video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Positioned in percentages of the wide clip's own box, so it stays on the
+   panel at every width. */
+.dc-marker {
+  position: absolute;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.dc-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* One line, marker to panel. It crosses only empty ground, so it can be a
+   plain hairline without a halo to survive whatever it passes over. */
+.dc-ray {
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 1.5;
+}
+
+/* Stacked: the wide view above the detail, no gap for a line to cross. The
+   component drops the line on its own once it measures the zoom as overlapping
+   the marker horizontally rather than sitting beside it — the marker stays,
+   since it is still the thing that says which part of the window this is. */
+@media (max-width: 768px) {
+  .dc-callout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  /* grid-row back to auto so the two take a row each, in DOM order — the pin
+     above exists only to hold them level in the side-by-side layout. */
+  .dc-wide,
+  .dc-zoom {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+  }
+
+  .dc-zoom {
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,113 @@
+/* Spacescan reuses the case-study classes defined in projectOne.css /
+   projectTwo.css / projectThree.css, and the figure classes from
+   projectFour.css. All of those stylesheets are global once their components
+   are imported in App.js, which is how the existing pages already share this
+   styling. Only page-specific spacing belongs here.
+
+   The figure classes still carry Reality Check's `rc-` prefix because that is
+   where they were first written. They are generic — a row, a figure, a caption
+   — and duplicating them under an `ss-` prefix would be worse than the naming
+   wart. Worth a repo-wide rename to something neutral if a sixth case study
+   wants them too. */
+
+.research-container,
+.process-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Same reasoning as projectFour.css: this page is mostly text between its
+   subsections, so the separation has to be declared rather than falling out of
+   a video and a tag row sitting between them. */
+.research-container .section-subtitle,
+.process-container .section-subtitle {
+  padding-top: 4rem;
+}
+
+/* The section's own first heading should not inherit that gap — the
+   horizontal-line above it already carries 4rem. */
+.research-container .section-header + .section-subtitle,
+.process-container .section-header + .section-subtitle {
+  padding-top: 2rem;
+}
+
+/* Prose left, plugin panel right.
+   The panel recording is a tall, narrow surface (1400x1906, ~0.73 wide-to-tall).
+   Run full width it would tower over the section; set beside its own paragraphs
+   it fills the column that the text would otherwise leave empty, and lands at
+   roughly the height of the two paragraphs it illustrates. */
+.ss-split {
+  display: flex;
+  flex-direction: row;
+  /* The heading rides inside the text column rather than above the split, so
+     the panel starts level with it instead of with the first paragraph. */
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+/* Moving the heading inside the column breaks the `.section-header +
+   .section-subtitle` adjacency that normally gave this block its top spacing —
+   left alone the subtitle would fall back to the 4rem rule and sit well below
+   the panel it should align with. The eyebrow's own bottom margin is the whole
+   gap now: this is a flex container, so a margin here would not collapse into
+   it but stack on top, which measured 54px against Deliver's 25px. */
+.process-container .ss-split {
+  margin-top: 0;
+}
+
+/* The subtitle's own h2 margin sits inside the flex container, so it stacks on
+   top of the container's margin instead of collapsing into it. Zeroed, so the
+   gap under the eyebrow is set in one place and matches Deliver's. */
+.process-container .ss-split .section-subtitle {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.ss-split-text {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* .research-description carries no margin of its own — every other section on
+   these pages gets its paragraph spacing from .solution-column's `gap: 3rem`.
+   A sibling margin rather than a flex `gap`, so the heading keeps its own
+   padding-bottom instead of also being pushed 3rem off its first paragraph. */
+.ss-split-text .research-description + .research-description {
+  margin-top: 3rem;
+}
+
+/* Compounded with .rc-figure on purpose: that rule sets `flex: 1 1 320px` and
+   lives in another stylesheet, so equal-specificity selectors would leave this
+   override decided by the import order in App.js. */
+.rc-figure.ss-figure-panel {
+  flex: 0 1 34%;
+  min-width: 200px;
+  max-width: 340px;
+}
+
+@media (max-width: 768px) {
+  /* Stacked: paragraphs first, then the panel they describe. */
+  .ss-split {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .rc-figure.ss-figure-panel {
+    max-width: 320px;
+    align-self: center;
+  }
+}
+
+/* .live-app-block carries only a padding-bottom, so the buttons sit flush
+   against the paragraph above them wherever it follows body copy. */
+.research-container .live-app-block {
+  padding-top: 2rem;
+}
+
+/* The hero's copy sits tighter to its buttons than a section's does. */
+#Spacescan .project-content-block .live-app-block {
+  padding-top: 1rem;
+}

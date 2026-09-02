@@ -34,6 +34,15 @@
   padding-top: 2rem;
 }
 
+/* Decisions has no white heading of its own — the eyebrow is the section's
+   title — so its first subtitle sits directly under a .project-header and
+   matches neither rule above. Zeroed here, leaving the eyebrow's own bottom
+   margin as the gap, which is what every other eyebrow on the page uses. */
+.research-container .project-header + .section-subtitle,
+.process-container .project-header + .section-subtitle {
+  padding-top: 0;
+}
+
 /* Figures. The claims on this page are visual ones — a colour system, a flow, a
    reused map — so each sits next to the screen it describes. A row holds one or
    two; two side by side is what makes "same component, different layer" read as
