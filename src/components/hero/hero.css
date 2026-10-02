@@ -104,11 +104,11 @@ button:hover {
   
 .ascii-wrapper {
   position: relative;
+  /* Viewport-wide at every size. The ASCII canvas inside is an absolute
+     100vw box pinned to this one's left edge, so any narrower wrapper (it was
+     a fixed 1200px) pushed the "hi" right by the difference. */
   width: 100vw;
   height: 100vh;
-  /* right: 5%; */
-  width: 1200px;
-  /* width: 100%; */
   text-align: center;
   pointer-events: auto;
   animation: fadeOut 1s ease-in-out forwards;
@@ -143,12 +143,6 @@ button:hover {
   /* The offset is for the hero text; the intro should stay centred. */
   .hero-container.is-intro {
     padding-left: 0;
-  }
-
-  /* Viewport-wide rather than the desktop's fixed 1200px, which overhung a
-     narrower screen and dragged the intro off centre. */
-  .ascii-wrapper {
-    width: 100vw;
   }
 
   /* .ascii-wrapper {

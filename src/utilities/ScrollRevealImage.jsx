@@ -4,6 +4,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// styles.css gives html and body `height: 100%` with body set to scroll, so
+// BODY is what scrolls and the window never moves (see pageScroll.js).
+// ScrollTrigger reads body's position fine but only listens for scroll on the
+// window, and a body scroll never reaches it — so cards below the fold were
+// never told they had come into view and sat at opacity 0. Pass them along.
+if (typeof document !== 'undefined') {
+  document.body.addEventListener('scroll', () => ScrollTrigger.update(), { passive: true });
+}
+
 const ScrollRevealImage = ({
   children,
   from = { opacity: 0, y: 50 },

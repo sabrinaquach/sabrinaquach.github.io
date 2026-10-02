@@ -805,8 +805,11 @@ p, li {
         gap: 4rem;
     }
 
+    /* Some air before the footer; at 0 the last line sat on its border.
+       Less than the desktop 5rem to suit the shorter screen. Every case
+       study ends in this container, and the sheets are global. */
     .reflection-container {
-        padding-bottom: 0;
+        padding-bottom: 3.5rem;
     }
   
     .horizontal-line {
@@ -970,4 +973,13 @@ p, li {
 
 .shipping-container .project-content-breakdown-block {
     padding-top: 0;
+}
+
+/* On phones the clamps above bottom out below the 1rem the rest of the case
+   study uses, so this list read as fine print. Match the body text. */
+@media screen and (max-width: 768px) {
+    .constraint-title,
+    .constraint-detail {
+        font-size: 1rem;
+    }
 }

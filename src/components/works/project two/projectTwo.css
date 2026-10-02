@@ -1319,8 +1319,11 @@ p, li {
         gap: 4rem;
     }
 
+    /* Some air before the footer; at 0 the last line sat on its border.
+       Less than the desktop 5rem to suit the shorter screen. Every case
+       study ends in this container, and the sheets are global. */
     .reflection-container {
-        padding-bottom: 0;
+        padding-bottom: 3.5rem;
     }
   
     .horizontal-line {

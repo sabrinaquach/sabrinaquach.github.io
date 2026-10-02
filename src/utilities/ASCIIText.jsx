@@ -217,7 +217,11 @@ class CanvasTxt {
     const metrics = this.context.measureText(this.txt);
     const yPos = 10 + metrics.actualBoundingBoxAscent;
 
-    this.context.fillText(this.txt, 10, yPos);
+    // Centred in the padded canvas. Drawn at x=10 the 190px of padding all
+    // landed on the right, so the word sat left of the plane's centre and
+    // never lined up with the middle of the screen.
+    const xPos = (this.canvas.width - metrics.width) / 2;
+    this.context.fillText(this.txt, xPos, yPos);
   }
 
   get width() {
