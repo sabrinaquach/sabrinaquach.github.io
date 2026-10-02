@@ -321,6 +321,14 @@ class CanvAscii {
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
 
+    // A portrait screen sees a much narrower slice of the scene, so the text
+    // ran off the edge on phones. Shrink it to fit there; wider screens keep
+    // the original size.
+    const visibleH = 2 * this.camera.position.z * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2));
+    const visibleW = visibleH * this.camera.aspect;
+    const fit = Math.min(1, (visibleW * 0.8) / this.geometry.parameters.width);
+    this.mesh.scale.setScalar(fit);
+
     this.filter.setSize(w, h);
 
     this.center = { x: w / 2, y: h / 2 };

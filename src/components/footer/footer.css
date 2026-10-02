@@ -69,9 +69,12 @@
         align-items: flex-start;
     }
 
+    /* Stacked under the credit and left-aligned with it; the desktop
+       margin-left: auto would otherwise still push the column right. */
     .footer-links {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
         gap: 0.75rem;
+        margin-left: 0;
     }
 }

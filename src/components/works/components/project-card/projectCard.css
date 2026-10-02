@@ -66,6 +66,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  /* .final-design-video brings 5rem of bottom padding from the case study,
+     which stacked an empty band under each laptop on top of the section's. */
+  .project-image .final-design-video {
+    padding-bottom: 0;
+  }
+
   .project-image-placeholder {
     width: 85vw;
     max-width: 85vw;

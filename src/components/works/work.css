@@ -203,14 +203,38 @@
   }
 
   .project-column {
-    gap: 5rem;
+    gap: 2rem;
   }
 
+  /* The desktop 10rem above and below each card left most of a phone screen
+     empty between projects. */
+  .project-section {
+    padding: 4rem 0;
+  }
+
+  /* The text's own bottom padding, the block gap and the image's top margin
+     stacked to ~100px between a card's text and its clip; let the gap alone
+     set it. */
   .project-block {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2rem;
+    padding-left: 0;
+  }
+
+  /* Scoped to the list: the case study sheets also set .project-block's gap
+     on phones and load later, so a bare selector lost to them. */
+  .project-column .project-block {
+    gap: 1.5rem;
+  }
+
+  .project-block .live-app-block,
+  .project-block .project-description {
+    padding-bottom: 0;
+  }
+
+  .project-image {
+    margin-top: 0;
   }
 
   .project-text-laptop,

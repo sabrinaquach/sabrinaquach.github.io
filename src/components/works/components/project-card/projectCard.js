@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import ScrollRevealImage from "../../../../utilities/ScrollRevealImage";
@@ -16,6 +16,18 @@ const ProjectCard = ({ project }) => {
   // without a route stay inert and route their traffic through the button.
   const openCaseStudy = route ? () => navigate(route) : undefined;
 
+  // React sets `muted` as a property but never writes the attribute, and iOS
+  // Safari checks the attribute before allowing autoplay — so on phones the
+  // clips sat blank. Set it by hand and kick playback off ourselves.
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = true;
+    el.setAttribute("muted", "");
+    el.play()?.catch(() => {});
+  }, [media?.src]);
+
 
   // Adobe Flux and Pip have their device frames rendered into the video file
   // itself. This draws one in CSS instead, so a plain screen recording can be
@@ -32,13 +44,17 @@ const ProjectCard = ({ project }) => {
       );
     }
 
+    // The #t fragment makes iOS paint the first frame even when it refuses to
+    // autoplay (Low Power Mode), so the card never shows an empty box.
     const video = (
       <video
-        src={media.src}
+        ref={videoRef}
+        src={`${media.src}#t=0.001`}
         loop
         muted
         autoPlay
         playsInline
+        preload="auto"
         className={media.frame === "laptop" ? "laptop-screen-video" : media.className}
       />
     );

@@ -40,6 +40,9 @@
 .typed-slot {
   display: inline-grid;
   white-space: nowrap;
+  /* Mobile centres the hero; without this the word was centred inside the
+     slot, so it typed from the middle and left a gap after "SABRINA,". */
+  text-align: left;
 }
 
 .typed-slot > * {
@@ -135,7 +138,18 @@ button:hover {
 @media (max-width: 1024px) {
   .hero-container {
     padding-left: 150px;
-  } 
+  }
+
+  /* The offset is for the hero text; the intro should stay centred. */
+  .hero-container.is-intro {
+    padding-left: 0;
+  }
+
+  /* Viewport-wide rather than the desktop's fixed 1200px, which overhung a
+     narrower screen and dragged the intro off centre. */
+  .ascii-wrapper {
+    width: 100vw;
+  }
 
   /* .ascii-wrapper {
     left: 5%;
@@ -174,10 +188,6 @@ button:hover {
     align-items: center;
     justify-content: center;
     padding-top: 1.5rem;
-  }
-  .ascii-wrapper {
-    left: 30%;
-    width: 768px;
   }
 }
 

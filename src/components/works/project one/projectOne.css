@@ -891,6 +891,18 @@ p, li {
     .live-app-block {
         max-width: 85vw;
     }
+
+    /* At full size the pair is wider than 85vw on a phone and "View code"
+       dropped to its own line. Keep them on one row and trim them to fit. */
+    .live-app-buttons {
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+    }
+
+    .live-app-link, .repo-link, .card-demo-link, .card-repo-link {
+        font-size: 0.85rem;
+        padding: 0.6em 1.1em;
+    }
 }
 
 /* shipping constraints */
