@@ -1,7 +1,25 @@
 .project-tags-bubble {
-    border: 1.5px solid #fff;
+    border: 1.5px solid var(--tag, var(--fg));
     border-radius: 10px;
     padding: 0.5rem;
+    color: var(--tag, var(--fg));
+    background-color: color-mix(in srgb, var(--tag, var(--fg)) 20%, transparent);
+}
+
+/* The pastel tag colours wash out on the light ground, so the text and border
+   are darkened toward black there. */
+[data-theme="light"] .project-tags-bubble {
+    color: color-mix(in srgb, var(--tag, var(--fg)) 45%, #000);
+    border-color: color-mix(in srgb, var(--tag, var(--fg)) 70%, #000);
+    background-color: color-mix(in srgb, var(--tag, var(--fg)) 35%, transparent);
+}
+
+/* The accent already reads on both grounds, so it stays the true orange. */
+.project-tags-bubble.is-accent,
+[data-theme="light"] .project-tags-bubble.is-accent {
+    color: var(--tag);
+    border-color: var(--tag);
+    background-color: color-mix(in srgb, var(--tag) 12%, transparent);
 }
 .project-tag-title {
     font-size: 1.3rem;

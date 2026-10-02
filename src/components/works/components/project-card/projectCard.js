@@ -3,39 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 import ScrollRevealImage from "../../../../utilities/ScrollRevealImage";
 import DecryptedText from "../../../../utilities/DecryptedText";
-import ProjectTags from "../project-tags/tags";
-import SeeProjectButton from "../see-portfolio/see-portfolio";
-import { hasCaseStudy } from "../../projects";
+import ProjectStatus from "../project-status/projectStatus";
 
 import "./projectCard.css";
 
 const ProjectCard = ({ project }) => {
   const navigate = useNavigate();
-  const { title, shipped, layout, description, route, media, links, tags } = project;
+  const { title, layout, description, route, media, links } = project;
 
   // Only the cards with a written case study are clickable as a whole. Sending
   // a whole-card click out to an external site would be a surprise, so cards
   // without a route stay inert and route their traffic through the button.
   const openCaseStudy = route ? () => navigate(route) : undefined;
 
-  // Every project gets a SEE PROJECT button; only the destination differs.
-  // Falling back demo -> repo means a project with neither simply has no
-  // button rather than a dead one.
-  const seeProject = route
-    ? { click: openCaseStudy }
-    : links?.demo
-    ? { href: links.demo }
-    : links?.repo
-    ? { href: links.repo }
-    : null;
-
-  // Quiet text, not pills. SEE PROJECT is a deliberate attention magnet
-  // sitting right above this, and the tags below are pills too — another pill
-  // here just competes with the button for the same click.
-  const statuses = [
-    shipped && { key: 'shipped', label: 'Shipped' },
-    hasCaseStudy(project) && { key: 'case-study', label: 'Case study' },
-  ].filter(Boolean);
 
   // Adobe Flux and Pip have their device frames rendered into the video file
   // itself. This draws one in CSS instead, so a plain screen recording can be
@@ -78,14 +58,9 @@ const ProjectCard = ({ project }) => {
       <div
         className={`project-block${route ? "" : " project-block-static"}`}
         onClick={openCaseStudy}
+        data-cursor-text={route ? "VIEW CASE STUDY" : undefined}
       >
         <div className={layout === "phone" ? "project-text-phone" : "project-text-laptop"}>
-          {seeProject && (
-            <div className="button-wrapper">
-              <SeeProjectButton {...seeProject} />
-            </div>
-          )}
-
           <DecryptedText
             className="project-title"
             encryptedClassName="encrypted-char"
@@ -96,18 +71,7 @@ const ProjectCard = ({ project }) => {
             speed="120"
           />
 
-          {statuses.length > 0 && (
-            <p className="project-status-line">
-              {statuses.map((status, i) => (
-                <React.Fragment key={status.key}>
-                  {i > 0 && <span className="project-status-sep">/</span>}
-                  <span className={`project-status project-status-${status.key}`}>
-                    {status.label}
-                  </span>
-                </React.Fragment>
-              ))}
-            </p>
-          )}
+          <ProjectStatus project={project} />
 
           <p className="project-description">{description}</p>
 
@@ -140,12 +104,6 @@ const ProjectCard = ({ project }) => {
               {links.note && <span className="live-app-note">{links.note}</span>}
             </div>
           )}
-
-          <div className="project-tags">
-            {tags.map((tag) => (
-              <ProjectTags key={tag.text} text={tag.text} color={tag.color} />
-            ))}
-          </div>
         </div>
 
         <ScrollRevealImage>

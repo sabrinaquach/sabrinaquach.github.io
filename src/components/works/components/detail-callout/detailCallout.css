@@ -80,7 +80,7 @@
 /* One line, marker to panel. It crosses only empty ground, so it can be a
    plain hairline without a halo to survive whatever it passes over. */
 .dc-ray {
-  stroke: rgba(255, 255, 255, 0.55);
+  stroke: var(--ray);
   stroke-width: 1.5;
 }
 

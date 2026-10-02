@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import ProjectStatus from "../components/project-status/projectStatus";
+import { getProject } from "../projects";
 import './projectOne.css'
 import { BiSearchAlt, BiBook, BiRotateRight, BiSmile, BiPen, BiLayer, BiTargetLock, BiSliderAlt, BiBrain, BiShow, } from "react-icons/bi";
 import { TbScale, TbTerminal2, TbMoodSearch, TbTrendingUp, TbBulb, TbCloudCheck, TbMoodOff } from "react-icons/tb";
@@ -50,7 +52,7 @@ const ProjectOne = () => {
                 <div className="project-block">
                     <div className="project-content-block">
                         <div className="text-column">
-                            <h3 className="project-header">— Case Study 01</h3>
+                            <ProjectStatus project={getProject('pip')} className="case-study-status" />
                             <h1 className="project-title">Pip</h1>
                             <p className="project-description">A beginner-friendly skincare ingredient scanner that helps users understand what's in their products — personalized to their skin type, jargon-free, and guided by a friendly mascot named Pip.</p>
                             <div className="live-app-block">
@@ -73,32 +75,6 @@ const ProjectOne = () => {
                                     </a>
                                 </div>
                                 <span className="live-app-note">Try the demo — no signup</span>
-                            </div>
-                            <div className='project-tags'>
-                                <ProjectTags
-                                    text="UX Design"
-                                    color="#B1FFA6"
-                                />
-                                <ProjectTags
-                                    text="Product Design"
-                                    color="#FFE0C0"
-                                />
-                                <ProjectTags
-                                    text="Mobile Design"
-                                    color="#5AACDC"
-                                />
-                                <ProjectTags
-                                    text="User Research"
-                                    color="#FFE97B"
-                                />
-                                <ProjectTags
-                                    text="Interaction Design"
-                                    color="#FFA6E3"
-                                />
-                                <ProjectTags
-                                    text="End-to-end Product Design"
-                                    color="#D0B2FA"
-                                />
                             </div>
                         </div>
                         <div className="project-content-items">
@@ -184,7 +160,7 @@ const ProjectOne = () => {
                                         <div className='project-tags'>
                                             <ProjectTags
                                                 text="Match percentage instead of pass/fail — Ingredient safety isn't binary. A percentage gives users a personalized signal without requiring them to understand the logic behind it."
-                                                color="#F8B966"
+                                                accent
                                             />
                                         </div>
                                     </div>
@@ -211,7 +187,7 @@ const ProjectOne = () => {
                                         <div className='project-tags'>
                                             <ProjectTags
                                                 text="Editorial layout instead of bento grid — The grid looked dynamic but buried the benefit tags and created too much visual competition. The hero card gives the top result the space it deserves."
-                                                color="#F8B966"
+                                                accent
                                             />
                                         </div>
                                     </div>
@@ -238,7 +214,7 @@ const ProjectOne = () => {
                                         <div className='project-tags'>
                                             <ProjectTags
                                                 text="Emoji-anchored scales instead of numbers — Numbers drift in meaning day to day. Anchoring each option to a plain-English descriptor keeps ratings consistent over time and makes the check-in feel conversational."
-                                                color="#F8B966"
+                                                accent
                                             />
                                         </div>
                                     </div>
@@ -265,7 +241,7 @@ const ProjectOne = () => {
                                         <div className='project-tags'>
                                             <ProjectTags
                                                 text="Single container instead of card per step — Nested cards inside cards added visual weight without adding information. Spacing and dividers do the same job more cleanly."
-                                                color="#F8B966"
+                                                accent
                                             />
                                         </div>
                                     </div>
@@ -422,7 +398,9 @@ const ProjectOne = () => {
                                 src="/images/pip-images/themes-pip.png"
                                 alt="Themes from user interviews"
                                 className="themes-image"
-                                onClick={() => setModalImage({
+                                data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                     src: '/images/pip-images/themes-pip.png',
                                     alt: 'Themes from user interviews'
                                 })}
@@ -431,14 +409,16 @@ const ProjectOne = () => {
                                 src="/images/pip-images/pain-points-pip.png"
                                 alt="Painpoints from user interviews"
                                 className="themes-image"
-                                onClick={() => setModalImage({
+                                data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                     src: '/images/pip-images/pain-points-pip.png',
                                     alt: 'Painpoints from user interviews'
                                 })}
                             />
                         </div>
                         {modalImage && (
-                            <div className="image-modal" onClick={() => setModalImage(null)}>
+                            <div className="image-modal" onClick={() => setModalImage(null)} data-cursor-text="CLOSE" data-cursor-icon="close">
                             <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
                             </div>
                         )}
@@ -469,6 +449,8 @@ const ProjectOne = () => {
                                     src="/images/pip-images/journey-map-pip.png"
                                     alt="Themes from user interviews"
                                     className="themes-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/pip-images/journey-map-pip.png',
                                         alt: 'User journey map'
@@ -591,7 +573,9 @@ const ProjectOne = () => {
                                             src="/images/pip-images/onboarding-pip.png"
                                             alt="Lo-fi onboarding wireframes"
                                             className="prioritization-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/pip-images/onboarding-pip.png',
                                                 alt: 'Lo-fi onboarding wireframes'
                                             })}
@@ -605,7 +589,9 @@ const ProjectOne = () => {
                                             src="/images/pip-images/core-features-pip.png"
                                             alt="Lo-fi core features wireframes"
                                             className="prioritization-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/pip-images/core-features-pip.png',
                                                 alt: 'Lo-fi core features wireframes'
                                             })}
@@ -637,7 +623,9 @@ const ProjectOne = () => {
                                             src="/images/pip-images/hifi-onboarding-pip.png"
                                             alt="Hi-fi onboarding wireframes"
                                             className="prioritization-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/pip-images/hifi-onboarding-pip.png',
                                                 alt: 'Lo-fi onboarding wireframes'
                                             })}
@@ -651,7 +639,9 @@ const ProjectOne = () => {
                                             src="/images/pip-images/hifi-core-pip.png"
                                             alt="Hi-fi core features wireframes"
                                             className="prioritization-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/pip-images/hifi-core-pip.png',
                                                 alt: 'Lo-fi core features wireframes'
                                             })}
@@ -687,7 +677,9 @@ const ProjectOne = () => {
                                             src="/images/pip-images/refined1-core-pip.png"
                                             alt="Refined core features wireframes"
                                             className="refined-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/pip-images/refined1-core-pip.png',
                                                 alt: 'Refined core features wireframes'
                                             })}

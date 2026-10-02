@@ -13,7 +13,7 @@ p, li {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: black;
+  background: var(--bg);
 }
 
 .project-content {
@@ -57,7 +57,7 @@ p, li {
 }
 
 .project-header {
-    color: #5B5B5B;
+    color: var(--line);
     font-size: 0.85rem;
     font-family: 'Inter';
     text-transform: uppercase;
@@ -66,7 +66,7 @@ p, li {
 }
 
 .project-title {
-    color: #f2f3f4;
+    color: var(--fg-1);
     font-size: clamp(2rem, 3vw, 3.5rem);
     font-family: 'Inter';
     text-transform: uppercase;
@@ -78,7 +78,7 @@ p, li {
     font-size: 1rem;
     max-width: 100%;
     padding-bottom: 3rem;
-    color: #f0f0f0;
+    color: var(--fg-2);
 }
 
 .project1-image {
@@ -108,14 +108,15 @@ p, li {
 
 .horizontal-line {
     border: none;
-    border: 1px solid #5B5B5B;
-    opacity: 50%;
+    /* A single 2px rule in the hairline colour (a full border on an empty box
+       would draw two lines). No opacity, so it matches the footer's hairline. */
+    border-top: 2px solid var(--hairline);
     width: 100%;
     margin: 4.5rem 0;
 }
 
 .section-subheader {
-    color: #484848;
+    color: var(--dim);
     font-size: clamp(0.8rem, 0.6vw, 1rem);
     font-family: 'Inter';
     text-transform: uppercase;
@@ -153,7 +154,7 @@ p, li {
     font-family: 'Inter';
     text-transform: uppercase;
     font-size: 1.2rem;
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .background-design-list * {
@@ -161,7 +162,7 @@ p, li {
     text-transform: capitalize;
     line-height: 1.4;
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #979797;
+    color: var(--muted);
 }
 
 .timeline-list {
@@ -181,7 +182,7 @@ p, li {
     text-transform: uppercase;
     font-size: clamp(1.5rem, 2vw, 2rem);
     padding-bottom: 1rem;
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .challenge-column {
@@ -193,7 +194,7 @@ p, li {
 .challenge-question {
     padding-top: 0.5rem;
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #FFB266;
+    color: var(--accent);
     max-width: 100%;
 }
 
@@ -201,14 +202,14 @@ p, li {
     max-width: 1200px;
     width: 100%;
     line-height: 1.5;
-    color: #f0f0f0;
+    color: var(--fg-2);
 }
 
 .design-decision-question {
     max-width: 1200px;
     width: 100%;
     line-height: 1.5;
-    color: #f0f0f0;
+    color: var(--fg-2);
     font-weight:bolder;
 }
 
@@ -229,7 +230,7 @@ p, li {
     text-indent: 20px;
     padding-top: 0.5rem;
     max-width: 100%;
-    color: #f0f0f0;
+    color: var(--fg-2);
   }
   
 .design-with-intent-list li::before,
@@ -237,7 +238,7 @@ p, li {
 .interviews-with-creatives-list li::before {
   content: "-";
   margin-right: 0.5rem;
-  color: #f0f0f0;
+  color: var(--fg-2);
 }
 
 .section-subtitle {
@@ -246,7 +247,7 @@ p, li {
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 1rem; 
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .empathy-maps-column {
@@ -345,7 +346,7 @@ p, li {
 }
 
 .swot-orange {
-    color: #FFB266;
+    color: var(--accent);
     font-family: 'JetBrains Mono', monospace;
     font-weight: 800;
 }
@@ -359,7 +360,7 @@ p, li {
 
 .experience-drivers-question {
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #FFB266;
+    color: var(--accent);
     max-width: 1020px;
     padding-bottom: 2rem;
 }
@@ -418,7 +419,7 @@ p, li {
     font-size: clamp(1.1rem, 1.7vw, 2rem);
     padding-bottom: 1rem; 
     /* padding-top: 4rem; */
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .early-design-image-row {
@@ -453,7 +454,7 @@ p, li {
     text-transform: uppercase;
     font-weight: bold;
     font-size: clamp(1.1rem, 1.7vw, 2rem);
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .prioritization-image {
@@ -510,12 +511,12 @@ p, li {
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
     /* max-width: 1020px; */
     /* width: 100%;     */
-    color: #f0f0f0;
+    color: var(--fg-2);
 }
 
 .key-feedback-list {
     font-size: clamp(0.85rem, 2vw, 1rem);
-    color: #979797;
+    color: var(--muted);
     list-style: none; 
     padding-top: 0.4rem;
 }
@@ -596,7 +597,7 @@ p, li {
 
 
 .project-title {
-    color: #f2f3f4;
+    color: var(--fg-1);
     font-size: 3.5rem;
     font-family: 'Work Sans';
     text-transform: uppercase;
@@ -629,7 +630,7 @@ p, li {
 }
 
 .section-subheader {
-    color: #484848;
+    color: var(--dim);
     font-size: clamp(0.8rem, 0.6vw, 1rem);
     font-family: 'Work Sans';
     text-transform: uppercase;
@@ -673,7 +674,7 @@ p, li {
     text-transform: capitalize;
     line-height: 1.4;
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #979797;
+    color: var(--muted);
     min-width: auto;
 }
 
@@ -686,7 +687,7 @@ p, li {
     text-transform: uppercase;
     font-size: 2.3rem;
     padding-bottom: 1rem;
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .challenge-column {
@@ -698,7 +699,7 @@ p, li {
 .challenge-question {
     padding-top: 0.5rem;
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #FFB266;
+    color: var(--accent);
     max-width: 100%;
 }
 
@@ -706,7 +707,7 @@ p, li {
     max-width: 1200px;
     width: 100%;
     line-height: 1.5;
-    color: #f0f0f0;
+    color: var(--fg-2);
     font-size: 1rem;
 }
 
@@ -726,7 +727,7 @@ p, li {
     text-indent: -1rem;
     padding-left: 1.5rem;
     padding-top: 0.5rem;
-    color: #f0f0f0;
+    color: var(--fg-2);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -737,7 +738,7 @@ p, li {
 .interviews-with-creatives-list li::before {
   content: "-";
   margin-right: 0.5rem;
-  color: #f0f0f0;
+  color: var(--fg-2);
 }
 
 /* .section-subtitle {
@@ -747,7 +748,7 @@ p, li {
     font-size: 2rem;
     padding-bottom: 1rem; 
     padding-top: 6rem;
-    color: #f2f3f4;
+    color: var(--fg-1);
 } */
 
 .project-section-subtitle {
@@ -756,7 +757,7 @@ p, li {
     font-weight: bold;
     font-size: 1.2rem;
     padding-bottom: 0.5rem; 
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .empathy-maps-column {
@@ -832,7 +833,7 @@ p, li {
 }
 
 .swot-orange {
-    color: #FFB266;
+    color: var(--accent);
     font-family: 'JetBrains Mono', monospace;
     font-weight: 800;
 }
@@ -846,7 +847,7 @@ p, li {
 
 .experience-drivers-question {
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #FFB266;
+    color: var(--accent);
     max-width: 1020px;
     padding-bottom: 2rem;
 }
@@ -887,7 +888,7 @@ p, li {
     font-size: clamp(1.1rem, 1.7vw, 2rem);
     padding-bottom: 1rem; 
     /* padding-top: 4rem; */
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .early-design-image-row {
@@ -922,7 +923,7 @@ p, li {
     text-transform: uppercase;
     font-weight: bold;
     font-size: clamp(1.1rem, 1.7vw, 2rem);
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .prioritization-image {
@@ -979,12 +980,12 @@ p, li {
     font-size: 1.1rem;
     /* max-width: 1020px; */
     /* width: 100%;     */
-    color: #f0f0f0;
+    color: var(--fg-2);
 }
 
 .key-feedback-list {
     font-size: 0.9rem;
-    color: #979797;
+    color: var(--muted);
     list-style: none; 
     padding-top: 0.4rem;
 }

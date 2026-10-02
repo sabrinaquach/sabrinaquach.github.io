@@ -1,0 +1,200 @@
+/* Contact details and message form (menu contact panel). Moved here from the
+   old footer, which used to hold this content. */
+.inital-subtitle {
+    font-family: 'Work Sans';
+    font-size: 1rem;
+    color: var(--muted);
+    padding-bottom: 0.5rem;
+    padding-top: 0.8rem;
+}
+.inital-email {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.link-list {
+    display: flex;
+    gap: 2rem;
+}
+.link-list a {
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+/* Outbound-link arrow, larger than the label it follows. */
+.link-arrow {
+    width: 0.85em;
+    height: 0.85em;
+    margin-left: 0.4em;
+    vertical-align: -0.02em;
+}
+/* hover colors for link list */
+.resume-button:hover {
+    color: var(--accent);
+}
+.linkedin-button:hover {
+    color: #0a66c2;
+}
+.github-button:hover {
+    color: #08872B;
+}
+
+/* ─── Copy-email button (footer + menu) ───
+   :where() keeps this reset at zero specificity, so whatever styles the
+   button is given (e.g. .inital-email in the menu) win over it. */
+:where(.copy-email-button) {
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    text-transform: inherit;
+    cursor: pointer;
+}
+
+/* Beats the global button:hover fill in hero.css. */
+.copy-email-button:hover {
+    background: none;
+}
+
+/* "Email copied!" pill, for touch screens; the custom cursor covers desktop. */
+.copy-email {
+    position: relative;
+    display: inline-flex;
+}
+
+.copy-email-toast {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    left: -0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 32px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.75);
+    transform-origin: bottom left;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.copy-email-toast.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+html.has-custom-cursor .copy-email-toast {
+    display: none;
+}
+
+/* Message Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+.message-title {
+    color: var(--fg);
+    font-size: 2rem;
+    font-family: 'Work Sans';
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+.message-name, .message-email, .message-msg {
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    background: none;
+  }
+  ::placeholder {
+    color: var(--fg);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  input, textarea {
+    border: 1px solid var(--fg);
+    outline: none;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+/* Required name / email, flagged only after a send attempt. The note tucks
+   up into the field's bottom margin, right under the field it's about. */
+.message-name.is-invalid,
+.message-email.is-invalid {
+    border-color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.field-error {
+    margin: -0.75rem 0 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+/* Message box with its send button in the bottom-right corner. */
+.message-msg-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.message-msg-wrap .message-msg {
+    display: block;
+    resize: none;
+    /* Room under the last line so text never runs beneath the send button. */
+    padding-bottom: 3rem;
+}
+
+@media (max-width: 1024px) {
+    .message-title {
+      text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .inital-subtitle, .inital-email {
+      text-align: left;
+      font-size: 0.8rem;
+      padding-bottom: 0.2rem;
+    }
+
+    .link-list {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .link-list a {
+      font-size: 0.8rem;
+    }
+
+    .message-title {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .message-name, .message-email, .message-msg {
+      font-size: 0.8rem;
+    }
+}

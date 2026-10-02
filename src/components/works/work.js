@@ -8,7 +8,7 @@ import WorkFilter from "./components/work-filter/workFilter";
 import projects, { hasCaseStudy } from "./projects";
 
 import './work.css';
-import { scrollPageTo } from '../../utilities/pageScroll';
+import useFooterInView from '../../utilities/useFooterInView';
 
 // Overlapping on purpose: a project that is both shipped and written up is
 // counted under both chips, so neither filter can hide it. The counts add up to
@@ -26,16 +26,8 @@ const Work = () => {
   const location = useLocation();
   const [filter, setFilter] = useState('all');
   const [inWork, setInWork] = useState(false);
+  const footerInView = useFooterInView();
   const workRef = useRef(null);
-
-  const handleContactClick = () => {
-    const el = document.getElementById('footer');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      scrollPageTo(0, 'smooth');
-    }
-  };
 
   useEffect(() => {
     if (location.state?.scrollTo === 'hero') {
@@ -75,6 +67,10 @@ const Work = () => {
     { value: 'case-study', label: 'Case studies', count: projects.filter(hasCaseStudy).length },
   ], []);
 
+  // The footer is short, so #work is still on screen at the very bottom of the
+  // page; step aside for the footer rather than covering it.
+  const showDock = inWork && !footerInView;
+
   const visible = useMemo(() => projects.filter(MATCHES[filter]), [filter]);
 
   // Filtering changes the height of the column, so every trigger below the
@@ -88,7 +84,7 @@ const Work = () => {
   return (
     <div className="main-content">
       <div className="work-container">
-        <Hero onMessageClick={handleContactClick} />
+        <Hero />
       </div>
       <section id="work" className="work-section" ref={workRef}>
         <div className="project-column">
@@ -102,8 +98,8 @@ const Work = () => {
           out of the tab order while the dock is off screen, so they cannot be
           focused from behind the hero. */}
       <div
-        className={`work-filter-dock${inWork ? ' is-visible' : ''}`}
-        aria-hidden={!inWork}
+        className={`work-filter-dock${showDock ? ' is-visible' : ''}`}
+        aria-hidden={!showDock}
       >
         <WorkFilter filters={filters} active={filter} onChange={setFilter} />
       </div>

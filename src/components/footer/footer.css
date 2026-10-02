@@ -1,258 +1,77 @@
+/* One line, after rachelchen.tech: muted mono caps, a hairline on top. */
 .footer {
-    background-color: #000;;
-    color: #fff;
-}
-.main-row {
-    display: flex;
-    align-items: stretch;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-.column-left, .message-column {
-    flex: 1 1 400px; 
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.s-cube,
-.q-cube,
-.message-content {
-  width: 100%;
-  box-sizing: border-box;
-}
-.s-title, .q-title {
-    font-family: 'Work Sans';
-    font-size: 5rem;
-}
-.inital-subtitle {
-    font-family: 'Work Sans';
-    font-size: 1rem;
-    color: #888888;
-    padding-bottom: 0.5rem;
-    padding-top: 0.8rem;
-}
-.inital-email {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 800;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-.link-list {
-    display: flex;
-    gap: 2rem;
-}
-.link-list a {
-    text-transform: uppercase;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 800;
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-}
-/* hover colors for link list */
-.resume-button, .linkedin-button, .github-button {
-    color: black;
-}
-.resume-button:hover {
-    color: #FFB266;
-}
-.linkedin-button:hover {
-    color: #0a66c2;
-}
-.github-button:hover {
-    color: #08872B;
-}
-
-/* Message Styles */
-.message-content {
-    flex: 1;
     display: flex;
     justify-content: center;
+    /* Edges line up with the top bar: the credit with the s.q. logo (2rem in),
+       the links with the right end of the menu icon's lines, which sit 12px
+       inside the toggle button (2rem in). */
+    padding: 1.25rem calc(2rem + 12px) 1.25rem 2rem;
+    border-top: 1px solid var(--hairline);
+    background-color: var(--bg);
+    color: #6b6b6b;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.footer-inner {
+    display: flex;
     align-items: center;
-}
-.message-inner {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
     width: 100%;
-    max-width: 600px;
-  }
-.contact-form {
+}
+
+.footer-credit {
+    margin: 0;
+    min-width: 0;
+    /* Shown as written (sentence case); the links beside it stay in caps. */
+    text-transform: none;
+}
+
+.footer-links {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin-left: auto;
 }
-.message-title {
-    color: white;
-    font-size: 2rem;
-    font-family: 'Work Sans';
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-.message-description {
-    color: #B9B9B9;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: normal;
-    font-size: 0.9rem;
-    max-width: 600px;
-    margin-bottom: 1.5rem;
-}
-.message-name, .message-email, .message-msg {
-    font-size: 0.8rem;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 1rem;
-    padding: 1rem 1rem;
-    border-radius: 5px;
+
+.footer-links a,
+.footer-links button {
+    padding: 0;
     background: none;
-  }
-  ::placeholder {
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: normal;
-    text-transform: uppercase;
-  }
-  input, textarea {
-    border: 1px solid white;
-    outline: none;
-    background: black;
-    color: white;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: normal;
-    text-transform: uppercase;
-  }
-.submit-container {
-    text-align: center;
-}
-.message-submit {
-    color: black;
-    background-color: #fff;
-    border: 1px solid white;
-    padding: 0.5rem 4rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 800;
-    font-size: 0.9rem;
+    border: none;
+    color: #6b6b6b;
+    font: inherit;
+    text-transform: inherit;
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.message-submit:hover {
-    background-color: #FFB266;
-}
-.cutoff-wrapper {
-    height: 8.3rem;   
-    overflow: hidden;
-    position: relative;
-}
-.connect-bottom {
-    font-family: 'Work Sans';
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 16vw;
-    overflow: hidden;
-    line-height: 1;
-    position: relative;          
+    transition: color 0.2s ease;
 }
 
-@media (max-width: 1024px) {
+/* Same hovers as the menu's contact links: brand colours for LinkedIn and
+   GitHub (contact.css, via each link's class), the accent for email. */
+.footer-links button:hover {
+    background: none;
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    /* The top bar's inset drops to 1rem here. */
     .footer {
-      /* padding-left: 180px; */
-      padding-top: 10rem;
-      }
-
-    .main-row {
-      flex-direction: row;
+        padding: 1.25rem calc(1rem + 12px) 1.25rem 1rem;
     }
 
-    .message-inner {
-      max-width: 100%;
-    }
-  
-    .message-title, .message-description {
-      text-align: center;
-    }
-  
-    .message-submit {
-      width: 100%;
-    }
-    .cutoff-wrapper {
-        height: 8rem;             
-        overflow: hidden;
-        position: relative;
-    }
-    .connect-bottom {
-        font-size: clamp(9rem, 15vw, 14rem);
-        overflow: hidden;
-        line-height: 1;
-        position: relative;   
-      }
-  }
-
-  @media (max-width: 768px) {
-    .footer {
-      padding-left: 0;
-      padding-top: 10rem;
-    }
-    .main-row {
-      flex-direction: column;
-      padding: 2rem 1rem;
-    }
-  
-    .column-left, .message-column {
-      flex: initial;
-      width: 100%;
-    }
-  
-    .s-title, .q-title {
-      font-size: 3rem;
-      text-align: left;
-      padding-bottom: 1rem;
-    }
-  
-    .inital-subtitle, .inital-email {
-      text-align: left;
-      font-size: 0.8rem;
-      padding-bottom: 0.2rem;
-    }
-  
-    .link-list {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 1rem;
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .link-list a {
-      font-size: 0.8rem;
+    .footer-links {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
     }
-  
-    .message-inner {
-      max-width: 100%;
-    }
-  
-    .message-title {
-      text-align: center;
-      font-size: 2rem;
-    }
-
-    .message-description {
-      text-align: center;
-      font-size: 0.8rem;
-    }
-
-    .message-name, .message-email, .message-msg {
-      font-size: 0.8rem;
-    }
-  
-    .message-submit {
-      width: 100%;
-    }
-    .cutoff-wrapper {
-        height: 0;
-    }
-    .connect-bottom {  
-        display: none;
-      }
-  }
+}

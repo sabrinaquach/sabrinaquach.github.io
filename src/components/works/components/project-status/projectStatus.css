@@ -1,0 +1,39 @@
+/* Status line — deliberately not a pill, so it doesn't read as one more
+   thing to press. Small letterspaced mono says "metadata" instead. */
+.project-status-line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Just enough colour to stay scannable at a glance, muted enough that it
+   never reads as interactive. */
+.project-status-shipped {
+  color: #8FCF86;
+}
+
+.project-status-concept {
+  color: #8FB3E0;
+}
+
+.project-status-case-study {
+  color: #7a7a7a;
+}
+
+.project-status-sep {
+  color: #3f3f3f;
+  font-weight: normal;
+}
+
+/* Above a case study's title, in place of the old "— Case Study 0X". */
+.case-study-status {
+  margin-bottom: 0.8rem;
+}

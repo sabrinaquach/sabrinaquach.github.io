@@ -1,0 +1,281 @@
+/* Moodboard (see moodboard.js): photos and notes clipped up straight on the
+   page background. Sizes inside it are in cqw (1% of the board's width), so
+   the whole collage scales as one piece. */
+.moodboard {
+    container-type: inline-size;
+}
+
+.mb-board {
+    position: relative;
+    aspect-ratio: 1100 / 960;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ─── Placement ─── */
+.mb-pin {
+    position: absolute;
+    left: calc(var(--x) * 1%);
+    top: calc(var(--y) * 1%);
+    width: calc(var(--w) * 1%);
+    transform: rotate(var(--r));
+}
+
+.mb-pin {
+    z-index: 1;
+    /* Light from the upper right, so shadows fall down-left: a tight contact
+       shadow where the item meets the steel, and a soft ambient one. */
+    filter:
+        drop-shadow(-0.1cqw 0.15cqw 0.12cqw rgba(0, 0, 0, 0.22))
+        drop-shadow(-0.5cqw 0.8cqw 1.1cqw rgba(0, 0, 0, 0.14));
+    transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Picked up: straightens, lifts, comes to the front. */
+.mb-pin:hover {
+    z-index: 5;
+    transform: rotate(0deg) translateY(-0.6cqw) scale(1.03);
+}
+
+/* ─── Photos ─── */
+.mb-photo {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: #ddd;
+}
+
+/* Glossy print: a faint highlight from the same light, and a hairline edge. */
+.mb-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.14) 62%, rgba(255, 255, 255, 0) 78%);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+.mb-photo img,
+.mb-photo video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mb-print {
+    padding: 0.55cqw;
+    background: linear-gradient(105deg, #f1f1ef, #fff 45%, #f4f4f2);
+}
+
+/* Matte card stock: slightly warm, a little darker toward the left edge. */
+.mb-polaroid {
+    padding: 1.1cqw 1.1cqw 0;
+    background: linear-gradient(105deg, #eceae3, #fbfaf6 40%, #f6f5f0);
+}
+
+/* Reenie Beanie: scratchy, uneven pen handwriting. It runs small and thin,
+   so the sizes below are larger than they'd be for a typical font. */
+.mb-hand {
+    margin: 0;
+    font-family: 'Reenie Beanie', cursive;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #1d1d1f;
+}
+
+.mb-caption {
+    padding: 0.6cqw 0 1cqw;
+    font-size: 2.7cqw;
+    text-align: center;
+}
+
+/* ─── Magnets and tape ─── */
+
+/* A round steel magnet, lit from the upper right like everything else: the
+   highlight sits up-right, the rim darkens toward the lower left, and it
+   casts a small shadow down-left. */
+.mb-magnet {
+    position: absolute;
+    z-index: 2;
+    top: -1.3cqw;
+    left: 50%;
+    width: 3cqw;
+    height: 3cqw;
+    margin-left: -1.5cqw;
+    border-radius: 50%;
+    background: radial-gradient(circle at 64% 30%, #fff 0%, #eceef1 14%, #b9bbc2 48%, #84868e 78%, #5f6168 100%);
+    box-shadow:
+        inset -0.15cqw -0.2cqw 0.3cqw rgba(0, 0, 0, 0.3),
+        inset 0.1cqw 0.1cqw 0.15cqw rgba(255, 255, 255, 0.6),
+        -0.25cqw 0.4cqw 0.45cqw rgba(0, 0, 0, 0.3);
+}
+
+/* Masking tape: translucent, faintly creased, with torn zig-zag ends. The
+   shadow is a filter, not a box-shadow, so it follows the torn outline. */
+.mb-tape {
+    position: absolute;
+    z-index: 2;
+    top: -1.4cqw;
+    left: 50%;
+    width: 10cqw;
+    height: 2.8cqw;
+    margin-left: -5cqw;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 60%),
+        repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.025) 0 1px, transparent 1px 4px),
+        rgba(236, 229, 208, 0.82);
+    clip-path: polygon(
+        0% 8%, 3% 0%, 97% 0%, 100% 10%, 97.5% 22%, 100% 36%, 97% 50%, 100% 64%,
+        97.5% 78%, 100% 90%, 97% 100%, 3% 100%, 0% 92%, 2.5% 78%, 0% 64%, 3% 50%,
+        0% 36%, 2.5% 22%
+    );
+    filter: drop-shadow(-0.1cqw 0.15cqw 0.12cqw rgba(0, 0, 0, 0.18));
+    transform: rotate(var(--tilt, 0deg));
+}
+
+/* ─── Paper ─── */
+.mb-receipt {
+    padding: 1.4cqw 1.6cqw 2cqw;
+    background:
+        repeating-linear-gradient(180deg, transparent 0 3.05cqw, rgba(213, 104, 132, 0.28) 3.05cqw 3.2cqw),
+        #f6dfe4;
+}
+
+.mb-receipt-head {
+    margin: 0 0 1cqw;
+    padding-bottom: 0.6cqw;
+    border-bottom: 0.15cqw solid #30408f;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.8cqw;
+    white-space: nowrap;
+    font-weight: 700;
+    color: #30408f;
+}
+
+.mb-receipt .mb-hand {
+    /* 3.05 × 1.05 ≈ the 3.2cqw ruled-line pitch, so the writing sits on the lines. */
+    font-size: 3.05cqw;
+    line-height: 1.05;
+}
+
+.mb-postcard {
+    padding: 2cqw 2.2cqw 2.4cqw;
+    background:
+        /* stamp box */
+        linear-gradient(#efe6d3, #efe6d3) right 1.4cqw top 1.4cqw / 4.2cqw 5cqw no-repeat,
+        #f4ecdc;
+    box-shadow: inset 0 0 0 0.15cqw rgba(120, 100, 70, 0.25);
+}
+
+.mb-postcard .mb-hand {
+    padding-right: 5cqw;
+    font-size: 2.75cqw;
+    color: #24345e;
+}
+
+.mb-ticket {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5cqw;
+    padding: 1.2cqw 1.6cqw;
+    background:
+        radial-gradient(circle at 0 50%, transparent 0.9cqw, #eef3d7 0.95cqw) left / 51% 100% no-repeat,
+        radial-gradient(circle at 100% 50%, transparent 0.9cqw, #eef3d7 0.95cqw) right / 51% 100% no-repeat;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    color: #2a2a2a;
+}
+
+.mb-ticket-admit {
+    font-size: 1.15cqw;
+    letter-spacing: 0.08em;
+}
+
+.mb-ticket-act {
+    font-family: 'Work Sans';
+    font-size: 2.4cqw;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* ─── Stickers (stickerPeel.js) ───
+   A layer over the board for the peelable stickers. It lets clicks through
+   to the photos; the stickers themselves take the pointer. */
+.moodboard {
+    position: relative;
+}
+
+.mb-sticker-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.mb-sticker-layer .sp-draggable {
+    pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mb-pin {
+        transition: none;
+    }
+
+    .mb-pin:hover {
+        transform: rotate(var(--r));
+    }
+}
+
+/* ─── Phones: two pinned-up columns instead of a hand-placed collage ─── */
+@media (max-width: 768px) {
+    .mb-board {
+        aspect-ratio: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 11cqw 5cqw;
+        padding: 10cqw 4cqw 8cqw;
+    }
+
+    .mb-pin {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 43%;
+        /* Keep a little of the tilt, but gentler. */
+        transform: rotate(calc(var(--r) * 0.6));
+    }
+
+    .mb-receipt,
+    .mb-postcard {
+        width: 92%;
+    }
+
+    /* Stacked phone layout: stickers would land on photos, so they rest
+       along the edges instead. */
+
+    .mb-pin {
+        filter:
+            drop-shadow(-0.25cqw 0.35cqw 0.3cqw rgba(0, 0, 0, 0.22))
+            drop-shadow(-1.1cqw 1.8cqw 2.4cqw rgba(0, 0, 0, 0.14));
+    }
+
+    .mb-print { padding: 1.2cqw; }
+
+    .mb-magnet { top: -3cqw; width: 7cqw; height: 7cqw; margin-left: -3.5cqw; }
+    .mb-tape { top: -3.2cqw; width: 22cqw; height: 6.2cqw; margin-left: -11cqw; }
+    .mb-polaroid { padding: 2.2cqw 2.2cqw 0; }
+    .mb-caption { font-size: 6.4cqw; padding: 1.2cqw 0 2cqw; }
+    .mb-receipt { padding: 3.5cqw 4cqw 4.5cqw; background-size: auto; background:
+        repeating-linear-gradient(180deg, transparent 0 7cqw, rgba(213, 104, 132, 0.28) 7cqw 7.3cqw), #f6dfe4; }
+    .mb-receipt-head { font-size: 5cqw; margin-bottom: 2cqw; padding-bottom: 1.4cqw; }
+    .mb-receipt .mb-hand { font-size: 7cqw; }
+    .mb-postcard { padding: 4.5cqw 5cqw 5cqw; background:
+        linear-gradient(#efe6d3, #efe6d3) right 3cqw top 3cqw / 9cqw 11cqw no-repeat, #f4ecdc; }
+    .mb-postcard .mb-hand { font-size: 6.4cqw; padding-right: 11cqw; }
+    .mb-ticket { width: 60%; padding: 3cqw 4cqw; gap: 1cqw; }
+    .mb-ticket-admit { font-size: 2.8cqw; }
+    .mb-ticket-act { font-size: 6cqw; }
+}

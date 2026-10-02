@@ -4,6 +4,7 @@
 // the best work is both:
 //   shipped: true  — it is deployed and a stranger can use it right now
 //   route          — there is a written page on this site at that path
+//   concept: true  — a design concept that was never built to ship
 //
 // A project with both shows up under both filter chips and wears both badges.
 //
@@ -30,14 +31,6 @@ const projects = [
       repo: 'https://github.com/sabrinaquach/pip-skincare',
       note: 'Try the demo — no signup',
     },
-    tags: [
-      { text: 'UX design', color: '#B1FFA6' },
-      { text: 'Product design', color: '#FFE0C0' },
-      { text: 'Mobile design', color: '#5AACDC' },
-      { text: 'User research', color: '#FFE97B' },
-      { text: 'Interaction design', color: '#FFA6E3' },
-      { text: 'End-to-end product design' },
-    ],
   },
   {
     id: 'reality-check',
@@ -56,14 +49,6 @@ const projects = [
       repo: 'https://github.com/sabrinaquach/reality-check',
       note: 'Live — score any address',
     },
-    tags: [
-      { text: 'Full-stack', color: '#AAFFD8' },
-      { text: 'Product design', color: '#FFE0C0' },
-      { text: 'TypeScript', color: '#66A8F8' },
-      { text: 'React', color: '#5AACDC' },
-      { text: 'Data modeling', color: '#F9FF8F' },
-      { text: 'Mapbox', color: '#B5B6FF' },
-    ],
   },
   {
     id: 'spacescan',
@@ -82,50 +67,30 @@ const projects = [
       repo: 'https://github.com/sabrinaquach/Spacescan',
       note: 'Figma plugin',
     },
-    tags: [
-      { text: 'Design systems', color: '#FFA6E3' },
-      { text: 'Design tooling', color: '#18FF08' },
-      { text: 'Figma plugin API', color: '#F6FAB2' },
-      { text: 'TypeScript', color: '#66A8F8' },
-    ],
   },
   {
     id: 'adobe-flux',
     title: 'Adobe Flux',
     shipped: false,
+    concept: true,
     layout: 'laptop',
     description: 'Generative AI tool that creates visuals through actions.',
     route: '/AdobeFlux',
     media: { type: 'video', src: '/videos/project1-videos/adobeFlux-vid1.mov', className: 'final-design-video' },
-    tags: [
-      { text: 'AI-driven design', color: '#18FF08' },
-      { text: 'Desktop', color: '#FFE0C0' },
-      { text: 'Creative tools', color: '#F6FAB2' },
-      { text: 'UX design', color: '#FFA6E3' },
-      { text: 'Customer journeys', color: '#5AACDC' },
-    ],
   },
   {
     id: 'aura',
     title: 'Aura',
     shipped: false,
+    concept: true,
     layout: 'phone',
     description: 'Smart home app to view energy levels and change temperature in multiple rooms.',
     route: '/Aura',
     media: { type: 'video', src: '/videos/project3-videos/Aura-App-Motion-Off.mov', className: 'p2-final-design-video' },
-    tags: [
-      { text: 'IoT design', color: '#18FF08' },
-      { text: 'UX design', color: '#FFA6E3' },
-      { text: 'Home automation', color: '#F9FF8F' },
-      { text: 'Mobile', color: '#B2E4FA' },
-      { text: 'Full-stack', color: '#AAFFD8' },
-      { text: 'HTML', color: '#B5B6FF' },
-      { text: 'CSS', color: '#F8B966' },
-      { text: 'JavaScript', color: '#66A8F8' },
-      { text: 'Supabase', color: '#34b27b' },
-    ],
   },
 ];
+
+export const getProject = (id) => projects.find((p) => p.id === id);
 
 export const hasCaseStudy = (project) => Boolean(project.route) && project.caseStudy !== false;
 

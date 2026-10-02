@@ -1,0 +1,257 @@
+/* Cut-outs for the black backgrounds baked into the mockup recordings and
+   Figma exports, so devices and boards sit on the page background in either
+   theme. Each mask is white where the media should show and transparent over
+   the dark ground that touches the edge; bezels and dark UI inside are kept.
+   Matched on src so every place a file is used picks it up. Regenerate the
+   mask if the file is re-exported. */
+
+video[src="/videos/pip-videos/diary-pip.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/diary-pip.png");
+    mask-image: url("/images/media-masks/diary-pip.png");
+}
+
+video[src="/videos/pip-videos/explore-pip.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/explore-pip.png");
+    mask-image: url("/images/media-masks/explore-pip.png");
+}
+
+video[src="/videos/pip-videos/live-app-pip.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/live-app-pip.png");
+    mask-image: url("/images/media-masks/live-app-pip.png");
+}
+
+video[src="/videos/pip-videos/routine-pip.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/routine-pip.png");
+    mask-image: url("/images/media-masks/routine-pip.png");
+}
+
+video[src="/videos/pip-videos/scan-pip.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/scan-pip.png");
+    mask-image: url("/images/media-masks/scan-pip.png");
+}
+
+video[src="/videos/project1-videos/adobeFlux-vid1.mov"] {
+    -webkit-mask-image: url("/images/media-masks/adobeFlux-vid1.png");
+    mask-image: url("/images/media-masks/adobeFlux-vid1.png");
+}
+
+video[src="/videos/project1-videos/adobeFlux-vid2.mov"] {
+    -webkit-mask-image: url("/images/media-masks/adobeFlux-vid2.png");
+    mask-image: url("/images/media-masks/adobeFlux-vid2.png");
+}
+
+video[src="/videos/project1-videos/adobeFlux-vid3.mov"] {
+    -webkit-mask-image: url("/images/media-masks/adobeFlux-vid3.png");
+    mask-image: url("/images/media-masks/adobeFlux-vid3.png");
+}
+
+video[src="/videos/project1-videos/adobeFlux-vid4.mov"] {
+    -webkit-mask-image: url("/images/media-masks/adobeFlux-vid4.png");
+    mask-image: url("/images/media-masks/adobeFlux-vid4.png");
+}
+
+video[src="/videos/project1-videos/hi-fidelity-wireframe.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/hi-fidelity-wireframe.png");
+    mask-image: url("/images/media-masks/hi-fidelity-wireframe.png");
+}
+
+video[src="/videos/project3-videos/Aura-App-History.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/Aura-App-History.png");
+    mask-image: url("/images/media-masks/Aura-App-History.png");
+}
+
+video[src="/videos/project3-videos/Aura-App-Motion-Off.mov"] {
+    -webkit-mask-image: url("/images/media-masks/Aura-App-Motion-Off.png");
+    mask-image: url("/images/media-masks/Aura-App-Motion-Off.png");
+}
+
+video[src="/videos/project3-videos/Aura-App-Motion-On.mov"] {
+    -webkit-mask-image: url("/images/media-masks/Aura-App-Motion-On.png");
+    mask-image: url("/images/media-masks/Aura-App-Motion-On.png");
+}
+
+video[src="/videos/project3-videos/Aura-App.mov"] {
+    -webkit-mask-image: url("/images/media-masks/Aura-App.png");
+    mask-image: url("/images/media-masks/Aura-App.png");
+}
+
+video[src="/videos/reality-check-videos/rc-breakdown-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-breakdown-laptop.png");
+    mask-image: url("/images/media-masks/rc-breakdown-laptop.png");
+}
+
+video[src="/videos/reality-check-videos/rc-comparison-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-comparison-laptop.png");
+    mask-image: url("/images/media-masks/rc-comparison-laptop.png");
+}
+
+video[src="/videos/reality-check-videos/rc-map-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-map-laptop.png");
+    mask-image: url("/images/media-masks/rc-map-laptop.png");
+}
+
+video[src="/videos/reality-check-videos/rc-mobile.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-mobile.png");
+    mask-image: url("/images/media-masks/rc-mobile.png");
+}
+
+video[src="/videos/reality-check-videos/rc-onboarding-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-onboarding-laptop.png");
+    mask-image: url("/images/media-masks/rc-onboarding-laptop.png");
+}
+
+video[src="/videos/reality-check-videos/rc-signin-saved-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-signin-saved-laptop.png");
+    mask-image: url("/images/media-masks/rc-signin-saved-laptop.png");
+}
+
+video[src="/videos/reality-check-videos/rc-single-listing-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/rc-single-listing-laptop.png");
+    mask-image: url("/images/media-masks/rc-single-listing-laptop.png");
+}
+
+video[src="/videos/spacescan-videos/spacescan-checks-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/spacescan-checks-laptop.png");
+    mask-image: url("/images/media-masks/spacescan-checks-laptop.png");
+}
+
+video[src="/videos/spacescan-videos/spacescan-fix-laptop.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/spacescan-fix-laptop.png");
+    mask-image: url("/images/media-masks/spacescan-fix-laptop.png");
+}
+
+video[src="/videos/spacescan-videos/spacescan-fix-panel.mp4"] {
+    -webkit-mask-image: url("/images/media-masks/spacescan-fix-panel.png");
+    mask-image: url("/images/media-masks/spacescan-fix-panel.png");
+}
+
+img[src="/images/aura-image1.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-aura-image1.png");
+    mask-image: url("/images/media-masks/img-aura-image1.png");
+}
+
+img[src="/images/pip-images/core-features-pip.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-core-features-pip.png");
+    mask-image: url("/images/media-masks/img-core-features-pip.png");
+}
+
+img[src="/images/pip-images/hifi-core-pip.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-hifi-core-pip.png");
+    mask-image: url("/images/media-masks/img-hifi-core-pip.png");
+}
+
+img[src="/images/pip-images/hifi-onboarding-pip.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-hifi-onboarding-pip.png");
+    mask-image: url("/images/media-masks/img-hifi-onboarding-pip.png");
+}
+
+img[src="/images/pip-images/onboarding-pip.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-onboarding-pip.png");
+    mask-image: url("/images/media-masks/img-onboarding-pip.png");
+}
+
+img[src="/images/pip-images/pip-home.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-pip-home.png");
+    mask-image: url("/images/media-masks/img-pip-home.png");
+}
+
+img[src="/images/pip-images/refined1-core-pip.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-refined1-core-pip.png");
+    mask-image: url("/images/media-masks/img-refined1-core-pip.png");
+}
+
+img[src="/images/project1-images/designConcept-1.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-designConcept-1.png");
+    mask-image: url("/images/media-masks/img-designConcept-1.png");
+}
+
+img[src="/images/project1-images/designConcept-2.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-designConcept-2.png");
+    mask-image: url("/images/media-masks/img-designConcept-2.png");
+}
+
+img[src="/images/project1-images/designConcept-3.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-designConcept-3.png");
+    mask-image: url("/images/media-masks/img-designConcept-3.png");
+}
+
+img[src="/images/project3-images/bar-graph.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-bar-graph.png");
+    mask-image: url("/images/media-masks/img-bar-graph.png");
+}
+
+img[src="/images/project3-images/bottom-half-circle.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-bottom-half-circle.png");
+    mask-image: url("/images/media-masks/img-bottom-half-circle.png");
+}
+
+img[src="/images/project3-images/cutoff-circle.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-cutoff-circle.png");
+    mask-image: url("/images/media-masks/img-cutoff-circle.png");
+}
+
+img[src="/images/project3-images/floor-plan.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-floor-plan.png");
+    mask-image: url("/images/media-masks/img-floor-plan.png");
+}
+
+img[src="/images/project3-images/full-circle.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-full-circle.png");
+    mask-image: url("/images/media-masks/img-full-circle.png");
+}
+
+img[src="/images/project3-images/temp-control-image1.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-temp-control-image1.png");
+    mask-image: url("/images/media-masks/img-temp-control-image1.png");
+}
+
+img[src="/images/project3-images/temp-control-image2.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-temp-control-image2.png");
+    mask-image: url("/images/media-masks/img-temp-control-image2.png");
+}
+
+img[src="/images/project3-images/temp-control-image3.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-temp-control-image3.png");
+    mask-image: url("/images/media-masks/img-temp-control-image3.png");
+}
+
+img[src="/images/project3-images/temp-control-image4.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-temp-control-image4.png");
+    mask-image: url("/images/media-masks/img-temp-control-image4.png");
+}
+
+img[src="/images/project3-images/temp-control-image5.png"] {
+    -webkit-mask-image: url("/images/media-masks/img-temp-control-image5.png");
+    mask-image: url("/images/media-masks/img-temp-control-image5.png");
+}
+
+img[src="/images/reality-check-images/green-after.jpg"] {
+    -webkit-mask-image: url("/images/media-masks/img-green-after.png");
+    mask-image: url("/images/media-masks/img-green-after.png");
+}
+
+img[src="/images/reality-check-images/green-before.jpg"] {
+    -webkit-mask-image: url("/images/media-masks/img-green-before.png");
+    mask-image: url("/images/media-masks/img-green-before.png");
+}
+
+img[src="/images/reality-check-images/scored.jpg"] {
+    -webkit-mask-image: url("/images/media-masks/img-scored.png");
+    mask-image: url("/images/media-masks/img-scored.png");
+}
+
+/* Shared sizing for every mask above. `contain` + centre tracks the picture
+   exactly whether the media keeps its own aspect or uses object-fit: contain.
+   content-box keeps padding (e.g. .final-design-video's bottom padding) out of
+   the mask's box, otherwise the mask shrinks and clips the device. */
+video[src^="/videos/"],
+img[src^="/images/"] {
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-origin: content-box;
+    mask-origin: content-box;
+}

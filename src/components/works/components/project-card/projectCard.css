@@ -1,36 +1,8 @@
-/* Status line — deliberately not a pill. The SEE PROJECT button above it
-   loops forever to advertise the click, and the tags below are pills as well;
-   a third pill row here reads as one more thing to press. Small letterspaced
-   mono says "metadata" instead. */
-.project-status-line {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5em;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  font-weight: bold;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  /* .project-title already carries 1rem below it, so this only has to space
-     itself off the description. */
+/* Status line spacing on the card; the line itself is ProjectStatus.
+   .project-title already carries 1rem below it, so this only has to space
+   itself off the description. */
+.project-block .project-status-line {
   margin: 0 0 1rem;
-}
-
-/* Just enough colour to stay scannable at a glance, well short of the tag
-   pills' saturation so it never reads as interactive. */
-.project-status-shipped {
-  color: #8FCF86;
-}
-
-.project-status-case-study {
-  color: #7a7a7a;
-}
-
-.project-status-sep {
-  color: #3f3f3f;
-  font-weight: normal;
 }
 
 /* A card with no case study page should not look clickable. */
@@ -81,7 +53,7 @@
    do below 768px), which stacks on top of this margin — 2rem of air around a
    0.72rem line. Hand the spacing over to the gap entirely. */
 @media (max-width: 1024px) {
-  .project-status-line {
+  .project-block .project-status-line {
     justify-content: center;
     margin-bottom: 0;
   }

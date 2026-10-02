@@ -17,6 +17,13 @@
     object-fit: cover; 
 }
 
+/* A row holding just one clip: centred under the text. */
+.two-final-design-row--single,
+.p-final-design-row-vids--single {
+    width: 100%;
+    justify-content: center;
+}
+
 .video2-border {
     border-radius: 8px;
 }
@@ -41,7 +48,7 @@
 
 .real-behavior-question {
     font-size: clamp(0.95rem, 0.6vw, 1.1rem);
-    color: #FFB266;
+    color: var(--accent);
     max-width: 100%;
     padding-left: 1rem;
 }
@@ -70,7 +77,7 @@
     font-size: clamp(0.7rem, 0.6vw, 0.8rem);
     max-width: 100%;
     padding-bottom: 3rem;
-    color: #f0f0f0;
+    color: var(--fg-2);
     text-align: center;
 }
 
@@ -192,3 +199,56 @@
         height: auto;
     }
   }
+
+/* Phones: keep the Deliver section inside the screen. Its video pairs sat side
+   by side at a fixed height, and one pair (a phone clip beside a landscape
+   clip) came to ~450px — wider than a 390px screen — which pushed the whole
+   section, text included, off both edges. Scoped to #Aura because the other
+   case studies share these class names. */
+@media screen and (max-width: 768px) {
+    #Aura .deliver-container,
+    #Aura .final-design-container,
+    #Aura .final-design-content,
+    #Aura .final-design-breakdown,
+    #Aura .final-design-row,
+    #Aura .final-design-column,
+    #Aura .p-final-design-column,
+    #Aura .two-final-design-row {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #Aura .final-design-row {
+        flex-direction: column;
+    }
+
+    /* A pair shares the width: each clip takes half and keeps its own shape. */
+    #Aura .p-final-design-row-vids {
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    #Aura .p-final-design-row-vids > video {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+        height: auto;
+        max-height: 80vw;
+        object-fit: contain;
+    }
+
+    #Aura .p-final-design-video {
+        width: min(60vw, 260px);
+        height: auto;
+    }
+
+    /* A lone clip keeps the size of one clip in a pair rather than
+       stretching across the space meant for two. */
+    #Aura .p-final-design-row-vids--single > video {
+        flex: 0 0 calc((100% - 0.75rem) / 2);
+    }
+}
+

@@ -1,0 +1,105 @@
+/* Only hide the system cursor once the custom one is mounted, and only on
+   mouse/trackpad devices (the component adds this class). */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Follows the pointer. Its origin sits on the hotspot; the dot hangs off it
+   so its left edge is at the pointer and it is centred vertically. */
+.custom-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  will-change: transform;
+}
+
+.custom-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translate(0, -50%) scale(1);
+  transition:
+    width 0.2s ease-out,
+    height 0.2s ease-out,
+    padding 0.2s ease-out,
+    border-radius 0.2s ease-out,
+    transform 0.1s ease-out,
+    opacity 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+}
+
+/* Over a link or button: bigger and see-through, so the target stays legible. */
+.custom-cursor.is-link {
+  transform: translate(0, -50%) scale(1.5);
+  opacity: 0.35;
+}
+
+.custom-cursor.is-pressed {
+  transform: translate(0, -50%) scale(0.75);
+}
+
+/* Over a labelled area: a pill that starts just left of the pointer. */
+.custom-cursor.is-pill {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 32px;
+  transform: translate(-12px, -50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.custom-cursor-icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 0;
+  margin-right: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease-out, margin 0.2s ease-out;
+}
+
+.custom-cursor-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.custom-cursor.is-pill .custom-cursor-icon {
+  width: 16px;
+  margin-right: 8px;
+  opacity: 1;
+}
+
+.custom-cursor-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.custom-cursor.is-pill .custom-cursor-label {
+  opacity: 1;
+}
+
+/* Off-screen copy of the label, used only to measure its width. */
+.custom-cursor-measure {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  visibility: hidden;
+}

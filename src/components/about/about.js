@@ -2,83 +2,76 @@ import React, { useEffect } from "react";
 import './about.css'
 import { FiMessageSquare } from "react-icons/fi";
 import { useLocation, useNavigate } from 'react-router-dom';
-import { scrollPageTo } from '../../utilities/pageScroll';
+import { openContactMenu } from '../../utilities/contactMenu';
+import Moodboard from './moodboard';
+import TextHighlighter from '../../utilities/TextHighlighter';
+import { CONTACT_EMAIL, CopyEmail } from '../footer/contact';
+
+import boothBaby from '../../assets/images/photobooth/booth-baby.jpg';
+import boothYoung from '../../assets/images/photobooth/booth-young.jpg';
+import boothNow from '../../assets/images/photobooth/booth-now.jpg';
+
+// Frames of the photobooth strip, top to bottom: baby, kid, now. The files
+// are already cropped to the frame's 5:6, so `position` just centres them.
+const PHOTOBOOTH = [
+    { src: boothBaby, position: '50% 50%', alt: 'Sabrina as a baby, asleep under a blanket' },
+    { src: boothYoung, position: '50% 50%', alt: 'Sabrina as a little girl, smiling with her fingers on her cheeks' },
+    { src: boothNow, position: '50% 50%', alt: 'Sabrina today, a portrait against a white wall' },
+];
 
 const About = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    
+
     useEffect(() => {
       if (location.state?.scrollTo === 'about') {
         const el = document.getElementById('about');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
-    
+
           navigate(location.pathname, { replace: true, state: {} });
         }
       }
     }, [location, navigate]);
-    
-    const handleContactClick = () => {
-        const el = document.getElementById('footer');
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          scrollPageTo(0, 'smooth');
-        }
-    };   
 
     return (
-        <div className="about-container" id="about">
-            <div className="about-content">
-                <h2 className="about-title">About Me</h2>
-                <div className="content-row">
-                    <div className="pfp-circle"></div>
-                    <div className="text-columns">
-                        <div className="content-items">
-                                <h3 className="about-subtitle">Hello I’m Sabrina!</h3>
-                                <p className="about-description">I'm a UX/Product Designer with a background in Computer Engineering. I’m passionate about creating products that focus on user needs.</p>
-                        </div>
-                        <div className="content-items">
-                            <h3 className="about-subtitle">During “Me” time</h3>
-                            <p className="about-description">I enjoy eating delicious food, yoga, and making new things. Ceramics is something I’ve enjoyed doing since high school, it feels nice to do something physically creative.</p>
-                            <div className="message-row-about nav-buttons">
-                                <button 
-                                    className='message-button' 
-                                    onClick={handleContactClick}
-                                >
-                                    <FiMessageSquare />
-                                    Message Me
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="about" id="about">
+            {/* A poster: giant marker "about me" scrawled across a photobooth
+                strip on dusty pink, the name small in the corner and the details
+                set small on the right. */}
+            <section className="about-poster">
+                <div className="poster-stage">
 
-            <section className="photos-section">
-                <h2 className="photo-title">Highlights</h2>
-                <div className="photo-grid">
-                    <div className="photo photo-1"></div>
-                    <div className="photo photo-2"></div>
-                    <div className="photo photo-3"></div>
-                    <div className="photo photo-4"></div>
-                    <div className="photo photo-5">
-                        <video 
-                            src="/videos/beyonce.mov" 
-                            loop 
-                            muted
-                            autoPlay
-                            playsInline
-                            className="photo-video"
-                        />
-                    </div>
-                    <div className="photo photo-6"></div>
-                    <div className="photo photo-7"></div>
-                    <div className="photo photo-8"></div>
-                    <div className="photo photo-9"></div>
-                    <div className="photo photo-10"></div>
+                    <figure className="photo-strip poster-strip">
+                        {PHOTOBOOTH.map(({ src, position, alt }) => (
+                            <span key={src} className="photo-strip-frame">
+                                <img src={src} alt={alt} style={{ objectPosition: position }} />
+                            </span>
+                        ))}
+                    </figure>
+
+                    <h1 className="poster-title">
+                        <span className="poster-word poster-word--about">about</span>{' '}
+                        <span className="poster-word poster-word--me">me</span>
+                    </h1>
                 </div>
+
+                <div className="poster-info">
+                    <p className="poster-bio">
+                        <TextHighlighter>Hi, I'm Sabrina!</TextHighlighter> I’m still growing as a designer, builder, but more importantly, as a person! 
+                        I love creating products that <TextHighlighter delay={0.4}>focus on people and their needs</TextHighlighter>. Outside of design, I workout, 
+                        listen to music, and spend time with my dog.
+                    </p>
+                    {/* <button className="message-button poster-message" onClick={openContactMenu}>
+                        <FiMessageSquare />
+                        Message Me
+                    </button> */}
+                </div>
+            </section>
+
+            {/* No visible heading: the receipt on the board says "During "Me" time". */}
+            <section className="about-me-time" aria-label="During “Me” time">
+                <Moodboard />
             </section>
         </div>
     )

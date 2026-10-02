@@ -1,0 +1,135 @@
+/* StickerPeel (see stickerPeel.js), ported from React Bits. The peel is two
+   clip-paths: the sticker's body is clipped down from the top while a
+   mirrored, grey-filled copy (the backing) grows up from that edge. */
+.sp-draggable {
+    --sp-start: calc(-1 * var(--sp-p));
+    --sp-end: calc(100% + var(--sp-p));
+
+    position: absolute;
+    z-index: 4;
+    cursor: grab;
+    transform: translateZ(0);
+}
+
+.sp-draggable:active,
+.sp-draggable.is-dragging {
+    cursor: grabbing;
+}
+
+/* Hold the finger's drag for the sticker rather than scrolling the page. */
+.sp-draggable {
+    touch-action: none;
+}
+
+.sp-defs {
+    position: absolute;
+}
+
+.sp-container {
+    position: relative;
+    transform: rotate(var(--sp-peel-direction));
+    transform-origin: center;
+}
+
+.sp-container * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sp-main {
+    clip-path: polygon(
+        var(--sp-start) var(--sp-start),
+        var(--sp-end) var(--sp-start),
+        var(--sp-end) var(--sp-end),
+        var(--sp-start) var(--sp-end)
+    );
+    transition: clip-path 0.6s ease-out;
+    will-change: clip-path;
+}
+
+.sp-main > *,
+.sp-flap > * {
+    transform: rotate(calc(-1 * var(--sp-peel-direction)));
+}
+
+.sp-image {
+    display: block;
+    width: var(--sp-width);
+    transform: rotate(var(--sp-rotate));
+}
+
+.sp-container:hover .sp-main,
+.sp-container.touch-active .sp-main {
+    clip-path: polygon(
+        var(--sp-start) var(--sp-peelback-hover),
+        var(--sp-end) var(--sp-peelback-hover),
+        var(--sp-end) var(--sp-end),
+        var(--sp-start) var(--sp-end)
+    );
+}
+
+.sp-container:active .sp-main {
+    clip-path: polygon(
+        var(--sp-start) var(--sp-peelback-active),
+        var(--sp-end) var(--sp-peelback-active),
+        var(--sp-end) var(--sp-end),
+        var(--sp-start) var(--sp-end)
+    );
+}
+
+.sp-flap {
+    position: absolute;
+    left: 0;
+    top: calc(-100% - var(--sp-p) - var(--sp-p));
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        var(--sp-start) var(--sp-start),
+        var(--sp-end) var(--sp-start),
+        var(--sp-end) var(--sp-start),
+        var(--sp-start) var(--sp-start)
+    );
+    transform: scaleY(-1);
+    transition: all 0.6s ease-out;
+    will-change: clip-path, transform;
+}
+
+.sp-container:hover .sp-flap,
+.sp-container.touch-active .sp-flap {
+    clip-path: polygon(
+        var(--sp-start) var(--sp-start),
+        var(--sp-end) var(--sp-start),
+        var(--sp-end) var(--sp-peelback-hover),
+        var(--sp-start) var(--sp-peelback-hover)
+    );
+    top: calc(-100% + 2 * var(--sp-peelback-hover) - 1px);
+}
+
+.sp-container:active .sp-flap {
+    clip-path: polygon(
+        var(--sp-start) var(--sp-start),
+        var(--sp-end) var(--sp-start),
+        var(--sp-end) var(--sp-peelback-active),
+        var(--sp-start) var(--sp-peelback-active)
+    );
+    top: calc(-100% + 2 * var(--sp-peelback-active) - 1px);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .sp-draggable {
+        cursor: default;
+    }
+
+    .sp-container {
+        touch-action: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sp-main,
+    .sp-flap {
+        transition: none;
+    }
+}

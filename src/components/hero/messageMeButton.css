@@ -1,0 +1,49 @@
+/* Ringing icon inside .message-button (base pill styles live in hero.css). */
+.message-button__icon {
+    position: relative;
+    display: inline-grid;
+    flex: none;
+    width: 1em;
+    height: 1em;
+}
+
+.message-button__glyph {
+    display: inline-grid;
+    place-items: center;
+    grid-area: 1 / 1;
+    width: 1em;
+    height: 1em;
+    /* The pivot sits near the top, like a hanging bell. */
+    transform-origin: 50% 16%;
+}
+
+.message-button .message-button__glyph svg {
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Doubled up with .message-button to beat hero.css's `.message-button svg`,
+   which would otherwise pull the arcs back into the flow. */
+.message-button .message-button__wave {
+    position: absolute;
+    top: -0.2em;
+    width: 0.85em;
+    height: 0.85em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.message-button .message-button__wave--left {
+    right: calc(100% - 0.1em);
+    transform-origin: 100% 100%;
+}
+
+.message-button .message-button__wave--right {
+    left: calc(100% - 0.1em);
+    transform-origin: 0% 100%;
+}

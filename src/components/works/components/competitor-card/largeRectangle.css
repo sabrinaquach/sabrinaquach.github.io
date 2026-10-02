@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    border: 1px solid #fff;
+    border: 1px solid var(--fg);
     border-radius: 5px;
     padding: 2rem;
     flex: 1;
@@ -19,16 +19,16 @@
     font-family: 'Work Sans';
     text-transform: uppercase;
     font-size: 1.1rem;
-    color: #f2f3f4;
+    color: var(--fg-1);
 }
 
 .orange-letter {
-    color: #FFB266;
+    color: var(--accent);
   }
   
 
 .large-rectangle-description {
-    color: #979797;
+    color: var(--muted);
     font-size: 0.8rem;
     text-align: center;
     padding-bottom: 1rem;
@@ -38,7 +38,7 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    background-color: #f2f3f4;
+    background-color: var(--fg-1);
     border-radius: 5px;
     padding: 2rem;
 }
@@ -51,7 +51,7 @@
 }
 
 .company-name {
-    color: #000;
+    color: var(--bg);
     min-width: 150px;
     font-family: 'Work Sans';
     text-transform: uppercase;
@@ -59,7 +59,7 @@
 }
 
 .inner-text {
-    color: #000;
+    color: var(--bg);
     font-family: 'JetBrains Mono', monospace;
     font-weight: normal;
     font-size: 0.8rem;
@@ -81,13 +81,13 @@
     }
     
     .company-name {
-        color: #000;
+        color: var(--bg);
         max-width: 50px;
         text-align: center;
     }
 
     .inner-text {
-        color: #000;
+        color: var(--bg);
         text-align: center;
     }
 }

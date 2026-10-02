@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import ProjectStatus from "../components/project-status/projectStatus";
+import { getProject } from "../projects";
 import './projectTwo.css'
 import { BiSearchAlt, BiBook, BiRotateRight, BiSmile, BiPen, BiLayer, BiTargetLock, BiSliderAlt, BiBrain, BiShow, } from "react-icons/bi";
 import { TbScale, TbTerminal2, TbMoodSearch, TbTrendingUp, TbBulb, TbCloudCheck, TbMoodOff } from "react-icons/tb";
@@ -9,7 +11,6 @@ import Rectangle from "../components/theme-card/rectangle";
 import LargeRectangle from "../components/competitor-card/largeRectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
 import DesignCard from "../components/design-iteration-card/designCard";
-import ProjectTags from "../components/project-tags/tags";
 import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
 
 const ProjectTwo = () => {
@@ -48,31 +49,9 @@ const ProjectTwo = () => {
             <div className="project-content">
                 <div className="project-block">
                     <div className="text-column">
-                        <h3 className="project-header">— Case Study 02</h3>
+                        <ProjectStatus project={getProject('adobe-flux')} className="case-study-status" />
                         <h1 className="project-title">Adobe Flux</h1>
                         <p className="project-description">Generative AI tool that creates visuals through actions.</p>
-                        <div className='project-tags'>
-                            <ProjectTags
-                                text="AI-Driven Design"
-                                color="#B1FFA6"
-                            />
-                            <ProjectTags
-                                text="Desktop"
-                                color="#FFE0C0"
-                            />
-                            <ProjectTags
-                                text="Customer Journeys"
-                                color="#5AACDC"
-                            />
-                            <ProjectTags
-                                text="Creative Tools"
-                                color="#FFE97B"
-                            />
-                            <ProjectTags
-                                text="UX design"
-                                color="#FFA6E3"
-                            />
-                        </div>
                     </div>
                     <div className="project-content-items">
                         <img className="project1-image" src="/images/adobeflux-image1.png" alt="Adobe Flux"/>
@@ -350,6 +329,8 @@ const ProjectTwo = () => {
                                     src="/images/project1-images/empathyMap-1.png"
                                     alt="Empathy Map 1"
                                     className="empathy-map-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/project1-images/empathyMap-1.png',
                                         alt: 'Empathy Map 1'
@@ -359,6 +340,8 @@ const ProjectTwo = () => {
                                     src="/images/project1-images/empathyMap-2.png"
                                     alt="Empathy Map 2"
                                     className="empathy-map-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/project1-images/empathyMap-2.png',
                                         alt: 'Empathy Map 2'
@@ -367,7 +350,7 @@ const ProjectTwo = () => {
                             </div>
 
                             {modalImage && (
-                                <div className="image-modal" onClick={() => setModalImage(null)}>
+                                <div className="image-modal" onClick={() => setModalImage(null)} data-cursor-text="CLOSE" data-cursor-icon="close">
                                 <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
                                 </div>
                             )}
@@ -580,7 +563,9 @@ const ProjectTwo = () => {
                                         src="/images/project1-images/designConcept-1.png"
                                         alt="3D Modular Design Studio Concept"
                                         className="designConcept-image"
-                                        onClick={() => setModalImage({
+                                        data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                             src: '/images/project1-images/designConcept-1.png',
                                             alt: '3D Modular Design Studio Concept'
                                         })}
@@ -601,7 +586,9 @@ const ProjectTwo = () => {
                                         src="/images/project1-images/designConcept-2.png"
                                         alt="Interactive Visual Design Suite Concept"
                                         className="designConcept-image"
-                                        onClick={() => setModalImage({
+                                        data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                             src: '/images/project1-images/designConcept-2.png',
                                             alt: 'Interactive Visual Design Suite Concept'
                                         })}
@@ -622,7 +609,9 @@ const ProjectTwo = () => {
                                         src="/images/project1-images/designConcept-3.png"
                                         alt="AI Agent Concept"
                                         className="designConcept-image"
-                                        onClick={() => setModalImage({
+                                        data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                             src: '/images/project1-images/designConcept-3.png',
                                             alt: 'AI Agent Concept'
                                         })}
@@ -657,7 +646,9 @@ const ProjectTwo = () => {
                                             src="/images/project1-images/priorization-feasibility.png"
                                             alt="Feasibility Chart"
                                             className="prioritization-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/project1-images/priorization-feasibility.png',
                                                 alt: 'Feasibility Chart'
                                             })}
@@ -671,7 +662,9 @@ const ProjectTwo = () => {
                                             src="/images/project1-images/priorization-desirability.png"
                                             alt="Desirability Chart"
                                             className="prioritization-image"
-                                            onClick={() => setModalImage({
+                                            data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
+                                    onClick={() => setModalImage({
                                                 src: '/images/project1-images/priorization-desirability.png',
                                                 alt: 'Desirability Chart'
                                             })}
@@ -702,6 +695,8 @@ const ProjectTwo = () => {
                                     src="/images/project1-images/lofi-wireframe-v1.png"
                                     alt="Low-Fidelity Wireframe Version 1"
                                     className="lofi-wireframes-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/project1-images/lofi-wireframe-v1.png',
                                         alt: 'Low-Fidelity Wireframe Version 1'
@@ -724,6 +719,8 @@ const ProjectTwo = () => {
                                     src="/images/project1-images/lofi-wireframe-v2.png"
                                     alt="Low-Fidelity Wireframe Version 2"
                                     className="lofi-wireframes-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/project1-images/lofi-wireframe-v2.png',
                                         alt: 'Low-Fidelity Wireframe Version 2'
@@ -747,6 +744,8 @@ const ProjectTwo = () => {
                                     src="/images/project1-images/lofi-wireframe-v3.png"
                                     alt="Low-Fidelity Wireframe Version 3"
                                     className="lofi-wireframes-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/project1-images/lofi-wireframe-v3.png',
                                         alt: 'Low-Fidelity Wireframe Version 3'

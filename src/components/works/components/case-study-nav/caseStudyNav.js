@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import "./caseStudyNav.css";
+import useFooterInView from "../../../../utilities/useFooterInView";
 
 const slug = (t) =>
   t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -16,6 +17,7 @@ const CaseStudyNav = ({ sections }) => {
   const [targets, setTargets] = useState([]);
   const [active, setActive] = useState(0);
   const [visible, setVisible] = useState(false);
+  const footerInView = useFooterInView();
   const barRef = useRef(null);
 
   const spec = useMemo(() => sections, [sections]);
@@ -116,8 +118,11 @@ const CaseStudyNav = ({ sections }) => {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // Step aside for the footer rather than covering it.
+  const show = visible && !footerInView;
+
   return (
-    <div className={`cs-nav-dock${visible ? " is-visible" : ""}`} aria-hidden={!visible}>
+    <div className={`cs-nav-dock${show ? " is-visible" : ""}`} aria-hidden={!show}>
       <nav className="cs-nav" ref={barRef} aria-label="Case study sections">
         {targets.map(({ id, label }, i) => (
           <button

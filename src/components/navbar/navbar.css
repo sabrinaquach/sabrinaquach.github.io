@@ -1,40 +1,20 @@
-.navbar {
+/* ─── Top bar: logo left, menu toggle right ─── */
+.topbar {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #000;
+    right: 0;
+    z-index: 1200;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 1000;
-    /* width: 150px;
-    height: 100vh; */
-    /* padding: min(3em, 8%); */
-    padding: 2rem 0 0 2rem;
-    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    /* The bar spans the page; only its two buttons should catch clicks. */
+    pointer-events: none;
 }
 
-.desktopMenuList {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* gap: 0.05rem; */
-} 
-
-.desktopMenuListItem {
-    font-size: 8rem;
-    font-family: 'Work Sans';
-    text-transform: uppercase;
-    font-weight: bold;
-    display: block;
-    transition: all .3s ease-in-out; 
-    transform-origin: center;
-    color: #000;
-    cursor: pointer;
-}
-
-.mobile-toggle {
-    display: none;
+.topbar > * {
+    pointer-events: auto;
 }
 
 .initial {
@@ -42,72 +22,203 @@
     font-size: clamp(1.1rem, 2vw, 2rem);
     font-weight: 600;
     text-transform: lowercase;
-    color: #fff;
+    color: var(--fg);
     line-height: 1;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s ease;
 }
 
-.navbar-light .desktopMenuListItem {
-    color: white;
-}
-.navbar-dark .desktopMenuListItem {
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
-}
-.desktopMenuListItem:hover {
-    color: #000; 
-    transition: color 0.3s ease;
+.initial:hover {
+    background: none;
+    color: var(--accent);
 }
 
-.desktopMenuListItem.active {
-    color: #ff8000;
-  }
-  
-.nav-buttons {
+.menu-toggle {
+    width: 44px;
+    height: 44px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 2rem;
-}
-.navbar-light .initial {
-    color: white;
-}
-.navbar-light .message-button {
-    border: 1.5px solid white;
-    color: white;
-}
-.navbar-dark .initial {
-    color: black;
-}
-.navbar-dark .initial {
-    color: black;
-}
-
-/* hover colors for white navbar */
-.navbar-light .message-button:hover {
-  background-color: white;
-  color: black;
-}
-
-/* hover colors for black navbar */
-.navbar-dark .message-button:hover {
-    background-color: black;
-    color: white;
-}
-
-.desktopMenuList:hover {
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    display: inline;
-    /* perspective: 800px; */
-} 
-.desktopMenuListItem:hover {
-    transform: scale(1.2); 
 }
 
+.menu-toggle:hover {
+    background: transparent;
+}
+
+.menu-icon-line {
+    stroke: var(--fg);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    transition: stroke 0.2s ease;
+}
+
+/* Once open, the toggle sits on the always-light top panel. */
+.menu-open .menu-icon-line {
+    stroke: #000;
+}
+
+/* ─── Overlay ─── */
+.menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.menu-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+}
+
+.menu-panel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    /* Same hairline as the footer's top border (light version: panels are .theme-light). */
+    border: 2px solid var(--hairline);
+    border-radius: 10px;
+}
+
+/* Both panels are always light (.theme-light), so inside them --bg is the
+   panel and --fg the text in either theme. */
+/* Never shrinks below its links; the contact panel gives way instead. */
+.menu-top {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 28px 28px;
+    overflow-y: auto;
+    background: var(--bg);
+    color: var(--fg);
+    z-index: 3;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    overflow: hidden;
+}
+
+.menu-link {
+    display: block;
+    padding: 0.4rem 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: 'Work Sans';
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.menu-link:hover {
+    background: none;
+    color: var(--accent);
+}
+
+.menu-link.active {
+    color: var(--accent);
+}
+
+/* Contact details and form — the footer's content, in the footer's styles. */
+.menu-contact {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 2rem;
+    flex: 0 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 28px;
+    background: var(--bg);
+    color: var(--fg);
+    z-index: 1;
+}
+
+.menu-contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-contact .link-list {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+}
+
+.menu-contact .inital-email {
+    display: inline-block;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.menu-contact .inital-email:hover {
+    color: var(--accent);
+}
+
+/* Line up the tops of the two columns: drop the footer's padding above the
+   first label, and trim the title's leading so its letters start at the top. */
+.menu-contact-details > :first-child .inital-subtitle {
+    padding-top: 0;
+    line-height: 1;
+}
+
+.menu-contact .message-title {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    /* contact.css centres this title on smaller screens; in the menu it lines
+       up on the left with "Say Hello" and "Connect". */
+    text-align: left;
+}
+
+/* ─── Bottom-right buttons (theme, back to top) ─── */
+.nav-buttons-wrapper {
+    position: fixed;
+    /* --footer-offset is set from navbar.js while the footer is on screen. */
+    bottom: calc(2rem + var(--footer-offset, 0px));
+    right: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+/* Shared with the hero and about rows that also use .nav-buttons. */
 .nav-buttons {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -117,8 +228,8 @@
     background: transparent;
     border-radius: 40px;
     padding: 0.8rem;
-    color: #fff;
-    border: 1.5px solid #fff;
+    color: var(--fg);
+    border: 1.5px solid var(--fg);
     cursor: pointer;
 }
 
@@ -129,123 +240,61 @@
     position: relative;
 }
 
-.desktopMenuList {
-    display: none !important;
-}
+@media (max-width: 768px) {
+    .topbar {
+        padding: 1rem;
+        background-color: var(--bg);
+    }
 
-.burger-wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1001;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+    /* Panels go full width here, so the logo ends up on the top panel. */
+    .menu-open .initial {
+        color: #000;
+    }
 
-.burger {
-    margin: 2rem;
-    position: relative;
-    z-index: 1002; 
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+    .menu-open .topbar {
+        background-color: transparent;
+    }
 
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; 
-    align-items: flex-end;     
-    padding: 2rem 5rem 2rem 0;
-    /* gap: 0rem; */
-    z-index: 1000;        
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.3s ease;
-    border-radius: 12px 0 0 12px;
-}
+    .initial {
+        font-size: 1.8rem;
+    }
 
-.mobile-menu.open {
-    transform: translateX(0);
-    opacity: 1;
-}
+    /* Tighter inset so the logo (1rem in) lands inside the top panel, not on its edge. */
+    .menu {
+        padding: 0.5rem;
+    }
 
-.nav-buttons-wrapper {
-    position: fixed;
-    bottom: 2rem;
-    right: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    z-index: 1000;
-    pointer-events: auto;
-}
+    /* Say Hello and Connect sit close as one group of details; the form gets
+       a clearly bigger break above it. */
+    .menu-contact {
+        grid-template-columns: 1fr;
+        gap: 2.75rem;
+        padding: 20px;
+    }
 
-.burger,
-.burger:hover,
-.burger:focus,
-.burger:active {
-    color: #000;
-}
+    .menu-contact-details {
+        gap: 1rem;
+    }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* z-index: 1000; */
-    /* width: 0; */
-    height: 100vh;
-}
-
-.decrypted-char {
-    display: inline;
-    color: inherit;
-}
-
-.encrypted-char1 {
-    color: #505050;
-    font-family: 'Work Sans';
-    font-size: 8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    /* opacity: 0.1; */
-    transition: color 0.3s, opacity 0.3s;
-  }
-
-  .desktopMenuListItem.active .encrypted-char1 {
-    color: #FFB266;
-}
-
-  @media (max-width: 768px) {
-    .mobile-menu {
-        width: 100vw;
-        border-radius: 0;
-        padding: 2rem;
+    .menu-contact-details .inital-subtitle {
+        padding-top: 0;
     }
 
     .nav-buttons-wrapper {
         right: 1rem;
-        bottom: 1rem;
+        bottom: calc(1rem + var(--footer-offset, 0px));
     }
 
-    .burger {
-        margin: 1rem;
+    /* Theme toggle stacked above back-to-top. hero.css turns .nav-buttons
+       into a row on phones (for its Message Me row); the corner pair stays a
+       column. */
+    .nav-buttons-wrapper .nav-buttons {
+        flex-direction: column;
+        gap: 0.6rem;
     }
 
-    .desktopMenuListItem, .encrypted-char1 {
-        font-size: 4rem;
+    .sun-button,
+    .top-button {
+        padding: 0.5rem;
     }
-
-  }
-  
+}

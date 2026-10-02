@@ -8,6 +8,17 @@
     <meta name="description" content="Sabrina Quach | Portfolio"/>
     <title>Sabrina Quach | Portfolio</title>
 
+    <!-- Light is the default; a saved choice from the theme toggle wins. Applied
+         before first paint so the page never flashes the other theme. -->
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,8 +26,11 @@
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Handwriting for the About page: the poster's marker title and the moodboard notes. -->
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="./media-masks.css"/>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

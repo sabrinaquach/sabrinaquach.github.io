@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import ProjectStatus from "../components/project-status/projectStatus";
+import { getProject } from "../projects";
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import ProjectTags from "../components/project-tags/tags";
 import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
 import DetailCallout from "../components/detail-callout/detailCallout";
 
@@ -45,7 +46,7 @@ const ProjectFive = () => {
                 <div className="project-block">
                     <div className="project-content-block">
                         <div className="text-column">
-                            <h3 className="project-header">— Case Study 05</h3>
+                            <ProjectStatus project={getProject('spacescan')} className="case-study-status" />
                             <h1 className="project-title">Spacescan</h1>
                             <p className="project-description">
                                 A design system is only real if something enforces it. Spacescan is a Figma plugin that
@@ -64,13 +65,6 @@ const ProjectFive = () => {
                                     </a>
                                 </div>
                                 <span className="live-app-note">Figma plugin — Community listing to come</span>
-                            </div>
-                            <div className='project-tags'>
-                                <ProjectTags text="Design Systems" color="#FFA6E3" />
-                                <ProjectTags text="Design Tooling" color="#18FF08" />
-                                <ProjectTags text="Figma Plugin API" color="#F6FAB2" />
-                                <ProjectTags text="TypeScript" color="#66A8F8" />
-                                <ProjectTags text="Design Engineering" color="#5AACDC" />
                             </div>
                         </div>
                         <div className="project-content-items">

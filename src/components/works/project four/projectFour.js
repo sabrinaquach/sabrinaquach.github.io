@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import ProjectStatus from "../components/project-status/projectStatus";
+import { getProject } from "../projects";
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import ProjectTags from "../components/project-tags/tags";
 import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
 
 import './projectFour.css';
@@ -41,7 +42,7 @@ const ProjectFour = () => {
                 <div className="project-block">
                     <div className="project-content-block">
                         <div className="text-column">
-                            <h3 className="project-header">— Case Study 04</h3>
+                            <ProjectStatus project={getProject('reality-check')} className="case-study-status" />
                             <h1 className="project-title">Reality Check</h1>
                             <p className="project-description">
                                 Most listing sites tell you what an apartment looks like. Reality Check tells you what living
@@ -68,13 +69,6 @@ const ProjectFour = () => {
                                     </a>
                                 </div>
                                 <span className="live-app-note">Score any address — no signup</span>
-                            </div>
-                            <div className='project-tags'>
-                                <ProjectTags text="Product Design" color="#FFE0C0" />
-                                <ProjectTags text="Full-stack" color="#AAFFD8" />
-                                <ProjectTags text="Data Modeling" color="#F9FF8F" />
-                                <ProjectTags text="Interaction Design" color="#FFA6E3" />
-                                <ProjectTags text="Design Engineering" color="#5AACDC" />
                             </div>
                         </div>
                         <div className="project-content-items">

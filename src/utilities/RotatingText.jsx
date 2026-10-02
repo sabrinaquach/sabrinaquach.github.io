@@ -58,7 +58,7 @@ const RotatingText = ({ words = [], delay = 2 }) => {
           fontWeight: "bold",
           textTransform: "uppercase",
           whiteSpace: "nowrap",
-          ...(word.toLowerCase() !== "builder" && { color: "#fff" })
+          ...(word.toLowerCase() !== "builder" && { color: "var(--fg)" })
         }}
       >
         {word}

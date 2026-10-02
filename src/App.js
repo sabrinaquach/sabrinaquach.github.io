@@ -9,6 +9,7 @@ import ProjectFour from "./components/works/project four/projectFour";
 import ProjectFive from "./components/works/project five/projectFive";
 import Footer from "./components/footer/footer";
 import ScrollToHashElement from "./utilities/ScrollToHashElement";
+import CustomCursor from "./components/cursor/customCursor";
 import './styles/styles.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <ScrollToHashElement />
+        <CustomCursor />
         <Navbar />
         <Routes>
           <Route path="/" element={<Work />} />

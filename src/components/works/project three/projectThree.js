@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import ProjectStatus from "../components/project-status/projectStatus";
+import { getProject } from "../projects";
 import './projectThree.css'
 import { BiSearchAlt, BiBook, BiRotateRight, BiSmile } from "react-icons/bi";
 import { TbBoltOff, TbBrandCss3, TbBrandFigma, TbBrandHtml5, TbBrandJavascript, TbBrandReact, TbBrandSupabase, TbBrandVisualStudio, TbHeartHandshake, TbMoodConfuzed, TbRepeat, TbUserCheck, TbWorldDollar } from "react-icons/tb";
@@ -7,7 +9,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Rectangle from "../components/theme-card/rectangle";
 import SmallRectangle from "../components/core-card/smallRectangle";
 import PercentSquare from "../components/percent-square/percent-square"
-import ProjectTags from "../components/project-tags/tags";
 import CaseStudyNav from "../components/case-study-nav/caseStudyNav";
 import { scrollPageTo } from '../../../utilities/pageScroll';
 
@@ -79,47 +80,9 @@ const ProjectThree = () => {
                 <div className="project-block">
                     <div className="project-content-block">
                     <div className="text-column">
-                        <h3 className="project-header">Case Study</h3>
+                        <ProjectStatus project={getProject('aura')} className="case-study-status" />
                         <h1 className="project-title">Aura</h1>
                         <p className="project-description">Smart home app to view energy levels and change temperature in multiple rooms.</p>
-                        <div className='project-tags'>
-                            <ProjectTags
-                                text="IoT Design"
-                                color="#18FF08"
-                            />
-                            <ProjectTags
-                                text="UX design"
-                                color="#FFA6E3"
-                            />
-                            <ProjectTags
-                                text="Home Automation"
-                                color="#F9FF8F"
-                            />
-                            <ProjectTags
-                                text="Mobile"
-                                color="#B2E4FA"
-                            />
-                            <ProjectTags
-                                text="Full-Stack"
-                                color="#AAFFD8"
-                            />
-                            <ProjectTags
-                                text="HTML"
-                                color="#B5B6FF"
-                            />
-                            <ProjectTags
-                                text="CSS"
-                                color="#F8B966"
-                            />
-                            <ProjectTags
-                                text="JavaScript"
-                                color="#66A8F8"
-                            />
-                            <ProjectTags
-                                text="Supabase"
-                                color="#34b27b"
-                            />
-                        </div>
                     </div>
                     <div className="project-content-items">
                         <img className="project2-image" src="/images/aura-image1.png" alt="Aura"/>
@@ -135,7 +98,7 @@ const ProjectThree = () => {
                         <div className="background-column">
                             <h2 className="background-subtitle">Timeline</h2>
                             <ul className="background-design-list">
-                                <li>Januart 2025 - December 2025</li>
+                                <li>January 2025 - December 2025</li>
                             </ul>
                         </div>
                         <div className="background-column">
@@ -161,7 +124,7 @@ const ProjectThree = () => {
                                 <li>Figma</li>
                                 <li>System Diagrams</li>
                                 <li>Google Docs</li>
-                                <li>Visual Studio Code</li>
+                                <li>VS Code</li>
                                 <li>Canva</li>
                             </ul>
                         </div>
@@ -306,25 +269,16 @@ const ProjectThree = () => {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="two-final-design-row">
-                                    <div className="p-final-design-row-vids">
+                                {/* One clip, centred, at the same size as the paired clips above. */}
+                                <div className="two-final-design-row two-final-design-row--single">
+                                    <div className="p-final-design-row-vids p-final-design-row-vids--single">
                                         <video 
-                                            ref={video1Ref}
                                             src="/videos/project3-videos/Aura-App.mov"
                                             loop 
                                             muted
                                             autoPlay
                                             playsInline
                                             className="p2-final-design-video"
-                                        />
-                                        <video 
-                                            ref={video2Ref}
-                                            src="/videos/project3-videos/Aura-Hardware-App.mov"
-                                            loop 
-                                            muted
-                                            autoPlay
-                                            playsInline
-                                            className="p2-final-design-video video2-border"
                                         />
                                     </div>
                                 </div>
@@ -694,6 +648,8 @@ const ProjectThree = () => {
                                     src="/images/project3-images/Aura-Hardware.jpeg"
                                     alt="AuraTherm Hardware Specs"
                                     className="current-state-image"
+                                    data-cursor-text="ZOOM IN"
+                                    data-cursor-icon="zoom"
                                     onClick={() => setModalImage({
                                         src: '/images/project3-images/Aura-Hardware.jpeg',
                                         alt: 'AuraTherm Hardware Specs'
@@ -702,7 +658,7 @@ const ProjectThree = () => {
                             </div>
 
                             {modalImage && (
-                                <div className="image-modal" onClick={() => setModalImage(null)}>
+                                <div className="image-modal" onClick={() => setModalImage(null)} data-cursor-text="CLOSE" data-cursor-icon="close">
                                 <img src={modalImage.src} alt={modalImage.alt} className="modal-img" />
                                 </div>
                             )}
