@@ -90,6 +90,22 @@
   outline-offset: 2px;
 }
 
+.work-filter-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex: none;
+}
+
+.work-filter-divider {
+  flex: none;
+  align-self: stretch;
+  width: 1px;
+  margin: 0.35rem 0.15rem;
+  background-color: var(--glass-border);
+}
+
 .work-filter-count {
   font-size: 0.72rem;
   font-weight: normal;

@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Hero from "../hero/hero";
 import ProjectCard from "./components/project-card/projectCard";
+import ProjectGridCard from "./components/project-grid-card/projectGridCard";
 import WorkFilter from "./components/work-filter/workFilter";
 import projects, { hasCaseStudy } from "./projects";
 
@@ -22,9 +23,38 @@ const MATCHES = {
   'case-study': hasCaseStudy,
 };
 
+// The chosen layout is a per-visitor convenience, so it is remembered in the
+// browser; storage can be blocked, in which case it just falls back to list.
+const VIEW_KEY = 'work-view';
+
+const readView = () => {
+  try {
+    return localStorage.getItem(VIEW_KEY) === 'grid' ? 'grid' : 'list';
+  } catch {
+    return 'list';
+  }
+};
+
+// Grid rows alternate three across, then two across, on a six-column track:
+// a card in a row of three spans 2, a card in a row of two spans 3. A short
+// last row (the filters can leave one) stretches its cards to fill the width
+// instead of leaving a gap.
+const ROW_SIZES = [3, 2];
+
+const gridSpans = (count) => {
+  const spans = [];
+  for (let row = 0; spans.length < count; row++) {
+    const size = ROW_SIZES[row % ROW_SIZES.length];
+    const inRow = Math.min(size, count - spans.length);
+    for (let i = 0; i < inRow; i++) spans.push(6 / inRow);
+  }
+  return spans;
+};
+
 const Work = () => {
   const location = useLocation();
   const [filter, setFilter] = useState('all');
+  const [view, setView] = useState(readView);
   const [inWork, setInWork] = useState(false);
   const footerInView = useFooterInView();
   const workRef = useRef(null);
@@ -72,14 +102,24 @@ const Work = () => {
   const showDock = inWork && !footerInView;
 
   const visible = useMemo(() => projects.filter(MATCHES[filter]), [filter]);
+  const spans = useMemo(() => gridSpans(visible.length), [visible]);
 
-  // Filtering changes the height of the column, so every trigger below the
+  const changeView = (next) => {
+    setView(next);
+    try {
+      localStorage.setItem(VIEW_KEY, next);
+    } catch {
+      // Not remembered; the toggle still works for this visit.
+    }
+  };
+
+  // Filtering or switching layout changes the height of the column, so every trigger below the
   // filter is measuring against a stale page. Cards remount and refresh on
   // their own, but that happens before layout settles — refresh once after.
   useEffect(() => {
     const id = requestAnimationFrame(() => ScrollTrigger.refresh());
     return () => cancelAnimationFrame(id);
-  }, [filter]);
+  }, [filter, view]);
 
   return (
     <div className="main-content">
@@ -87,11 +127,19 @@ const Work = () => {
         <Hero />
       </div>
       <section id="work" className="work-section" ref={workRef}>
-        <div className="project-column">
-          {visible.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        {view === 'grid' ? (
+          <div className="project-grid">
+            {visible.map((project, i) => (
+              <ProjectGridCard key={project.id} project={project} span={spans[i]} />
+            ))}
+          </div>
+        ) : (
+          <div className="project-column">
+            {visible.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* aria-hidden plus the stylesheet's visibility:hidden keeps the chips
@@ -101,7 +149,13 @@ const Work = () => {
         className={`work-filter-dock${showDock ? ' is-visible' : ''}`}
         aria-hidden={!showDock}
       >
-        <WorkFilter filters={filters} active={filter} onChange={setFilter} />
+        <WorkFilter
+          filters={filters}
+          active={filter}
+          onChange={setFilter}
+          view={view}
+          onViewChange={changeView}
+        />
       </div>
     </div>
   );

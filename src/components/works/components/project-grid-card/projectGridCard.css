@@ -1,0 +1,165 @@
+/* Grid view of the work section. Six columns on desktop so rows can alternate
+   three across (span 2) and two across (span 3); --grid-span comes from Work.
+   Two across on tablets, one on phones. */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  /* Bottom padding clears the fixed filter dock. */
+  padding: 6rem 4rem 8rem;
+  box-sizing: border-box;
+}
+
+.project-grid-card {
+  grid-column: span var(--grid-span, 2);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.project-grid-card:hover {
+  border-color: var(--fg-1);
+  transform: translateY(-4px);
+}
+
+.project-grid-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.project-grid-card-static,
+.project-grid-card-static:hover {
+  cursor: default;
+  transform: none;
+}
+
+/* Fixed frame so every card's preview box is the same size, phone or laptop.
+   min-height: 0 and overflow: hidden stop a tall portrait clip from stretching
+   the box past its ratio; the clip is then placed absolutely inside it.
+
+   Phones and laptops are sized to the same visible height. The laptop clips
+   are all ~1600x975 (height ≈ 0.61 × width), so at 88% of the box width a
+   laptop stands 0.88 × 0.61 × 16/10 ≈ 86% of the box height — the phone gets
+   that height directly. Both keep their natural ratio (no object-fit), so the
+   cut-out masks in media-masks.css stay aligned. */
+.project-grid-media {
+  --device-width: 88%;
+  --device-height: 86%;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-grid-media video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+.project-grid-media-laptop video {
+  width: var(--device-width);
+  height: auto;
+}
+
+.project-grid-media-phone video {
+  height: var(--device-height);
+  width: auto;
+}
+
+.project-grid-media-placeholder {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.project-grid-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.project-grid-title {
+  font-family: 'Work Sans';
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.project-grid-text .project-status-line {
+  margin: 0;
+}
+
+.project-grid-description {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Same buttons as the list view (.card-demo-link / .card-repo-link in
+   work.css), a touch smaller to fit a three-across card; they wrap rather
+   than overflow when the card is narrow. */
+.project-grid-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.project-grid-links .card-demo-link,
+.project-grid-links .card-repo-link {
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-grid-card,
+  .project-grid-card:hover {
+    transition: border-color 0.25s ease;
+    transform: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-grid-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 3rem 1rem 7rem;
+  }
+
+  .project-grid-title {
+    font-size: 1.5rem;
+  }
+}
